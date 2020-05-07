@@ -1,0 +1,40 @@
+{
+  "name": "Prime Adhoc Job File Submission",
+  "description": "Prime Adhoc Job File Submission",
+  "main": "Main.xaml",
+  "dependencies": {
+    "BalaReva.ZipUnzip.Activities": "[2019.4.1]",
+    "SSHComandInterpreter.Activities": "[1.1.0]",
+    "UiPath.Excel.Activities": "[2.7.2]",
+    "UiPath.FTP.Activities": "[1.0.7346.28183]",
+    "UiPath.Mail.Activities": "[1.8.3-beta.889642]",
+    "UiPath.System.Activities": "[20.2.0-preview]",
+    "UiPath.UIAutomation.Activities": "[20.2.0-preview]",
+    "UiPathTeam.UnZipFile.Activities": "[1.2.0]"
+  },
+  "webServices": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.2.0.108",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "fileInfoCollection": []
+  },
+  "expressionLanguage": "VisualBasic"
+}
