@@ -1847,9 +1847,9 @@
     "restore": {
       "projectUniqueName": "Prime Job Automation Post Batch",
       "projectName": "Prime Job Automation Post Batch",
-      "projectPath": "D:\\Prime_Job_Automation\\UiPathCode\\Stage 4 - Post Batch\\.local",
+      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 4 - Post Batch\\.local",
       "packagesPath": "C:\\Users\\divakar_r\\.nuget\\packages\\",
-      "outputPath": "D:\\Prime_Job_Automation\\UiPathCode\\Stage 4 - Post Batch\\.local"
+      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 4 - Post Batch\\.local"
     },
     "frameworks": {
       "net461": {

@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>630,1200</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1200</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -65,7 +65,6 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID5}" sap2010:Annotation.AnnotationText="[TPA Email SFTP and PCIDSS source file extraction.]&#xA;[This process will extract source files from email, SFTP and PCIDSS network.]&#xA;[Expleo RPA Development Team]" DisplayName="TPA Email, SFTP and PCIDSS - Source File Extraction" sap:VirtualizedContainerService.HintSize="640,1035" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -228,36 +227,16 @@
                       </ui:LogMessage>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Source File Extraction from PCIDSS" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="3 Source File Extraction - PCIDSS\PCIDSS Source File Extraction.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
-                          </OutArgument>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedSourceFileList">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProcessedSourceFileList" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileLookupPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProcessedFileListLookupPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">
-                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysPwd" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysUserID">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysUserID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysServerDetails" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ArchiveFolderPath" />
-                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedSourceFileList">[str_ProcessedSourceFileList]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileLookupPath">[str_ProcessedFileListLookupPath]</InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">[pwd_TSysPwd]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysUserID">[str_TSysUserID]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[str_TSysServerDetails]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">[str_ArchiveFolderPath]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -369,36 +348,16 @@
                               </ui:LogMessage>
                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Source File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="4 Source File Extraction - SFTP\SFTP Source File Extraction.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
-                                  </OutArgument>
-                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
-                                    <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedSourceFileList">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProcessedSourceFileList" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileLookupPath">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProcessedFileListLookupPath" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">
-                                    <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysPwd" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysUserID">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysUserID" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysServerDetails" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ArchiveFolderPath" />
-                                  </InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
+                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedSourceFileList">[str_ProcessedSourceFileList]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileLookupPath">[str_ProcessedFileListLookupPath]</InArgument>
+                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">[pwd_TSysPwd]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysUserID">[str_TSysUserID]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[str_TSysServerDetails]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">[str_ArchiveFolderPath]</InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -584,7 +543,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Transition.To>
-                                    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="480,685" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                                    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,119" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                                       <State.Entry>
                                         <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="434,541" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                           <TryCatch.Try>
@@ -895,16 +854,6 @@
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
     <StateMachine.Variables>
-      <Variable x:TypeArguments="ui:QueueItem" sap2010:Annotation.AnnotationText="Transaction item to be processed. The type of this variable can be changed to match the transaction type in the process. For example, when processing data from a spreadsheet that is read into a DataTable, this type can be changed to DataRow. " Name="TransactionItem" />
-      <Variable x:TypeArguments="s:Exception" sap2010:Annotation.AnnotationText="Used during transitions between states to represent exceptions other than business exceptions." Name="SystemException" />
-      <Variable x:TypeArguments="ui:BusinessRuleException" sap2010:Annotation.AnnotationText="Used during transitions between states and represents a situation that does not conform to the rules of the process being automated." Name="BusinessException" />
-      <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="Sequential counter of transaction items." Default="1" Name="TransactionNumber" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="Config" />
-      <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="Used to control the number of attempts of retrying the transaction processing in case of system exceptions." Default="0" Name="RetryNumber" />
-      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Optionally used to include additional information about the transaction item." Name="TransactionField2" />
-      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Optionally used to include additional information about the transaction item." Name="TransactionField1" />
-      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Transaction ID used for information and logging purposes. Ideally, the ID should be unique for each transaction. " Name="TransactionID" />
-      <Variable x:TypeArguments="sd:DataTable" sap2010:Annotation.AnnotationText="Used in case transactions are stored in a DataTable, for example, after being retrieved from a spreadsheet." Name="TransactionData" />
       <Variable x:TypeArguments="x:String" Name="str_ExceptionMessage" />
       <Variable x:TypeArguments="x:String" Name="str_ProcessedSourceFileList" />
       <Variable x:TypeArguments="x:String" Name="str_RpaOpsEmailID" />

@@ -350,13 +350,13 @@
                         <av:PointCollection x:Key="ConnectorLocation">300,455.5 300,510</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_SftpRuleFactory]" DisplayName="For Each SFTP Staging Folder - File Validation" sap:VirtualizedContainerService.HintSize="711,1709" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_SftpRuleFactory]" DisplayName="For Each SFTP Staging Folder - File Validation" sap:VirtualizedContainerService.HintSize="847,1661" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rule" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Sequence - File Validation" sap:VirtualizedContainerService.HintSize="661,1561" sap2010:WorkflowViewState.IdRef="Sequence_203">
+                          <Sequence DisplayName="Sequence - File Validation" sap:VirtualizedContainerService.HintSize="797,1513" sap2010:WorkflowViewState.IdRef="Sequence_203">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="s:String[]" Name="arr_fileArrayStage1" />
                               <Variable x:TypeArguments="s:String[]" Name="arr_fileArrayStage2" />
@@ -367,7 +367,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Set - Filenames Array Stage1" sap:VirtualizedContainerService.HintSize="619,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                            <Assign DisplayName="Set - Filenames Array Stage1" sap:VirtualizedContainerService.HintSize="755,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="s:String[]">[arr_fileArrayStage1]</OutArgument>
                               </Assign.To>
@@ -375,13 +375,13 @@
                                 <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Str_ProjectFolderPath+rule("Staging_Folder").ToString)]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File Before UnZip" sap:VirtualizedContainerService.HintSize="619,752" sap2010:WorkflowViewState.IdRef="ForEach`1_35" Values="[arr_fileArrayStage1]">
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File Before UnZip" sap:VirtualizedContainerService.HintSize="755,704" sap2010:WorkflowViewState.IdRef="ForEach`1_35" Values="[arr_fileArrayStage1]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:String" Name="fileItemS1" />
                                   </ActivityAction.Argument>
-                                  <If Condition="[Path.GetExtension(fileItemS1.ToString)=&quot;.zip&quot; Or Path.GetExtension(fileItemS1.ToString)=&quot;.7z&quot;]" DisplayName="If Valid File Extension" sap:VirtualizedContainerService.HintSize="583,618" sap2010:WorkflowViewState.IdRef="If_63">
+                                  <If Condition="[Path.GetExtension(fileItemS1.ToString)=&quot;.zip&quot; Or Path.GetExtension(fileItemS1.ToString)=&quot;.7z&quot;]" DisplayName="If Valid File Extension" sap:VirtualizedContainerService.HintSize="719,570" sap2010:WorkflowViewState.IdRef="If_63">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -389,7 +389,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <TryCatch DisplayName="Try Unzip files" sap:VirtualizedContainerService.HintSize="438,470" sap2010:WorkflowViewState.IdRef="TryCatch_20">
+                                      <TryCatch DisplayName="Try Unzip files" sap:VirtualizedContainerService.HintSize="574,422" sap2010:WorkflowViewState.IdRef="TryCatch_20">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -397,7 +397,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <TryCatch.Try>
-                                          <Sequence DisplayName="Unzip Using Password" sap:VirtualizedContainerService.HintSize="304,243" sap2010:WorkflowViewState.IdRef="Sequence_230">
+                                          <Sequence DisplayName="Unzip Using Password" sap:VirtualizedContainerService.HintSize="536,195" sap2010:WorkflowViewState.IdRef="Sequence_230">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="x:String" Name="str_UnzipPwd" />
                                             </Sequence.Variables>
@@ -406,18 +406,10 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign DisplayName="Get Last modified date" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_51">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:String">[str_UnzipPwd]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">[DateTime.ParseExact(Left(System.IO.File.GetLastWriteTime(fileItemS1).ToString,10).ToString,“MM/dd/yyyy”,Globalization.CultureInfo.InvariantCulture).ToString(“MMddyy”)]</InArgument>
-                                              </Assign.Value>
-                                            </Assign>
-                                            <bz:UnZipFile CodePage="1252" DisplayName="UnZip &amp; Password - Email" ExtractFolderPath="[Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="UnZipFile_6" Password="[rule(&quot;Password&quot;).ToString.Replace(&quot;mmddyy&quot;,str_UnzipPwd)]" ZipFile="[fileItemS1.ToString]">
+                                            <bz:UnZipFile CodePage="1252" DisplayName="UnZip &amp; Password - Email" ExtractFolderPath="[Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="494,103" sap2010:WorkflowViewState.IdRef="UnZipFile_6" Password="[rule(&quot;Password&quot;).ToString.Replace(&quot;mmddyy&quot;,DateTime.ParseExact(Left(System.IO.File.GetLastWriteTime(fileItemS1).ToString,10).ToString,“MM/dd/yyyy”,Globalization.CultureInfo.InvariantCulture).ToString(“MMddyy”)).Replace(&quot;yyddmm&quot;,DateTime.ParseExact(Left(System.IO.File.GetLastWriteTime(fileItemS1).ToString,10).ToString,“MM/dd/yyyy”,Globalization.CultureInfo.InvariantCulture).ToString(“yyddMM”))]" ZipFile="[fileItemS1.ToString]">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -425,7 +417,7 @@
                                           </Sequence>
                                         </TryCatch.Try>
                                         <TryCatch.Catches>
-                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_31">
+                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="540,21" sap2010:WorkflowViewState.IdRef="Catch`1_31">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -436,7 +428,7 @@
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                               </ActivityAction.Argument>
-                                              <If Condition="[Exception.Message.Equals(&quot;bad password&quot;) Or Exception.Message.Contains(&quot;The password did not match&quot;) Or exception.Message.Contains(&quot;Data Error&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_62">
+                                              <If Condition="[Exception.Message.Equals(&quot;bad password&quot;) Or Exception.Message.Contains(&quot;The password did not match&quot;) Or exception.Message.Contains(&quot;Data Error&quot;)]" sap:VirtualizedContainerService.HintSize="713,253" sap2010:WorkflowViewState.IdRef="If_62">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -488,7 +480,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ForEach>
-                            <Assign DisplayName="Set - Filenames Array Stage2" sap:VirtualizedContainerService.HintSize="619,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                            <Assign DisplayName="Set - Filenames Array Stage2" sap:VirtualizedContainerService.HintSize="755,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="s:String[]">[arr_fileArrayStage2]</OutArgument>
                               </Assign.To>

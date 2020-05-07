@@ -1847,9 +1847,9 @@
     "restore": {
       "projectUniqueName": "Prime Adhoc Job File Submission",
       "projectName": "Prime Adhoc Job File Submission",
-      "projectPath": "D:\\Prime_Job_Automation\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\.local",
+      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\.local",
       "packagesPath": "C:\\Users\\divakar_r\\.nuget\\packages\\",
-      "outputPath": "D:\\Prime_Job_Automation\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\.local"
+      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\.local"
     },
     "frameworks": {
       "net461": {
