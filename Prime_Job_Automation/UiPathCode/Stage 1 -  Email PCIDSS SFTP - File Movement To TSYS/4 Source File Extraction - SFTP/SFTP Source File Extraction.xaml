@@ -181,7 +181,7 @@
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Sequence - File Extraction" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_180">
+                            <Sequence DisplayName="Sequence - File Extraction" sap:VirtualizedContainerService.HintSize="242,205" sap2010:WorkflowViewState.IdRef="Sequence_180">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="scg:IEnumerable(p:FtpObjectInfo)" Name="dt_EnumerateSftpfiles" />
                                 <Variable x:TypeArguments="x:Boolean" Name="CurrentDateFolderExists" />
@@ -189,7 +189,7 @@
                               </Sequence.Variables>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -250,10 +250,10 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <If.Then>
-                                                    <Sequence DisplayName="Download File" sap:VirtualizedContainerService.HintSize="242,205" sap2010:WorkflowViewState.IdRef="Sequence_197">
+                                                    <Sequence DisplayName="Download File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_197">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
@@ -350,13 +350,13 @@
                         <av:PointCollection x:Key="ConnectorLocation">300,455.5 300,510</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_SftpRuleFactory]" DisplayName="For Each SFTP Staging Folder - File Validation" sap:VirtualizedContainerService.HintSize="847,1661" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_SftpRuleFactory]" DisplayName="For Each SFTP Staging Folder - File Validation" sap:VirtualizedContainerService.HintSize="882,2277" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rule" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Sequence - File Validation" sap:VirtualizedContainerService.HintSize="797,1513" sap2010:WorkflowViewState.IdRef="Sequence_203">
+                          <Sequence DisplayName="Sequence - File Validation" sap:VirtualizedContainerService.HintSize="349,726" sap2010:WorkflowViewState.IdRef="Sequence_203">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="s:String[]" Name="arr_fileArrayStage1" />
                               <Variable x:TypeArguments="s:String[]" Name="arr_fileArrayStage2" />
@@ -367,7 +367,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Set - Filenames Array Stage1" sap:VirtualizedContainerService.HintSize="755,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                            <Assign DisplayName="Set - Filenames Array Stage1" sap:VirtualizedContainerService.HintSize="307,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="s:String[]">[arr_fileArrayStage1]</OutArgument>
                               </Assign.To>
@@ -375,24 +375,24 @@
                                 <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Str_ProjectFolderPath+rule("Staging_Folder").ToString)]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File Before UnZip" sap:VirtualizedContainerService.HintSize="755,704" sap2010:WorkflowViewState.IdRef="ForEach`1_35" Values="[arr_fileArrayStage1]">
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File Before UnZip" sap:VirtualizedContainerService.HintSize="307,194" sap2010:WorkflowViewState.IdRef="ForEach`1_35" Values="[arr_fileArrayStage1]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:String" Name="fileItemS1" />
                                   </ActivityAction.Argument>
-                                  <If Condition="[Path.GetExtension(fileItemS1.ToString)=&quot;.zip&quot; Or Path.GetExtension(fileItemS1.ToString)=&quot;.7z&quot;]" DisplayName="If Valid File Extension" sap:VirtualizedContainerService.HintSize="719,570" sap2010:WorkflowViewState.IdRef="If_63">
+                                  <If Condition="[Path.GetExtension(fileItemS1.ToString)=&quot;.zip&quot; Or Path.GetExtension(fileItemS1.ToString)=&quot;.7z&quot;]" DisplayName="If Valid File Extension" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_63">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <TryCatch DisplayName="Try Unzip files" sap:VirtualizedContainerService.HintSize="574,422" sap2010:WorkflowViewState.IdRef="TryCatch_20">
+                                      <TryCatch DisplayName="Try Unzip files" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_20">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -428,7 +428,7 @@
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                               </ActivityAction.Argument>
-                                              <If Condition="[Exception.Message.Equals(&quot;bad password&quot;) Or Exception.Message.Contains(&quot;The password did not match&quot;) Or exception.Message.Contains(&quot;Data Error&quot;)]" sap:VirtualizedContainerService.HintSize="713,253" sap2010:WorkflowViewState.IdRef="If_62">
+                                              <If Condition="[Exception.Message.Equals(&quot;bad password&quot;) Or Exception.Message.Contains(&quot;The password did not match&quot;) Or exception.Message.Contains(&quot;Data Error&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_62">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -436,26 +436,26 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <If.Then>
-                                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;The file &quot;+fileItemS1.ToString.Replace(Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString,&quot;&quot;)+&quot; cannot be processed due to the incorrect password to unzip. Kindly encrypt the file with valid password and resend a file to run the process.&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;TIA - PMU Team&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_41" IsBodyHtml="True" IsDraft="False" Subject="Warning - Invalid PCIDSS file" To="[rule(&quot;Sender_Email_Id&quot;).ToString]">
+                                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;The file &quot;+fileItemS1.ToString.Replace(Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString,&quot;&quot;)+&quot; cannot be processed due to the incorrect password to unzip. Kindly encrypt the file with valid password and resend a file to run the process.&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;TIA - PMU Team&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_41" IsBodyHtml="True" IsDraft="False" Subject="Warning - Invalid PCIDSS file" To="[rule(&quot;Sender_Email_Id&quot;).ToString]">
                                                     <ui:SendOutlookMail.Files>
                                                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                     </ui:SendOutlookMail.Files>
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:SendOutlookMail>
                                                 </If.Then>
                                                 <If.Else>
-                                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;The file &quot;+fileItemS1.ToString.Replace(Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString,&quot;&quot;)+&quot; cannot be processed due to an Error occured. Please look into Issue.&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;The Error details is given below.&quot; +&quot;&lt;br&gt;&quot;+&#xA; exception.Message+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;TIA - PMU Team&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_42" IsBodyHtml="True" IsDraft="False" Subject="Warning - Invalid PCIDSS file" To="[rule(&quot;Sender_Email_Id&quot;).ToString]">
+                                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;The file &quot;+fileItemS1.ToString.Replace(Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString,&quot;&quot;)+&quot; cannot be processed due to an Error occured. Please look into Issue.&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;The Error details is given below.&quot; +&quot;&lt;br&gt;&quot;+&#xA; exception.Message+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;TIA - PMU Team&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_42" IsBodyHtml="True" IsDraft="False" Subject="Warning - Invalid PCIDSS file" To="[rule(&quot;Sender_Email_Id&quot;).ToString]">
                                                     <ui:SendOutlookMail.Files>
                                                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                     </ui:SendOutlookMail.Files>
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
@@ -480,7 +480,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ForEach>
-                            <Assign DisplayName="Set - Filenames Array Stage2" sap:VirtualizedContainerService.HintSize="755,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                            <Assign DisplayName="Set - Filenames Array Stage2" sap:VirtualizedContainerService.HintSize="307,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="s:String[]">[arr_fileArrayStage2]</OutArgument>
                               </Assign.To>
@@ -488,20 +488,20 @@
                                 <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Str_ProjectFolderPath+rule("Staging_Folder").ToString)]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File After UnZip" sap:VirtualizedContainerService.HintSize="619,477" sap2010:WorkflowViewState.IdRef="ForEach`1_38" Values="[arr_FileArrayStage2]">
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File After UnZip" sap:VirtualizedContainerService.HintSize="307,200" sap2010:WorkflowViewState.IdRef="ForEach`1_38" Values="[arr_FileArrayStage2]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:String" Name="fileItemS2" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Sequence - Source File Format Validation" sap:VirtualizedContainerService.HintSize="304,343" sap2010:WorkflowViewState.IdRef="Sequence_226">
+                                  <Sequence DisplayName="Sequence - Source File Format Validation" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_226">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:Boolean" Name="bool_IsFileValid" />
                                       <Variable x:TypeArguments="x:String" Name="str_fileNamePattern" />
                                     </Sequence.Variables>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -613,7 +613,7 @@
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;The file &quot; + Path.GetFileName(fileItemS2.ToString) +&quot; cannot be processed due to &quot; + str_AttachmentErrorMsg +&quot;. Kindly resend the new file.&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;TIA - PMU Team&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_43" IsBodyHtml="False" IsDraft="False" Subject="SFTP file Validation Failure" To="[rule(&quot;Sender_Email_Id&quot;).ToString]">
+                                                          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;The file &quot; + Path.GetFileName(fileItemS2.ToString) +&quot; cannot be processed due to &quot; + str_AttachmentErrorMsg +&quot;. Kindly resend the new file.&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;TIA - PMU Team&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_43" IsBodyHtml="True" IsDraft="False" Subject="SFTP file Validation Failure" To="[rule(&quot;Sender_Email_Id&quot;).ToString]">
                                                             <ui:SendOutlookMail.Files>
                                                               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                             </ui:SendOutlookMail.Files>
@@ -752,7 +752,7 @@
                                                                   <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                                                 </Assign.Value>
                                                               </Assign>
-                                                              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;The validation is success for the file attachment &quot; + Path.GetFileName(fileItemS2.ToString) + &quot; and ready to process.&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;TIA - PMU Team&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_44" IsBodyHtml="False" IsDraft="False" Subject="SFTP file Validation Success" To="[rule(&quot;Sender_Email_Id&quot;).ToString]">
+                                                              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;The validation is success for the file attachment &quot; + Path.GetFileName(fileItemS2.ToString) + &quot; and ready to process.&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;TIA - PMU Team&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_44" IsBodyHtml="True" IsDraft="False" Subject="SFTP file Validation Success" To="[rule(&quot;Sender_Email_Id&quot;).ToString]">
                                                                 <ui:SendOutlookMail.Files>
                                                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                                 </ui:SendOutlookMail.Files>
@@ -897,10 +897,10 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Sequence - Exception Handling" sap:VirtualizedContainerService.HintSize="304,66" sap2010:WorkflowViewState.IdRef="Sequence_220">
+            <Sequence DisplayName="Sequence - Exception Handling" sap:VirtualizedContainerService.HintSize="304,243" sap2010:WorkflowViewState.IdRef="Sequence_220">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
