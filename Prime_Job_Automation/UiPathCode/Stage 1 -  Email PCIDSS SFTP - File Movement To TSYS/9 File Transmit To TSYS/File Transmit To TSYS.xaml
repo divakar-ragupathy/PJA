@@ -7,11 +7,12 @@
     <x:Property Name="Str_TSysServerDetails" Type="InArgument(x:String)" />
     <x:Property Name="Str_StagingFile" Type="InArgument(x:String)" />
     <x:Property Name="Pwd_TSysServerPassword" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="Bool_IsFileValid" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>704,1120</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1120</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -47,7 +48,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -104,13 +105,13 @@
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="Transfer Files to Tsys" sap:VirtualizedContainerService.HintSize="200,51" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_12" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysServerPassword).Password]" Port="[str_TSysServerPort]" UseSftp="True" Username="[Str_TSysServerUserName]">
+            <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="Transfer Files to Tsys" sap:VirtualizedContainerService.HintSize="667,874" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_12" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysServerPassword).Password]" Port="[str_TSysServerPort]" UseSftp="True" Username="[Str_TSysServerUserName]">
               <p:WithFtpSession.Body>
                 <ActivityAction x:TypeArguments="p:IFtpSession">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Check Folder and Transmit File" sap:VirtualizedContainerService.HintSize="663,769" sap2010:WorkflowViewState.IdRef="Sequence_140">
+                  <Sequence DisplayName="Check Folder and Transmit File" sap:VirtualizedContainerService.HintSize="633,788" sap2010:WorkflowViewState.IdRef="Sequence_140">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="bool_IsDirectoryExist" />
                     </Sequence.Variables>
@@ -119,8 +120,8 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <p:DirectoryExists ContinueOnError="False" DisplayName="Remote Directory exists" Exists="[bool_IsDirectoryExist]" sap:VirtualizedContainerService.HintSize="621,22" sap2010:WorkflowViewState.IdRef="DirectoryExists_7" RemotePath="[Str_TsysFolder]" />
-                    <If Condition="[bool_IsDirectoryExist]" DisplayName="If Remote Directory Exists" sap:VirtualizedContainerService.HintSize="621,615" sap2010:WorkflowViewState.IdRef="If_38">
+                    <p:DirectoryExists ContinueOnError="False" DisplayName="Remote Directory exists" Exists="[bool_IsDirectoryExist]" sap:VirtualizedContainerService.HintSize="591,22" sap2010:WorkflowViewState.IdRef="DirectoryExists_7" RemotePath="[Str_TsysFolder]" />
+                    <If Condition="[bool_IsDirectoryExist]" DisplayName="If Remote Directory Exists" sap:VirtualizedContainerService.HintSize="591,634" sap2010:WorkflowViewState.IdRef="If_38">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -128,15 +129,15 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="376,468" sap2010:WorkflowViewState.IdRef="Sequence_137">
+                        <Sequence DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="304,487" sap2010:WorkflowViewState.IdRef="Sequence_137">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload files To TSYS " sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="UploadFiles_14" LocalPath="[Str_StagingFile]" Overwrite="True" Recursive="False" RemotePath="[Str_TsysFolder]" />
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Info" Message="[&quot;The file &quot;+Str_StagingFile+&quot; uploaded  into TSys successfully&quot;]">
+                          <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload files To TSYS " sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="UploadFiles_14" LocalPath="[Str_StagingFile]" Overwrite="True" Recursive="False" RemotePath="[Str_TsysFolder]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Info" Message="[&quot;The file &quot;+Str_StagingFile+&quot; uploaded  into TSys successfully&quot;]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -144,15 +145,15 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:LogMessage>
-                          <ui:AppendLine DisplayName="Add File into Processed File List" FileName="[Str_ProcessedFileListLookUpPath]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[Str_StagingFile]">
+                          <ui:AppendLine DisplayName="Add File into Processed File List" FileName="[Str_ProcessedFileListLookUpPath]" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[Str_StagingFile]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:AppendLine>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_76" Level="Info" Message="[&quot;The file &quot;+Str_StagingFile+&quot; added into processed file list&quot;]">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_76" Level="Info" Message="[&quot;The file &quot;+Str_StagingFile+&quot; added into processed file list&quot;]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -160,13 +161,21 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:LogMessage>
+                          <Assign DisplayName="Set File Validation Flag" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Boolean">[Bool_IsFileValid]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                            </Assign.Value>
+                          </Assign>
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Sequence - Notify Error to Ops Team" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_139">
+                        <Sequence DisplayName="Sequence - Notify Error to Ops Team" sap:VirtualizedContainerService.HintSize="242,234" sap2010:WorkflowViewState.IdRef="Sequence_139">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
