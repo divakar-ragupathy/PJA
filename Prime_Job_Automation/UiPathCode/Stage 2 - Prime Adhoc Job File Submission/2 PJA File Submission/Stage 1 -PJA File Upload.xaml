@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,1180</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1496</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -74,15 +74,15 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="714,1081" sap2010:WorkflowViewState.IdRef="Sequence_85">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="724,1331" sap2010:WorkflowViewState.IdRef="Sequence_85">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Identify Adhoc Process from File Name" sap:VirtualizedContainerService.HintSize="672,989" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+    <TryCatch DisplayName="Try Identify Adhoc Process from File Name" sap:VirtualizedContainerService.HintSize="682,1239" sap2010:WorkflowViewState.IdRef="TryCatch_12">
       <TryCatch.Try>
-        <Flowchart DisplayName="Identify Adhoc Process Workflow" sap:VirtualizedContainerService.HintSize="644,1012" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart DisplayName="Identify Adhoc Process Workflow" sap:VirtualizedContainerService.HintSize="724,1012" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="bool_IsPaymentError" />
             <Variable x:TypeArguments="x:Boolean" Name="bool_IsBillerError" />
@@ -108,7 +108,7 @@
               <av:Size x:Key="ShapeSize">60,75</av:Size>
               <x:Double x:Key="Height">975.5</x:Double>
               <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,109</av:PointCollection>
-              <x:Double x:Key="Width">610</x:Double>
+              <x:Double x:Key="Width">690</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
@@ -119,7 +119,7 @@
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">169,310</av:Point>
                 <av:Size x:Key="ShapeSize">262,60</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">300,370 300,414.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">300,370 300,404.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="Set Server Port" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_48">
@@ -136,17 +136,17 @@
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
             <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID3">
+              <FlowStep x:Name="__ReferenceID9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">200,414.5</av:Point>
+                    <av:Point x:Key="ShapeLocation">200,404.5</av:Point>
                     <av:Size x:Key="ShapeSize">200,51</av:Size>
-                    <av:PointCollection x:Key="ConnectorLocation">300,465.5 300,494.5</av:PointCollection>
+                    <av:PointCollection x:Key="ConnectorLocation">300,455.5 300,494.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:BuildDataTable DataTable="[dt_ConversionFileNamePattern]" DisplayName="Conversion File Name RegEx Rule" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BuildDataTable_7" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ProcessName&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;FileNamePattern&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;MeralcoBilling&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_meralco_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;MayniladBilling&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_maynilad_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;Smart&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_smart_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;SunCellular&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_sun_cellular_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;SMFile&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_sm_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;MasterVisaBancnetRobinson&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_branch_payment_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;VecoBilling&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_veco_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;AutoDB&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_auto_debit_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;PLDT&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_pldt_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;BPI&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_bpi_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;dm012&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_cash_advance_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;SkyCable&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_sky_cable_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;Globe&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_globe_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;BayantelBilling&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_bayantel_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+                <ui:BuildDataTable DataTable="[dt_ConversionFileNamePattern]" DisplayName="Build File Name RegEx Rule" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BuildDataTable_9" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;FileNamePattern&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TreeHierarchy&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_meralco_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_maynilad_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_smart_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_sun_cellular_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_sm_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_branch_payment_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_veco_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_auto_debit_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_pldt_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_bpi_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_cash_advance_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_sky_cable_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_globe_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_bayantel_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;    &lt;TreeHierarchy&gt;Monetary Transaction Interface &lt;/TreeHierarchy&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
                 <FlowStep.Next>
-                  <FlowStep x:Name="__ReferenceID4">
+                  <FlowStep x:Name="__ReferenceID3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">200,494.5</av:Point>
@@ -179,7 +179,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:FilterDataTable>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID5">
+                      <FlowStep x:Name="__ReferenceID4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">200,569</av:Point>
@@ -195,7 +195,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:RemoveDuplicateRows>
                         <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID6">
+                          <FlowStep x:Name="__ReferenceID10">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">200,624.5</av:Point>
@@ -203,19 +203,19 @@
                                 <av:PointCollection x:Key="ConnectorLocation">300,675.5 300,704.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_UniqueConversionFolderList]" DisplayName="For Each Conversion Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_16">
+                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_UniqueConversionFolderList]" DisplayName="For Each Conversion Folder" sap:VirtualizedContainerService.HintSize="795,1348" sap2010:WorkflowViewState.IdRef="ForEachRow_20">
                               <ui:ForEachRow.Body>
                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="folder" />
                                   </ActivityAction.Argument>
-                                  <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="Connect TSys Server" sap:VirtualizedContainerService.HintSize="745,1138" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_13" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysPwd).Password]" Port="[str_TSysServerPort]" UseSftp="True" Username="[Str_TSysUserID]">
+                                  <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="Connect TSys Server" sap:VirtualizedContainerService.HintSize="745,1200" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_15" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysPwd).Password]" Port="[str_TSysServerPort]" UseSftp="True" Username="[Str_TSysUserID]">
                                     <p:WithFtpSession.Body>
                                       <ActivityAction x:TypeArguments="p:IFtpSession">
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                                         </ActivityAction.Argument>
-                                        <Sequence DisplayName="Sequence - PJAUploadFileList" sap:VirtualizedContainerService.HintSize="711,1052" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                                        <Sequence DisplayName="Sequence - PJAUploadFileList" sap:VirtualizedContainerService.HintSize="711,1114" sap2010:WorkflowViewState.IdRef="Sequence_113">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="scg:IEnumerable(p:FtpObjectInfo)" Name="list_ConvertedFiles" />
                                           </Sequence.Variables>
@@ -225,20 +225,20 @@
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <p:EnumerateObjects ContinueOnError="False" DisplayName="Get Converted File List" Files="[list_ConvertedFiles]" sap:VirtualizedContainerService.HintSize="669,22" sap2010:WorkflowViewState.IdRef="EnumerateObjects_13" Recursive="False" RemotePath="[folder(&quot;TSYS_PJAUpload_Location&quot;).ToString]" />
-                                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Converted Files" sap:VirtualizedContainerService.HintSize="669,898" sap2010:WorkflowViewState.IdRef="ForEach`1_28" Values="[list_ConvertedFiles]">
+                                          <p:EnumerateObjects ContinueOnError="False" DisplayName="Get Converted File List" Files="[list_ConvertedFiles]" sap:VirtualizedContainerService.HintSize="669,22" sap2010:WorkflowViewState.IdRef="EnumerateObjects_15" Recursive="False" RemotePath="[folder(&quot;TSYS_PJAUpload_Location&quot;).ToString]" />
+                                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Converted Files" sap:VirtualizedContainerService.HintSize="669,960" sap2010:WorkflowViewState.IdRef="ForEach`1_30" Values="[list_ConvertedFiles]">
                                             <ui:ForEach.Body>
                                               <ActivityAction x:TypeArguments="x:String">
                                                 <ActivityAction.Argument>
                                                   <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                                                 </ActivityAction.Argument>
-                                                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_ConversionFileNamePattern]" DisplayName="For Each File_Name_Pattern" sap:VirtualizedContainerService.HintSize="633,765" sap2010:WorkflowViewState.IdRef="ForEachRow_15">
+                                                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_ConversionFileNamePattern]" DisplayName="For Each File_Name_Pattern" sap:VirtualizedContainerService.HintSize="633,827" sap2010:WorkflowViewState.IdRef="ForEachRow_19">
                                                   <ui:ForEachRow.Body>
                                                     <ActivityAction x:TypeArguments="sd:DataRow">
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="filePattern" />
                                                       </ActivityAction.Argument>
-                                                      <Sequence DisplayName="PJA File Upload " sap:VirtualizedContainerService.HintSize="583,618" sap2010:WorkflowViewState.IdRef="Sequence_106">
+                                                      <Sequence DisplayName="PJA File Upload " sap:VirtualizedContainerService.HintSize="583,680" sap2010:WorkflowViewState.IdRef="Sequence_112">
                                                         <Sequence.Variables>
                                                           <Variable x:TypeArguments="x:String" Name="str_FileName" />
                                                           <Variable x:TypeArguments="x:String" Name="str_ProcessName" />
@@ -249,7 +249,7 @@
                                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <Assign DisplayName="Get Converted File Name" sap:VirtualizedContainerService.HintSize="541,60" sap2010:WorkflowViewState.IdRef="Assign_53">
+                                                        <Assign DisplayName="Get Converted File Name" sap:VirtualizedContainerService.HintSize="541,60" sap2010:WorkflowViewState.IdRef="Assign_57">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:String">[str_FileName]</OutArgument>
                                                           </Assign.To>
@@ -257,7 +257,7 @@
                                                             <InArgument x:TypeArguments="x:String">[Path.GetFileName(str_FileName.ToString)]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <If Condition="[Regex.IsMatch(str_FileName.ToLower,filePattern.ToString.ToLower)]" DisplayName="If File Name Match with Pattern" sap:VirtualizedContainerService.HintSize="541,426" sap2010:WorkflowViewState.IdRef="If_35">
+                                                        <If Condition="[Regex.IsMatch(str_FileName.ToLower,filePattern.ToString.ToLower)]" DisplayName="If File Name Match with Pattern" sap:VirtualizedContainerService.HintSize="541,488" sap2010:WorkflowViewState.IdRef="If_37">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -265,24 +265,26 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <If.Then>
-                                                            <Sequence DisplayName="Sequence PJA File Upload Stage 2" sap:VirtualizedContainerService.HintSize="396,279" sap2010:WorkflowViewState.IdRef="Sequence_105">
+                                                            <Sequence DisplayName="Sequence PJA File Upload Stage 2" sap:VirtualizedContainerService.HintSize="396,341" sap2010:WorkflowViewState.IdRef="Sequence_111">
+                                                              <Sequence.Variables>
+                                                                <Variable x:TypeArguments="ui:GenericValue" Name="str_TreeLabel" />
+                                                              </Sequence.Variables>
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <Assign DisplayName="Get Process Name" sap:VirtualizedContainerService.HintSize="354,60" sap2010:WorkflowViewState.IdRef="Assign_54">
+                                                              <Assign DisplayName="Get Tree Hirerarchy" sap:VirtualizedContainerService.HintSize="354,60" sap2010:WorkflowViewState.IdRef="Assign_58">
                                                                 <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:String">[str_ProcessName]</OutArgument>
+                                                                  <OutArgument x:TypeArguments="ui:GenericValue">[str_TreeLabel]</OutArgument>
                                                                 </Assign.To>
                                                                 <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:String">[filePattern("ProcessName").ToString]</InArgument>
+                                                                  <InArgument x:TypeArguments="ui:GenericValue">[filePattern("TreeHierarchy").ToString]</InArgument>
                                                                 </Assign.Value>
                                                               </Assign>
-                                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PJA Workflow File" sap:VirtualizedContainerService.HintSize="354,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="2 PJA File Submission\Stage 2 -PJA File Upload.xaml">
+                                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PJA Workflow File" sap:VirtualizedContainerService.HintSize="354,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="2 PJA File Submission\Stage 2 -PJA File Upload.xaml">
                                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessName">[str_ProcessName]</InArgument>
                                                                   <InArgument x:TypeArguments="x:String" x:Key="Str_AdhocInputFile">[str_FileName]</InArgument>
                                                                   <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">[Str_MicrosoftCVUrl]</InArgument>
                                                                   <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">[Str_MicrosoftCVKey]</InArgument>
@@ -291,6 +293,7 @@
                                                                   <InArgument x:TypeArguments="x:String" x:Key="Str_SplUserId">[Str_TPSUserID]</InArgument>
                                                                   <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_SplUserPwd">[Pwd_TPSUser]</InArgument>
                                                                   <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TreeLabel">[str_TreeLabel]</InArgument>
                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -299,6 +302,7 @@
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:InvokeWorkflowFile>
+                                                              <ui:Break sap:VirtualizedContainerService.HintSize="354,22" sap2010:WorkflowViewState.IdRef="Break_1" />
                                                             </Sequence>
                                                           </If.Then>
                                                         </If>
@@ -334,7 +338,7 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:ForEachRow>
                             <FlowStep.Next>
-                              <FlowStep x:Name="__ReferenceID10">
+                              <FlowStep x:Name="__ReferenceID8">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">200,704.5</av:Point>
@@ -344,7 +348,7 @@
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:BuildDataTable DataTable="[dt_NonConversionFileNamePattern]" DisplayName="NonConversion File Name RegEx Rule" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BuildDataTable_8" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ProcessName&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;FileNamePattern&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;MeralcoBilling&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_meralco_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;MayniladBilling&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_maynilad_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;Smart&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_smart_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;SunCellular&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_sun_cellular_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;SMFile&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_sm_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;MasterVisaBancnetRobinson&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_branch_payment_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;VecoBilling&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_veco_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;AutoDB&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_auto_debit_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;PLDT&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_pldt_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;BPI&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_bpi_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;dm012&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_cash_advance_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;SkyCable&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_sky_cable_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;Globe&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_globe_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;ProcessName&gt;BayantelBilling&lt;/ProcessName&gt;&#xA;    &lt;FileNamePattern&gt;^TransactionMonetary_bayantel_\d\d\d\d\d\d\d\d.dat$&lt;/FileNamePattern&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
                                 <FlowStep.Next>
-                                  <FlowStep x:Name="__ReferenceID7">
+                                  <FlowStep x:Name="__ReferenceID5">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">200,784.5</av:Point>
@@ -377,7 +381,7 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:FilterDataTable>
                                     <FlowStep.Next>
-                                      <FlowStep x:Name="__ReferenceID8">
+                                      <FlowStep x:Name="__ReferenceID6">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <av:Point x:Key="ShapeLocation">200,869</av:Point>
@@ -393,7 +397,7 @@
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:RemoveDuplicateRows>
                                         <FlowStep.Next>
-                                          <FlowStep x:Name="__ReferenceID9">
+                                          <FlowStep x:Name="__ReferenceID7">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <av:Point x:Key="ShapeLocation">200,924.5</av:Point>
@@ -401,7 +405,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">310,685.5 310,714.5</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_UniqueConversionFolderList]" DisplayName="For Each NonConversion Folder" sap:VirtualizedContainerService.HintSize="795,1286" sap2010:WorkflowViewState.IdRef="ForEachRow_18">
+                                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_UniqueConversionFolderList]" DisplayName="For Each NonConversion Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_18">
                                               <ui:ForEachRow.Body>
                                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                                   <ActivityAction.Argument>
@@ -602,6 +606,144 @@
           <x:Reference>__ReferenceID2</x:Reference>
           <x:Reference>__ReferenceID3</x:Reference>
           <x:Reference>__ReferenceID4</x:Reference>
+          <FlowStep>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">490,594.5</av:Point>
+                <av:Size x:Key="ShapeSize">200,51</av:Size>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_UniqueConversionFolderList]" DisplayName="For Each Conversion Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_16">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="folder" />
+                  </ActivityAction.Argument>
+                  <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="Connect TSys Server" sap:VirtualizedContainerService.HintSize="745,1138" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_13" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysPwd).Password]" Port="[str_TSysServerPort]" UseSftp="True" Username="[Str_TSysUserID]">
+                    <p:WithFtpSession.Body>
+                      <ActivityAction x:TypeArguments="p:IFtpSession">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Sequence - PJAUploadFileList" sap:VirtualizedContainerService.HintSize="711,1052" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="scg:IEnumerable(p:FtpObjectInfo)" Name="list_ConvertedFiles" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <p:EnumerateObjects ContinueOnError="False" DisplayName="Get Converted File List" Files="[list_ConvertedFiles]" sap:VirtualizedContainerService.HintSize="669,22" sap2010:WorkflowViewState.IdRef="EnumerateObjects_13" Recursive="False" RemotePath="[folder(&quot;TSYS_PJAUpload_Location&quot;).ToString]" />
+                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Converted Files" sap:VirtualizedContainerService.HintSize="669,898" sap2010:WorkflowViewState.IdRef="ForEach`1_28" Values="[list_ConvertedFiles]">
+                            <ui:ForEach.Body>
+                              <ActivityAction x:TypeArguments="x:String">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="x:String" Name="file" />
+                                </ActivityAction.Argument>
+                                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_ConversionFileNamePattern]" DisplayName="For Each File_Name_Pattern" sap:VirtualizedContainerService.HintSize="633,765" sap2010:WorkflowViewState.IdRef="ForEachRow_15">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="filePattern" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="PJA File Upload " sap:VirtualizedContainerService.HintSize="583,618" sap2010:WorkflowViewState.IdRef="Sequence_106">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:String" Name="str_FileName" />
+                                          <Variable x:TypeArguments="x:String" Name="str_ProcessName" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="Get Converted File Name" sap:VirtualizedContainerService.HintSize="541,60" sap2010:WorkflowViewState.IdRef="Assign_53">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[str_FileName]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[Path.GetFileName(str_FileName.ToString)]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <If Condition="[Regex.IsMatch(str_FileName.ToLower,filePattern.ToString.ToLower)]" DisplayName="If File Name Match with Pattern" sap:VirtualizedContainerService.HintSize="541,426" sap2010:WorkflowViewState.IdRef="If_35">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <If.Then>
+                                            <Sequence DisplayName="Sequence PJA File Upload Stage 2" sap:VirtualizedContainerService.HintSize="396,279" sap2010:WorkflowViewState.IdRef="Sequence_105">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign DisplayName="Get Process Name" sap:VirtualizedContainerService.HintSize="354,60" sap2010:WorkflowViewState.IdRef="Assign_54">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[str_ProcessName]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[filePattern("ProcessName").ToString]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PJA Workflow File" sap:VirtualizedContainerService.HintSize="354,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="2 PJA File Submission\Stage 2 -PJA File Upload.xaml">
+                                                <ui:InvokeWorkflowFile.Arguments>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessName">[str_ProcessName]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Str_AdhocInputFile">[str_FileName]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">[Str_MicrosoftCVUrl]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">[Str_MicrosoftCVKey]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Str_NormalUserId">[Str_TPNUserID]</InArgument>
+                                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_NormalUserPwd">[Pwd_TPNUser]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Str_SplUserId">[Str_TPSUserID]</InArgument>
+                                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_SplUserPwd">[Pwd_TPSUser]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
+                                                </ui:InvokeWorkflowFile.Arguments>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:InvokeWorkflowFile>
+                                            </Sequence>
+                                          </If.Then>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                </ui:ForEachRow>
+                              </ActivityAction>
+                            </ui:ForEach.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:ForEach>
+                        </Sequence>
+                      </ActivityAction>
+                    </p:WithFtpSession.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </p:WithFtpSession>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </FlowStep>
           <x:Reference>__ReferenceID5</x:Reference>
           <x:Reference>__ReferenceID6</x:Reference>
           <x:Reference>__ReferenceID7</x:Reference>
@@ -611,7 +753,7 @@
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="638,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="648,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

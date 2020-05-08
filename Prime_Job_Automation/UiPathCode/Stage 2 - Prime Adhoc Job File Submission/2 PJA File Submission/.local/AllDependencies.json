@@ -103,6 +103,27 @@
           }
         }
       },
+      "FluentFTP/19.1.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "System.Data",
+          "System.Drawing",
+          "System.IO.Compression.FileSystem",
+          "System.Numerics",
+          "System.Runtime.Serialization",
+          "System.Web",
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/FluentFTP.dll": {}
+        }
+      },
       "Humanizer.Core/2.4.2": {
         "type": "package",
         "compile": {
@@ -206,6 +227,15 @@
         },
         "runtime": {
           "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "SSH.NET/2016.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/_._": {}
+        },
+        "runtime": {
+          "lib/net40/Renci.SshNet.dll": {}
         }
       },
       "System.ValueTuple/4.5.0": {
@@ -351,6 +381,21 @@
           "lib/net461/zh-CN/UiPath.Excel.resources.dll": {
             "locale": "zh-CN"
           }
+        }
+      },
+      "UiPath.FTP.Activities/1.0.7346.28183": {
+        "type": "package",
+        "dependencies": {
+          "FluentFTP": "19.1.2",
+          "SSH.NET": "2016.1.0"
+        },
+        "compile": {
+          "lib/net452/_._": {}
+        },
+        "runtime": {
+          "lib/net452/UiPath.FTP.Activities.Design.dll": {},
+          "lib/net452/UiPath.FTP.Activities.dll": {},
+          "lib/net452/UiPath.FTP.dll": {}
         }
       },
       "UiPath.Mail.Activities/1.8.0-preview": {
@@ -938,6 +983,29 @@
         "tools/install.ps1"
       ]
     },
+    "FluentFTP/19.1.2": {
+      "sha512": "0xvKcao/sUbZQgD2PhXHejl9msxUzuU7cSpczDb2MnI1cUwp1ViS8FjkPjPE9C6UucLgII4nIpq8VYEvNyjgoQ==",
+      "type": "package",
+      "path": "fluentftp/19.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentftp.19.1.2.nupkg.sha512",
+        "fluentftp.nuspec",
+        "lib/net20/FluentFTP.dll",
+        "lib/net20/FluentFTP.xml",
+        "lib/net35/FluentFTP.dll",
+        "lib/net35/FluentFTP.xml",
+        "lib/net40/FluentFTP.dll",
+        "lib/net40/FluentFTP.xml",
+        "lib/net45/FluentFTP.dll",
+        "lib/net45/FluentFTP.xml",
+        "lib/netstandard1.4/FluentFTP.dll",
+        "lib/netstandard1.4/FluentFTP.xml",
+        "lib/netstandard1.6/FluentFTP.dll",
+        "lib/netstandard1.6/FluentFTP.xml"
+      ]
+    },
     "Humanizer.Core/2.4.2": {
       "sha512": "1ZKy7LHVYuhmM398hpvyWCcc2Fcx+hqiGYASELDthjWhVrsA6IabYnHRfkQFF6nGG6x4fA1D0StDX/U2Pj+FdQ==",
       "type": "package",
@@ -1123,6 +1191,33 @@
         "sharpziplib.nuspec"
       ]
     },
+    "SSH.NET/2016.1.0": {
+      "sha512": "b0fcFFOE044KNRhq1uGujmK04ab+OzA9xARdeVCoZrY6I4D1IIaR6dn6qBIa+er4bJapGBhznDitwcRQpSRC0w==",
+      "type": "package",
+      "path": "ssh.net/2016.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Renci.SshNet.dll",
+        "lib/net35/Renci.SshNet.xml",
+        "lib/net40/Renci.SshNet.dll",
+        "lib/net40/Renci.SshNet.xml",
+        "lib/netstandard1.3/Renci.SshNet.dll",
+        "lib/netstandard1.3/Renci.SshNet.xml",
+        "lib/sl4/Renci.SshNet.dll",
+        "lib/sl4/Renci.SshNet.xml",
+        "lib/sl5/Renci.SshNet.dll",
+        "lib/sl5/Renci.SshNet.xml",
+        "lib/uap10/Renci.SshNet.dll",
+        "lib/uap10/Renci.SshNet.xml",
+        "lib/wp71/Renci.SshNet.dll",
+        "lib/wp71/Renci.SshNet.xml",
+        "lib/wp8/Renci.SshNet.dll",
+        "lib/wp8/Renci.SshNet.xml",
+        "ssh.net.2016.1.0.nupkg.sha512",
+        "ssh.net.nuspec"
+      ]
+    },
     "System.ValueTuple/4.5.0": {
       "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
       "type": "package",
@@ -1269,6 +1364,20 @@
         "lib/net461/zh-CN/UiPath.Excel.resources.dll",
         "uipath.excel.activities.2.8.0-preview.nupkg.sha512",
         "uipath.excel.activities.nuspec"
+      ]
+    },
+    "UiPath.FTP.Activities/1.0.7346.28183": {
+      "sha512": "NN+aaJRhyeahaLqzMgr6j6rRV5WtDJ6Rmj0ALolNUIF5TxwJ8/BoUWTeaRcFfrHVVw6dYqglLa+H7/YG7OWUoQ==",
+      "type": "package",
+      "path": "uipath.ftp.activities/1.0.7346.28183",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/UiPath.FTP.Activities.Design.dll",
+        "lib/net452/UiPath.FTP.Activities.dll",
+        "lib/net452/UiPath.FTP.dll",
+        "uipath.ftp.activities.1.0.7346.28183.nupkg.sha512",
+        "uipath.ftp.activities.nuspec"
       ]
     },
     "UiPath.Mail.Activities/1.8.0-preview": {
@@ -1598,21 +1707,22 @@
     "": [],
     ".NETFramework,Version=v4.6.1": [
       "UiPath.Excel.Activities >= 2.8.0-preview <= 2.8.0-preview",
+      "UiPath.FTP.Activities >= 1.0.7346.28183 <= 1.0.7346.28183",
       "UiPath.Mail.Activities >= 1.8.0-preview <= 1.8.0-preview",
       "UiPath.System.Activities >= 19.12.0-preview <= 19.12.0-preview",
       "UiPath.UIAutomation.Activities >= 19.12.0-preview <= 19.12.0-preview"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\divakar_r\\.nuget\\packages\\": {}
+    "C:\\Users\\sashankar\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Adhoc Process Integration",
       "projectName": "Adhoc Process Integration",
-      "projectPath": "D:\\Prime_Job_Automation\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\2 PJA File Submission\\.local",
-      "packagesPath": "C:\\Users\\divakar_r\\.nuget\\packages\\",
-      "outputPath": "D:\\Prime_Job_Automation\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\2 PJA File Submission\\.local"
+      "projectPath": "C:\\Prime_Job_Automation_Old\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\2 PJA File Submission\\.local",
+      "packagesPath": "C:\\Users\\sashankar\\.nuget\\packages\\",
+      "outputPath": "C:\\Prime_Job_Automation_Old\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\2 PJA File Submission\\.local"
     },
     "frameworks": {
       "net461": {
@@ -1621,6 +1731,11 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[2.8.0-preview, 2.8.0-preview]"
+          },
+          "UiPath.FTP.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.7346.28183, 1.0.7346.28183]"
           },
           "UiPath.Mail.Activities": {
             "include": "Runtime",
