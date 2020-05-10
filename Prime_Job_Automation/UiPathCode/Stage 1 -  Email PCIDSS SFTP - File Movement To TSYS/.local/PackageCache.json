@@ -25,6 +25,38 @@
     },
     {
       "Package": {
+        "Id": "System.Binary",
+        "Version": "0.1.0-alpha-001"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.win32.primitives/4.3.0\\lib/net46/Microsoft.Win32.Primitives.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.appcontext/4.3.0\\lib/net46/System.AppContext.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.binary/0.1.0-alpha-001\\lib/netstandard1.1/System.Binary.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.buffers/4.3.0\\lib/netstandard1.1/System.Buffers.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.buffers.primitives/0.1.0-alpha-001\\lib/netstandard1.1/System.Buffers.Primitives.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.console/4.3.0\\lib/net46/System.Console.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.diagnostics.diagnosticsource/4.3.0\\lib/net46/System.Diagnostics.DiagnosticSource.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.globalization.calendars/4.3.0\\lib/net46/System.Globalization.Calendars.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.compression/4.3.0\\lib/net46/System.IO.Compression.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.compression.zipfile/4.3.0\\lib/net46/System.IO.Compression.ZipFile.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.filesystem/4.3.0\\lib/net46/System.IO.FileSystem.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.filesystem.primitives/4.3.0\\lib/net46/System.IO.FileSystem.Primitives.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.memory/4.4.0-preview2-25405-01\\lib/netstandard2.0/System.Memory.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.net.http/4.3.0\\lib/net46/System.Net.Http.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.net.sockets/4.3.0\\lib/net46/System.Net.Sockets.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.numerics.vectors/4.3.0\\lib/net46/System.Numerics.Vectors.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.compilerservices.unsafe/4.4.0-preview2-25405-01\\lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation/4.3.0\\lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.algorithms/4.3.0\\lib/net461/System.Security.Cryptography.Algorithms.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.encoding/4.3.0\\lib/net46/System.Security.Cryptography.Encoding.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.primitives/4.3.0\\lib/net46/System.Security.Cryptography.Primitives.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.x509certificates/4.3.0\\lib/net461/System.Security.Cryptography.X509Certificates.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.xml.readerwriter/4.3.0\\lib/net46/System.Xml.ReaderWriter.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.binary\\0.1.0-alpha-001"
+    },
+    {
+      "Package": {
         "Id": "UiPath.Excel.Activities",
         "Version": "2.7.2"
       },
@@ -158,9 +190,39 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities/1.2.0\\lib/net461/UiPathTeam.UnZipFile.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities\\1.2.0"
+    },
+    {
+      "Package": {
+        "Id": "WinSCP",
+        "Version": "5.17.5"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\winscp/5.17.5\\lib/net40/WinSCPnet.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\winscp\\5.17.5"
     }
   ],
-  "Conflicts": [],
+  "Conflicts": [
+    {
+      "AffectedPackages": [
+        {
+          "Id": "System.Memory",
+          "Version": "4.4.0-preview2-25405-01"
+        },
+        {
+          "Id": "System.Numerics.Vectors",
+          "Version": "4.4.0-preview2-25405-01"
+        }
+      ],
+      "CausingPackage": {
+        "Id": "System.Numerics.Vectors",
+        "Version": "4.3.0"
+      },
+      "IsCycle": false,
+      "IsDowngrade": true,
+      "IsConflict": false
+    }
+  ],
   "ResolvedDependencies": {
     "AvalonEdit": {
       "Id": "AvalonEdit",
@@ -246,6 +308,11 @@
       "Version": "2.2.0",
       "Dependencies": []
     },
+    "Microsoft.NETCore.Platforms": {
+      "Id": "Microsoft.NETCore.Platforms",
+      "Version": "1.1.0",
+      "Dependencies": []
+    },
     "Microsoft.Rest.ClientRuntime": {
       "Id": "Microsoft.Rest.ClientRuntime",
       "Version": "2.3.20",
@@ -260,6 +327,193 @@
       "Id": "Microsoft.VisualStudio.OLE.Interop",
       "Version": "7.10.6071",
       "Dependencies": []
+    },
+    "Microsoft.Win32.Primitives": {
+      "Id": "Microsoft.Win32.Primitives",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "NETStandard.Library": {
+      "Id": "NETStandard.Library",
+      "Version": "1.6.1",
+      "Dependencies": [
+        {
+          "Item1": "Microsoft.NETCore.Platforms",
+          "Item2": "[1.1.0, )"
+        },
+        {
+          "Item1": "Microsoft.Win32.Primitives",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.AppContext",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Collections",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Collections.Concurrent",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Console",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Debug",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Tools",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Tracing",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Globalization",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Globalization.Calendars",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.IO",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.IO.Compression",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.IO.Compression.ZipFile",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.IO.FileSystem",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.IO.FileSystem.Primitives",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Linq",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Linq.Expressions",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Net.Http",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Net.Primitives",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Net.Sockets",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.ObjectModel",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Reflection",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Reflection.Extensions",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Reflection.Primitives",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Resources.ResourceManager",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Runtime",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Runtime.Extensions",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Runtime.Handles",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Runtime.InteropServices",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Runtime.InteropServices.RuntimeInformation",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Runtime.Numerics",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Security.Cryptography.Algorithms",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Security.Cryptography.Encoding",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Security.Cryptography.Primitives",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Security.Cryptography.X509Certificates",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Text.Encoding",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Text.Encoding.Extensions",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Text.RegularExpressions",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Threading",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Threading.Tasks",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Threading.Timer",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Xml.ReaderWriter",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Xml.XDocument",
+          "Item2": "[4.3.0, )"
+        }
+      ]
     },
     "Newtonsoft.Json": {
       "Id": "Newtonsoft.Json",
@@ -296,9 +550,325 @@
       "Version": "1.1.0",
       "Dependencies": []
     },
+    "System.AppContext": {
+      "Id": "System.AppContext",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Binary": {
+      "Id": "System.Binary",
+      "Version": "0.1.0-alpha-001",
+      "Dependencies": [
+        {
+          "Item1": "System.Buffers.Primitives",
+          "Item2": "[0.1.0-alpha-001, )"
+        },
+        {
+          "Item1": "NETStandard.Library",
+          "Item2": "[1.6.1, )"
+        }
+      ]
+    },
+    "System.Buffers": {
+      "Id": "System.Buffers",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Buffers.Primitives": {
+      "Id": "System.Buffers.Primitives",
+      "Version": "0.1.0-alpha-001",
+      "Dependencies": [
+        {
+          "Item1": "NETStandard.Library",
+          "Item2": "[1.6.1, )"
+        },
+        {
+          "Item1": "System.Buffers",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Memory",
+          "Item2": "[4.4.0-preview2-25405-01, )"
+        },
+        {
+          "Item1": "System.Runtime.CompilerServices.Unsafe",
+          "Item2": "[4.4.0-preview2-25405-01, )"
+        },
+        {
+          "Item1": "System.Diagnostics.Tools",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Numerics.Vectors",
+          "Item2": "[4.3.0, )"
+        }
+      ]
+    },
+    "System.Collections": {
+      "Id": "System.Collections",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Collections.Concurrent": {
+      "Id": "System.Collections.Concurrent",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Console": {
+      "Id": "System.Console",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Diagnostics.Debug": {
+      "Id": "System.Diagnostics.Debug",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Diagnostics.DiagnosticSource": {
+      "Id": "System.Diagnostics.DiagnosticSource",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Diagnostics.Tools": {
+      "Id": "System.Diagnostics.Tools",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Diagnostics.Tracing": {
+      "Id": "System.Diagnostics.Tracing",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Globalization": {
+      "Id": "System.Globalization",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Globalization.Calendars": {
+      "Id": "System.Globalization.Calendars",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.IO": {
+      "Id": "System.IO",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.IO.Compression": {
+      "Id": "System.IO.Compression",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.IO.Compression.ZipFile": {
+      "Id": "System.IO.Compression.ZipFile",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.IO.FileSystem": {
+      "Id": "System.IO.FileSystem",
+      "Version": "4.3.0",
+      "Dependencies": [
+        {
+          "Item1": "System.IO.FileSystem.Primitives",
+          "Item2": "[4.3.0, )"
+        }
+      ]
+    },
+    "System.IO.FileSystem.Primitives": {
+      "Id": "System.IO.FileSystem.Primitives",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Linq": {
+      "Id": "System.Linq",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Linq.Expressions": {
+      "Id": "System.Linq.Expressions",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Memory": {
+      "Id": "System.Memory",
+      "Version": "4.4.0-preview2-25405-01",
+      "Dependencies": [
+        {
+          "Item1": "System.Numerics.Vectors",
+          "Item2": "[4.4.0-preview2-25405-01, )"
+        },
+        {
+          "Item1": "System.Runtime.CompilerServices.Unsafe",
+          "Item2": "[4.4.0-preview2-25405-01, )"
+        }
+      ]
+    },
+    "System.Net.Http": {
+      "Id": "System.Net.Http",
+      "Version": "4.3.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Diagnostics.DiagnosticSource",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Security.Cryptography.X509Certificates",
+          "Item2": "[4.3.0, )"
+        }
+      ]
+    },
+    "System.Net.Primitives": {
+      "Id": "System.Net.Primitives",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Net.Sockets": {
+      "Id": "System.Net.Sockets",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Numerics.Vectors": {
+      "Id": "System.Numerics.Vectors",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.ObjectModel": {
+      "Id": "System.ObjectModel",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Reflection": {
+      "Id": "System.Reflection",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Reflection.Extensions": {
+      "Id": "System.Reflection.Extensions",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Reflection.Primitives": {
+      "Id": "System.Reflection.Primitives",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Resources.ResourceManager": {
+      "Id": "System.Resources.ResourceManager",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Runtime": {
+      "Id": "System.Runtime",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Runtime.CompilerServices.Unsafe": {
+      "Id": "System.Runtime.CompilerServices.Unsafe",
+      "Version": "4.4.0-preview2-25405-01",
+      "Dependencies": []
+    },
+    "System.Runtime.Extensions": {
+      "Id": "System.Runtime.Extensions",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Runtime.Handles": {
+      "Id": "System.Runtime.Handles",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Runtime.InteropServices": {
+      "Id": "System.Runtime.InteropServices",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Runtime.InteropServices.RuntimeInformation": {
+      "Id": "System.Runtime.InteropServices.RuntimeInformation",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Runtime.Numerics": {
+      "Id": "System.Runtime.Numerics",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Security.Cryptography.Algorithms": {
+      "Id": "System.Security.Cryptography.Algorithms",
+      "Version": "4.3.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Security.Cryptography.Primitives",
+          "Item2": "[4.3.0, )"
+        }
+      ]
+    },
+    "System.Security.Cryptography.Encoding": {
+      "Id": "System.Security.Cryptography.Encoding",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Security.Cryptography.Primitives": {
+      "Id": "System.Security.Cryptography.Primitives",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Security.Cryptography.X509Certificates": {
+      "Id": "System.Security.Cryptography.X509Certificates",
+      "Version": "4.3.0",
+      "Dependencies": [
+        {
+          "Item1": "System.Security.Cryptography.Algorithms",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Security.Cryptography.Encoding",
+          "Item2": "[4.3.0, )"
+        }
+      ]
+    },
+    "System.Text.Encoding": {
+      "Id": "System.Text.Encoding",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Text.Encoding.Extensions": {
+      "Id": "System.Text.Encoding.Extensions",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Text.RegularExpressions": {
+      "Id": "System.Text.RegularExpressions",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Threading": {
+      "Id": "System.Threading",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Threading.Tasks": {
+      "Id": "System.Threading.Tasks",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Threading.Timer": {
+      "Id": "System.Threading.Timer",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
     "System.ValueTuple": {
       "Id": "System.ValueTuple",
       "Version": "4.5.0",
+      "Dependencies": []
+    },
+    "System.Xml.ReaderWriter": {
+      "Id": "System.Xml.ReaderWriter",
+      "Version": "4.3.0",
+      "Dependencies": []
+    },
+    "System.Xml.XDocument": {
+      "Id": "System.Xml.XDocument",
+      "Version": "4.3.0",
       "Dependencies": []
     },
     "UiPath": {
@@ -452,6 +1022,11 @@
           "Item2": "[10.0.3, )"
         }
       ]
+    },
+    "WinSCP": {
+      "Id": "WinSCP",
+      "Version": "5.17.5",
+      "Dependencies": []
     }
   },
   "AllPackages": [
@@ -595,6 +1170,16 @@
     },
     {
       "Package": {
+        "Id": "Microsoft.NETCore.Platforms",
+        "Version": "1.1.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\lib\\netstandard1.0\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0"
+    },
+    {
+      "Package": {
         "Id": "Microsoft.Rest.ClientRuntime",
         "Version": "2.3.20"
       },
@@ -612,6 +1197,24 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.visualstudio.ole.interop\\7.10.6071\\lib\\Microsoft.VisualStudio.OLE.Interop.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.visualstudio.ole.interop\\7.10.6071"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Win32.Primitives",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\lib\\net46\\Microsoft.Win32.Primitives.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "NETStandard.Library",
+        "Version": "1.6.1"
+      },
+      "Assemblies": [],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\netstandard.library\\1.6.1"
     },
     {
       "Package": {
@@ -678,6 +1281,476 @@
     },
     {
       "Package": {
+        "Id": "System.AppContext",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.appcontext\\4.3.0\\lib\\net46\\System.AppContext.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.appcontext\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Binary",
+        "Version": "0.1.0-alpha-001"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.binary\\0.1.0-alpha-001\\lib\\netstandard1.1\\System.Binary.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.binary\\0.1.0-alpha-001"
+    },
+    {
+      "Package": {
+        "Id": "System.Buffers",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.buffers\\4.3.0\\lib\\netstandard1.1\\System.Buffers.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.buffers\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Buffers.Primitives",
+        "Version": "0.1.0-alpha-001"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.buffers.primitives\\0.1.0-alpha-001\\lib\\netstandard1.1\\System.Buffers.Primitives.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.buffers.primitives\\0.1.0-alpha-001"
+    },
+    {
+      "Package": {
+        "Id": "System.Collections",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.collections\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.collections\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Collections.Concurrent",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.collections.concurrent\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Console",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.console\\4.3.0\\lib\\net46\\System.Console.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.console\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Diagnostics.Debug",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.diagnostics.debug\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Diagnostics.DiagnosticSource",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.3.0\\lib\\net46\\System.Diagnostics.DiagnosticSource.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Diagnostics.Tools",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.diagnostics.tools\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Diagnostics.Tracing",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Globalization",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.globalization\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.globalization\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Globalization.Calendars",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.globalization.calendars\\4.3.0\\lib\\net46\\System.Globalization.Calendars.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.globalization.calendars\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.IO",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.io\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.io\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.IO.Compression",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.compression\\4.3.0\\lib\\net46\\System.IO.Compression.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.compression\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.IO.Compression.ZipFile",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\lib\\net46\\System.IO.Compression.ZipFile.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.IO.FileSystem",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.filesystem\\4.3.0\\lib\\net46\\System.IO.FileSystem.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.filesystem\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.IO.FileSystem.Primitives",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\lib\\net46\\System.IO.FileSystem.Primitives.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Linq",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.linq\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.linq\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Linq.Expressions",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.linq.expressions\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.linq.expressions\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Memory",
+        "Version": "4.4.0-preview2-25405-01"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.memory\\4.4.0-preview2-25405-01\\lib\\netstandard2.0\\System.Memory.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.memory\\4.4.0-preview2-25405-01"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.Http",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.net.http\\4.3.0\\lib\\net46\\System.Net.Http.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.net.http\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.Primitives",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.net.primitives\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.net.primitives\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Net.Sockets",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.net.sockets\\4.3.0\\lib\\net46\\System.Net.Sockets.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.net.sockets\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Numerics.Vectors",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.numerics.vectors\\4.3.0\\lib\\net46\\System.Numerics.Vectors.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.numerics.vectors\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.ObjectModel",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.objectmodel\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.objectmodel\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Reflection",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.reflection\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.reflection\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Reflection.Extensions",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.reflection.extensions\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Reflection.Primitives",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.reflection.primitives\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Resources.ResourceManager",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.CompilerServices.Unsafe",
+        "Version": "4.4.0-preview2-25405-01"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0-preview2-25405-01\\lib\\netstandard2.0\\System.Runtime.CompilerServices.Unsafe.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0-preview2-25405-01"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.Extensions",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.extensions\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.Handles",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.handles\\4.3.0\\lib\\net46\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.handles\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.InteropServices",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.interopservices\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.InteropServices.RuntimeInformation",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.3.0\\lib\\net45\\System.Runtime.InteropServices.RuntimeInformation.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Runtime.Numerics",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.numerics\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.runtime.numerics\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Security.Cryptography.Algorithms",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0\\lib\\net461\\System.Security.Cryptography.Algorithms.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Security.Cryptography.Encoding",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.encoding\\4.3.0\\lib\\net46\\System.Security.Cryptography.Encoding.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.encoding\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Security.Cryptography.Primitives",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.primitives\\4.3.0\\lib\\net46\\System.Security.Cryptography.Primitives.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.primitives\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Security.Cryptography.X509Certificates",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.3.0\\lib\\net461\\System.Security.Cryptography.X509Certificates.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Text.Encoding",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.text.encoding\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.text.encoding\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Text.Encoding.Extensions",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Text.RegularExpressions",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.text.regularexpressions\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Threading",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.threading\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.threading\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Threading.Tasks",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.threading.tasks\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.threading.tasks\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Threading.Timer",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.threading.timer\\4.3.0\\lib\\net451\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.threading.timer\\4.3.0"
+    },
+    {
+      "Package": {
         "Id": "System.ValueTuple",
         "Version": "4.5.0"
       },
@@ -685,6 +1758,26 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\system.valuetuple\\4.5.0\\lib\\net461\\System.ValueTuple.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.valuetuple\\4.5.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Xml.ReaderWriter",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\lib\\net46\\System.Xml.ReaderWriter.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.xml.readerwriter\\4.3.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Xml.XDocument",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\system.xml.xdocument\\4.3.0"
     },
     {
       "Package": {
@@ -814,6 +1907,16 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities\\1.2.0\\lib\\net461\\UiPathTeam.UnZipFile.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities\\1.2.0"
+    },
+    {
+      "Package": {
+        "Id": "WinSCP",
+        "Version": "5.17.5"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\winscp\\5.17.5\\lib\\net40\\WinSCPnet.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\winscp\\5.17.5"
     }
   ]
 }
