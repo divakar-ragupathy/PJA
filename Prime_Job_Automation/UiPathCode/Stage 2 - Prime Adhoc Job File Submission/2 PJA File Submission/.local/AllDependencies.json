@@ -1714,15 +1714,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sashankar\\.nuget\\packages\\": {}
+    "C:\\Users\\divakar_r\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Adhoc Process Integration",
       "projectName": "Adhoc Process Integration",
-      "projectPath": "C:\\Prime_Job_Automation_Old\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\2 PJA File Submission\\.local",
-      "packagesPath": "C:\\Users\\sashankar\\.nuget\\packages\\",
-      "outputPath": "C:\\Prime_Job_Automation_Old\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\2 PJA File Submission\\.local"
+      "projectPath": "D:\\DO NOT TOUCH\\UiPathCode\\2 PJA File Submission\\.local",
+      "packagesPath": "C:\\Users\\divakar_r\\.nuget\\packages\\",
+      "outputPath": "D:\\DO NOT TOUCH\\UiPathCode\\2 PJA File Submission\\.local"
     },
     "frameworks": {
       "net461": {
