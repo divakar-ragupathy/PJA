@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,956</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>934,1420</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>VerifyLogFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -65,10 +65,9 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Buffers.Primitives</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="476,791" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="847,1255" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="KeyWord" Name="str_ResponseLog" />
     </Sequence.Variables>
@@ -88,7 +87,7 @@
         <Sequence DisplayName="Execute Command and Check Error" sap:VirtualizedContainerService.HintSize="767,936" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
             <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String) from{&quot;Error&quot;,&quot;error&quot;}]" Name="list_ErrorKeyWordList" />
-            <Variable x:TypeArguments="x:Int32" Name="str_TSysServerPort" />
+            <Variable x:TypeArguments="x:Int32" Name="int_TSysServerPort" />
             <Variable x:TypeArguments="x:String" Name="str_TSysServerHost" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
@@ -99,7 +98,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <Assign DisplayName="Set Server Port" sap:VirtualizedContainerService.HintSize="725,60" sap2010:WorkflowViewState.IdRef="Assign_8">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:Int32">[str_TSysServerPort]</OutArgument>
+              <OutArgument x:TypeArguments="x:Int32">[int_TSysServerPort]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:Int32">[CInt(Split(Str_TSysServerDetails,":")(1))]</InArgument>
@@ -131,7 +130,7 @@
               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </Assign.Value>
           </Assign>
-          <l:SshExpect Command="[Str_Command+Environment.NewLine]" DisplayName="Run SSH Command" sap:VirtualizedContainerService.HintSize="725,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_1" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysServerPassword).Password]" Port="[str_TSysServerPort]" Prompt="$" Response="[str_ResponseLog]" User="[Str_TSysServerUserName]" />
+          <l:SshExpect Command="[Str_Command+Environment.NewLine]" DisplayName="Run SSH Command" sap:VirtualizedContainerService.HintSize="725,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_1" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysServerPassword).Password]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_ResponseLog]" User="[Str_TSysServerUserName]" />
           <If Condition="[list_ErrorKeyWordList.Any(Function(KeyWord) str_ResponseLog.Contains(KeyWord))]" DisplayName="If Error Exist" sap:VirtualizedContainerService.HintSize="725,482" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">

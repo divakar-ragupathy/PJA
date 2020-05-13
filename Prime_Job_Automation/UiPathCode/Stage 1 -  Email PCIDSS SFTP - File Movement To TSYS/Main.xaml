@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1200</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>934,1200</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -78,9 +78,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will trigger source file extraction from email " DisplayName="File Extraction from Email" sap:VirtualizedContainerService.HintSize="251,112" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will trigger source file extraction from email " DisplayName="File Extraction from Email" sap:VirtualizedContainerService.HintSize="505,1015" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
-        <TryCatch DisplayName="Try Extract Files from Email" sap:VirtualizedContainerService.HintSize="438,293" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+        <TryCatch DisplayName="Try Extract Files from Email" sap:VirtualizedContainerService.HintSize="459,597" sap2010:WorkflowViewState.IdRef="TryCatch_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -88,10 +88,10 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="File Extraction from Email" sap:VirtualizedContainerService.HintSize="421,370" sap2010:WorkflowViewState.IdRef="Sequence_31">
+            <Sequence DisplayName="Load Email Workflow" sap:VirtualizedContainerService.HintSize="421,370" sap2010:WorkflowViewState.IdRef="Sequence_31">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -128,7 +128,7 @@
             </Sequence>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="425,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -194,7 +194,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger source file extraction from PCIDSS" DisplayName="File Extraction from PCIDSS" sap:VirtualizedContainerService.HintSize="251,111" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <TryCatch DisplayName="Try File Extraction from PCIDSS" sap:VirtualizedContainerService.HintSize="438,561" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                <TryCatch DisplayName="Try File Extraction from PCIDSS" sap:VirtualizedContainerService.HintSize="459,597" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -202,14 +202,14 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Load PCIDSS WorkFlow" sap:VirtualizedContainerService.HintSize="304,334" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                    <Sequence DisplayName="Load PCIDSS WorkFlow" sap:VirtualizedContainerService.HintSize="421,370" sap2010:WorkflowViewState.IdRef="Sequence_28">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Set SystemException " sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                      <Assign DisplayName="Set SystemException " sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_30">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[str_ExceptionMessage]</OutArgument>
                         </Assign.To>
@@ -217,7 +217,7 @@
                           <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="Info" Message="[&quot;Invoking source file extraction from PCIDSS workflow&quot;]">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,51" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="Info" Message="[&quot;Invoking source file extraction from PCIDSS workflow&quot;]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -225,7 +225,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:LogMessage>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Source File Extraction from PCIDSS" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="3 Source File Extraction - PCIDSS\PCIDSS Source File Extraction.xaml">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Source File Extraction from PCIDSS" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="3 Source File Extraction - PCIDSS\PCIDSS Source File Extraction.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
                           <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</InArgument>
@@ -240,7 +240,7 @@
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -248,7 +248,7 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="425,21" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -313,7 +313,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="This process will trigger source file extraction from SFTP" DisplayName="File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="505,1015" sap2010:WorkflowViewState.IdRef="State_5">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="This process will trigger source file extraction from SFTP" DisplayName="File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="256,117" sap2010:WorkflowViewState.IdRef="State_5">
                       <State.Entry>
                         <TryCatch DisplayName="Try File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="459,597" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                           <sap:WorkflowViewStateService.ViewState>
@@ -466,7 +466,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:LogMessage>
-                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Source File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="5 Pre-Batch\PreBatch Conversion.xaml">
+                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Pre Batch Conversion" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="5 Pre-Batch\PreBatch Conversion.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_RuleFactory">[dt_RuleFactory]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</InArgument>
@@ -712,7 +712,7 @@
     <x:Reference>__ReferenceID0</x:Reference>
     <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the mail activity starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
-        <TryCatch DisplayName="Try Check all Pre-Requisites are Exist" sap:VirtualizedContainerService.HintSize="438,637" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch DisplayName="Try Check all Pre-Requisites are Exist" sap:VirtualizedContainerService.HintSize="434,291" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -720,7 +720,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Load Pre-Run Check WorkFlow" sap:VirtualizedContainerService.HintSize="376,410" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Pre-Run Check WorkFlow" sap:VirtualizedContainerService.HintSize="376,410" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -736,7 +736,7 @@
                 </Assign.Value>
               </Assign>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[&quot;Invoking PreRun check workflow&quot;]" />
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PreRunCheck workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="1 PreRunCheck\PreRunCheck.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PreRun Check workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="1 PreRunCheck\PreRunCheck.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_ProcessSourceFileListContent">[str_ProcessedSourceFileList]</OutArgument>
@@ -759,10 +759,10 @@
             </Sequence>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -794,18 +794,18 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <State.Exit>
-        <Sequence DisplayName="Exit" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_29">
+        <Sequence DisplayName="Exit" sap:VirtualizedContainerService.HintSize="242,205" sap2010:WorkflowViewState.IdRef="Sequence_29">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Excel" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL" />
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;PreRun Check Completed.&quot;]">
+          <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Excel" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;PreRun Check Completed.&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -813,7 +813,7 @@
         </Sequence>
       </State.Exit>
       <State.Transitions>
-        <Transition DisplayName="Success" sap:VirtualizedContainerService.HintSize="450,800" sap2010:WorkflowViewState.IdRef="Transition_2">
+        <Transition DisplayName="Success" sap:VirtualizedContainerService.HintSize="450,796" sap2010:WorkflowViewState.IdRef="Transition_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>

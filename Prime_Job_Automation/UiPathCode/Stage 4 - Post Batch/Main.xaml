@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Allows the Orchestrator queue name to be passed as an argument, instead of only being defined in the configuration file." Name="in_OrchestratorQueueName" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1200</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>934,1200</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -132,7 +132,7 @@
     </State>
     <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the post batch starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
-        <TryCatch DisplayName="Try Check all Pre-Requisites are Exist" sap:VirtualizedContainerService.HintSize="438,637" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch DisplayName="Try Check all Pre-Requisites are Exist" sap:VirtualizedContainerService.HintSize="438,561" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -140,14 +140,14 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Load Pre-Run Check WorkFlow" sap:VirtualizedContainerService.HintSize="376,410" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Load Pre-Run Check WorkFlow" sap:VirtualizedContainerService.HintSize="304,334" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Set SystemException " sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign DisplayName="Set SystemException " sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[str_ExceptionMessage]</OutArgument>
                 </Assign.To>
@@ -155,8 +155,15 @@
                   <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[&quot;Invoking PreRun check workflow&quot;]" />
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PreRunCheck workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="1 PreRunCheck\PreRunCheck.xaml">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[&quot;Invoking PreRun check workflow&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PreRunCheck workflow" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="1 PreRunCheck\PreRunCheck.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
@@ -173,10 +180,40 @@
                   <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">
                     <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysPwd" />
                   </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_LogFilePath">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_LogFilePath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_PostBatchScriptPathRepo">
+                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_PostBatchScriptPathRepo" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_EmbossingPath">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_EmbossingPath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_NonEmbossingPath">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_NonEmbossingPath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_SatementPath">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_StatementPath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_VisaServerDetails">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_VisaServerDetails" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_VisaPwd">
+                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_VisaPwd" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_VisaUserID">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_VisaUserID" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_AutoDbPath">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_AutoDbPath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_VisaVcfPath">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_VisaVcfPath" />
+                  </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -299,22 +336,56 @@
                       </ui:LogMessage>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Source File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="2 Post-Batch\PostBatch Conversion.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
+                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysPwd" />
                           </InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
                             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysServerDetails" />
                           </InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">
-                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysPwd" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysUserID">
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
                             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysUserID" />
                           </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_VisaServerPassword" />
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_VisaServerDetails">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_VisaServerDetails" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_VisaServerUserName">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_VisaUserID" />
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
+                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
+                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_LogsPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_LogFilePath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_PostBatchScriptPathRepo">
+                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_PostBatchScriptPathRepo" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_EmbossingPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_EmbossingPath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_NonEmbossingPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_NonEmbossingPath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_StatementPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_StatementPath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_VisaVcfPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_VisaVcfPath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_AutoDbPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_AutoDbPath" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
                   </TryCatch.Try>
@@ -413,6 +484,16 @@
       <Variable x:TypeArguments="x:String" Name="str_TSysUserID" />
       <Variable x:TypeArguments="x:String" Name="str_TSysServerDetails" />
       <Variable x:TypeArguments="ss:SecureString" Name="pwd_TSysPwd" />
+      <Variable x:TypeArguments="x:String" Name="str_LogFilePath" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_PostBatchScriptPathRepo" />
+      <Variable x:TypeArguments="x:String" Name="str_EmbossingPath" />
+      <Variable x:TypeArguments="x:String" Name="str_NonEmbossingPath" />
+      <Variable x:TypeArguments="x:String" Name="str_StatementPath" />
+      <Variable x:TypeArguments="x:String" Name="str_VisaServerDetails" />
+      <Variable x:TypeArguments="ss:SecureString" Name="pwd_VisaPwd" />
+      <Variable x:TypeArguments="x:String" Name="str_VisaUserID" />
+      <Variable x:TypeArguments="x:String" Name="str_VisaVcfPath" />
+      <Variable x:TypeArguments="x:String" Name="str_AutoDbPath" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
