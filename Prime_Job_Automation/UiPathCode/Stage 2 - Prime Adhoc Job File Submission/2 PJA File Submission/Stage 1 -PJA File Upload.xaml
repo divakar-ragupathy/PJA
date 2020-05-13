@@ -307,7 +307,7 @@
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:InvokeWorkflowFile>
-                                                              <If Condition="[bool_IsUploaded = True]" DisplayName="If File is Uploaded" sap:VirtualizedContainerService.HintSize="484,352" sap2010:WorkflowViewState.IdRef="If_38">
+                                                              <If Condition="[bool_IsUploaded]" DisplayName="If File is Uploaded" sap:VirtualizedContainerService.HintSize="484,352" sap2010:WorkflowViewState.IdRef="If_38">
                                                                 <If.Then>
                                                                   <Sequence DisplayName="Archive PJ Uploaded Files" sap:VirtualizedContainerService.HintSize="242,205" sap2010:WorkflowViewState.IdRef="Sequence_114">
                                                                     <sap:WorkflowViewStateService.ViewState>
