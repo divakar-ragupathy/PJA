@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1024,1653</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1024,554</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -71,7 +71,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1005,1488" sap2010:WorkflowViewState.IdRef="Sequence_637">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="476,389" sap2010:WorkflowViewState.IdRef="Sequence_637">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_TsysLogo" />
     </Sequence.Variables>
@@ -80,7 +80,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Adhoc Job Process" sap:VirtualizedContainerService.HintSize="963,1396" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Adhoc Job Process" sap:VirtualizedContainerService.HintSize="434,297" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="bool_IsProcessNameExist" />
         <Variable x:TypeArguments="x:Boolean" Name="bool_IsUsernameExist" />
@@ -105,13 +105,13 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
               <av:Point x:Key="ShapeLocation">390,2.5</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">420,77.5 420,127.5</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">420,77.5 420,110</av:PointCollection>
               <x:Double x:Key="Width">891</x:Double>
               <x:Double x:Key="Height">1133</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID439</x:Reference>
+            <x:Reference>__ReferenceID440</x:Reference>
           </Flowchart.StartNode>
           <FlowStep x:Name="__ReferenceID422">
             <sap:WorkflowViewStateService.ViewState>
@@ -120,7 +120,7 @@
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch To Process" Expression="[Str_MenuName.ToLower.Replace(&quot; &quot;,&quot;&quot;).Replace(&quot;-&quot;,&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="497,500" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch To Process" Expression="[Str_MenuName.ToLower.Replace(&quot; &quot;,&quot;&quot;).Replace(&quot;-&quot;,&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Switch`1_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -16415,12 +16415,12 @@
               </Flowchart>
             </Switch>
           </FlowStep>
-          <FlowDecision x:Name="__ReferenceID424" Condition="[Str_AdhocInputFile.ToLower.Equals(&quot;tt067.001&quot;)]" DisplayName="Need Spl Login?" sap:VirtualizedContainerService.HintSize="92,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+          <FlowDecision x:Name="__ReferenceID424" Condition="[Str_AdhocInputFile.ToLower.Equals(&quot;tt067.001&quot;)]" DisplayName="Need Spl Login?" sap:VirtualizedContainerService.HintSize="91,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <av:Point x:Key="ShapeLocation">364.5,616.5</av:Point>
-                <av:Size x:Key="ShapeSize">92,87</av:Size>
+                <av:Size x:Key="ShapeSize">91,87</av:Size>
                 <av:PointCollection x:Key="TrueConnector">364.5,660 314.5,660</av:PointCollection>
                 <av:PointCollection x:Key="FalseConnector">455.5,660 505.5,660</av:PointCollection>
               </scg:Dictionary>
@@ -16431,7 +16431,7 @@
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">114.5,627</av:Point>
                     <av:Size x:Key="ShapeSize">200,66</av:Size>
-                    <av:PointCollection x:Key="ConnectorLocation">214.5,693 214.5,723 410,723 410,737</av:PointCollection>
+                    <av:PointCollection x:Key="ConnectorLocation">214.5,693 214.5,723 410,723 410,757</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Sequence DisplayName="PJA Log On - Special Login" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_872">
@@ -16585,9 +16585,9 @@
                   <FlowStep x:Name="__ReferenceID423">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">310,737</av:Point>
+                        <av:Point x:Key="ShapeLocation">310,757</av:Point>
                         <av:Size x:Key="ShapeSize">200,66</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">410,803 410,853</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">410,823 410,853</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Sequence DisplayName="Login Validation" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_856">
@@ -16934,7 +16934,7 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:LogMessage>
                             <FlowStep.Next>
-                              <FlowStep x:Name="__ReferenceID441">
+                              <FlowStep x:Name="__ReferenceID437">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">478.895,960</av:Point>
@@ -16988,7 +16988,7 @@
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">505.5,627</av:Point>
                     <av:Size x:Key="ShapeSize">200,66</av:Size>
-                    <av:PointCollection x:Key="ConnectorLocation">605.5,693 605.5,723 410,723 410,737</av:PointCollection>
+                    <av:PointCollection x:Key="ConnectorLocation">605.5,693 605.5,723 410,723 410,757</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Sequence DisplayName="PJA Log On - Normal Login" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_878">
@@ -17148,17 +17148,17 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">150,357</av:Point>
-                <av:Size x:Key="ShapeSize">200,68</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">250,425 250,466.5</av:PointCollection>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">250,423 250,466.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Launch Prime Job Application" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_840">
+            <Sequence DisplayName="Launch Prime Job Application" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_840">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate Window" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="Activate_86">
+              <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate Window" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="Activate_86">
                 <ui:Activate.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f0655e61dc1909e134712d8b5695916c" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;&lt;wnd omit:cls='UIContainerClass' omit:title='ABC' /&gt;&lt;wnd omit:cls='IHWindowClass' omit:title='Input Capture Window' /&gt;">
                     <ui:Target.TimeoutMS>
@@ -17171,7 +17171,7 @@
                 </ui:Activate.Target>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -17325,11 +17325,11 @@
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">660,364</av:Point>
-                                <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                <av:Size x:Key="ShapeSize">200,51</av:Size>
                                 <av:PointCollection x:Key="ConnectorLocation">760,415 760,750</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_461" Level="Error" Message="[&quot;Error - Application Launch Failed after maximum attempt&quot;]">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_461" Level="Error" Message="[&quot;Error - Application Launch Failed after maximum attempt&quot;]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -17337,7 +17337,7 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:LogMessage>
                             <FlowStep.Next>
-                              <FlowStep x:Name="__ReferenceID442">
+                              <FlowStep x:Name="__ReferenceID438">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">629,750</av:Point>
@@ -17383,62 +17383,46 @@
           <x:Reference>__ReferenceID434</x:Reference>
           <x:Reference>__ReferenceID435</x:Reference>
           <x:Reference>__ReferenceID436</x:Reference>
-          <FlowDecision x:Name="__ReferenceID437" Condition="[bool_TsysLogo=False]" DisplayName="Logo Exists?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_112">
+          <FlowStep x:Name="__ReferenceID440">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <av:Point x:Key="ShapeLocation">385,228.5</av:Point>
-                <av:Size x:Key="ShapeSize">70,87</av:Size>
-                <av:PointCollection x:Key="TrueConnector">385,272 355,272 355,240 291,240</av:PointCollection>
-                <av:PointCollection x:Key="FalseConnector">455,272 520.5,272</av:PointCollection>
+                <av:Point x:Key="ShapeLocation">289,110</av:Point>
+                <av:Size x:Key="ShapeSize">262,60</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">420,170 420,207</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <FlowDecision.True>
-              <FlowStep x:Name="__ReferenceID440">
+            <Assign DisplayName="Set Prime App Path" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_90">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_PrimeAppPath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">C:\TSYS\ThickClients\Prime Jobs Administrator\PRIME Jobs Administrator.exe</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID439">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">29,210</av:Point>
-                    <av:Size x:Key="ShapeSize">262,60</av:Size>
-                    <av:PointCollection x:Key="ConnectorLocation">160,270 160,300 250,300 250,357</av:PointCollection>
+                    <av:Point x:Key="ShapeLocation">320,207</av:Point>
+                    <av:Size x:Key="ShapeSize">200,108</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">320,261 250,261 250,357</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Set Prime App Path" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_90">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[str_PrimeAppPath]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">C:\TSYS\ThickClients\Prime Jobs Administrator\PRIME Jobs Administrator.exe</InArgument>
-                  </Assign.Value>
+                <Sequence sap2010:Annotation.AnnotationText="This will kill if any instance already opened" DisplayName="Terminate Prime Job Application" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="Sequence_1042">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </Assign>
-                <FlowStep.Next>
-                  <x:Reference>__ReferenceID425</x:Reference>
-                </FlowStep.Next>
-              </FlowStep>
-            </FlowDecision.True>
-            <FlowDecision.False>
-              <FlowStep x:Name="__ReferenceID438">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">520.5,239</av:Point>
-                    <av:Size x:Key="ShapeSize">200,68</av:Size>
-                    <av:PointCollection x:Key="ConnectorLocation">620.5,239 620.5,160.5 520,160.5</av:PointCollection>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Terminate Application" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_883">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate " sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Activate_96">
+                  <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate Window" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Activate_171">
                     <ui:Activate.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b1c2657f6e0dab1ab21062cc8081444b" Selector="&lt;wnd app='mstsc.exe' omit:cls='TscShellContainerClass' title='*192.168.16.165:*' /&gt;&lt;wnd omit:cls='IHWindowClass' omit:title='Input Capture Window' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f0655e61dc1909e134712d8b5695916c" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;&lt;wnd omit:cls='UIContainerClass' omit:title='ABC' /&gt;&lt;wnd omit:cls='IHWindowClass' omit:title='Input Capture Window' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -17447,10 +17431,16 @@
                         </ui:Target.WaitForReady>
                       </ui:Target>
                     </ui:Activate.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:Activate>
-                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey to Terminate Application" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1046" Key="f4" KeyModifiers="Alt" SpecialKey="True">
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey &quot;Win+r&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendHotkey_1106" Key="r" KeyModifiers="Win" SpecialKey="False">
                     <ui:SendHotkey.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f0655e61dc1909e134712d8b5695916c" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;&lt;wnd omit:cls='UIContainerClass' omit:title='ABC' /&gt;&lt;wnd cls='IHWindowClass' omit:title='Input Capture Window' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -17459,77 +17449,122 @@
                         </ui:Target.WaitForReady>
                       </ui:Target>
                     </ui:SendHotkey.Target>
-                  </ui:SendHotkey>
-                </Sequence>
-                <FlowStep.Next>
-                  <FlowStep x:Name="__ReferenceID439">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">320,127.5</av:Point>
-                        <av:Size x:Key="ShapeSize">200,68</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">420,195.5 420,228.5</av:PointCollection>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="TSYS Logo Exist" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_882">
+                  </ui:SendHotkey>
+                  <Sequence DisplayName="Native Citrix" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1041">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window " sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WindowScope_320" InformativeScreenshot="f2fc02d6fa3468f8a59bce8ad05d7d8c" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165:*' /&gt;">
+                      <ui:WindowScope.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1040">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'Open'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ClickImage_262" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+                              <ui:ClickImage.CursorPosition>
+                                <ui:CursorPosition OffsetX="75" OffsetY="17" Position="TopRight" />
+                              </ui:ClickImage.CursorPosition>
+                              <ui:ClickImage.Image>
+                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAZCAYAAAChBHccAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEJSURBVFhH7ZRRDoMgDEA5liReZiH78irGL6+ilzHxd8foAFuHCEgyYzXhJXygK32lnQIeTJHnoshzUeS5KPJcFHkujuVHBUKIdcnugy/4SctbcQn9hHuYoa/vU0BCfhFVI26JqQcpFAy45SQuH5Wcoa2oGwMo05nR/DYwVvYMGjk6C2O6Bp87MabTdasz5JGWr0IHuR0xIlqAElpZrzAaOS22SGLMG6/FjiYWdqp87s2v/wn95I2FbW4dlxX2Y/Zn5PLnzPuJnZho8ZfIa9yWWkwid669/a6w0JcpIX/a2BC2gF/rt51YEjcvGX7vj87R2Jwun8QXuZao/HpbiXVb+TweLc/Lg+UBvk+mRIxDGLxFAAAAAElFTkSuQmCC" />
+                              </ui:ClickImage.Image>
+                              <ui:ClickImage.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd omit:cls='UIContainerClass' omit:title='ABC' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:ClickImage.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:ClickImage>
+                            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into &quot;Run Command&quot;" EmptyField="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TypeInto_47" SendWindowMessages="False" SimulateType="False" Text="[&quot;taskkill /IM &quot;&quot;PRIME Jobs Administrator.exe&quot;&quot; /F&quot;]">
+                              <ui:TypeInto.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c2148eec38da55e0c75a880a7aa67c44" Selector="&lt;wnd omit:cls='UIContainerClass' omit:title='ABC' /&gt;&lt;wnd omit:cls='IHWindowClass' omit:title='Input Capture Window' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:TypeInto.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:TypeInto>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey &quot;Enter&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendHotkey_1107" Key="enter" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165:*' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:SendHotkey>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:WindowScope.Body>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate " sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Activate_95">
-                        <ui:Activate.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b1c2657f6e0dab1ab21062cc8081444b" Selector="&lt;wnd app='mstsc.exe' omit:cls='TscShellContainerClass' title='*192.168.16.165:*' /&gt;&lt;wnd omit:cls='IHWindowClass' omit:title='Input Capture Window' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Activate.Target>
-                      </ui:Activate>
-                      <ui:ImageFound DisplayName="TSYS Logo Exist " Found="[bool_TsysLogo]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_85">
-                        <ui:ImageFound.Image>
-                          <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
-                        </ui:ImageFound.Image>
-                        <ui:ImageFound.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='mstsc.exe' omit:cls='TscShellContainerClass' title='*192.168.16.165:*' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:ImageFound.Target>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:ImageFound>
-                    </Sequence>
-                    <FlowStep.Next>
-                      <x:Reference>__ReferenceID437</x:Reference>
-                    </FlowStep.Next>
-                  </FlowStep>
+                    </ui:WindowScope>
+                  </Sequence>
+                </Sequence>
+                <FlowStep.Next>
+                  <x:Reference>__ReferenceID425</x:Reference>
                 </FlowStep.Next>
               </FlowStep>
-            </FlowDecision.False>
-          </FlowDecision>
+            </FlowStep.Next>
+          </FlowStep>
+          <x:Reference>__ReferenceID426</x:Reference>
+          <x:Reference>__ReferenceID437</x:Reference>
           <x:Reference>__ReferenceID438</x:Reference>
           <x:Reference>__ReferenceID439</x:Reference>
-          <x:Reference>__ReferenceID440</x:Reference>
-          <x:Reference>__ReferenceID426</x:Reference>
-          <x:Reference>__ReferenceID441</x:Reference>
-          <x:Reference>__ReferenceID442</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="929,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,135" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -17537,7 +17572,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Sequence - Exception Handling" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_636">
+            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_636">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="Str_ExceptionMessage" />
               </Sequence.Variables>
@@ -17583,9 +17618,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID445</x:Reference>
+            <x:Reference>__ReferenceID443</x:Reference>
           </Flowchart.StartNode>
-          <FlowStep x:Name="__ReferenceID443">
+          <FlowStep x:Name="__ReferenceID441">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">385,237</av:Point>
@@ -17626,7 +17661,7 @@
               </ui:SendHotkey>
             </Sequence>
             <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID445">
+              <FlowStep x:Name="__ReferenceID443">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
@@ -17674,7 +17709,7 @@
                   </ui:ImageFound>
                 </Sequence>
                 <FlowStep.Next>
-                  <FlowDecision x:Name="__ReferenceID444" Condition="[bool_TsysLogo=False]" DisplayName="Logo Exists?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_113">
+                  <FlowDecision x:Name="__ReferenceID442" Condition="[bool_TsysLogo=False]" DisplayName="Logo Exists?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_113">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -17685,7 +17720,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <FlowDecision.True>
-                      <FlowStep x:Name="__ReferenceID446">
+                      <FlowStep x:Name="__ReferenceID444">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">15,244.02</av:Point>
@@ -17702,16 +17737,16 @@
                       </FlowStep>
                     </FlowDecision.True>
                     <FlowDecision.False>
-                      <x:Reference>__ReferenceID443</x:Reference>
+                      <x:Reference>__ReferenceID441</x:Reference>
                     </FlowDecision.False>
                   </FlowDecision>
                 </FlowStep.Next>
               </FlowStep>
             </FlowStep.Next>
           </FlowStep>
+          <x:Reference>__ReferenceID442</x:Reference>
+          <x:Reference>__ReferenceID443</x:Reference>
           <x:Reference>__ReferenceID444</x:Reference>
-          <x:Reference>__ReferenceID445</x:Reference>
-          <x:Reference>__ReferenceID446</x:Reference>
         </Flowchart>
       </TryCatch.Finally>
     </TryCatch>
