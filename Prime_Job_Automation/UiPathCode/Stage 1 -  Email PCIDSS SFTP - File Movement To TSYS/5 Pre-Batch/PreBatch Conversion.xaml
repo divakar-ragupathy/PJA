@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,731</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>934,1616</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -45,7 +45,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -69,17 +69,19 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Buffers.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="476,566" sap2010:WorkflowViewState.IdRef="Sequence_85">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="865,1451" sap2010:WorkflowViewState.IdRef="Sequence_85">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Execute Pre-Batch Script" sap:VirtualizedContainerService.HintSize="434,474" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+    <TryCatch DisplayName="Try Execute Pre-Batch Script" sap:VirtualizedContainerService.HintSize="823,1359" sap2010:WorkflowViewState.IdRef="TryCatch_12">
       <TryCatch.Try>
-        <Flowchart DisplayName="Pre-Batch Script Run Flow" sap:VirtualizedContainerService.HintSize="691,1022" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart DisplayName="Pre-Batch Script Run Flow" sap:VirtualizedContainerService.HintSize="730,1272" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="bool_IsPaymentError" />
             <Variable x:TypeArguments="x:Boolean" Name="bool_IsBillerError" />
@@ -88,6 +90,7 @@
             <Variable x:TypeArguments="x:String" Name="str_GLCommand" />
             <Variable x:TypeArguments="x:String" Name="str_BillerCommand" />
             <Variable x:TypeArguments="x:String" Name="str_PaymentCommand" />
+            <Variable x:TypeArguments="x:String" Name="str_SuccessNotificationEmailId" />
           </Flowchart.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -96,31 +99,47 @@
               <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,120</av:PointCollection>
-              <x:Double x:Key="Height">985.5</x:Double>
-              <x:Double x:Key="Width">657</x:Double>
+              <x:Double x:Key="Height">1235.5</x:Double>
+              <x:Double x:Key="Width">695.5</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID11</x:Reference>
+            <x:Reference>__ReferenceID14</x:Reference>
           </Flowchart.StartNode>
           <FlowStep x:Name="__ReferenceID1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">200,564.5</av:Point>
+                <av:Point x:Key="ShapeLocation">200,794.5</av:Point>
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">400,590 516.5,590 516.5,636.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">400,820 516.5,820 516.5,876.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Payment Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">[Str_PaymentCommand]</InArgument>
-                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">[bool_IsPaymentError]</OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
-                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">errondajr@unionbankph.com</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
+                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_ExceptionMessage" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PaymentCommand" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">
+                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsPaymentError" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerDetails" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysUserID" />
+                </InArgument>
+                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
+                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysPwd" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SuccessNotificationEmailId" />
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -134,19 +153,19 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <av:Point x:Key="ShapeLocation">460,636.5</av:Point>
+                    <av:Point x:Key="ShapeLocation">460,876.5</av:Point>
                     <av:Size x:Key="ShapeSize">113,87</av:Size>
-                    <av:PointCollection x:Key="TrueConnector">460,680 400,680</av:PointCollection>
-                    <av:PointCollection x:Key="FalseConnector">573,680 629.5,680 629.5,940 400,940</av:PointCollection>
+                    <av:PointCollection x:Key="TrueConnector">460,920 400,920</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">573,920 670,920 670,1210 640,1210</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <FlowDecision.True>
                   <FlowStep x:Name="__ReferenceID9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">200,654.5</av:Point>
+                        <av:Point x:Key="ShapeLocation">200,894.5</av:Point>
                         <av:Size x:Key="ShapeSize">200,51</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">300,705.5 300,744.5</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">300,945.5 300,990</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Info" Message="[&quot;Payment Script execution completed&quot;]">
@@ -158,49 +177,89 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID0">
+                      <FlowStep x:Name="__ReferenceID13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">200,744.5</av:Point>
-                            <av:Size x:Key="ShapeSize">200,51</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">300,795.5 300,834.5</av:PointCollection>
+                            <av:Point x:Key="ShapeLocation">169,990</av:Point>
+                            <av:Size x:Key="ShapeSize">262,60</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">300,1050 300,1094.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Biller Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="Str_Command">[Str_BillerCommand]</InArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">[bool_IsBillerError]</OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
-                            <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">errondajr@unionbankph.com</InArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
+                        <Assign DisplayName="Set Biller Notification Email Id" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_52">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_SuccessNotificationEmailId]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">["errondajr@unionbankph.com"]</InArgument>
+                          </Assign.Value>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                        </ui:InvokeWorkflowFile>
+                        </Assign>
                         <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID10">
+                          <FlowStep x:Name="__ReferenceID0">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">200,834.5</av:Point>
+                                <av:Point x:Key="ShapeLocation">200,1094.5</av:Point>
                                 <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                <av:PointCollection x:Key="ConnectorLocation">167.5,308 167.5,327</av:PointCollection>
+                                <av:PointCollection x:Key="ConnectorLocation">300,1145.5 300,1184.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Info" Message="[&quot;Biller Script execution completed&quot;]">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Biller Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
+                                </InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
+                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_ExceptionMessage" />
+                                </OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_BillerCommand" />
+                                </InArgument>
+                                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">
+                                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsBillerError" />
+                                </OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerDetails" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysUserID" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
+                                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysPwd" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SuccessNotificationEmailId" />
+                                </InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                            </ui:LogMessage>
+                            </ui:InvokeWorkflowFile>
+                            <FlowStep.Next>
+                              <FlowStep x:Name="__ReferenceID10">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">200,1184.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">167.5,308 167.5,327</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Info" Message="[&quot;Biller Script execution completed&quot;]">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:LogMessage>
+                              </FlowStep>
+                            </FlowStep.Next>
                           </FlowStep>
                         </FlowStep.Next>
                       </FlowStep>
@@ -211,7 +270,7 @@
                   <FlowStep x:Name="__ReferenceID2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">200,914.5</av:Point>
+                        <av:Point x:Key="ShapeLocation">440,1184.5</av:Point>
                         <av:Size x:Key="ShapeSize">200,51</av:Size>
                         <av:PointCollection x:Key="ConnectorLocation">310,765.5 310,784.5</av:PointCollection>
                       </scg:Dictionary>
@@ -233,21 +292,37 @@
           <FlowStep x:Name="__ReferenceID3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">200,394.5</av:Point>
+                <av:Point x:Key="ShapeLocation">200,504.5</av:Point>
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">400,420 520,420 520,456.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">400,530 520,530 520,576.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GL Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">[Str_GLCommand]</InArgument>
-                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">[bool_IsGLError]</OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
-                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">jsfranco@unionbankph.com</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
+                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_ExceptionMessage" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_GLCommand" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">
+                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsGLError" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerDetails" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysUserID" />
+                </InArgument>
+                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
+                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysPwd" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SuccessNotificationEmailId" />
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -261,19 +336,19 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <av:Point x:Key="ShapeLocation">480,456.5</av:Point>
+                    <av:Point x:Key="ShapeLocation">480,576.5</av:Point>
                     <av:Size x:Key="ShapeSize">80,87</av:Size>
-                    <av:PointCollection x:Key="FalseConnector">560,500 590,500 590,940 400,940</av:PointCollection>
-                    <av:PointCollection x:Key="TrueConnector">480,500 400,500</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">560,620 670,620 670,1210 640,1210</av:PointCollection>
+                    <av:PointCollection x:Key="TrueConnector">480,620 400,620</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <FlowDecision.True>
                   <FlowStep x:Name="__ReferenceID8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">200,474.5</av:Point>
+                        <av:Point x:Key="ShapeLocation">200,594.5</av:Point>
                         <av:Size x:Key="ShapeSize">200,51</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">300,525.5 300,564.5</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">300,645.5 300,690</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info" Message="[&quot;GL Script execution completed&quot;]">
@@ -285,7 +360,31 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
                     <FlowStep.Next>
-                      <x:Reference>__ReferenceID1</x:Reference>
+                      <FlowStep x:Name="__ReferenceID12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">169,690</av:Point>
+                            <av:Size x:Key="ShapeSize">262,60</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">300,750 300,794.5</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Set Payment Notification Email Id" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_51">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_SuccessNotificationEmailId]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">["errondajr@unionbankph.com"]</InArgument>
+                          </Assign.Value>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Assign>
+                        <FlowStep.Next>
+                          <x:Reference>__ReferenceID1</x:Reference>
+                        </FlowStep.Next>
+                      </FlowStep>
                     </FlowStep.Next>
                   </FlowStep>
                 </FlowDecision.True>
@@ -295,7 +394,7 @@
               </FlowDecision>
             </FlowStep.Next>
           </FlowStep>
-          <FlowStep x:Name="__ReferenceID11">
+          <FlowStep x:Name="__ReferenceID14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">169,120</av:Point>
@@ -303,7 +402,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">300,180 300,210</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign - GLCommand" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_47">
+            <Assign DisplayName="Set GLCommand" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_47">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_GLCommand]</OutArgument>
               </Assign.To>
@@ -320,7 +419,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">300,270 300,300</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign - BillerCommand" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_48">
+                <Assign DisplayName="Set BillerCommand" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_48">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[str_BillerCommand]</OutArgument>
                   </Assign.To>
@@ -334,10 +433,10 @@
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">169,300</av:Point>
                         <av:Size x:Key="ShapeSize">262,60</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">300,360 300,394.5</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">300,360 300,400</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign - PaymentCommand" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_49">
+                    <Assign DisplayName="Set PaymentCommand" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_49">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[str_PaymentCommand]</OutArgument>
                       </Assign.To>
@@ -346,7 +445,31 @@
                       </Assign.Value>
                     </Assign>
                     <FlowStep.Next>
-                      <x:Reference>__ReferenceID3</x:Reference>
+                      <FlowStep x:Name="__ReferenceID11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">169,400</av:Point>
+                            <av:Size x:Key="ShapeSize">262,60</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">300,460 300,504.5</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Set GL Notification Email Id" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_50">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_SuccessNotificationEmailId]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">jsfranco@unionbankph.com</InArgument>
+                          </Assign.Value>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Assign>
+                        <FlowStep.Next>
+                          <x:Reference>__ReferenceID3</x:Reference>
+                        </FlowStep.Next>
+                      </FlowStep>
                     </FlowStep.Next>
                   </FlowStep>
                 </FlowStep.Next>
@@ -361,13 +484,16 @@
           <x:Reference>__ReferenceID8</x:Reference>
           <x:Reference>__ReferenceID9</x:Reference>
           <x:Reference>__ReferenceID10</x:Reference>
+          <x:Reference>__ReferenceID11</x:Reference>
+          <x:Reference>__ReferenceID12</x:Reference>
+          <x:Reference>__ReferenceID13</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,312" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="789,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -375,7 +501,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="304,243" sap2010:WorkflowViewState.IdRef="Sequence_86">
+            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="304,240" sap2010:WorkflowViewState.IdRef="Sequence_86">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>

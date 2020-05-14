@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,825</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>934,1120</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -84,7 +84,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="476,660" sap2010:WorkflowViewState.IdRef="Sequence_64">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="745,955" sap2010:WorkflowViewState.IdRef="Sequence_64">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_fileNamePattern" />
     </Sequence.Variables>
@@ -94,7 +94,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Extract File from Email" sap:VirtualizedContainerService.HintSize="434,568" sap2010:WorkflowViewState.IdRef="TryCatch_18">
+    <TryCatch DisplayName="Try Extract File from Email" sap:VirtualizedContainerService.HintSize="703,863" sap2010:WorkflowViewState.IdRef="TryCatch_18">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -102,7 +102,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Flowchart DisplayName="Email Source File Extraction Flow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart DisplayName="Email Source File Extraction Flow" sap:VirtualizedContainerService.HintSize="665,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
             <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="obj_EmailList" />
             <Variable x:TypeArguments="x:String" Name="str_MailboxName" />
@@ -110,7 +110,7 @@
           </Flowchart.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">290,2.5</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">320,77.5 320,127</av:PointCollection>
@@ -129,7 +129,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">210,450 369,450</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Extracting Source File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
+            <Sequence DisplayName="Extracting Source File" sap:VirtualizedContainerService.HintSize="1033,2069" sap2010:WorkflowViewState.IdRef="Sequence_22">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dt_EmailRuleFactory" />
               </Sequence.Variables>
@@ -138,7 +138,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:FilterDataTable DataTable="[Dt_RuleFactory]" DisplayName="Filter Rule Factory for Email" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="340,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_EmailRuleFactory]" SelectColumnsMode="Keep">
+              <ui:FilterDataTable DataTable="[Dt_RuleFactory]" DisplayName="Filter Rule Factory for Email" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="991,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_EmailRuleFactory]" SelectColumnsMode="Keep">
                 <ui:FilterDataTable.Filters>
                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                     <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -163,13 +163,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:FilterDataTable>
-              <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each - Emails" sap:VirtualizedContainerService.HintSize="340,492" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[obj_EmailList]">
+              <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each - Emails" sap:VirtualizedContainerService.HintSize="991,1886" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[obj_EmailList]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="snm:MailMessage">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Identify Right Subject" sap:VirtualizedContainerService.HintSize="304,358" sap2010:WorkflowViewState.IdRef="Sequence_144">
+                    <Sequence DisplayName="Identify Right Subject" sap:VirtualizedContainerService.HintSize="955,1752" sap2010:WorkflowViewState.IdRef="Sequence_144">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Boolean" Name="IsSubjMatch" />
                         <Variable x:TypeArguments="x:String" Name="str_NewSubject" />
@@ -180,7 +180,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Set IsSubMatch to Default" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+                      <Assign DisplayName="Set IsSubMatch to Default" sap:VirtualizedContainerService.HintSize="913,60" sap2010:WorkflowViewState.IdRef="Assign_29">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Boolean">[IsSubjMatch]</OutArgument>
                         </Assign.To>
@@ -188,7 +188,7 @@
                           <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Clean Subject" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_70">
+                      <Assign DisplayName="Clean Subject" sap:VirtualizedContainerService.HintSize="913,60" sap2010:WorkflowViewState.IdRef="Assign_70">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[str_NewSubject]</OutArgument>
                         </Assign.To>
@@ -196,20 +196,20 @@
                           <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(mail.Subject.ToString.ToLower,"( |-|_)","")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Sequence DisplayName="Sequence - Email Loop" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_114">
+                      <Sequence DisplayName="Looping Email" sap:VirtualizedContainerService.HintSize="913,1460" sap2010:WorkflowViewState.IdRef="Sequence_114">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_EmailRuleFactory]" DisplayName="For Each Email Subject Rule" sap:VirtualizedContainerService.HintSize="534,692" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_EmailRuleFactory]" DisplayName="For Each Email Subject Rule" sap:VirtualizedContainerService.HintSize="871,1277" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rule" />
                               </ActivityAction.Argument>
-                              <If Condition="[str_NewSubject.Contains(rule(&quot;Mail_Subject_Keyword&quot;).ToString.ToLower)]" DisplayName="If Email Subject Match with Keyword" sap:VirtualizedContainerService.HintSize="484,544" sap2010:WorkflowViewState.IdRef="If_60">
+                              <If Condition="[str_NewSubject.Contains(rule(&quot;Mail_Subject_Keyword&quot;).ToString.ToLower)]" DisplayName="If Email Subject Match with Keyword" sap:VirtualizedContainerService.HintSize="821,1129" sap2010:WorkflowViewState.IdRef="If_60">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -217,14 +217,14 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="Email Subject Check" sap:VirtualizedContainerService.HintSize="304,396" sap2010:WorkflowViewState.IdRef="Sequence_183">
+                                  <Sequence DisplayName="Email Subject Check" sap:VirtualizedContainerService.HintSize="676,981" sap2010:WorkflowViewState.IdRef="Sequence_183">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_104" Level="Info" Message="[&quot;Email Subject &quot; +mail.Subject.ToString + &quot; received on &quot; + mail.Headers(&quot;Date&quot;) +&quot; is matched with keyword &quot; + rule(&quot;Mail_Subject_Keyword&quot;).ToString]">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,51" sap2010:WorkflowViewState.IdRef="LogMessage_104" Level="Info" Message="[&quot;Email Subject &quot; +mail.Subject.ToString + &quot; received on &quot; + mail.Headers(&quot;Date&quot;) +&quot; is matched with keyword &quot; + rule(&quot;Mail_Subject_Keyword&quot;).ToString]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -238,7 +238,7 @@
                                       </Flowchart.Variables>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                                           <av:Size x:Key="ShapeSize">60,75</av:Size>
@@ -411,7 +411,7 @@
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                       <If.Then>
-                                                                        <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xD;&#xA;&quot;Process cannot be executed due to the incorrect password. Kindly encrypt the file with valid password and resend a file to run the process.&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xD;&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_30" MailMessage="[mail]" ReplyAll="False">
+                                                                        <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Process cannot be executed due to the incorrect password. Kindly encrypt the file with valid password and resend a file to run the process.&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_30" MailMessage="[mail]" ReplyAll="False">
                                                                           <ui:ReplyToOutlookMailMessage.Files>
                                                                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                                           </ui:ReplyToOutlookMailMessage.Files>
@@ -424,7 +424,7 @@
                                                                         </ui:ReplyToOutlookMailMessage>
                                                                       </If.Then>
                                                                       <If.Else>
-                                                                        <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xD;&#xA;&quot;Process cannot be executed due to an Error occured. Please look into Issue.&quot;+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;The Error detail is given below.&quot; +&quot;&lt;br&gt;&quot;+&#xD;&#xA; exception.Message+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xD;&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&quot;+&#xD;&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_31" MailMessage="[mail]" ReplyAll="False">
+                                                                        <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Process cannot be executed due to an Error occured. Please look into Issue.&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;The Error detail is given below.&quot; +&quot;&lt;br&gt;&quot;+&#xA; exception.Message+&quot;&lt;br&gt;&lt;br&gt;&quot;+&#xA;&quot;Regards,&quot;+&quot;&lt;br&gt;&quot;+&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_31" MailMessage="[mail]" ReplyAll="False">
                                                                           <ui:ReplyToOutlookMailMessage.Files>
                                                                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                                           </ui:ReplyToOutlookMailMessage.Files>
@@ -861,7 +861,7 @@
                                       <x:Reference>__ReferenceID15</x:Reference>
                                       <x:Reference>__ReferenceID16</x:Reference>
                                     </Flowchart>
-                                    <Assign DisplayName="Set IsSubMatch to True" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_69">
+                                    <Assign DisplayName="Set IsSubMatch to True" sap:VirtualizedContainerService.HintSize="634,60" sap2010:WorkflowViewState.IdRef="Assign_69">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Boolean">[IsSubjMatch]</OutArgument>
                                       </Assign.To>
@@ -869,7 +869,7 @@
                                         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:Break sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_2" />
+                                    <ui:Break sap:VirtualizedContainerService.HintSize="634,22" sap2010:WorkflowViewState.IdRef="Break_2" />
                                   </Sequence>
                                 </If.Then>
                               </If>
@@ -877,12 +877,12 @@
                           </ui:ForEachRow.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:ForEachRow>
-                        <If Condition="[IsSubjMatch = False]" DisplayName="If Subject Not Match" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_44">
+                        <If Condition="[IsSubjMatch = False]" DisplayName="If Subject Not Match" sap:VirtualizedContainerService.HintSize="871,51" sap2010:WorkflowViewState.IdRef="If_44">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -894,7 +894,7 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:MoveOutlookMessage>
@@ -1029,10 +1029,10 @@
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,406" sap2010:WorkflowViewState.IdRef="Catch`1_22">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="669,21" sap2010:WorkflowViewState.IdRef="Catch`1_22">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -1040,7 +1040,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="376,337" sap2010:WorkflowViewState.IdRef="Sequence_141">
+            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="376,334" sap2010:WorkflowViewState.IdRef="Sequence_141">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
