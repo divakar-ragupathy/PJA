@@ -15,14 +15,15 @@
     <x:Property Name="Str_StatementPath" Type="InArgument(x:String)" />
     <x:Property Name="Str_VisaVcfPath" Type="InArgument(x:String)" />
     <x:Property Name="Str_AutoDbPath" Type="InArgument(x:String)" />
+    <x:Property Name="Str_ErrorKeywordRegExList" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1024,2222</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1024,2236</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PostBatch_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="24">
+    <scg:List x:TypeArguments="x:String" Capacity="48">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -47,6 +48,7 @@
       <x:String>System.Security</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Net</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -71,10 +73,9 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence - PostBatch" sap:VirtualizedContainerService.HintSize="1002,2057" sap2010:WorkflowViewState.IdRef="Sequence_27">
+  <Sequence DisplayName="Sequence - PostBatch" sap:VirtualizedContainerService.HintSize="714,2071" sap2010:WorkflowViewState.IdRef="Sequence_27">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_ConsoleMessage" />
       <Variable x:TypeArguments="x:String" Name="str_IcmMailId" />
@@ -84,7 +85,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch - PostBatch" sap:VirtualizedContainerService.HintSize="434,474" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch - PostBatch" sap:VirtualizedContainerService.HintSize="672,1979" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -92,12 +93,12 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Flowchart DisplayName="Flow Chart - PostBatch" sap:VirtualizedContainerService.HintSize="634,1698" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart DisplayName="Flow Chart - PostBatch" sap:VirtualizedContainerService.HintSize="634,1752" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
             <Variable x:TypeArguments="x:String" Name="str_TSysServerHost" />
             <Variable x:TypeArguments="x:Int32" Name="int_TSysServerPort" />
             <Variable x:TypeArguments="x:String" Name="str_Response" />
-            <Variable x:TypeArguments="x:Boolean" Name="bool_ContainsError" />
+            <Variable x:TypeArguments="x:Boolean" Name="bool_IsNoError" />
             <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dict_PostBatchScriptPath" />
           </Flowchart.Variables>
           <sap:WorkflowViewStateService.ViewState>
@@ -106,12 +107,12 @@
               <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,114.5</av:PointCollection>
-              <x:Double x:Key="Height">1662</x:Double>
+              <x:Double x:Key="Height">1715.5</x:Double>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID15</x:Reference>
+            <x:Reference>__ReferenceID16</x:Reference>
           </Flowchart.StartNode>
           <FlowStep x:Name="__ReferenceID0">
             <sap:WorkflowViewStateService.ViewState>
@@ -447,10 +448,10 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                                     <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Boolean">[bool_ContainsError]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:Boolean">[bool_IsNoError]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                     </Assign.Value>
                                   </Assign>
                                   <l:SshExpect Command="[&quot;mkdir -p &quot; + Dict_PostBatchScriptPath(&quot;EmbossInput&quot;)+&quot;/Archive/&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+Environment.NewLine+&quot;mv &quot;+Dict_PostBatchScriptPath(&quot;EmbossInput&quot;)+&quot;/ *.* &quot;+Dict_PostBatchScriptPath(&quot;EmbossInput&quot;)+&quot;/Archive/&quot;+&quot;/&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+Environment.NewLine]" DisplayName="Archive Old Emboss Files" sap:VirtualizedContainerService.HintSize="262,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_15" Password="[Pwd_TSysServerPassword.ToString]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_ConvertEmbossLog]" User="[Str_TSysServerUserName]" />
@@ -479,7 +480,7 @@
                                       <InArgument x:TypeArguments="x:String">[str_ConvertEmbossLog.Substring(str_ConvertEmbossLog.IndexOf("grep -i ora-0 *.*")+len("grep -i ora-0 *.*"))]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <If Condition="[str_ConvertEmbossLog.ToLower.Contains(&quot;ora-0&quot;)]" DisplayName="If - Oracle Errors" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_12">
+                                  <If Condition="[Regex.IsMatch(str_ConvertEmbossLog.ToLower,Str_ErrorKeywordRegExList.ToLower)]" DisplayName="If - Oracle Errors" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_12">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -500,10 +501,10 @@
                                       </ui:SendOutlookMail>
                                     </If.Then>
                                     <If.Else>
-                                      <Sequence DisplayName="Copy Emboss and Non-Emboss files to 183 Server" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                      <Sequence DisplayName="Copy Emboss and Non-Emboss files to 183 Server" sap:VirtualizedContainerService.HintSize="304,334" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -591,10 +592,10 @@
                                         </p:WithFtpSession>
                                         <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
                                           <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Boolean">[bool_ContainsError]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Boolean">[bool_IsNoError]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                           </Assign.Value>
                                         </Assign>
                                       </Sequence>
@@ -602,23 +603,26 @@
                                   </If>
                                 </Sequence>
                                 <FlowStep.Next>
-                                  <FlowDecision x:Name="__ReferenceID8" Condition="[bool_ContainsError=False]" DisplayName="IsNoError?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                  <FlowDecision x:Name="__ReferenceID8" DisplayName="IsNoError?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                    <FlowDecision.Condition>
+                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="bool_IsNoError" />
+                                    </FlowDecision.Condition>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <av:Point x:Key="ShapeLocation">265,1246.5</av:Point>
                                         <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                        <av:PointCollection x:Key="TrueConnector">265,1290 160,1290 160,1356</av:PointCollection>
-                                        <av:PointCollection x:Key="FalseConnector">335,1290 440,1290 440,1354</av:PointCollection>
+                                        <av:PointCollection x:Key="TrueConnector">265,1290 160,1290 160,1336</av:PointCollection>
+                                        <av:PointCollection x:Key="FalseConnector">335,1290 440,1290 440,1334</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <FlowDecision.True>
                                       <FlowStep x:Name="__ReferenceID7">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">60,1356</av:Point>
+                                            <av:Point x:Key="ShapeLocation">60,1336</av:Point>
                                             <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                            <av:PointCollection x:Key="ConnectorLocation">160,1422 160,1466</av:PointCollection>
+                                            <av:PointCollection x:Key="ConnectorLocation">160,1402 160,1446</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <Sequence DisplayName="Statements" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
@@ -714,9 +718,9 @@
                                           <FlowStep x:Name="__ReferenceID10">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">60,1466</av:Point>
+                                                <av:Point x:Key="ShapeLocation">60,1446</av:Point>
                                                 <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                <av:PointCollection x:Key="ConnectorLocation">160,1532 160,1596</av:PointCollection>
+                                                <av:PointCollection x:Key="ConnectorLocation">160,1512 160,1556</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <Sequence DisplayName="AUTODBD" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_20">
@@ -788,9 +792,9 @@
                                               <FlowStep x:Name="__ReferenceID11">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <av:Point x:Key="ShapeLocation">60,1596</av:Point>
+                                                    <av:Point x:Key="ShapeLocation">60,1556</av:Point>
                                                     <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                    <av:PointCollection x:Key="ConnectorLocation">731,827 731,851</av:PointCollection>
+                                                    <av:PointCollection x:Key="ConnectorLocation">160,1622 160,1664.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <Sequence DisplayName="Corporate File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_24">
@@ -929,6 +933,29 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:AppendLine>
                                                 </Sequence>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID15">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <av:Point x:Key="ShapeLocation">60,1664.5</av:Point>
+                                                        <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Please find the post batch log for your review &quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_24" IsBodyHtml="False" IsDraft="False" Subject="Notification: Post Batch Log" To="[Str_RpaOpsEmailID]">
+                                                      <ui:SendOutlookMail.Files>
+                                                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                                                          <InArgument x:TypeArguments="x:String">[Str_LogsPath]</InArgument>
+                                                        </scg:List>
+                                                      </ui:SendOutlookMail.Files>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:SendOutlookMail>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
                                               </FlowStep>
                                             </FlowStep.Next>
                                           </FlowStep>
@@ -939,7 +966,7 @@
                                       <FlowStep x:Name="__ReferenceID9">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">340,1354</av:Point>
+                                            <av:Point x:Key="ShapeLocation">340,1334</av:Point>
                                             <av:Size x:Key="ShapeSize">200,51</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -1069,7 +1096,7 @@
               <x:Reference>__ReferenceID13</x:Reference>
             </FlowStep.Next>
           </FlowStep>
-          <FlowStep x:Name="__ReferenceID15">
+          <FlowStep x:Name="__ReferenceID16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">200,114.5</av:Point>
@@ -1103,13 +1130,14 @@
               <x:Reference>__ReferenceID14</x:Reference>
             </FlowStep.Next>
           </FlowStep>
+          <x:Reference>__ReferenceID15</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,312" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="638,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -1117,7 +1145,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Sequence - Exception Handling" sap:VirtualizedContainerService.HintSize="304,243" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <Sequence DisplayName="Sequence - Exception Handling" sap:VirtualizedContainerService.HintSize="304,334" sap2010:WorkflowViewState.IdRef="Sequence_28">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1135,6 +1163,19 @@
               <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;An unexpected error occured in Post-Batch script execution. The error is &quot;+Str_ExceptionMessage+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_19" IsBodyHtml="False" IsDraft="False" Subject="ERROR: An unexpected error" To="[Str_RpaOpsEmailID]">
                 <ui:SendOutlookMail.Files>
                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                </ui:SendOutlookMail.Files>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:SendOutlookMail>
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Please find the post batch log for your review &quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_25" IsBodyHtml="False" IsDraft="False" Subject="Notification: Post Batch Log" To="[Str_RpaOpsEmailID]">
+                <ui:SendOutlookMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                    <InArgument x:TypeArguments="x:String">[Str_LogsPath]</InArgument>
+                  </scg:List>
                 </ui:SendOutlookMail.Files>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">

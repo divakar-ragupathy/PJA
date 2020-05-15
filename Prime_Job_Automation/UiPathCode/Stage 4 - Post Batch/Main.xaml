@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,1200</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1024,1200</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -130,7 +130,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the post batch starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the post batch starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="484,979" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
         <TryCatch DisplayName="Try Check all Pre-Requisites are Exist" sap:VirtualizedContainerService.HintSize="438,561" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -192,9 +192,6 @@
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_NonEmbossingPath">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_NonEmbossingPath" />
                   </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_SatementPath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_StatementPath" />
-                  </OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_VisaServerDetails">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_VisaServerDetails" />
                   </OutArgument>
@@ -209,6 +206,12 @@
                   </OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_VisaVcfPath">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_VisaVcfPath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_StatementPath">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_StatementPath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ErrorKeywordRegExList" />
                   </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
@@ -301,7 +304,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger Pre-Batch Script Execution in TSys Server" DisplayName="Post-Batch Script Execution" sap:VirtualizedContainerService.HintSize="484,988" sap2010:WorkflowViewState.IdRef="State_6">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger Pre-Batch Script Execution in TSys Server" DisplayName="Post-Batch Script Execution" sap:VirtualizedContainerService.HintSize="257,132" sap2010:WorkflowViewState.IdRef="State_6">
               <State.Entry>
                 <TryCatch DisplayName="Try Pre-Batch Script Execution" sap:VirtualizedContainerService.HintSize="438,597" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                   <sap:WorkflowViewStateService.ViewState>
@@ -378,6 +381,9 @@
                           </InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="Str_AutoDbPath">
                             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_AutoDbPath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ErrorKeywordRegExList" />
                           </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
@@ -494,6 +500,7 @@
       <Variable x:TypeArguments="x:String" Name="str_VisaUserID" />
       <Variable x:TypeArguments="x:String" Name="str_VisaVcfPath" />
       <Variable x:TypeArguments="x:String" Name="str_AutoDbPath" />
+      <Variable x:TypeArguments="x:String" Name="str_ErrorKeywordRegExList" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

@@ -6,11 +6,12 @@
     <x:Property Name="Str_TSysServerDetails" Type="InArgument(x:String)" />
     <x:Property Name="Pwd_TSysPwd" Type="InArgument(ss:SecureString)" />
     <x:Property Name="Str_TSysUserID" Type="InArgument(x:String)" />
+    <x:Property Name="Str_ErrorKeywordRegExList" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,1616</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1024,1756</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -73,15 +74,15 @@
       <AssemblyReference>System.Memory</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="865,1451" sap2010:WorkflowViewState.IdRef="Sequence_85">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="865,1591" sap2010:WorkflowViewState.IdRef="Sequence_85">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Execute Pre-Batch Script" sap:VirtualizedContainerService.HintSize="823,1359" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+    <TryCatch DisplayName="Try Execute Pre-Batch Script" sap:VirtualizedContainerService.HintSize="823,1499" sap2010:WorkflowViewState.IdRef="TryCatch_12">
       <TryCatch.Try>
-        <Flowchart DisplayName="Pre-Batch Script Run Flow" sap:VirtualizedContainerService.HintSize="730,1272" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart DisplayName="Pre-Batch Script Run Flow" sap:VirtualizedContainerService.HintSize="731,1272" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="bool_IsPaymentError" />
             <Variable x:TypeArguments="x:Boolean" Name="bool_IsBillerError" />
@@ -100,7 +101,7 @@
               <av:Size x:Key="ShapeSize">60,75</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,120</av:PointCollection>
               <x:Double x:Key="Height">1235.5</x:Double>
-              <x:Double x:Key="Width">695.5</x:Double>
+              <x:Double x:Key="Width">697</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
@@ -116,30 +117,14 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Payment Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_ExceptionMessage" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PaymentCommand" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">
-                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsPaymentError" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerDetails" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysUserID" />
-                </InArgument>
-                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
-                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysPwd" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SuccessNotificationEmailId" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">[Str_PaymentCommand]</InArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">[bool_IsPaymentError]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
+                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">[str_SuccessNotificationEmailId]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -209,30 +194,14 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Biller Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
-                                </InArgument>
-                                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_ExceptionMessage" />
-                                </OutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_BillerCommand" />
-                                </InArgument>
-                                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">
-                                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsBillerError" />
-                                </OutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerDetails" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysUserID" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
-                                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysPwd" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SuccessNotificationEmailId" />
-                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">[Str_BillerCommand]</InArgument>
+                                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">[bool_IsBillerError]</OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
+                                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">[str_SuccessNotificationEmailId]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -297,7 +266,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">400,530 520,530 520,576.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GL Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GL Script" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
                   <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
@@ -322,6 +291,9 @@
                 </InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">
                   <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SuccessNotificationEmailId" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ErrorKeywordRegExList" />
                 </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>

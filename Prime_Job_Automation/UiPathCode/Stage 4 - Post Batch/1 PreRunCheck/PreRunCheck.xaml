@@ -9,17 +9,18 @@
     <x:Property Name="Dt_PostBatchScriptPathRepo" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="Str_EmbossingPath" Type="OutArgument(x:String)" />
     <x:Property Name="Str_NonEmbossingPath" Type="OutArgument(x:String)" />
-    <x:Property Name="Str_SatementPath" Type="OutArgument(x:String)" />
     <x:Property Name="Str_VisaServerDetails" Type="OutArgument(x:String)" />
     <x:Property Name="Pwd_VisaPwd" Type="OutArgument(ss:SecureString)" />
     <x:Property Name="Str_VisaUserID" Type="OutArgument(x:String)" />
     <x:Property Name="Str_AutoDbPath" Type="OutArgument(x:String)" />
     <x:Property Name="Str_VisaVcfPath" Type="OutArgument(x:String)" />
+    <x:Property Name="Str_StatementPath" Type="OutArgument(x:String)" />
+    <x:Property Name="Str_ErrorKeywordRegExList" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,2386</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1024,2699</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PreRunCheck_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -51,7 +52,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -74,9 +75,10 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MainSequence" sap:VirtualizedContainerService.HintSize="893,2221" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence DisplayName="MainSequence" sap:VirtualizedContainerService.HintSize="893,2534" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_HTMLTableCode" />
     </Sequence.Variables>
@@ -86,7 +88,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Perform Pre-Run Check" sap:VirtualizedContainerService.HintSize="851,2129" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Perform Pre-Run Check" sap:VirtualizedContainerService.HintSize="851,2442" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -94,7 +96,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="PreRunCheck" sap:VirtualizedContainerService.HintSize="813,1902" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="PreRunCheck" sap:VirtualizedContainerService.HintSize="813,2215" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_PostBatchScriptRepoPath" />
             <Variable x:TypeArguments="ui:WorkbookApplication" Name="str_WorkbookName" />
@@ -103,6 +105,8 @@
             <Variable x:TypeArguments="x:Int32" Name="str_TSysServerPort" />
             <Variable x:TypeArguments="x:String" Name="str_TSysServerHost" />
             <Variable x:TypeArguments="x:String" Name="str_ProjectFolderPath" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_FolderList" />
+            <Variable x:TypeArguments="x:String" Name="str_ErrorKeywordRegExListPath" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -110,7 +114,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Get Asset Values" sap:VirtualizedContainerService.HintSize="771,66" sap2010:WorkflowViewState.IdRef="Sequence_76">
+          <Sequence DisplayName="Get Assets" sap:VirtualizedContainerService.HintSize="771,66" sap2010:WorkflowViewState.IdRef="Sequence_76">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -128,6 +132,11 @@
               </ui:GetRobotAsset.Value>
             </ui:GetRobotAsset>
             <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="TPA_TsysServerCredentials" DisplayName="Get Credential - TSysCredentials" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Pwd_TSysPwd]" Username="[Str_TSysUserID]" />
+            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="TPA_ErrorKeywordList" DisplayName="Get Asset - ErrorKeywordList" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_16">
+              <ui:GetRobotAsset.Value>
+                <OutArgument x:TypeArguments="x:String">[str_ErrorKeywordRegExListPath]</OutArgument>
+              </ui:GetRobotAsset.Value>
+            </ui:GetRobotAsset>
             <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="TPA_ProjectFolderPath" DisplayName="Get Asset - Project Folder Path" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_14">
               <ui:GetRobotAsset.Value>
                 <OutArgument x:TypeArguments="x:String">[str_ProjectFolderPath]</OutArgument>
@@ -150,6 +159,37 @@
             </ui:GetRobotAsset>
             <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="TPA_VISAServerCredentials" DisplayName="Get Credential - VisaCredentials" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[Pwd_VisaPwd]" Username="[Str_VisaUserID]" />
           </Sequence>
+          <ui:BuildDataTable DataTable="[dt_FolderList]" DisplayName="Asset DataTable " sap:VirtualizedContainerService.HintSize="771,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;FolderPath&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderPath&gt;Staging\Embossing_Return&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderPath&gt;Staging\Non_Embossing_Return&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderPath&gt;Staging\Statement&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderPath&gt;Staging\Visa_VCF&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderPath&gt;Staging\AutoDB&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderPath&gt;Configuration\Log&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:BuildDataTable>
+          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_FolderList]" DisplayName="Asset - File Path Creation" sap:VirtualizedContainerService.HintSize="771,51" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="asset" />
+                </ActivityAction.Argument>
+                <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="CreateDirectory_8" Path="[str_ProjectFolderPath+asset(&quot;FolderPath&quot;).ToString]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CreateDirectory>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEachRow>
           <Sequence DisplayName="Set Variables" sap:VirtualizedContainerService.HintSize="771,66" sap2010:WorkflowViewState.IdRef="Sequence_74">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -175,7 +215,7 @@
             </Assign>
             <Assign DisplayName="Set Statement Path" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_50">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[str_SatementPath]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[Str_StatementPath]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">[str_ProjectFolderPath+"Staging\Statement"]</InArgument>
@@ -197,62 +237,6 @@
                 <InArgument x:TypeArguments="x:String">[str_ProjectFolderPath+"Staging\AutoDB"]</InArgument>
               </Assign.Value>
             </Assign>
-          </Sequence>
-          <Sequence DisplayName="Create Folders" sap:VirtualizedContainerService.HintSize="771,66" sap2010:WorkflowViewState.IdRef="Sequence_75">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Log Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Str_LogFilePath]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CreateDirectory>
-            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Statement Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[str_SatementPath]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CreateDirectory>
-            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Embossing Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_4" Path="[Str_EmbossingPath]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CreateDirectory>
-            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Non Embossing Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[Str_NonEmbossingPath]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CreateDirectory>
-            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Visa VCF Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[Str_VisaVcfPath]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CreateDirectory>
-            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create AUTODB Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_6" Path="[str_AutoDbPath]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CreateDirectory>
           </Sequence>
           <Assign DisplayName="Set Server Port" sap:VirtualizedContainerService.HintSize="771,60" sap2010:WorkflowViewState.IdRef="Assign_51">
             <Assign.To>
@@ -280,15 +264,15 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:PathExists DisplayName="Post Script Repo Path Exists" Exists="[bool_IsRepoExist]" sap:VirtualizedContainerService.HintSize="771,51" sap2010:WorkflowViewState.IdRef="PathExists_4" Path="[str_PostBatchScriptRepoPath]" PathType="File">
+          <ui:PathExists DisplayName="Post Script Repo Path Exists" Exists="[bool_IsRepoExist]" sap:VirtualizedContainerService.HintSize="771,89" sap2010:WorkflowViewState.IdRef="PathExists_4" Path="[str_ProjectFolderPath+str_PostBatchScriptRepoPath]" PathType="File">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:PathExists>
-          <If Condition="[bool_IsRepoExist]" DisplayName="If PostBatch Script Repo Exists" sap:VirtualizedContainerService.HintSize="771,1201" sap2010:WorkflowViewState.IdRef="If_8">
+          <If Condition="[bool_IsRepoExist]" DisplayName="If PostBatch Script Repo Exists" sap:VirtualizedContainerService.HintSize="771,1392" sap2010:WorkflowViewState.IdRef="If_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -296,14 +280,14 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Post Batch Script Path Check" sap:VirtualizedContainerService.HintSize="526,1053" sap2010:WorkflowViewState.IdRef="Sequence_37">
+              <Sequence DisplayName="Post Batch Script Path Check" sap:VirtualizedContainerService.HintSize="526,1244" sap2010:WorkflowViewState.IdRef="Sequence_37">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Read Post Batch Script Repository" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" Workbook="[str_WorkbookName]" WorkbookPath="[str_PostBatchScriptRepoPath]">
+                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Read Post Batch Script Repository" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" Workbook="[str_WorkbookName]" WorkbookPath="[str_ProjectFolderPath+str_PostBatchScriptRepoPath]">
                   <ui:ExcelApplicationScope.Body>
                     <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                       <ActivityAction.Argument>
@@ -331,6 +315,22 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ExcelApplicationScope>
+                <ui:ReadTextFile Content="[Str_ErrorKeywordRegExList]" DisplayName="Read Error Keyword File List" FileName="[Str_ProjectFolderPath+str_ErrorKeywordRegExListPath]" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ReadTextFile>
+                <Assign DisplayName="Remove Newlines from Error Keyword" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_59">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Str_ErrorKeywordRegExList]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[Str_ErrorKeywordRegExList.Replace(Environment.NewLine,"|")]</InArgument>
+                  </Assign.Value>
+                </Assign>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Retreived post batch script repository&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -606,7 +606,7 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xD;&#xA;&quot;The process is terminated due to post batch script repository file not exist in &quot;+str_PostBatchScriptRepoPath+&quot;. Please have a look.&quot;+Environment.NewLine+Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" IsBodyHtml="False" IsDraft="False" Subject="ERROR - Prerequisite Failure" To="[Str_RpaOpsEmailID]">
+                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;The process is terminated due to post batch script repository file not exist in &quot;+str_PostBatchScriptRepoPath+&quot;. Please have a look.&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" IsBodyHtml="False" IsDraft="False" Subject="ERROR - Prerequisite Failure" To="[Str_RpaOpsEmailID]">
                   <ui:SendOutlookMail.Files>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                   </ui:SendOutlookMail.Files>

@@ -1,0 +1,10 @@
+error
+ora-
+[1-9] ro(w|ws) not loaded due to data error
+\d\d ro(w|ws) not loaded due to data error
+[1-9] ro(w|ws) not loaded because all when clauses were fail
+\d\d ro(w|ws) not loaded because all when clauses were fail
+[1-9] ro(w|ws) not loaded because all fields were null
+\d\d ro(w|ws) not loaded because all fields were null
+total logical records rejected:[ ]+[1-9]
+total logical records discarded:[ ]+[1-9]

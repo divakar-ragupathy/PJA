@@ -8,11 +8,12 @@
     <x:Property Name="Str_TSysServerUserName" Type="InArgument(x:String)" />
     <x:Property Name="Pwd_TSysServerPassword" Type="InArgument(ss:SecureString)" />
     <x:Property Name="Str_SuccessNotificationEmailID" Type="InArgument(x:String)" />
+    <x:Property Name="Str_ErrorKeywordRegExList" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,1420</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1024,1420</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>VerifyLogFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -39,6 +40,7 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Security</x:String>
       <x:String>System.Net</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -86,7 +88,6 @@
       <TryCatch.Try>
         <Sequence DisplayName="Execute Command and Check Error" sap:VirtualizedContainerService.HintSize="767,936" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
-            <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String) from{&quot;Error&quot;,&quot;error&quot;}]" Name="list_ErrorKeyWordList" />
             <Variable x:TypeArguments="x:Int32" Name="int_TSysServerPort" />
             <Variable x:TypeArguments="x:String" Name="str_TSysServerHost" />
           </Sequence.Variables>
@@ -131,7 +132,7 @@
             </Assign.Value>
           </Assign>
           <l:SshExpect Command="[Str_Command+Environment.NewLine]" DisplayName="Run SSH Command" sap:VirtualizedContainerService.HintSize="725,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_1" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysServerPassword).Password]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_ResponseLog]" User="[Str_TSysServerUserName]" />
-          <If Condition="[list_ErrorKeyWordList.Any(Function(KeyWord) str_ResponseLog.Contains(KeyWord))]" DisplayName="If Error Exist" sap:VirtualizedContainerService.HintSize="725,482" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[Regex.IsMatch(str_ResponseLog.ToLower,Str_ErrorKeywordRegExList.ToLower)]" DisplayName="If Error Exist" sap:VirtualizedContainerService.HintSize="725,482" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
