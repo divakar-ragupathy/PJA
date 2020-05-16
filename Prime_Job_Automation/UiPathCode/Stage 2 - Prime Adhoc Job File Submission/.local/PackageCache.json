@@ -158,6 +158,19 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities/1.2.0\\lib/net461/UiPathTeam.UnZipFile.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities\\1.2.0"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Database.Activities",
+        "Version": "1.3.7369.25200"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/Microsoft.Data.ConnectionUI.Dialog.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200"
     }
   ],
   "Conflicts": [],
@@ -304,6 +317,11 @@
     "UiPath": {
       "Id": "UiPath",
       "Version": "20.2.7348.30662-preview",
+      "Dependencies": []
+    },
+    "UiPath.Database.Activities": {
+      "Id": "UiPath.Database.Activities",
+      "Version": "1.3.7369.25200",
       "Dependencies": []
     },
     "UiPath.Excel.Activities": {
@@ -695,6 +713,19 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath\\20.2.7348.30662-preview\\lib\\UiPath.Interop.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath\\20.2.7348.30662-preview"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Database.Activities",
+        "Version": "1.3.7369.25200"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200\\lib\\net452\\Microsoft.Data.ConnectionUI.Dialog.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200\\lib\\net452\\UiPath.Database.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200\\lib\\net452\\UiPath.Database.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200\\lib\\net452\\UiPath.Database.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200"
     },
     {
       "Package": {
