@@ -10,8 +10,7 @@
     <x:Property Name="Dt_PostBatchScriptPathRepo" Type="InArgument(sd:DataTable)" />
     <x:Property Name="Str_ErrorKeywordRegExList" Type="InArgument(x:String)" />
     <x:Property Name="Dt_RuleFactory" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="dict_ReturnFolderPath" Type="InArgument(scg:Dictionary(x:String, x:String))" />
-    <x:Property Name="Str_LogFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="Dict_ReturnFolderPath" Type="InArgument(scg:Dictionary(x:String, x:String))" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -19,7 +18,7 @@
   <sap:VirtualizedContainerService.HintSize>1024,2236</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PostBatch_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="48">
+    <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -48,7 +47,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -69,7 +68,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Sequence - PostBatch" sap:VirtualizedContainerService.HintSize="714,2071" sap2010:WorkflowViewState.IdRef="Sequence_27">
@@ -97,6 +95,7 @@
             <Variable x:TypeArguments="x:String" Name="str_Response" />
             <Variable x:TypeArguments="x:Boolean" Name="bool_IsNoError" />
             <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dict_PostBatchScriptPath" />
+            <Variable x:TypeArguments="x:String" Name="str_LogFilePath" />
           </Flowchart.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -415,7 +414,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <l:SshExpect Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;InterfaceOutgoing&quot;)+Environment.NewLine+&#xD;&#xA;&quot;mv bnk03541.txt ../Out/response&quot;+Environment.NewLine+&#xD;&#xA;&quot;mv UNION????????.txt ../Out/response&quot;+Environment.NewLine+&#xD;&#xA;&quot;mv glb????r.txt ../Out/response&quot;+Environment.NewLine+&#xD;&#xA;&quot;mv skyc????r1.txt ../Out/response&quot;+Environment.NewLine+&#xD;&#xA;&quot;mv skyc????r2.txt ../Out/response&quot;+Environment.NewLine+&#xD;&#xA;&quot;mv RLUM??????.txt ../Out/response&quot;+Environment.NewLine+&#xD;&#xA;&quot;mv SUN??????r.txt ../Out/response&quot;+Environment.NewLine+&#xD;&#xA;&quot;mv UBP??????.brf ../Out/response&quot;+Environment.NewLine+&#xD;&#xA;&quot;mv UBC?????.PAY.DAT ../Out/response&quot;+Environment.NewLine+&#xD;&#xA;&quot;mv lumi????01.txt ../Out/response&quot;+Environment.NewLine]" DisplayName="Copy Conversion file" sap:VirtualizedContainerService.HintSize="200,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_14" Password="[Pwd_TSysServerPassword.ToString]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_Response]" User="[Str_TSysServerUserName]" />
+                              <l:SshExpect Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;InterfaceOutgoing&quot;)+Environment.NewLine+&#xA;&quot;mv bnk03541.txt ../Out/response&quot;+Environment.NewLine+&#xA;&quot;mv UNION????????.txt ../Out/response&quot;+Environment.NewLine+&#xA;&quot;mv glb????r.txt ../Out/response&quot;+Environment.NewLine+&#xA;&quot;mv skyc????r1.txt ../Out/response&quot;+Environment.NewLine+&#xA;&quot;mv skyc????r2.txt ../Out/response&quot;+Environment.NewLine+&#xA;&quot;mv RLUM??????.txt ../Out/response&quot;+Environment.NewLine+&#xA;&quot;mv SUN??????r.txt ../Out/response&quot;+Environment.NewLine+&#xA;&quot;mv UBP??????.brf ../Out/response&quot;+Environment.NewLine+&#xA;&quot;mv UBC?????.PAY.DAT ../Out/response&quot;+Environment.NewLine+&#xA;&quot;mv lumi????01.txt ../Out/response&quot;+Environment.NewLine]" DisplayName="Copy Conversion file" sap:VirtualizedContainerService.HintSize="200,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_14" Password="[Pwd_TSysServerPassword.ToString]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_Response]" User="[Str_TSysServerUserName]" />
                               <l:SshExpect Command="[Dict_PostBatchScriptPath(&quot;ConvertorOutput&quot;)+Environment.NewLine]" DisplayName="Run Convert_Output" sap:VirtualizedContainerService.HintSize="200,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_29" Password="[Pwd_TSysServerPassword.ToString]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_Response]" User="[Str_TSysServerUserName]" />
                               <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[&quot;*******************************  Execution started for Convert All Return Files  ***************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully completed Convert All Return Files  **************************************&quot;+Environment.NewLine]">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -448,27 +447,13 @@
                                 <If.Else>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Return Files Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="3. Return File\ReturnFiles.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
-                                        <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysServerPassword" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerDetails" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerUserName" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFileLocalPath">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="dict_ReturnFolderPath(&quot;str_ReturnFilePath&quot;)" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TypeOfReturnFiles">
-                                        <Literal x:TypeArguments="x:String">AfterEOD</Literal>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_ReturnFilesRuleFactory">
-                                        <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Dt_RuleFactory" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysServerPassword]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysServerUserName]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFileLocalPath">[Dict_ReturnFolderPath("str_ReturnFilePath")]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TypeOfReturnFiles">AfterEOD</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_ReturnFilesRuleFactory">[Dt_RuleFactory]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -575,8 +560,8 @@
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Sequence file" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_8" LocalPath="[dict_ReturnFolderPath(&quot;str_EmbossingPath&quot;)]" Overwrite="True" Recursive="False" RemotePath="[Path.GetDirectoryName(Dict_PostBatchScriptPath(&quot;RunEmboss&quot;))+&quot;/&quot;+&quot;sequence.txt&quot;]" />
-                                                <ui:ReadTextFile Content="[str_SeqNum]" DisplayName="Read Sequence Number" FileName="[dict_ReturnFolderPath(&quot;str_EmbossingPath&quot;)+&quot;\sequence.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+                                                <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Sequence file" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_8" LocalPath="[Dict_ReturnFolderPath(&quot;str_EmbossingPath&quot;)]" Overwrite="True" Recursive="False" RemotePath="[Path.GetDirectoryName(Dict_PostBatchScriptPath(&quot;RunEmboss&quot;))+&quot;/&quot;+&quot;sequence.txt&quot;]" />
+                                                <ui:ReadTextFile Content="[str_SeqNum]" DisplayName="Read Sequence Number" FileName="[Dict_ReturnFolderPath(&quot;str_EmbossingPath&quot;)+&quot;\sequence.txt&quot;]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -584,8 +569,8 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:ReadTextFile>
-                                                <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Emboss Files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_1" LocalPath="[dict_ReturnFolderPath(&quot;Str_EmbossingPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;EmbossOutput&quot;)+&quot;/&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))]" />
-                                                <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Non Emboss files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_2" LocalPath="[dict_ReturnFolderPath(&quot;Str_NonEmbossingPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;EmbossOutput&quot;)+&quot;/&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))]" />
+                                                <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Emboss Files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_1" LocalPath="[Dict_ReturnFolderPath(&quot;Str_EmbossingPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;EmbossOutput&quot;)+&quot;/&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))]" />
+                                                <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Non Emboss files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_2" LocalPath="[Dict_ReturnFolderPath(&quot;Str_NonEmbossingPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;EmbossOutput&quot;)+&quot;/&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))]" />
                                               </Sequence>
                                             </ActivityAction>
                                           </p:WithFtpSession.Body>
@@ -629,8 +614,8 @@
                                                     <InArgument x:TypeArguments="x:String">["/Non Embossing Return"]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload Emboss files" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="UploadFiles_2" LocalPath="[dict_ReturnFolderPath(&quot;Str_EmbossingPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[str_EmbossSftpPath]" />
-                                                <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload Non Emboss files" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="UploadFiles_3" LocalPath="[dict_ReturnFolderPath(&quot;str_NonEmbossingPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[str_NonEmbossSftpPath]" />
+                                                <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload Emboss files" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="UploadFiles_2" LocalPath="[Dict_ReturnFolderPath(&quot;Str_EmbossingPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[str_EmbossSftpPath]" />
+                                                <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload Non Emboss files" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="UploadFiles_3" LocalPath="[Dict_ReturnFolderPath(&quot;str_NonEmbossingPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[str_NonEmbossSftpPath]" />
                                               </Sequence>
                                             </ActivityAction>
                                           </p:WithFtpSession.Body>
@@ -713,7 +698,7 @@
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                                                       </ActivityAction.Argument>
-                                                      <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download R06_CLUBP_PH_UBPIssuerStatementFile_ALL Files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_9" LocalPath="[dict_ReturnFolderPath(&quot;str_StatementPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;StatementFiles&quot;)]" />
+                                                      <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download R06_CLUBP_PH_UBPIssuerStatementFile_ALL Files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_9" LocalPath="[Dict_ReturnFolderPath(&quot;str_StatementPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;StatementFiles&quot;)]" />
                                                     </ActivityAction>
                                                   </p:WithFtpSession.Body>
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -723,13 +708,11 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </p:WithFtpSession>
-                                                <bz:ZipFilesCls DisplayName="Zip - Statement Files" FolderFilesPath="[{dict_ReturnFolderPath(&quot;str_StatementPath&quot;)}]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ZipFilesCls_1" Password="[Now.ToString(&quot;yyyyMMdd&quot;)+&quot;@&quot;]" ZipFile="[dict_ReturnFolderPath(&quot;str_StatementPath&quot;)+&quot;\UBIX_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;]" />
+                                                <bz:ZipFilesCls DisplayName="Zip - Statement Files" FolderFilesPath="[{dict_ReturnFolderPath(&quot;str_StatementPath&quot;)}]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ZipFilesCls_1" Password="[Now.ToString(&quot;yyyyMMdd&quot;)+&quot;@&quot;]" ZipFile="[Dict_ReturnFolderPath(&quot;str_StatementPath&quot;)+&quot;\UBIX_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;]" />
                                                 <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Please find the issuer statement file attachment.&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_15" IsBodyHtml="False" IsDraft="False" Subject="Notification: Issuer Statement File" To="[str_UbixEsoaMailId]">
                                                   <ui:SendOutlookMail.Files>
                                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                                      <InArgument x:TypeArguments="x:String">
-                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="dict_ReturnFolderPath(&quot;str_StatementPath&quot;)+&quot;\UBIX_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;" />
-                                                      </InArgument>
+                                                      <InArgument x:TypeArguments="x:String">[Dict_ReturnFolderPath("str_StatementPath")+"\UBIX_"+Now.ToString("yyyyMMdd")+".zip"]</InArgument>
                                                     </scg:List>
                                                   </ui:SendOutlookMail.Files>
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -803,7 +786,7 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download AUTODB File" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_6" LocalPath="[dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;DirectDebitOut&quot;)]" />
+                                                        <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download AUTODB File" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_6" LocalPath="[Dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;DirectDebitOut&quot;)]" />
                                                       </Sequence>
                                                     </ActivityAction>
                                                   </p:WithFtpSession.Body>
@@ -814,13 +797,11 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </p:WithFtpSession>
-                                                <bz:ZipFilesCls DisplayName="Zip - Statement Files" FolderFilesPath="[{dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)}]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ZipFilesCls_2" Password="[Now.ToString(&quot;yyyyMMdd&quot;)]" ZipFile="[dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)+&quot;\AutoDB_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;]" />
+                                                <bz:ZipFilesCls DisplayName="Zip - Statement Files" FolderFilesPath="[{dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)}]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ZipFilesCls_2" Password="[Now.ToString(&quot;yyyyMMdd&quot;)]" ZipFile="[Dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)+&quot;\AutoDB_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;]" />
                                                 <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Please find the Auto DB file attachment.&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_23" IsBodyHtml="False" IsDraft="False" Subject="Notification: Auto DB File" To="[str_IcmMailId]">
                                                   <ui:SendOutlookMail.Files>
                                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                                      <InArgument x:TypeArguments="x:String">
-                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)+&quot;\UBIX_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;" />
-                                                      </InArgument>
+                                                      <InArgument x:TypeArguments="x:String">[Dict_ReturnFolderPath("str_AutoDbPath")+"\UBIX_"+Now.ToString("yyyyMMdd")+".zip"]</InArgument>
                                                     </scg:List>
                                                   </ui:SendOutlookMail.Files>
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -908,7 +889,7 @@
                                                               <ActivityAction.Argument>
                                                                 <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                                                               </ActivityAction.Argument>
-                                                              <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Visa File" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_10" LocalPath="[dict_ReturnFolderPath(&quot;str_VisaVcfPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;VisaVCF&quot;)]" />
+                                                              <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Visa File" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_10" LocalPath="[Dict_ReturnFolderPath(&quot;str_VisaVcfPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;VisaVCF&quot;)]" />
                                                             </ActivityAction>
                                                           </p:WithFtpSession.Body>
                                                           <sap:WorkflowViewStateService.ViewState>
@@ -948,7 +929,7 @@
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_1" LocalPath="[dict_ReturnFolderPath(&quot;str_VisaVcfPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[str_VisaVcfSftpPath]" />
+                                                                  <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_1" LocalPath="[Dict_ReturnFolderPath(&quot;str_VisaVcfPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[str_VisaVcfSftpPath]" />
                                                                 </Sequence>
                                                               </Sequence>
                                                             </ActivityAction>
@@ -1133,10 +1114,10 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="Set  Log File Path" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_31">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[Str_LogFilePath]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[str_LogFilePath]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[dict_ReturnFolderPath("str_LogFilePath")+"\PostBatch"+Now.ToString("yyyyMMddmmss") + ".txt"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[Dict_ReturnFolderPath("str_LogFilePath")+"\PostBatch"+Now.ToString("yyyyMMddmmss") + ".txt"]</InArgument>
               </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
