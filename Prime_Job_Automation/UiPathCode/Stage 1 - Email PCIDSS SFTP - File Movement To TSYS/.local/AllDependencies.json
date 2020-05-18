@@ -5417,9 +5417,9 @@
     "restore": {
       "projectUniqueName": "Prime Job Automation Email SFTP and PCIDSS",
       "projectName": "Prime Job Automation Email SFTP and PCIDSS",
-      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 1 -  Email PCIDSS SFTP - File Movement To TSYS\\.local",
+      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 1 - Email PCIDSS SFTP - File Movement To TSYS\\.local",
       "packagesPath": "C:\\Users\\divakar_r\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 1 -  Email PCIDSS SFTP - File Movement To TSYS\\.local"
+      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 1 - Email PCIDSS SFTP - File Movement To TSYS\\.local"
     },
     "frameworks": {
       "net461": {
@@ -5479,13 +5479,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'WinSCP 5.17.5' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
-      "libraryId": "WinSCP"
-    },
     {
       "code": "NU1605",
       "level": "Warning",

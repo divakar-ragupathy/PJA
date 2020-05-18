@@ -65,8 +65,8 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="[TPA Post Batch Execution.]&#xA;[This process will execute a set of post batch scripts in tsys server.]&#xA;[Expleo RPA Development Team]" DisplayName="Post Batch Execution" sap:VirtualizedContainerService.HintSize="640,1035" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -131,7 +131,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the post batch starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the post batch starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="484,1015" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
         <TryCatch DisplayName="Try Check all Pre-Requisites are Exist" sap:VirtualizedContainerService.HintSize="438,597" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -142,6 +142,9 @@
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
             <Sequence DisplayName="Load Pre-Run Check WorkFlow" sap:VirtualizedContainerService.HintSize="376,370" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dict_ReturnFileFolder" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -222,6 +225,9 @@
                   </OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="Dict_ReturnFileFolder">
+                    <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dict_ReturnFileFolder" />
                   </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
@@ -314,7 +320,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger Pre-Batch Script Execution in TSys Server" DisplayName="Post-Batch Script Execution" sap:VirtualizedContainerService.HintSize="484,988" sap2010:WorkflowViewState.IdRef="State_6">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger Pre-Batch Script Execution in TSys Server" DisplayName="Post-Batch Script Execution" sap:VirtualizedContainerService.HintSize="257,132" sap2010:WorkflowViewState.IdRef="State_6">
               <State.Entry>
                 <TryCatch DisplayName="Try Pre-Batch Script Execution" sap:VirtualizedContainerService.HintSize="438,597" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                   <sap:WorkflowViewStateService.ViewState>
@@ -349,58 +355,24 @@
                       </ui:LogMessage>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Source File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="2 Post-Batch\PostBatch Conversion.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
-                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysPwd" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysServerDetails" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysUserID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[pwd_TSysPwd]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[str_TSysServerDetails]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[str_TSysUserID]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</InArgument>
                           <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_VisaServerPassword" />
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_VisaServerDetails">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_VisaServerDetails" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_VisaServerUserName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_VisaUserID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_LogsPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_LogFilePath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_PostBatchScriptPathRepo">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_PostBatchScriptPathRepo" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_EmbossingPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_EmbossingPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_NonEmbossingPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_NonEmbossingPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_StatementPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_StatementPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_VisaVcfPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_VisaVcfPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_AutoDbPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_AutoDbPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ErrorKeywordRegExList" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ReturnFilePath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_VisaServerDetails">[str_VisaServerDetails]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_VisaServerUserName">[str_VisaUserID]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_LogsPath">[str_LogFilePath]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_PostBatchScriptPathRepo">[dt_PostBatchScriptPathRepo]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_EmbossingPath">[str_EmbossingPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_NonEmbossingPath">[str_NonEmbossingPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_StatementPath">[str_StatementPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_VisaVcfPath">[str_VisaVcfPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_AutoDbPath">[str_AutoDbPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">[str_ErrorKeywordRegExList]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">[str_ReturnFilePath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">

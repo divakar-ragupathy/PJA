@@ -117,14 +117,33 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Payment Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">[Str_PaymentCommand]</InArgument>
-                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">[bool_IsPaymentError]</OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
-                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">[str_SuccessNotificationEmailId]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
+                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_ExceptionMessage" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PaymentCommand" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">
+                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsPaymentError" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerDetails" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysUserID" />
+                </InArgument>
+                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
+                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysPwd" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SuccessNotificationEmailId" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ErrorKeywordRegExList" />
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -194,14 +213,33 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Biller Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
-                                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">[Str_BillerCommand]</InArgument>
-                                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">[bool_IsBillerError]</OutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
-                                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">[str_SuccessNotificationEmailId]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
+                                </InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
+                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_ExceptionMessage" />
+                                </OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_BillerCommand" />
+                                </InArgument>
+                                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">
+                                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsBillerError" />
+                                </OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerDetails" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysUserID" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
+                                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysPwd" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SuccessNotificationEmailId" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ErrorKeywordRegExList" />
+                                </InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -266,35 +304,17 @@
                 <av:PointCollection x:Key="ConnectorLocation">400,530 520,530 520,576.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GL Script" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GL Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_ExceptionMessage" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_GLCommand" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">
-                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsGLError" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerDetails" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysUserID" />
-                </InArgument>
-                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
-                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysPwd" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SuccessNotificationEmailId" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ErrorKeywordRegExList" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_Command">[Str_GLCommand]</InArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsError">[bool_IsGLError]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
+                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_SuccessNotificationEmailID">[str_SuccessNotificationEmailId]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">[Str_ErrorKeywordRegExList]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -379,7 +399,7 @@
                 <OutArgument x:TypeArguments="x:String">[str_GLCommand]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">cd /tsys/prime/deployment/CREDIT/GLConv/GLCPROConv.com</InArgument>
+                <InArgument x:TypeArguments="x:String">["/tsys/prime/deployment/CREDIT/GLConv/GLCPROConv.com"]</InArgument>
               </Assign.Value>
             </Assign>
             <FlowStep.Next>
@@ -396,7 +416,7 @@
                     <OutArgument x:TypeArguments="x:String">[str_BillerCommand]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">cd /tsys/prime/deployment/CREDIT/convert_biller/work/convert_input_biller_1.com</InArgument>
+                    <InArgument x:TypeArguments="x:String">["/tsys/prime/deployment/CREDIT/convert_biller/work/convert_input_biller_1.com"]</InArgument>
                   </Assign.Value>
                 </Assign>
                 <FlowStep.Next>
@@ -413,7 +433,7 @@
                         <OutArgument x:TypeArguments="x:String">[str_PaymentCommand]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">cd /tsys/prime/deployment/CREDIT/convert_payment/work/convert_input_payment_1.com</InArgument>
+                        <InArgument x:TypeArguments="x:String">["/tsys/prime/deployment/CREDIT/convert_payment/work/convert_input_payment_1.com"]</InArgument>
                       </Assign.Value>
                     </Assign>
                     <FlowStep.Next>

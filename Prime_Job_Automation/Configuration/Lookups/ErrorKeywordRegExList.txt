@@ -1,4 +1,5 @@
 error
+Permission denied
 ora-
 [1-9] ro(w|ws) not loaded due to data error
 \d\d ro(w|ws) not loaded due to data error

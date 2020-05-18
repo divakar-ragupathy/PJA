@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1024,1347</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1024,1307</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -73,7 +73,6 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="714,1142" sap2010:WorkflowViewState.IdRef="Sequence_85">
@@ -141,7 +140,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">300,485.5 300,534.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_ConversionFolderList]" DisplayName="For Each PJUpload Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_31">
+                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DT_RuleFactory]" DisplayName="For Each PJUpload Folder" sap:VirtualizedContainerService.HintSize="544,1279" sap2010:WorkflowViewState.IdRef="ForEachRow_31">
                   <ui:ForEachRow.Body>
                     <ActivityAction x:TypeArguments="sd:DataRow">
                       <ActivityAction.Argument>
@@ -314,32 +313,16 @@
                         <av:PointCollection x:Key="ConnectorLocation">300,585.5 300,637</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Return Files Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="3. Return File\ReturnFiles.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Return Files Workflow File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="3. Return File\ReturnFiles.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">
-                          <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysPwd" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysServerDetails" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysUserID" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFileLocalPath">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ReturnFilePath" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Str_TypeOfReturnFiles">
-                          <Literal x:TypeArguments="x:String">BeforeEOD</Literal>
-                        </InArgument>
-                        <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_ReturnFilesRuleFactory">
-                          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Dt_RuleFactory" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ProjectFolderPath" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFileLocalPath">[Str_ReturnFilePath]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Str_TypeOfReturnFiles">BeforeEOD</InArgument>
+                        <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_ReturnFilesRuleFactory">[Dt_RuleFactory]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[Str_ProjectFolderPath]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
