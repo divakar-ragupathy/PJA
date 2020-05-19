@@ -4,16 +4,16 @@
     <x:Property Name="Str_ExceptionMessage" Type="OutArgument(x:String)" />
     <x:Property Name="Str_Command" Type="InArgument(x:String)" />
     <x:Property Name="Bool_IsError" Type="OutArgument(x:Boolean)" />
-    <x:Property Name="Str_TSysServerDetails" Type="InArgument(x:String)" />
-    <x:Property Name="Str_TSysServerUserName" Type="InArgument(x:String)" />
-    <x:Property Name="Pwd_TSysServerPassword" Type="InArgument(ss:SecureString)" />
     <x:Property Name="Str_SuccessNotificationEmailID" Type="InArgument(x:String)" />
     <x:Property Name="Str_ErrorKeywordRegExList" Type="InArgument(x:String)" />
+    <x:Property Name="Str_ServerDetails" Type="InArgument(x:String)" />
+    <x:Property Name="Str_ServerUserName" Type="InArgument(x:String)" />
+    <x:Property Name="Pwd_ServerPassword" Type="InArgument(ss:SecureString)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1024,1420</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>951,1420</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>VerifyLogFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -88,8 +88,8 @@
       <TryCatch.Try>
         <Sequence DisplayName="Execute Command and Check Error" sap:VirtualizedContainerService.HintSize="767,936" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
-            <Variable x:TypeArguments="x:Int32" Name="int_TSysServerPort" />
-            <Variable x:TypeArguments="x:String" Name="str_TSysServerHost" />
+            <Variable x:TypeArguments="x:Int32" Name="int_ServerPort" />
+            <Variable x:TypeArguments="x:String" Name="str_ServerHost" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -99,10 +99,10 @@
           </sap:WorkflowViewStateService.ViewState>
           <Assign DisplayName="Set Server Port" sap:VirtualizedContainerService.HintSize="725,60" sap2010:WorkflowViewState.IdRef="Assign_8">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:Int32">[int_TSysServerPort]</OutArgument>
+              <OutArgument x:TypeArguments="x:Int32">[int_ServerPort]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:Int32">[CInt(Split(Str_TSysServerDetails,":")(1))]</InArgument>
+              <InArgument x:TypeArguments="x:Int32">[CInt(Split(Str_ServerDetails,":")(1))]</InArgument>
             </Assign.Value>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -112,10 +112,10 @@
           </Assign>
           <Assign DisplayName="Set Server Host" sap:VirtualizedContainerService.HintSize="725,60" sap2010:WorkflowViewState.IdRef="Assign_9">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[str_TSysServerHost]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[str_ServerHost]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[Split(Str_TSysServerDetails,":")(0)]</InArgument>
+              <InArgument x:TypeArguments="x:String">[Split(Str_ServerDetails,":")(0)]</InArgument>
             </Assign.Value>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -131,7 +131,7 @@
               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </Assign.Value>
           </Assign>
-          <l:SshExpect Command="[Str_Command+Environment.NewLine]" DisplayName="Run SSH Command" sap:VirtualizedContainerService.HintSize="725,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_1" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysServerPassword).Password]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_ResponseLog]" User="[Str_TSysServerUserName]" />
+          <l:SshExpect Command="[Str_Command+Environment.NewLine]" DisplayName="Run SSH Command" sap:VirtualizedContainerService.HintSize="725,22" Host="[str_ServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_1" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_ServerPassword).Password]" Port="[int_ServerPort]" Prompt="$" Response="[str_ResponseLog]" User="[Str_ServerUserName]" />
           <If Condition="[Regex.IsMatch(str_ResponseLog.ToLower,Str_ErrorKeywordRegExList.ToLower)]" DisplayName="If Error Exist" sap:VirtualizedContainerService.HintSize="725,482" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -191,7 +191,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xD;&#xA;&quot;The command : &quot;+Str_Command+Environment.NewLine+Environment.NewLine+ &quot; is executed successfully&quot;+Environment.NewLine+Environment.NewLine+&#xD;&#xA;&quot;Please find the console output :&quot; +Environment.NewLine+&#xD;&#xA;str_ResponseLog+Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_5" IsBodyHtml="False" IsDraft="False" Subject="Success - SSH Command" To="[Str_SuccessNotificationEmailID]">
+                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;The command : &quot;+Str_Command+Environment.NewLine+Environment.NewLine+ &quot; is executed successfully&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Please find the console output :&quot; +Environment.NewLine+&#xA;str_ResponseLog+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_5" IsBodyHtml="False" IsDraft="False" Subject="Success - SSH Command" To="[Str_SuccessNotificationEmailID]">
                   <ui:SendOutlookMail.Files>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                   </ui:SendOutlookMail.Files>

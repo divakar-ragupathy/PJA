@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1024,1200</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>951,1200</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -491,6 +491,15 @@
                                           <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
                                             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ErrorKeywordRegExList" />
                                           </InArgument>
+                                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJAppServerPwd">
+                                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_PJAppServerPwd" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerUserID">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PJAppServerUserID" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerDetails">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PJAppServerDetails" />
+                                          </InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>
@@ -788,6 +797,15 @@
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ErrorKeywordRegExList" />
                   </OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJAppServerPwd">
+                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_PJAppServerPwd" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerUserID">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PJAppServerUserID" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerDetails">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PJAppServerDetails" />
+                  </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -905,6 +923,9 @@
       <Variable x:TypeArguments="ss:SecureString" Name="pwd_TSysPwd" />
       <Variable x:TypeArguments="x:String" Name="str_ArchiveFolderPath" />
       <Variable x:TypeArguments="x:String" Name="str_ErrorKeywordRegExList" />
+      <Variable x:TypeArguments="x:String" Name="str_PJAppServerDetails" />
+      <Variable x:TypeArguments="x:String" Name="str_PJAppServerUserID" />
+      <Variable x:TypeArguments="ss:SecureString" Name="pwd_PJAppServerPwd" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
