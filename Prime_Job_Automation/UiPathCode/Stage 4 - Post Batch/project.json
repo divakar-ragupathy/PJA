@@ -11,6 +11,7 @@
     "UiPath.Mail.Activities": "[1.8.3-beta.889642]",
     "UiPath.System.Activities": "[20.2.0-preview]",
     "UiPath.UIAutomation.Activities": "[20.2.0-preview]",
+    "UiPathTeam.SSHConnector.Activities": "[1.0.2]",
     "UiPathTeam.UnZipFile.Activities": "[1.2.0]"
   },
   "webServices": [],

@@ -202,8 +202,8 @@
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
                   </OutArgument>
-                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="Dict_ReturnFileFolder">
-                    <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dict_ReturnFileFolder" />
+                  <OutArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="Dict_ReturnFileFolder">
+                    <mva:VisualBasicReference x:TypeArguments="scg:IDictionary(x:String, x:String)" ExpressionText="dict_ReturnFileFolder" />
                   </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
@@ -296,7 +296,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger Pre-Batch Script Execution in TSys Server" DisplayName="Post-Batch Script Execution" sap:VirtualizedContainerService.HintSize="484,988" sap2010:WorkflowViewState.IdRef="State_6">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger Pre-Batch Script Execution in TSys Server" DisplayName="Post-Batch Script Execution" sap:VirtualizedContainerService.HintSize="484,1123" sap2010:WorkflowViewState.IdRef="State_6">
               <State.Entry>
                 <TryCatch DisplayName="Try Pre-Batch Script Execution" sap:VirtualizedContainerService.HintSize="438,597" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                   <sap:WorkflowViewStateService.ViewState>
@@ -361,8 +361,8 @@
                           <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
                             <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
                           </InArgument>
-                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="Dict_ReturnFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dict_ReturnFileFolder" />
+                          <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="Dict_ReturnFolderPath">
+                            <mva:VisualBasicValue x:TypeArguments="scg:IDictionary(x:String, x:String)" ExpressionText="dict_ReturnFileFolder" />
                           </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
@@ -410,15 +410,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <State.Exit>
-                <Sequence DisplayName="Exit" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                <Sequence DisplayName="Exit" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_37">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Excel" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="KillProcess_6" ProcessName="EXCEL" />
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;Pre-Batch script execution is completed&quot;]">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;Post-Batch script execution is completed&quot;]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -476,7 +476,7 @@
       <Variable x:TypeArguments="x:String" Name="str_ErrorKeywordRegExList" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_RuleFactory" />
       <Variable x:TypeArguments="x:String" Name="str_ProjectFolderPath" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dict_ReturnFileFolder" />
+      <Variable x:TypeArguments="scg:IDictionary(x:String, x:String)" Name="dict_ReturnFileFolder" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

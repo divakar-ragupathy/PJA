@@ -25,6 +25,19 @@
     },
     {
       "Package": {
+        "Id": "UiPath.Database.Activities",
+        "Version": "1.3.7369.25200"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/Microsoft.Data.ConnectionUI.Dialog.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200"
+    },
+    {
+      "Package": {
         "Id": "UiPath.Excel.Activities",
         "Version": "2.7.2"
       },
@@ -161,16 +174,14 @@
     },
     {
       "Package": {
-        "Id": "UiPath.Database.Activities",
-        "Version": "1.3.7369.25200"
+        "Id": "UiPathTeam.SSHConnector.Activities",
+        "Version": "1.0.2"
       },
       "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/Microsoft.Data.ConnectionUI.Dialog.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.Activities.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.dll"
+        "C:\\Users\\divakar_r\\.nuget\\packages\\ssh.net/2016.1.0\\lib/net40/Renci.SshNet.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.sshconnector.activities/1.0.2\\lib/net452/UiPathTeam.SSHConnector.Activities.dll"
       ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200"
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.sshconnector.activities\\1.0.2"
     }
   ],
   "Conflicts": [],
@@ -458,6 +469,16 @@
         {
           "Item1": "UiPath.OCR.Contracts",
           "Item2": "[2.2.1, )"
+        }
+      ]
+    },
+    "UiPathTeam.SSHConnector.Activities": {
+      "Id": "UiPathTeam.SSHConnector.Activities",
+      "Version": "1.0.2",
+      "Dependencies": [
+        {
+          "Item1": "SSH.NET",
+          "Item2": "[2016.1.0, )"
         }
       ]
     },
@@ -833,6 +854,16 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision\\2.0.1\\lib\\net452\\UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision\\2.0.1"
+    },
+    {
+      "Package": {
+        "Id": "UiPathTeam.SSHConnector.Activities",
+        "Version": "1.0.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.sshconnector.activities\\1.0.2\\lib\\net452\\UiPathTeam.SSHConnector.Activities.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.sshconnector.activities\\1.0.2"
     },
     {
       "Package": {
