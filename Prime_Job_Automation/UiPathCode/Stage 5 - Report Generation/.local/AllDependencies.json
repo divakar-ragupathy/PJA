@@ -1610,9 +1610,9 @@
     "restore": {
       "projectUniqueName": "Report Generation",
       "projectName": "Report Generation",
-      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 5 - Report Generation\\.local",
+      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 5 - Report Generation - Sathish\\.local",
       "packagesPath": "C:\\Users\\divakar_r\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 5 - Report Generation\\.local"
+      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 5 - Report Generation - Sathish\\.local"
     },
     "frameworks": {
       "net461": {

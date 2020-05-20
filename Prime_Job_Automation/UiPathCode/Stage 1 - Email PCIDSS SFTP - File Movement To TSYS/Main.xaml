@@ -435,7 +435,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="This process will trigger Pre-Batch Script Execution in TSys Server" DisplayName="Pre-Batch Script Execution" sap:VirtualizedContainerService.HintSize="484,988" sap2010:WorkflowViewState.IdRef="State_6">
+                            <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="This process will trigger Pre-Batch Script Execution in TSys Server" DisplayName="Pre-Batch Script Execution" sap:VirtualizedContainerService.HintSize="257,132" sap2010:WorkflowViewState.IdRef="State_6">
                               <State.Entry>
                                 <TryCatch DisplayName="Try Pre-Batch Script Execution" sap:VirtualizedContainerService.HintSize="438,597" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -470,36 +470,16 @@
                                       </ui:LogMessage>
                                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Pre Batch Conversion" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="5 Pre-Batch\PreBatch Conversion.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_RuleFactory">
-                                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysServerDetails" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">
-                                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysPwd" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysUserID">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysUserID" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ErrorKeywordRegExList" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJAppServerPwd">
-                                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_PJAppServerPwd" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerUserID">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PJAppServerUserID" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerDetails">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PJAppServerDetails" />
-                                          </InArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_RuleFactory">[dt_RuleFactory]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[str_TSysServerDetails]</InArgument>
+                                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">[pwd_TSysPwd]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysUserID">[str_TSysUserID]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">[str_ErrorKeywordRegExList]</InArgument>
+                                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJAppServerPwd">[pwd_PJAppServerPwd]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerUserID">[str_PJAppServerUserID]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerDetails">[str_PJAppServerDetails]</InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>
@@ -764,48 +744,20 @@
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[&quot;Invoking PreRun check workflow&quot;]" />
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PreRun Check workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="1 PreRunCheck\PreRunCheck.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProcessSourceFileListContent">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProcessedSourceFileList" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
-                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileListLookupPath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProcessedFileListLookupPath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysUserID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysUserID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysServerDetails" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">
-                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysPwd" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ArchiveFolderPath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ErrorKeywordRegExList" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJAppServerPwd">
-                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_PJAppServerPwd" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerUserID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PJAppServerUserID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerDetails">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PJAppServerDetails" />
-                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProcessSourceFileListContent">[str_ProcessedSourceFileList]</OutArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileListLookupPath">[str_ProcessedFileListLookupPath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysUserID">[str_TSysUserID]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[str_TSysServerDetails]</OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">[pwd_TSysPwd]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">[str_ArchiveFolderPath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">[str_ErrorKeywordRegExList]</OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJAppServerPwd">[pwd_PJAppServerPwd]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerUserID">[str_PJAppServerUserID]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PJAppServerDetails">[str_PJAppServerDetails]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
