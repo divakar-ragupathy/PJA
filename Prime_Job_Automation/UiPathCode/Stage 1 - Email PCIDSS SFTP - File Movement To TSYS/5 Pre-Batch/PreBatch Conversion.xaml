@@ -271,7 +271,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">400,530 520,530 520,576.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GL Script" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GL Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
                 <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
@@ -366,7 +366,7 @@
                 <OutArgument x:TypeArguments="x:String">[str_GLCommand]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">["/custom/deployment/CREDIT/GLPreBatchConvertor.com"]</InArgument>
+                <InArgument x:TypeArguments="x:String">["cd /custom/deployment/CREDIT;./GLPreBatchConvertor.com"]</InArgument>
               </Assign.Value>
             </Assign>
             <FlowStep.Next>
@@ -383,7 +383,7 @@
                     <OutArgument x:TypeArguments="x:String">[str_BillerCommand]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">["/tsys/prime/deployment/CREDIT/convert_biller/work/convert_input_biller_1.com"]</InArgument>
+                    <InArgument x:TypeArguments="x:String">["cd /tsys/prime/deployment/CREDIT/convert_biller/work;./convert_input_biller_1.com"]</InArgument>
                   </Assign.Value>
                 </Assign>
                 <FlowStep.Next>
@@ -400,7 +400,7 @@
                         <OutArgument x:TypeArguments="x:String">[str_PaymentCommand]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">["/tsys/prime/deployment/CREDIT/convert_payment/work/convert_input_payment_1.com"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">["cd /tsys/prime/deployment/CREDIT/convert_payment/work;./convert_input_payment_1.com"]</InArgument>
                       </Assign.Value>
                     </Assign>
                     <FlowStep.Next>

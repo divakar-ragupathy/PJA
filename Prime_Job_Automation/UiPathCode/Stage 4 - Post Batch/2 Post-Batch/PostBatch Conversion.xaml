@@ -209,7 +209,7 @@
                             <av:PointCollection x:Key="ConnectorLocation">300,963 300,1007</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Notify ICM for File Availability" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence DisplayName="Notify ICM for File Availability" sap:VirtualizedContainerService.HintSize="304,1036" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -230,11 +230,11 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <l:SshExpect Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;CollectorOutgoing&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;ls&quot;+Environment.NewLine]" DisplayName="List Collector O/G" sap:VirtualizedContainerService.HintSize="200,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_8" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysServerPassword).Password]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_Response]" User="[Str_TSysServerUserName]" />
-                            <If Condition="[str_Response.ToLower.Contains(&quot;extractfile_&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;))]" DisplayName="If - Files Available For Collector O/G" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_5">
+                            <l:SshExpect Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;CollectorOutgoing&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;ls&quot;+Environment.NewLine]" DisplayName="List Collector O/G" sap:VirtualizedContainerService.HintSize="484,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_8" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysServerPassword).Password]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_Response]" User="[Str_TSysServerUserName]" />
+                            <If Condition="[str_Response.ToLower.Contains(&quot;extractfile_&quot;)]" DisplayName="If - Files Available For Collector O/G" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -252,7 +252,7 @@
                                 </ui:SendOutlookMail>
                               </If.Then>
                             </If>
-                            <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[&quot;*******************************  Inform ICM availability of files   ****************************************************&quot;+Environment.NewLine+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully informed availability of files to ICM  ***********************************&quot;+Environment.NewLine]">
+                            <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[&quot;*******************************  Inform ICM availability of files   ****************************************************&quot;+Environment.NewLine+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully informed availability of files to ICM  ***********************************&quot;+Environment.NewLine]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -261,15 +261,15 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:AppendLine>
                           </Sequence>
-                          <Sequence DisplayName="Daily REJC / NOCH" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                          <Sequence DisplayName="Daily REJC / NOCH" sap:VirtualizedContainerService.HintSize="262,296" sap2010:WorkflowViewState.IdRef="Sequence_31">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <l:SshExpect Command="[&quot;cd &quot;+dict_PostBatchScriptPath(&quot;Reports&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;ls&quot;+Environment.NewLine]" DisplayName="List Daily REJC / NOCH" sap:VirtualizedContainerService.HintSize="200,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_9" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysServerPassword).Password]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_Response]" User="[Str_TSysServerUserName]" />
-                            <If Condition="[str_Response.Substring(str_Response.LastIndexOf(&quot;R06_CLUBP_PH_RejectedTransactions_&quot;)+len(&quot;R06_CLUBP_PH_RejectedTransactions_&quot;)).ToLower.Contains(&quot;r06_clubp_ph_rejectedtransactions_&quot;)]" DisplayName="If - Files Available For Daily REJC / NOCH" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_16">
+                            <l:SshExpect Command="[&quot;cd &quot;+dict_PostBatchScriptPath(&quot;Reports&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;ls R06_CLUBP_PH_RejectedTransactions_*&quot;+Environment.NewLine]" DisplayName="List Daily REJC / NOCH" sap:VirtualizedContainerService.HintSize="200,22" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="SshExpect_9" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysServerPassword).Password]" Port="[int_TSysServerPort]" Prompt="$" Response="[str_Response]" User="[Str_TSysServerUserName]" />
+                            <If Condition="[str_Response.Substring(str_Response.LastIndexOf(&quot;R06_CLUBP_PH_RejectedTransactions_*&quot;)+len(&quot;R06_CLUBP_PH_RejectedTransactions_*&quot;)).ToLower.Contains(&quot;r06_clubp_ph_rejectedtransactions_&quot;)]" DisplayName="If - Files Available For Daily REJC / NOCH" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_16">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -299,10 +299,10 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:AppendLine>
                           </Sequence>
-                          <Sequence DisplayName="CLM" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                          <Sequence DisplayName="CLM" sap:VirtualizedContainerService.HintSize="262,296" sap2010:WorkflowViewState.IdRef="Sequence_32">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -845,7 +845,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">160,1622 160,1664.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Sequence DisplayName="Corporate File" sap:VirtualizedContainerService.HintSize="304,496" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                                <Sequence DisplayName="Corporate File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="x:String" Name="str_VisaLog" />
                                                     <Variable x:TypeArguments="x:Int32" Name="int_VisaServerPort" />
@@ -1133,7 +1133,7 @@
                 <OutArgument x:TypeArguments="x:String">[str_LogFilePath]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[Dict_ReturnFolderPath("str_LogFilePath")+"\PostBatch"+Now.ToString("yyyyMMddmmss") + ".txt"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[Dict_ReturnFolderPath("str_LogFilePath")+"\PostBatch"+Now.ToString("yyyyMMddHHmmss") + ".txt"]</InArgument>
               </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">

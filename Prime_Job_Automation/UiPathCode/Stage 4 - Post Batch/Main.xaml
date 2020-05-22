@@ -66,7 +66,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="[TPA Post Batch Execution.]&#xA;[This process will execute a set of post batch scripts in tsys server.]&#xA;[Expleo RPA Development Team]" DisplayName="Post Batch Execution" sap:VirtualizedContainerService.HintSize="640,1035" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -272,7 +271,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger Pre-Batch Script Execution in TSys Server" DisplayName="Post-Batch Script Execution" sap:VirtualizedContainerService.HintSize="484,1123" sap2010:WorkflowViewState.IdRef="State_6">
               <State.Entry>
-                <TryCatch DisplayName="Try Pre-Batch Script Execution" sap:VirtualizedContainerService.HintSize="438,597" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                <TryCatch DisplayName="Try Post-Batch Script Execution" sap:VirtualizedContainerService.HintSize="438,597" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -280,7 +279,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Load Pre-Batch WorkFlow" sap:VirtualizedContainerService.HintSize="376,370" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                    <Sequence DisplayName="Load Post-Batch WorkFlow" sap:VirtualizedContainerService.HintSize="376,370" sap2010:WorkflowViewState.IdRef="Sequence_36">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
