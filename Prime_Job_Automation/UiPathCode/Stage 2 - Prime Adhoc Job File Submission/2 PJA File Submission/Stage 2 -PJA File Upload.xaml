@@ -14,10 +14,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1653</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>995,1653</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="26">
+    <scg:List x:TypeArguments="x:String" Capacity="52">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -44,10 +44,11 @@
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>System.Security</x:String>
       <x:String>System.Net</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="42">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -69,6 +70,7 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1005,1488" sap2010:WorkflowViewState.IdRef="Sequence_637">
@@ -120,7 +122,7 @@
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch To Process" Expression="[Str_MenuName.ToLower.Replace(&quot; &quot;,&quot;&quot;).Replace(&quot;-&quot;,&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch To Process" Expression="[Regex.Replace(Str_MenuName.ToLower,&quot;( |-|(|))&quot;,&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="1299,2132" sap2010:WorkflowViewState.IdRef="Switch`1_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -15028,7 +15030,7 @@
                 <x:Reference>__ReferenceID384</x:Reference>
                 <x:Reference>__ReferenceID385</x:Reference>
               </Flowchart>
-              <Flowchart x:Key="ubpenrresponsevecoenrollment" DisplayName="Workflow - UBP enr Response(VECO)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_28">
+              <Flowchart x:Key="ubpenrresponseveco" DisplayName="Workflow - UBP enr Response(VECO)" sap:VirtualizedContainerService.HintSize="1259,1706" sap2010:WorkflowViewState.IdRef="Flowchart_28">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="bool_IsJobs" />
                   <Variable x:TypeArguments="x:Boolean" Name="bool_IsAdHoc" />
@@ -15039,7 +15041,7 @@
                 </Flowchart.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                     <av:Size x:Key="ShapeSize">60,75</av:Size>
                     <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,124.5</av:PointCollection>
@@ -15055,11 +15057,11 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,124.5</av:Point>
-                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                      <av:Size x:Key="ShapeSize">200,51</av:Size>
                       <av:PointCollection x:Key="ConnectorLocation">300,175.5 300,225.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Check &quot;Jobs&quot; Label Exists" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="WindowScope_308" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Check &quot;Jobs&quot; Label Exists" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WindowScope_308" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
                     <ui:WindowScope.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
@@ -15125,11 +15127,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">20,334.5</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:Size x:Key="ShapeSize">200,51</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">120,385.5 120,415.5 280,415.5 280,444.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Double Click &quot;Jobs&quot;" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="WindowScope_309" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
+                          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Double Click &quot;Jobs&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WindowScope_309" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
                             <ui:WindowScope.Body>
                               <ActivityAction x:TypeArguments="x:Object">
                                 <ActivityAction.Argument>
@@ -15175,11 +15177,11 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">180,444.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
                                   <av:PointCollection x:Key="ConnectorLocation">280,495.5 280,536.5</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Check &quot;Ad Hoc&quot; Label Exists" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="WindowScope_310" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
+                              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Check &quot;Ad Hoc&quot; Label Exists" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WindowScope_310" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
                                 <ui:WindowScope.Body>
                                   <ActivityAction x:TypeArguments="x:Object">
                                     <ActivityAction.Argument>
@@ -15245,11 +15247,11 @@
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">60,644.5</av:Point>
-                                          <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
                                           <av:PointCollection x:Key="ConnectorLocation">160,696.5 160,724</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Double Click &quot;Ad Hoc&quot;" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="WindowScope_311" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
+                                      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Double Click &quot;Ad Hoc&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WindowScope_311" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
                                         <ui:WindowScope.Body>
                                           <ActivityAction x:TypeArguments="x:Object">
                                             <ActivityAction.Argument>
@@ -15295,11 +15297,11 @@
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">60,724</av:Point>
-                                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
                                               <av:PointCollection x:Key="ConnectorLocation">260,750 390,750 390,776.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Send HK &quot;UBP Recurring&quot;" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="WindowScope_312" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
+                                          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Send HK &quot;UBP Recurring&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WindowScope_312" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
                                             <ui:WindowScope.Body>
                                               <ActivityAction x:TypeArguments="x:Object">
                                                 <ActivityAction.Argument>
@@ -15377,17 +15379,17 @@
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:Point x:Key="ShapeLocation">60,904</av:Point>
-                                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
                                                       <av:PointCollection x:Key="ConnectorLocation">160,955 160,985 162,985 162,986.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Double Click &quot;UBP Recurring&quot; and Scroll &quot;Right&quot;" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="WindowScope_313" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
+                                                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Double Click &quot;UBP Recurring&quot; and Scroll &quot;Right&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WindowScope_313" InformativeScreenshot="1293dcd5c0c5ef48a9e88a02a87de2c4" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
                                                     <ui:WindowScope.Body>
                                                       <ActivityAction x:TypeArguments="x:Object">
                                                         <ActivityAction.Argument>
                                                           <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                                         </ActivityAction.Argument>
-                                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,942" sap2010:WorkflowViewState.IdRef="Sequence_1033">
+                                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,940" sap2010:WorkflowViewState.IdRef="Sequence_1033">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -15412,7 +15414,7 @@
                                                               </ui:Target>
                                                             </ui:ClickImage.Target>
                                                           </ui:ClickImage>
-                                                          <While DisplayName="Scroll Right until &quot;UBP Enr Response (VECO)&quot; Label is visible" sap:VirtualizedContainerService.HintSize="484,603" sap2010:WorkflowViewState.IdRef="While_24">
+                                                          <While DisplayName="Scroll Right until &quot;UBP Enr Response (VECO)&quot; Label is visible" sap:VirtualizedContainerService.HintSize="484,601" sap2010:WorkflowViewState.IdRef="While_24">
                                                             <While.Variables>
                                                               <Variable x:TypeArguments="x:Int32" Default="0" Name="int_NumOfClicks" />
                                                             </While.Variables>
@@ -15485,12 +15487,12 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:WindowScope>
                                                   <FlowStep.Next>
-                                                    <FlowDecision x:Name="__ReferenceID413" Condition="[bool_IsProcessNameExist]" DisplayName="IsSubLabelExst" sap:VirtualizedContainerService.HintSize="83,87" sap2010:WorkflowViewState.IdRef="FlowDecision_202">
+                                                    <FlowDecision x:Name="__ReferenceID413" Condition="[bool_IsProcessNameExist]" DisplayName="IsSubLabelExst" sap:VirtualizedContainerService.HintSize="82,87" sap2010:WorkflowViewState.IdRef="FlowDecision_202">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           <av:Point x:Key="ShapeLocation">120.5,986.5</av:Point>
-                                                          <av:Size x:Key="ShapeSize">83,87</av:Size>
+                                                          <av:Size x:Key="ShapeSize">82,87</av:Size>
                                                           <av:PointCollection x:Key="TrueConnector">120.5,1030 30,1030 30,1180 60,1180</av:PointCollection>
                                                           <av:PointCollection x:Key="FalseConnector">203.5,1030 233.5,1030 233.5,1029.5 300,1029.5</av:PointCollection>
                                                         </scg:Dictionary>
@@ -16146,11 +16148,11 @@
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <av:Point x:Key="ShapeLocation">300,1004</av:Point>
-                                                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
                                                               <av:PointCollection x:Key="ConnectorLocation">500,1030 929,1030</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_529" Level="Error" Message="[&quot;Error - Unable to identify UBP Response Veco Label&quot;]">
+                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_529" Level="Error" Message="[&quot;Error - Unable to identify UBP Response Veco Label&quot;]">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -16195,11 +16197,11 @@
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:Point x:Key="ShapeLocation">500,794</av:Point>
-                                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
                                                       <av:PointCollection x:Key="ConnectorLocation">700,820 929,820</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_530" Level="Error" Message="[&quot;Error - Unable to identify UBP Recurring Label&quot;]">
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_530" Level="Error" Message="[&quot;Error - Unable to identify UBP Recurring Label&quot;]">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -16246,11 +16248,11 @@
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">300,644.5</av:Point>
-                                          <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
                                           <av:PointCollection x:Key="ConnectorLocation">500,670.5 530,670.5 530,670 929,670</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_531" Level="Error" Message="[&quot;Error - Unable to identify Ad-hoc Label&quot;]">
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_531" Level="Error" Message="[&quot;Error - Unable to identify Ad-hoc Label&quot;]">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -16330,11 +16332,11 @@
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">600,124.5</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
                                       <av:PointCollection x:Key="ConnectorLocation">800,150.5 830,150.5 830,150 919,150</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_532" Level="Error" Message="[&quot;Error - Unable to identify Jobs Label&quot;]">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_532" Level="Error" Message="[&quot;Error - Unable to identify Jobs Label&quot;]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
