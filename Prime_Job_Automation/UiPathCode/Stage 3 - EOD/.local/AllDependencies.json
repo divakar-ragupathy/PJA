@@ -1610,9 +1610,9 @@
     "restore": {
       "projectUniqueName": "EOD",
       "projectName": "EOD",
-      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 3 - EOD-Sathish\\Stage 3 - EOD\\.local",
+      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 3 - EOD\\.local",
       "packagesPath": "C:\\Users\\divakar_r\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 3 - EOD-Sathish\\Stage 3 - EOD\\.local"
+      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 3 - EOD\\.local"
     },
     "frameworks": {
       "net461": {
