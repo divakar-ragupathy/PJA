@@ -39,7 +39,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -178,6 +178,12 @@
                   <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</OutArgument>
                   <OutArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="Dict_ReturnFileFolder">[dict_ReturnFileFolder]</OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Str_108ServerDetails">[str_108ServerDetails]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Str_83ServerDetails">[str_83ServerDetails]</InArgument>
+                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_108Pwd">[pwd_108Pwd]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Str_108UserID">[str_108UserID]</InArgument>
+                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_83Pwd">[pwd_83Pwd]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Str_83UserID">[str_83UserID]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -302,7 +308,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:LogMessage>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Source File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="2 Post-Batch\PostBatch Conversion.xaml">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Post Batch Script" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="2 Post-Batch\PostBatch Conversion.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[pwd_TSysPwd]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[str_TSysServerDetails]</InArgument>
@@ -315,6 +321,12 @@
                           <InArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">[str_ErrorKeywordRegExList]</InArgument>
                           <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</InArgument>
                           <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="Dict_ReturnFolderPath">[dict_ReturnFileFolder]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_83ServerDetails">[str_83ServerDetails]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_83UserName">[str_83UserID]</InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_83Password">[pwd_83Pwd]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_108ServerDetails">[str_108ServerDetails]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_108UserName">[str_108UserID]</InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_108ServerPassword">[pwd_108Pwd]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -428,6 +440,12 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dt_RuleFactory" />
       <Variable x:TypeArguments="x:String" Name="str_ProjectFolderPath" />
       <Variable x:TypeArguments="scg:IDictionary(x:String, x:String)" Name="dict_ReturnFileFolder" />
+      <Variable x:TypeArguments="x:String" Name="str_108ServerDetails" />
+      <Variable x:TypeArguments="x:String" Name="str_83ServerDetails" />
+      <Variable x:TypeArguments="ss:SecureString" Name="pwd_108Pwd" />
+      <Variable x:TypeArguments="x:String" Name="str_108UserID" />
+      <Variable x:TypeArguments="ss:SecureString" Name="pwd_83Pwd" />
+      <Variable x:TypeArguments="x:String" Name="str_83UserID" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

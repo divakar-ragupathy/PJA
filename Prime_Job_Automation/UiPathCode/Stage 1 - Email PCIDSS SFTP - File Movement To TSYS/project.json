@@ -5,12 +5,13 @@
   "dependencies": {
     "BalaReva.ZipUnzip.Activities": "[2019.4.1]",
     "SSHComandInterpreter.Activities": "[1.1.0]",
+    "SSHCommandHandler": "[1.0.1]",
     "System.Binary": "[0.1.0-alpha-001]",
-    "UiPath.Excel.Activities": "[2.7.2]",
+    "UiPath.Excel.Activities": "[2.8.5]",
     "UiPath.FTP.Activities": "[1.0.7346.28183]",
-    "UiPath.Mail.Activities": "[1.8.3-beta.889642]",
-    "UiPath.System.Activities": "[20.2.0-preview]",
-    "UiPath.UIAutomation.Activities": "[20.2.0-preview]",
+    "UiPath.Mail.Activities": "[1.8.5]",
+    "UiPath.System.Activities": "[20.4.0]",
+    "UiPath.UIAutomation.Activities": "[20.4.1]",
     "UiPathTeam.UnZipFile.Activities": "[1.2.0]",
     "WinSCP": "[5.17.5]"
   },

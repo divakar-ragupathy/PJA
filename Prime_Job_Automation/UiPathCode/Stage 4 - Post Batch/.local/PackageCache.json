@@ -38,27 +38,6 @@
     },
     {
       "Package": {
-        "Id": "UiPath.Excel.Activities",
-        "Version": "2.7.2"
-      },
-      "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\closedxml/0.87.1\\lib/net40/ClosedXML.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\csvhelper/2.13.5\\lib/net40-client/CsvHelper.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\documentformat.openxml/2.5.0\\lib/DocumentFormat.OpenXml.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.visualstudio.ole.interop/7.10.6071\\lib/Microsoft.VisualStudio.OLE.Interop.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OOXML.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OpenXml4Net.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OpenXmlFormats.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\sharpziplib/1.0.0\\lib/net45/ICSharpCode.SharpZipLib.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities/2.7.2\\lib/net461/UiPath.Excel.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities/2.7.2\\lib/net461/UiPath.Excel.Activities.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities/2.7.2\\lib/net461/UiPath.Excel.dll"
-      ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities\\2.7.2"
-    },
-    {
-      "Package": {
         "Id": "UiPath.FTP.Activities",
         "Version": "1.0.7346.28183"
       },
@@ -70,25 +49,6 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities\\1.0.7346.28183"
-    },
-    {
-      "Package": {
-        "Id": "UiPath.Mail.Activities",
-        "Version": "1.8.3-beta.889642"
-      },
-      "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\bouncycastle/1.8.5\\lib/BouncyCastle.Crypto.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\interop.domino.dll/1.0.0\\lib/Interop.Domino.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.exchange.webservices/2.2.0\\lib/40/Microsoft.Exchange.WebServices.Auth.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.exchange.webservices/2.2.0\\lib/40/Microsoft.Exchange.WebServices.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.3-beta.889642\\lib/net461/MailKit.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.3-beta.889642\\lib/net461/MimeKit.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.3-beta.889642\\lib/net461/UiPath.Mail.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.3-beta.889642\\lib/net461/UiPath.Mail.Activities.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.3-beta.889642\\lib/net461/UiPath.Mail.dll"
-      ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.3-beta.889642"
     },
     {
       "Package": {
@@ -161,6 +121,17 @@
     },
     {
       "Package": {
+        "Id": "UiPathTeam.SSHConnector.Activities",
+        "Version": "1.0.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\ssh.net/2016.1.0\\lib/net40/Renci.SshNet.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.sshconnector.activities/1.0.2\\lib/net452/UiPathTeam.SSHConnector.Activities.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.sshconnector.activities\\1.0.2"
+    },
+    {
+      "Package": {
         "Id": "UiPathTeam.UnZipFile.Activities",
         "Version": "1.2.0"
       },
@@ -174,14 +145,54 @@
     },
     {
       "Package": {
-        "Id": "UiPathTeam.SSHConnector.Activities",
-        "Version": "1.0.2"
+        "Id": "UiPath.Excel.Activities",
+        "Version": "2.8.5"
       },
       "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\ssh.net/2016.1.0\\lib/net40/Renci.SshNet.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.sshconnector.activities/1.0.2\\lib/net452/UiPathTeam.SSHConnector.Activities.dll"
+        "C:\\Users\\divakar_r\\.nuget\\packages\\closedxml/0.87.1\\lib/net40/ClosedXML.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\csvhelper/2.13.5\\lib/net40-client/CsvHelper.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\documentformat.openxml/2.5.0\\lib/DocumentFormat.OpenXml.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.visualstudio.ole.interop/7.10.6071\\lib/Microsoft.VisualStudio.OLE.Interop.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OOXML.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OpenXml4Net.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OpenXmlFormats.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sharpziplib/1.0.0\\lib/net45/ICSharpCode.SharpZipLib.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities/2.8.5\\lib/net461/UiPath.Excel.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities/2.8.5\\lib/net461/UiPath.Excel.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities/2.8.5\\lib/net461/UiPath.Excel.dll"
       ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.sshconnector.activities\\1.0.2"
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities\\2.8.5"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Mail.Activities",
+        "Version": "1.8.5"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\bouncycastle/1.8.5\\lib/BouncyCastle.Crypto.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\interop.domino.dll/1.0.0\\lib/Interop.Domino.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.exchange.webservices/2.2.0\\lib/40/Microsoft.Exchange.WebServices.Auth.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.exchange.webservices/2.2.0\\lib/40/Microsoft.Exchange.WebServices.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.5\\lib/net461/MailKit.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.5\\lib/net461/MimeKit.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.5\\lib/net461/UiPath.Mail.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.5\\lib/net461/UiPath.Mail.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.5\\lib/net461/UiPath.Mail.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.5"
+    },
+    {
+      "Package": {
+        "Id": "SSHCommandHandler",
+        "Version": "1.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler/1.0.1\\lib/Renci.SshNet.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler/1.0.1\\lib/SSHCommandHandler.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler\\1.0.1"
     }
   ],
   "Conflicts": [],
@@ -320,6 +331,11 @@
       "Version": "1.1.0",
       "Dependencies": []
     },
+    "SSHCommandHandler": {
+      "Id": "SSHCommandHandler",
+      "Version": "1.0.1",
+      "Dependencies": []
+    },
     "System.ValueTuple": {
       "Id": "System.ValueTuple",
       "Version": "4.5.0",
@@ -337,7 +353,7 @@
     },
     "UiPath.Excel.Activities": {
       "Id": "UiPath.Excel.Activities",
-      "Version": "2.7.2",
+      "Version": "2.8.5",
       "Dependencies": [
         {
           "Item1": "ClosedXML",
@@ -381,7 +397,7 @@
     },
     "UiPath.Mail.Activities": {
       "Id": "UiPath.Mail.Activities",
-      "Version": "1.8.3-beta.889642",
+      "Version": "1.8.5",
       "Dependencies": [
         {
           "Item1": "System.ValueTuple",
@@ -717,6 +733,17 @@
     },
     {
       "Package": {
+        "Id": "SSHCommandHandler",
+        "Version": "1.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler\\1.0.1\\lib\\Renci.SshNet.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler\\1.0.1\\lib\\SSHCommandHandler.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler\\1.0.1"
+    },
+    {
+      "Package": {
         "Id": "System.ValueTuple",
         "Version": "4.5.0"
       },
@@ -751,14 +778,14 @@
     {
       "Package": {
         "Id": "UiPath.Excel.Activities",
-        "Version": "2.7.2"
+        "Version": "2.8.5"
       },
       "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities\\2.7.2\\lib\\net461\\UiPath.Excel.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities\\2.7.2\\lib\\net461\\UiPath.Excel.Activities.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities\\2.7.2\\lib\\net461\\UiPath.Excel.dll"
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities\\2.8.5\\lib\\net461\\UiPath.Excel.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities\\2.8.5\\lib\\net461\\UiPath.Excel.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities\\2.8.5\\lib\\net461\\UiPath.Excel.dll"
       ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities\\2.7.2"
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.excel.activities\\2.8.5"
     },
     {
       "Package": {
@@ -775,16 +802,16 @@
     {
       "Package": {
         "Id": "UiPath.Mail.Activities",
-        "Version": "1.8.3-beta.889642"
+        "Version": "1.8.5"
       },
       "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.3-beta.889642\\lib\\net461\\MailKit.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.3-beta.889642\\lib\\net461\\MimeKit.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.3-beta.889642\\lib\\net461\\UiPath.Mail.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.3-beta.889642\\lib\\net461\\UiPath.Mail.Activities.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.3-beta.889642\\lib\\net461\\UiPath.Mail.dll"
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.5\\lib\\net461\\MailKit.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.5\\lib\\net461\\MimeKit.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.5\\lib\\net461\\UiPath.Mail.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.5\\lib\\net461\\UiPath.Mail.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.5\\lib\\net461\\UiPath.Mail.dll"
       ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.3-beta.889642"
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.5"
     },
     {
       "Package": {

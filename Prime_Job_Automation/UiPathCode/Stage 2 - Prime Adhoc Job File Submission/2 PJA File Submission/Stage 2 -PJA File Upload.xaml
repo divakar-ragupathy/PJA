@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>995,1653</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1653</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -70,7 +70,6 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1005,1488" sap2010:WorkflowViewState.IdRef="Sequence_637">
@@ -122,7 +121,7 @@
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch To Process" Expression="[Regex.Replace(Str_MenuName.ToLower,&quot;( |-|(|))&quot;,&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="1299,2132" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch To Process" Expression="[Regex.Replace(Str_MenuName.ToLower,&quot;( |-|\(|\))&quot;,&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Switch`1_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -16792,7 +16791,7 @@
                                 </ActivityFunc>
                               </p:CVScope.OCREngine>
                               <p:CVScope.Target>
-                                <ui:Target Element="{x:Null}" InformativeScreenshot="aa113066cb4963da6bafd1ab9b04db0e" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*- 192.168.16.165:*' /&gt;&lt;wnd cls='UIContainerClass' /&gt;" WaitForReady="INTERACTIVE">
+                                <ui:Target Element="{x:Null}" InformativeScreenshot="aa113066cb4963da6bafd1ab9b04db0e" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;&lt;wnd cls='UIContainerClass' /&gt;" WaitForReady="INTERACTIVE">
                                   <ui:Target.ClippingRegion>
                                     <ui:Region Rectangle="161, 58, 1173, 585" />
                                   </ui:Target.ClippingRegion>
@@ -16817,7 +16816,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">210.5,1023 210.5,1073</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <p:CVScope ApiKey="[Str_MicrosoftCVKey]" ContinueOnError="True" DelayBefore="2000" DisplayName="Business Date Popup window" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CVScope_375" Server="[Str_MicrosoftCVUrl]" Version="V1">
+                                <p:CVScope ApiKey="[Str_MicrosoftCVKey]" ContinueOnError="True" DelayBefore="2000" DisplayName="Business Date Popup window" sap:VirtualizedContainerService.HintSize="434,297" sap2010:WorkflowViewState.IdRef="CVScope_375" Server="[Str_MicrosoftCVUrl]" Version="V1">
                                   <p:CVScope.Body>
                                     <ActivityAction x:TypeArguments="x:Object">
                                       <ActivityAction.Argument>
@@ -16896,7 +16895,7 @@
                                     </ActivityFunc>
                                   </p:CVScope.OCREngine>
                                   <p:CVScope.Target>
-                                    <ui:Target Element="{x:Null}" InformativeScreenshot="4421bfc693c3b94d14964a591df64622" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*- 192.168.16.165:*' /&gt;&lt;wnd cls='UIContainerClass' /&gt;" WaitForReady="INTERACTIVE">
+                                    <ui:Target Element="{x:Null}" InformativeScreenshot="4421bfc693c3b94d14964a591df64622" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;&lt;wnd cls='UIContainerClass' /&gt;" WaitForReady="INTERACTIVE">
                                       <ui:Target.ClippingRegion>
                                         <ui:Region Rectangle="376, 246, 948, 447" />
                                       </ui:Target.ClippingRegion>
