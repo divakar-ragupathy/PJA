@@ -1744,8 +1744,8 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "SSH",
-      "projectName": "SSH",
+      "projectUniqueName": "RemoteDesktopUtility",
+      "projectName": "RemoteDesktopUtility",
       "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\4. RemoteDesktop\\.local",
       "packagesPath": "C:\\Users\\divakar_r\\.nuget\\packages\\",
       "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 2 - Prime Adhoc Job File Submission\\4. RemoteDesktop\\.local"

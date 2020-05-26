@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1232</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>951,825</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -73,18 +73,17 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="798,1067" sap2010:WorkflowViewState.IdRef="Sequence_85">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="476,660" sap2010:WorkflowViewState.IdRef="Sequence_85">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Identify Adhoc Process from File Name" sap:VirtualizedContainerService.HintSize="756,1169" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+    <TryCatch DisplayName="Try Identify Adhoc Process from File Name" sap:VirtualizedContainerService.HintSize="434,568" sap2010:WorkflowViewState.IdRef="TryCatch_12">
       <TryCatch.Try>
-        <Flowchart DisplayName="Identify Adhoc Process Workflow" sap:VirtualizedContainerService.HintSize="718,942" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart DisplayName="Identify Adhoc Process Workflow" sap:VirtualizedContainerService.HintSize="634,900" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_ConversionFolderList" />
             <Variable x:TypeArguments="sd:DataTable" Name="dt_UniqueConversionFolderList" />
@@ -107,13 +106,12 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
               <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
-              <x:Double x:Key="Height">905.5</x:Double>
+              <x:Double x:Key="Height">864.07999999999993</x:Double>
               <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,109</av:PointCollection>
-              <x:Double x:Key="Width">684</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID9</x:Reference>
+            <x:Reference>__ReferenceID8</x:Reference>
           </Flowchart.StartNode>
           <FlowStep x:Name="__ReferenceID0">
             <sap:WorkflowViewStateService.ViewState>
@@ -137,7 +135,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
             <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID6">
+              <FlowStep x:Name="__ReferenceID5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">200,574.02</av:Point>
@@ -147,15 +145,9 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RDP Workflow File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="4. RemoteDesktop\RemoteDesktop.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="Str_RdpIP">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PJRemoteIp" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="Str_RdpUserId">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PJRemoteUserId" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_RdpPwd">
-                      <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_PJRemotePassword" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Str_RdpIP">[str_PJRemoteIp]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Str_RdpUserId">[str_PJRemoteUserId]</InArgument>
+                    <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_RdpPwd">[pwd_PJRemotePassword]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -169,7 +161,7 @@
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">200,684.5</av:Point>
                         <av:Size x:Key="ShapeSize">200,51</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">300,735.5 300,779</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">300,735.5 300,794.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DT_RuleFactory]" DisplayName="For Each PJUpload Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_31">
@@ -337,41 +329,29 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEachRow>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID5">
+                      <FlowStep x:Name="__ReferenceID4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">200,779</av:Point>
-                            <av:Size x:Key="ShapeSize">200,22</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">300,801 300,854.5</av:PointCollection>
+                            <av:Point x:Key="ShapeLocation">200,794.5</av:Point>
+                            <av:Size x:Key="ShapeSize">200,51</av:Size>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="mstsc" />
-                        <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID4">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">200,854.5</av:Point>
-                                <av:Size x:Key="ShapeSize">200,51</av:Size>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Return Files Workflow File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="3. Return File\ReturnFiles.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFileLocalPath">[Str_ReturnFilePath]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="Str_TypeOfReturnFiles">BeforeEOD</InArgument>
-                                <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_ReturnFilesRuleFactory">[Dt_RuleFactory]</InArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:InvokeWorkflowFile>
-                          </FlowStep>
-                        </FlowStep.Next>
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Return Files Workflow File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="3. Return File\ReturnFiles.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFileLocalPath">[Str_ReturnFilePath]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="Str_TypeOfReturnFiles">BeforeEOD</InArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_ReturnFilesRuleFactory">[Dt_RuleFactory]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InvokeWorkflowFile>
                       </FlowStep>
                     </FlowStep.Next>
                   </FlowStep>
@@ -404,7 +384,7 @@
               <x:Reference>__ReferenceID0</x:Reference>
             </FlowStep.Next>
           </FlowStep>
-          <FlowStep x:Name="__ReferenceID9">
+          <FlowStep x:Name="__ReferenceID8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">200,109</av:Point>
@@ -424,7 +404,7 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="TPA_TSysPrimeAppNormalUserCredential" DisplayName="Get Credential - TPA Normal User" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[pwd_TPNUser]" Username="[str_TPNUserID]" />
                 <FlowStep.Next>
-                  <FlowStep x:Name="__ReferenceID8">
+                  <FlowStep x:Name="__ReferenceID7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">200,229</av:Point>
@@ -443,7 +423,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:GetRobotAsset>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID7">
+                      <FlowStep x:Name="__ReferenceID6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">200,289</av:Point>
@@ -468,14 +448,13 @@
           <x:Reference>__ReferenceID5</x:Reference>
           <x:Reference>__ReferenceID6</x:Reference>
           <x:Reference>__ReferenceID7</x:Reference>
-          <x:Reference>__ReferenceID8</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="722,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,406" sap2010:WorkflowViewState.IdRef="Catch`1_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -483,7 +462,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="376,399" sap2010:WorkflowViewState.IdRef="Sequence_86">
+            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="376,337" sap2010:WorkflowViewState.IdRef="Sequence_86">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -498,7 +477,6 @@
                   <InArgument x:TypeArguments="x:String">[Exception.Message]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="mstsc" />
               <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;An unexpected error occured in Pre-Batch script execution. The error is &quot;+Str_ExceptionMessage+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="ERROR: An unexpected error" To="[Str_RpaOpsEmailID]">
                 <ui:SendOutlookMail.Files>
                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
@@ -514,6 +492,9 @@
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="mstsc" />
+      </TryCatch.Finally>
     </TryCatch>
   </Sequence>
 </Activity>
