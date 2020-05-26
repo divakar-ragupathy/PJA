@@ -574,7 +574,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">300,1202 300,1256.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Convert Embossing &amp; Transfer" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Sequence DisplayName="Convert Embossing &amp; Transfer" sap:VirtualizedContainerService.HintSize="763,1691" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="str_ConvertEmbossLog" />
                                   </Sequence.Variables>
@@ -591,7 +591,7 @@
                                       <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <s:executeSSHCommands Command="[&quot;cd &quot; + Dict_PostBatchScriptPath(&quot;fd_EmbossInput&quot;) +&quot;;mkdir -p &quot;+&quot;Archive/&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;;mv &quot;+&quot; *.* &quot;+Dict_PostBatchScriptPath(&quot;EmbossInput&quot;)+&quot;/Archive/&quot;+Now.ToString(&quot;yyyyMMdd&quot;)]" DisplayName="Archive Old Emboss Files" sap:VirtualizedContainerService.HintSize="721,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_14" Response="[str_Response]" ServerHost="[str_TSysServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysServerPassword).Password]" ServerPort="[int_TSysServerPort]" ServerUserName="[Str_TSysServerUserName]" />
+                                  <s:executeSSHCommands Command="[&quot;cd &quot; + Dict_PostBatchScriptPath(&quot;fd_EmbossInput&quot;) +&quot;;mkdir -p &quot;+&quot;Archive/&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;;mv &quot;+&quot; *.* &quot;+Dict_PostBatchScriptPath(&quot;fd_EmbossInput&quot;)+&quot;/Archive/&quot;+Now.ToString(&quot;yyyyMMdd&quot;)]" DisplayName="Archive Old Emboss Files" sap:VirtualizedContainerService.HintSize="721,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_14" Response="[str_Response]" ServerHost="[str_TSysServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysServerPassword).Password]" ServerPort="[int_TSysServerPort]" ServerUserName="[Str_TSysServerUserName]" />
                                   <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="721,60" sap2010:WorkflowViewState.IdRef="Assign_73">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
