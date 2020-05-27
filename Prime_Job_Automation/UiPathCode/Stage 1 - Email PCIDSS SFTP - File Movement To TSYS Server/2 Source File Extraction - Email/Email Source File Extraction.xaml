@@ -6,10 +6,10 @@
     <x:Property Name="Str_RpaOpsEmailID" Type="InArgument(x:String)" />
     <x:Property Name="Str_ProjectFolderPath" Type="InArgument(x:String)" />
     <x:Property Name="Str_ProcessedFileLookupPath" Type="InArgument(x:String)" />
-    <x:Property Name="Pwd_TSysPwd" Type="InArgument(ss:SecureString)" />
-    <x:Property Name="Str_TSysUserID" Type="InArgument(x:String)" />
-    <x:Property Name="Str_TSysServerDetails" Type="InArgument(x:String)" />
     <x:Property Name="Str_ArchiveFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="Pwd_TSysDBServerPwd" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="Str_TSysDBServerUserID" Type="InArgument(x:String)" />
+    <x:Property Name="Str_TSysDBServerDetails" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -76,6 +76,7 @@
       <AssemblyReference>Renci.SshNet</AssemblyReference>
       <AssemblyReference>System.Buffers.Primitives</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -129,7 +130,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">210,450 369,450</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Extracting Source File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
+            <Sequence DisplayName="Extracting Source File" sap:VirtualizedContainerService.HintSize="1033,2069" sap2010:WorkflowViewState.IdRef="Sequence_22">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dt_EmailRuleFactory" />
               </Sequence.Variables>
@@ -138,7 +139,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:FilterDataTable DataTable="[Dt_RuleFactory]" DisplayName="Filter Rule Factory for Email" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="340,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_EmailRuleFactory]" SelectColumnsMode="Keep">
+              <ui:FilterDataTable DataTable="[Dt_RuleFactory]" DisplayName="Filter Rule Factory for Email" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="991,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_EmailRuleFactory]" SelectColumnsMode="Keep">
                 <ui:FilterDataTable.Filters>
                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                     <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -163,13 +164,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:FilterDataTable>
-              <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each - Emails" sap:VirtualizedContainerService.HintSize="340,660" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[obj_EmailList]">
+              <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each - Emails" sap:VirtualizedContainerService.HintSize="991,1886" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[obj_EmailList]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="snm:MailMessage">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Identify Right Subject" sap:VirtualizedContainerService.HintSize="304,526" sap2010:WorkflowViewState.IdRef="Sequence_144">
+                    <Sequence DisplayName="Identify Right Subject" sap:VirtualizedContainerService.HintSize="955,1752" sap2010:WorkflowViewState.IdRef="Sequence_144">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Boolean" Name="IsSubjMatch" />
                         <Variable x:TypeArguments="x:String" Name="str_NewSubject" />
@@ -180,7 +181,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Set IsSubMatch to Default" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+                      <Assign DisplayName="Set IsSubMatch to Default" sap:VirtualizedContainerService.HintSize="913,60" sap2010:WorkflowViewState.IdRef="Assign_29">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Boolean">[IsSubjMatch]</OutArgument>
                         </Assign.To>
@@ -188,7 +189,7 @@
                           <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Clean Subject" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_70">
+                      <Assign DisplayName="Clean Subject" sap:VirtualizedContainerService.HintSize="913,60" sap2010:WorkflowViewState.IdRef="Assign_70">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[str_NewSubject]</OutArgument>
                         </Assign.To>
@@ -196,20 +197,20 @@
                           <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(mail.Subject.ToString.ToLower,"( |-|_)","")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Sequence DisplayName="Looping Email" sap:VirtualizedContainerService.HintSize="262,234" sap2010:WorkflowViewState.IdRef="Sequence_114">
+                      <Sequence DisplayName="Looping Email" sap:VirtualizedContainerService.HintSize="913,1460" sap2010:WorkflowViewState.IdRef="Sequence_114">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_EmailRuleFactory]" DisplayName="For Each Email Subject Rule" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_EmailRuleFactory]" DisplayName="For Each Email Subject Rule" sap:VirtualizedContainerService.HintSize="871,1277" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rule" />
                               </ActivityAction.Argument>
-                              <If Condition="[str_NewSubject.Contains(rule(&quot;Mail_Subject_Keyword&quot;).ToString.ToLower)]" DisplayName="If Email Subject Match with Keyword" sap:VirtualizedContainerService.HintSize="484,544" sap2010:WorkflowViewState.IdRef="If_60">
+                              <If Condition="[str_NewSubject.Contains(rule(&quot;Mail_Subject_Keyword&quot;).ToString.ToLower)]" DisplayName="If Email Subject Match with Keyword" sap:VirtualizedContainerService.HintSize="821,1129" sap2010:WorkflowViewState.IdRef="If_60">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -217,14 +218,14 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="Email Subject Check" sap:VirtualizedContainerService.HintSize="304,396" sap2010:WorkflowViewState.IdRef="Sequence_183">
+                                  <Sequence DisplayName="Email Subject Check" sap:VirtualizedContainerService.HintSize="676,981" sap2010:WorkflowViewState.IdRef="Sequence_183">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_104" Level="Info" Message="[&quot;Email Subject &quot; +mail.Subject.ToString + &quot; received on &quot; + mail.Headers(&quot;Date&quot;) +&quot; is matched with keyword &quot; + rule(&quot;Mail_Subject_Keyword&quot;).ToString]">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,51" sap2010:WorkflowViewState.IdRef="LogMessage_104" Level="Info" Message="[&quot;Email Subject &quot; +mail.Subject.ToString + &quot; received on &quot; + mail.Headers(&quot;Date&quot;) +&quot; is matched with keyword &quot; + rule(&quot;Mail_Subject_Keyword&quot;).ToString]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -232,13 +233,13 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:LogMessage>
-                                    <Flowchart DisplayName="Email Subject Check Flow" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="Flowchart_7">
+                                    <Flowchart DisplayName="Email Subject Check Flow" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_7">
                                       <Flowchart.Variables>
                                         <Variable x:TypeArguments="x:Boolean" Name="bool_IsFileValid" />
                                       </Flowchart.Variables>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                                           <av:Size x:Key="ShapeSize">60,75</av:Size>
@@ -324,7 +325,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">450,453 450,494.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Sequence DisplayName="Save Attachments" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_182">
+                                                <Sequence DisplayName="Save Attachments" sap:VirtualizedContainerService.HintSize="760,1917" sap2010:WorkflowViewState.IdRef="Sequence_182">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="s:String[]" Name="arr_FileArrayStage1" />
                                                     <Variable x:TypeArguments="s:String[]" Name="arr_FileArrayStage2" />
@@ -335,7 +336,7 @@
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:SaveMailAttachments Attachments="{x:Null}" sap2010:Annotation.AnnotationText="This will download mail all attachments + any image embedded in the body of the email" DisplayName="Save Email Attachments" FolderPath="[Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="307,123" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_6" Message="[mail]">
+                                                  <ui:SaveMailAttachments Attachments="{x:Null}" sap2010:Annotation.AnnotationText="This will download mail all attachments + any image embedded in the body of the email" DisplayName="Save Email Attachments" FolderPath="[Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="718,123" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_6" Message="[mail]">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -344,7 +345,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:SaveMailAttachments>
-                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="307,51" sap2010:WorkflowViewState.IdRef="LogMessage_106" Level="Info" Message="[&quot;The attachments are saved from email subject &quot; + mail.Subject]">
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="718,51" sap2010:WorkflowViewState.IdRef="LogMessage_106" Level="Info" Message="[&quot;The attachments are saved from email subject &quot; + mail.Subject]">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -352,7 +353,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:LogMessage>
-                                                  <Assign DisplayName="Set - Filenames Array Stage1" sap:VirtualizedContainerService.HintSize="307,60" sap2010:WorkflowViewState.IdRef="Assign_61">
+                                                  <Assign DisplayName="Set - Filenames Array Stage1" sap:VirtualizedContainerService.HintSize="718,60" sap2010:WorkflowViewState.IdRef="Assign_61">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="s:String[]">[arr_FileArrayStage1]</OutArgument>
                                                     </Assign.To>
@@ -360,7 +361,7 @@
                                                       <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Str_ProjectFolderPath+rule("Staging_Folder").ToString)]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File Before UnZip" sap:VirtualizedContainerService.HintSize="307,51" sap2010:WorkflowViewState.IdRef="ForEach`1_34" Values="[arr_FileArrayStage1]">
+                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File Before UnZip" sap:VirtualizedContainerService.HintSize="718,51" sap2010:WorkflowViewState.IdRef="ForEach`1_34" Values="[arr_FileArrayStage1]">
                                                     <ui:ForEach.Body>
                                                       <ActivityAction x:TypeArguments="x:String">
                                                         <ActivityAction.Argument>
@@ -455,7 +456,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:ForEach>
-                                                  <Assign DisplayName="Set - Filenames Array Stage2" sap:VirtualizedContainerService.HintSize="307,60" sap2010:WorkflowViewState.IdRef="Assign_62">
+                                                  <Assign DisplayName="Set - Filenames Array Stage2" sap:VirtualizedContainerService.HintSize="718,60" sap2010:WorkflowViewState.IdRef="Assign_62">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="s:String[]">[arr_FileArrayStage2]</OutArgument>
                                                     </Assign.To>
@@ -463,20 +464,20 @@
                                                       <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Str_ProjectFolderPath+rule("Staging_Folder").ToString)]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File After UnZip" sap:VirtualizedContainerService.HintSize="307,200" sap2010:WorkflowViewState.IdRef="ForEach`1_35" Values="[arr_FileArrayStage2]">
+                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File After UnZip" sap:VirtualizedContainerService.HintSize="718,1280" sap2010:WorkflowViewState.IdRef="ForEach`1_35" Values="[arr_FileArrayStage2]">
                                                     <ui:ForEach.Body>
                                                       <ActivityAction x:TypeArguments="x:String">
                                                         <ActivityAction.Argument>
                                                           <DelegateInArgument x:TypeArguments="x:String" Name="fileItemS2" />
                                                         </ActivityAction.Argument>
-                                                        <Sequence DisplayName="Source File Format Validation" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_181">
+                                                        <Sequence DisplayName="Source File Format Validation" sap:VirtualizedContainerService.HintSize="682,1146" sap2010:WorkflowViewState.IdRef="Sequence_181">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <Assign DisplayName="Set File Validation Flag" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_63">
+                                                          <Assign DisplayName="Set File Validation Flag" sap:VirtualizedContainerService.HintSize="640,60" sap2010:WorkflowViewState.IdRef="Assign_63">
                                                             <Assign.To>
                                                               <OutArgument x:TypeArguments="x:Boolean">[bool_IsFileValid]</OutArgument>
                                                             </Assign.To>
@@ -484,7 +485,7 @@
                                                               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                                             </Assign.Value>
                                                           </Assign>
-                                                          <Assign DisplayName="Set File Name Pattern" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_64">
+                                                          <Assign DisplayName="Set File Name Pattern" sap:VirtualizedContainerService.HintSize="640,60" sap2010:WorkflowViewState.IdRef="Assign_64">
                                                             <Assign.To>
                                                               <OutArgument x:TypeArguments="x:String">[str_fileNamePattern]</OutArgument>
                                                             </Assign.To>
@@ -492,13 +493,13 @@
                                                               <InArgument x:TypeArguments="x:String">[rule("Source_Filename_Pattern").ToString.ToLower]</InArgument>
                                                             </Assign.Value>
                                                           </Assign>
-                                                          <Flowchart DisplayName="File Name Validation Flow" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="Flowchart_6">
+                                                          <Flowchart DisplayName="File Name Validation Flow" sap:VirtualizedContainerService.HintSize="640,854" sap2010:WorkflowViewState.IdRef="Flowchart_6">
                                                             <Flowchart.Variables>
                                                               <Variable x:TypeArguments="x:String" Name="str_AttachmentErrorMsg" />
                                                             </Flowchart.Variables>
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                                                                 <av:Size x:Key="ShapeSize">60,75</av:Size>
@@ -651,14 +652,14 @@
                                                                               <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                          <Sequence DisplayName="Move to TSys &amp; Archive Attachment" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_180">
+                                                                          <Sequence DisplayName="Move to TSys &amp; Archive Attachment" sap:VirtualizedContainerService.HintSize="391,543" sap2010:WorkflowViewState.IdRef="Sequence_180">
                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
-                                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_109" Level="Info" Message="[&quot;Invoking file transfer to TSys&quot;]">
+                                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="349,51" sap2010:WorkflowViewState.IdRef="LogMessage_109" Level="Info" Message="[&quot;Invoking file transfer to TSys&quot;]">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -666,26 +667,44 @@
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                             </ui:LogMessage>
-                                                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke File Transfer To TSys" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="9 File Transmit To TSYS\File Transmit To TSYS.xaml">
+                                                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke File Transfer To TSys" sap:VirtualizedContainerService.HintSize="349,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="9 File Transmit To TSYS\File Transmit To TSYS.xaml">
                                                                               <ui:InvokeWorkflowFile.Arguments>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TsysFolder">[rule("TSYS_Location").ToString]</InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsMailId">[Str_RpaOpsEmailID]</InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileListLookUpPath">[Str_ProcessedFileLookupPath]</InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerUserName">[Str_TSysUserID]</InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[Str_TSysServerDetails]</InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_StagingFile">[fileItemS2.ToString]</InArgument>
-                                                                                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysServerPassword">[Pwd_TSysPwd]</InArgument>
-                                                                                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsFileValid">[bool_IsFileValid]</OutArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[Str_ProjectFolderPath]</InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TsysFolder">
+                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="rule(&quot;TSYS_Location&quot;).ToString" />
+                                                                                </InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsMailId">
+                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
+                                                                                </InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileListLookUpPath">
+                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ProcessedFileLookupPath" />
+                                                                                </InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_StagingFile">
+                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="fileItemS2.ToString" />
+                                                                                </InArgument>
+                                                                                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsFileValid">
+                                                                                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsFileValid" />
+                                                                                </OutArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
+                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ProjectFolderPath" />
+                                                                                </InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserName">
+                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysDBServerUserID" />
+                                                                                </InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
+                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysDBServerDetails" />
+                                                                                </InArgument>
+                                                                                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPassword">
+                                                                                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysDBServerPwd" />
+                                                                                </InArgument>
                                                                               </ui:InvokeWorkflowFile.Arguments>
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                             </ui:InvokeWorkflowFile>
-                                                                            <If Condition="[bool_IsFileValid]" DisplayName="If IsFile Valid" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_61">
+                                                                            <If Condition="[bool_IsFileValid]" DisplayName="If IsFile Valid" sap:VirtualizedContainerService.HintSize="349,51" sap2010:WorkflowViewState.IdRef="If_61">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -722,7 +741,7 @@
                                                                                 </Sequence>
                                                                               </If.Then>
                                                                             </If>
-                                                                            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Archive Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Str_ProjectFolderPath+str_ArchiveFolderPath &amp; rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c)(rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c).Length-1)&amp;&quot;\&quot;&amp;now.ToString(&quot;ddMMyyyy&quot;)]">
+                                                                            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Archive Folder" sap:VirtualizedContainerService.HintSize="349,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Str_ProjectFolderPath+str_ArchiveFolderPath &amp; rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c)(rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c).Length-1)&amp;&quot;\&quot;&amp;now.ToString(&quot;ddMMyyyy&quot;)]">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -730,7 +749,7 @@
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                             </ui:CreateDirectory>
-                                                                            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Str_ProjectFolderPath+str_ArchiveFolderPath &amp; rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c)(rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c).Length-1)&amp;&quot;\&quot;&amp;now.ToString(&quot;ddMMyyyy&quot;)]" DisplayName="Archive Attachment" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="True" Path="[fileItemS2.ToString]">
+                                                                            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Str_ProjectFolderPath+str_ArchiveFolderPath &amp; rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c)(rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c).Length-1)&amp;&quot;\&quot;&amp;now.ToString(&quot;ddMMyyyy&quot;)]" DisplayName="Archive Attachment" sap:VirtualizedContainerService.HintSize="349,51" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="True" Path="[fileItemS2.ToString]">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -861,7 +880,7 @@
                                       <x:Reference>__ReferenceID15</x:Reference>
                                       <x:Reference>__ReferenceID16</x:Reference>
                                     </Flowchart>
-                                    <Assign DisplayName="Set IsSubMatch to True" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_69">
+                                    <Assign DisplayName="Set IsSubMatch to True" sap:VirtualizedContainerService.HintSize="634,60" sap2010:WorkflowViewState.IdRef="Assign_69">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Boolean">[IsSubjMatch]</OutArgument>
                                       </Assign.To>
@@ -869,7 +888,7 @@
                                         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:Break sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_2" />
+                                    <ui:Break sap:VirtualizedContainerService.HintSize="634,22" sap2010:WorkflowViewState.IdRef="Break_2" />
                                   </Sequence>
                                 </If.Then>
                               </If>
@@ -877,12 +896,12 @@
                           </ui:ForEachRow.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:ForEachRow>
-                        <If Condition="[IsSubjMatch = False]" DisplayName="If Subject Not Match" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_44">
+                        <If Condition="[IsSubjMatch = False]" DisplayName="If Subject Not Match" sap:VirtualizedContainerService.HintSize="871,51" sap2010:WorkflowViewState.IdRef="If_44">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
