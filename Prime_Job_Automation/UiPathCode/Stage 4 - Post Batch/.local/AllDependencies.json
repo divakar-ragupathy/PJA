@@ -987,6 +987,18 @@
           "lib/net461/UiPathTeam.UnZipFile.Activities.dll": {},
           "lib/net461/UiPathTeam.UnZipFile.dll": {}
         }
+      },
+      "WinSCP/5.17.6": {
+        "type": "package",
+        "compile": {
+          "lib/net40/_._": {}
+        },
+        "runtime": {
+          "lib/net40/WinSCPnet.dll": {}
+        },
+        "build": {
+          "build/_._": {}
+        }
       }
     }
   },
@@ -1937,6 +1949,23 @@
         "uipathteam.unzipfile.activities.1.2.0.nupkg.sha512",
         "uipathteam.unzipfile.activities.nuspec"
       ]
+    },
+    "WinSCP/5.17.6": {
+      "sha512": "u5sw/LpkNwj2L2uwOd3d2Bj/z4pBSjY2OD7PK6+bOvTpWPvs1xkmOszXFUbU3I90yV8ZOBcYh2o24kY69MzAuA==",
+      "type": "package",
+      "path": "winscp/5.17.6",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/WinSCP.targets",
+        "lib/net40/WinSCPnet.dll",
+        "lib/netstandard2.0/WinSCPnet.dll",
+        "tools/WinSCP.exe",
+        "winscp.5.17.6.nupkg.sha512",
+        "winscp.nuspec",
+        "winscp64.png"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -1952,7 +1981,8 @@
       "UiPath.System.Activities >= 20.2.0-preview <= 20.2.0-preview",
       "UiPath.UIAutomation.Activities >= 20.2.0-preview <= 20.2.0-preview",
       "UiPathTeam.SSHConnector.Activities >= 1.0.2 <= 1.0.2",
-      "UiPathTeam.UnZipFile.Activities >= 1.2.0 <= 1.2.0"
+      "UiPathTeam.UnZipFile.Activities >= 1.2.0 <= 1.2.0",
+      "WinSCP >= 5.17.6 <= 5.17.6"
     ]
   },
   "packageFolders": {
@@ -2023,9 +2053,23 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[1.2.0, 1.2.0]"
+          },
+          "WinSCP": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[5.17.6, 5.17.6]"
           }
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU3034",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'WinSCP 5.17.6' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
+      "libraryId": "WinSCP"
+    }
+  ]
 }

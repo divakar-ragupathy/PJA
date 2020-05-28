@@ -25,6 +25,17 @@
     },
     {
       "Package": {
+        "Id": "SSHCommandHandler",
+        "Version": "1.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler/1.0.1\\lib/Renci.SshNet.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler/1.0.1\\lib/SSHCommandHandler.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler\\1.0.1"
+    },
+    {
+      "Package": {
         "Id": "System.Binary",
         "Version": "0.1.0-alpha-001"
       },
@@ -57,54 +68,6 @@
     },
     {
       "Package": {
-        "Id": "UiPath.FTP.Activities",
-        "Version": "1.0.7346.28183"
-      },
-      "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\fluentftp/19.1.2\\lib/net45/FluentFTP.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\ssh.net/2016.1.0\\lib/net40/Renci.SshNet.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.Activities.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.dll"
-      ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities\\1.0.7346.28183"
-    },
-    {
-      "Package": {
-        "Id": "UiPathTeam.UnZipFile.Activities",
-        "Version": "1.2.0"
-      },
-      "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities/1.2.0\\lib/net461/UiPathTeam.UnZipFile.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities/1.2.0\\lib/net461/UiPathTeam.UnZipFile.Activities.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities/1.2.0\\lib/net461/UiPathTeam.UnZipFile.dll"
-      ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities\\1.2.0"
-    },
-    {
-      "Package": {
-        "Id": "WinSCP",
-        "Version": "5.17.5"
-      },
-      "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\winscp/5.17.5\\lib/net40/WinSCPnet.dll"
-      ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\winscp\\5.17.5"
-    },
-    {
-      "Package": {
-        "Id": "SSHCommandHandler",
-        "Version": "1.0.1"
-      },
-      "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler/1.0.1\\lib/Renci.SshNet.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler/1.0.1\\lib/SSHCommandHandler.dll"
-      ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler\\1.0.1"
-    },
-    {
-      "Package": {
         "Id": "UiPath.Excel.Activities",
         "Version": "2.8.5"
       },
@@ -126,6 +89,20 @@
     },
     {
       "Package": {
+        "Id": "UiPath.FTP.Activities",
+        "Version": "1.0.7346.28183"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\fluentftp/19.1.2\\lib/net45/FluentFTP.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\ssh.net/2016.1.0\\lib/net40/Renci.SshNet.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities\\1.0.7346.28183"
+    },
+    {
+      "Package": {
         "Id": "UiPath.Mail.Activities",
         "Version": "1.8.5"
       },
@@ -142,6 +119,31 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.5\\lib/net461/UiPath.Mail.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.5"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.System.Activities",
+        "Version": "20.4.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\csvhelper/2.13.5\\lib/net40-client/CsvHelper.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.aspnet.signalr.client/2.4.0\\lib/net45/Microsoft.AspNet.SignalR.Client.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.rest.clientruntime/2.3.20\\lib/net461/Microsoft.Rest.ClientRuntime.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Docking.Wpf.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Ribbon.Wpf.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Shared.Wpf.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.SyntaxEditor.Wpf.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Text.Addons.DotNet.Wpf.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Text.LLParser.Wpf.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Text.Wpf.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Wizard.Wpf.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/UiPath.OrchestratorClient.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/UiPath.System.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/UiPath.System.Activities.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities\\20.4.0"
     },
     {
       "Package": {
@@ -184,38 +186,36 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.uiautomation.activities/20.4.1\\lib/net461/UiPath.Wizards.dll",
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.AzureComputerVision.dll",
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.Core.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.dll",
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.GoogleCloud.dll",
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.Microsoft.dll",
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.MicrosoftCloud.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.Tesseract.dll"
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.Tesseract.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.uiautomation.activities\\20.4.1"
     },
     {
       "Package": {
-        "Id": "UiPath.System.Activities",
-        "Version": "20.4.0"
+        "Id": "UiPathTeam.UnZipFile.Activities",
+        "Version": "1.2.0"
       },
       "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\csvhelper/2.13.5\\lib/net40-client/CsvHelper.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.aspnet.signalr.client/2.4.0\\lib/net45/Microsoft.AspNet.SignalR.Client.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.rest.clientruntime/2.3.20\\lib/net461/Microsoft.Rest.ClientRuntime.dll",
         "C:\\Users\\divakar_r\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Docking.Wpf.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Ribbon.Wpf.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Shared.Wpf.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.SyntaxEditor.Wpf.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Text.Addons.DotNet.Wpf.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Text.LLParser.Wpf.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Text.Wpf.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/ActiproSoftware.Wizard.Wpf.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/UiPath.OrchestratorClient.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/UiPath.System.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities/20.4.0\\lib/net461/UiPath.System.Activities.dll"
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities/1.2.0\\lib/net461/UiPathTeam.UnZipFile.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities/1.2.0\\lib/net461/UiPathTeam.UnZipFile.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities/1.2.0\\lib/net461/UiPathTeam.UnZipFile.dll"
       ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.system.activities\\20.4.0"
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.unzipfile.activities\\1.2.0"
+    },
+    {
+      "Package": {
+        "Id": "WinSCP",
+        "Version": "5.17.5"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\winscp/5.17.5\\lib/net40/WinSCPnet.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\winscp\\5.17.5"
     }
   ],
   "Conflicts": [

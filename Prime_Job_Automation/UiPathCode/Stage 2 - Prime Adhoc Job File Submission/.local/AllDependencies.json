@@ -280,6 +280,16 @@
           "lib/LinuxComandExecutorActivities.dll": {}
         }
       },
+      "SSHCommandHandler/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/_._": {}
+        },
+        "runtime": {
+          "lib/Renci.SshNet.dll": {},
+          "lib/SSHCommandHandler.dll": {}
+        }
+      },
       "System.IO.Abstractions/3.0.10": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1421,6 +1431,20 @@
         "sshcomandinterpreter.activities.nuspec"
       ]
     },
+    "SSHCommandHandler/1.0.1": {
+      "sha512": "Ar9tS3eIxHZFkSrr+FmWt0h6e5CDtLNnuiSDXG4+VzbRZl/i4jys8dq66/6UeWqdcjXusTqTwNoutXxg42+tgg==",
+      "type": "package",
+      "path": "sshcommandhandler/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "lib/Renci.SshNet.dll",
+        "lib/Renci.SshNet.xml",
+        "lib/SSHCommandHandler.dll",
+        "lib/SSHCommandHandler.pdb",
+        "sshcommandhandler.1.0.1.nupkg.sha512",
+        "sshcommandhandler.nuspec"
+      ]
+    },
     "System.IO.Abstractions/3.0.10": {
       "sha512": "15N2bCO8DLGzrnDyPwQ0653bTCmyJW4Ajw6yeFkJR74VptVvnGINcU5ibX4isxGkvi+YevK7JyVyjiJh6X91kA==",
       "type": "package",
@@ -2013,6 +2037,7 @@
     ".NETFramework,Version=v4.6.1": [
       "BalaReva.ZipUnzip.Activities >= 2019.4.1 <= 2019.4.1",
       "SSHComandInterpreter.Activities >= 1.1.0 <= 1.1.0",
+      "SSHCommandHandler >= 1.0.1 <= 1.0.1",
       "UiPath.Database.Activities >= 1.3.7369.25200 <= 1.3.7369.25200",
       "UiPath.Excel.Activities >= 2.8.5 <= 2.8.5",
       "UiPath.FTP.Activities >= 1.0.7346.28183 <= 1.0.7346.28183",
@@ -2045,6 +2070,11 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[1.1.0, 1.1.0]"
+          },
+          "SSHCommandHandler": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.1, 1.0.1]"
           },
           "UiPath.Database.Activities": {
             "include": "Runtime",

@@ -5559,9 +5559,9 @@
     "restore": {
       "projectUniqueName": "Prime Job Automation Email SFTP and PCIDSS",
       "projectName": "Prime Job Automation Email SFTP and PCIDSS",
-      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 1 - Email PCIDSS SFTP - File Movement To TSYS\\.local",
+      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 1 - Email PCIDSS SFTP - File Movement To TSYS Server\\.local",
       "packagesPath": "C:\\Users\\divakar_r\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 1 - Email PCIDSS SFTP - File Movement To TSYS\\.local"
+      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 1 - Email PCIDSS SFTP - File Movement To TSYS Server\\.local"
     },
     "frameworks": {
       "net461": {

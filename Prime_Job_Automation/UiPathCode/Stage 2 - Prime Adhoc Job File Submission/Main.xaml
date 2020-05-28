@@ -131,7 +131,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the PJA upload activity starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="484,1015" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the PJA upload activity starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
         <TryCatch DisplayName="Try Check all Pre-Requisites are Exist" sap:VirtualizedContainerService.HintSize="438,597" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -166,36 +166,16 @@
               </ui:LogMessage>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PreRunCheck workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="1 PreRunCheck\PreRunCheck.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
-                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_MicrosoftCVUrl" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_MicrosoftCVKey" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ReturnFilePath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysDBServerDetails" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysDBServerUserID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">
-                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysDBServerPwd" />
-                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">[str_MicrosoftCVUrl]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">[str_MicrosoftCVKey]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">[str_ReturnFilePath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">[str_TSysDBServerDetails]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">[str_TSysDBServerUserID]</OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">[pwd_TSysDBServerPwd]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -287,7 +267,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger PJA File Submission process" DisplayName="PJA File Submission" sap:VirtualizedContainerService.HintSize="257,132" sap2010:WorkflowViewState.IdRef="State_6">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger PJA File Submission process" DisplayName="PJA File Submission" sap:VirtualizedContainerService.HintSize="484,1028" sap2010:WorkflowViewState.IdRef="State_6">
               <State.Entry>
                 <TryCatch DisplayName="Try PJA File Submission" sap:VirtualizedContainerService.HintSize="438,637" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                   <sap:WorkflowViewStateService.ViewState>
@@ -322,16 +302,36 @@
                       </ui:LogMessage>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PJA File Upload" sap:VirtualizedContainerService.HintSize="354,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="2 PJA File Submission\Stage 1 -PJA File Upload.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_RuleFactory">[dt_RuleFactory]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysServerDetails">[str_TSysDBServerDetails]</InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysPwd">[pwd_TSysDBServerPwd]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysUserID">[str_TSysDBServerUserID]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">[str_MicrosoftCVUrl]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">[str_MicrosoftCVKey]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">[str_ReturnFilePath]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_RuleFactory">
+                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_MicrosoftCVUrl" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_MicrosoftCVKey" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ReturnFilePath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysDBServerDetails" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">
+                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysDBServerPwd" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysDBServerUserID" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">

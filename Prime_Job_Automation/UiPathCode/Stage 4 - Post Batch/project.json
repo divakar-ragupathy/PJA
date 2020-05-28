@@ -13,7 +13,8 @@
     "UiPath.System.Activities": "[20.2.0-preview]",
     "UiPath.UIAutomation.Activities": "[20.2.0-preview]",
     "UiPathTeam.SSHConnector.Activities": "[1.0.2]",
-    "UiPathTeam.UnZipFile.Activities": "[1.2.0]"
+    "UiPathTeam.UnZipFile.Activities": "[1.2.0]",
+    "WinSCP": "[5.17.6]"
   },
   "webServices": [],
   "schemaVersion": "4.0",
