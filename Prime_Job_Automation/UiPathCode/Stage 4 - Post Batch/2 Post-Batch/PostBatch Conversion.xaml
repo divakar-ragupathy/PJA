@@ -39,7 +39,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>951,2641</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>951,2601</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PostBatch_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -588,7 +588,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">300,1162 300,1226.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Convert Embossing &amp; Transfer" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Sequence DisplayName="Convert Embossing &amp; Transfer" sap:VirtualizedContainerService.HintSize="763,1908" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="str_SeqNum" />
                                   </Sequence.Variables>
@@ -597,7 +597,7 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                  <Assign sap:VirtualizedContainerService.HintSize="721,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Boolean">[bool_IsNoError]</OutArgument>
                                     </Assign.To>
@@ -605,8 +605,8 @@
                                       <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <s:executeSSHCommands Command="[&quot;cd &quot; + Dict_PostBatchScriptPath(&quot;fd_EmbossInput&quot;) +&quot;;mkdir -p &quot;+&quot;Archive/&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;;mv &quot;+&quot; *.* &quot;+Dict_PostBatchScriptPath(&quot;fd_EmbossInput&quot;)+&quot;/Archive/&quot;+Now.ToString(&quot;yyyyMMdd&quot;)]" DisplayName="Archive Old Emboss Files" sap:VirtualizedContainerService.HintSize="549,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_14" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                                  <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_73">
+                                  <s:executeSSHCommands Command="[&quot;cd &quot; + Dict_PostBatchScriptPath(&quot;fd_EmbossInput&quot;) +&quot;;mkdir -p &quot;+&quot;Archive/&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;;mv &quot;+&quot; *.* &quot;+Dict_PostBatchScriptPath(&quot;fd_EmbossInput&quot;)+&quot;/Archive/&quot;+Now.ToString(&quot;yyyyMMdd&quot;)]" DisplayName="Archive Old Emboss Files" sap:VirtualizedContainerService.HintSize="721,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_14" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                                  <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="721,60" sap2010:WorkflowViewState.IdRef="Assign_73">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
                                     </Assign.To>
@@ -614,7 +614,7 @@
                                       <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:AppendLine DisplayName="Append Log file" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="549,51" sap2010:WorkflowViewState.IdRef="AppendLine_15" Text="[&quot;*******************************  Archived Old Emboss files *************************************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully archived Old Emboss files ************************************************&quot;+Environment.NewLine]">
+                                  <ui:AppendLine DisplayName="Append Log file" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="721,51" sap2010:WorkflowViewState.IdRef="AppendLine_15" Text="[&quot;*******************************  Archived Old Emboss files *************************************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully archived Old Emboss files ************************************************&quot;+Environment.NewLine]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -622,8 +622,8 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:AppendLine>
-                                  <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_EodEmbossFiles&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;cp -p *Credit* NEW* RES* RNW* RPL* &quot;+dict_PostBatchScriptPath(&quot;fd_EmbossInput&quot;)+&quot;; cd &quot;+dict_PostBatchScriptPath(&quot;fd_RunEmboss&quot;)+&quot;;./&quot;+Path.GetFileName(dict_PostBatchScriptPath(&quot;fl_RunEmboss&quot;))+&quot;;grep -i ora-0 *.*&quot;]" DisplayName="Copy &amp; Run EOD Emboss Files" sap:VirtualizedContainerService.HintSize="549,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_15" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                                  <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_74">
+                                  <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_EodEmbossFiles&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;cp -p *Credit* NEW* RES* RNW* RPL* &quot;+dict_PostBatchScriptPath(&quot;fd_EmbossInput&quot;)+&quot;; cd &quot;+dict_PostBatchScriptPath(&quot;fd_RunEmboss&quot;)+&quot;;./&quot;+Path.GetFileName(dict_PostBatchScriptPath(&quot;fl_RunEmboss&quot;))+&quot;;grep -i ora-0 *.*&quot;]" DisplayName="Copy &amp; Run EOD Emboss Files" sap:VirtualizedContainerService.HintSize="721,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_15" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                                  <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="721,60" sap2010:WorkflowViewState.IdRef="Assign_74">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
                                     </Assign.To>
@@ -631,7 +631,7 @@
                                       <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:AppendLine DisplayName="Append Log file" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="549,51" sap2010:WorkflowViewState.IdRef="AppendLine_16" Text="[&quot;*******************************  Copied &amp; Run new emboss files *********************************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully Copied &amp; converted new emboss files **************************************&quot;+Environment.NewLine]">
+                                  <ui:AppendLine DisplayName="Append Log file" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="721,51" sap2010:WorkflowViewState.IdRef="AppendLine_16" Text="[&quot;*******************************  Copied &amp; Run new emboss files *********************************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully Copied &amp; converted new emboss files **************************************&quot;+Environment.NewLine]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -639,7 +639,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:AppendLine>
-                                  <If Condition="[Regex.IsMatch(str_Response.ToLower,Str_ErrorKeywordRegExList.ToLower)]" DisplayName="If - Oracle Errors" sap:VirtualizedContainerService.HintSize="549,482" sap2010:WorkflowViewState.IdRef="If_12">
+                                  <If Condition="[Regex.IsMatch(str_Response.ToLower,Str_ErrorKeywordRegExList.ToLower)]" DisplayName="If - Oracle Errors" sap:VirtualizedContainerService.HintSize="721,1210" sap2010:WorkflowViewState.IdRef="If_12">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -660,27 +660,27 @@
                                       </ui:SendOutlookMail>
                                     </If.Then>
                                     <If.Else>
-                                      <Sequence DisplayName="Copy Emboss and Non-Emboss files to PCIDSS Server" sap:VirtualizedContainerService.HintSize="304,334" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                      <Sequence DisplayName="Copy Emboss and Non-Emboss files to PCIDSS Server" sap:VirtualizedContainerService.HintSize="476,1062" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSys Server Session" sap:VirtualizedContainerService.HintSize="262,51" Host="[Str_TSysDBServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_1" Password="[New Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" Port="[Int_TSysDBServerPort]" UseSftp="True" Username="[Str_TSysDBServerUserID]">
+                                        <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSys Server Session" sap:VirtualizedContainerService.HintSize="434,870" Host="[Str_TSysDBServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_1" Password="[New Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" Port="[Int_TSysDBServerPort]" UseSftp="True" Username="[Str_TSysDBServerUserID]">
                                           <p:WithFtpSession.Body>
                                             <ActivityAction x:TypeArguments="p:IFtpSession">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Download Embossing files" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                              <Sequence DisplayName="Download Embossing files" sap:VirtualizedContainerService.HintSize="242,784" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="scg:IEnumerable(p:FtpObjectInfo)" Name="list_EmbossingFiles" />
                                                   <Variable x:TypeArguments="scg:IEnumerable(p:FtpObjectInfo)" Name="list_NonEmbossingFiles" />
                                                 </Sequence.Variables>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
@@ -708,7 +708,7 @@
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="x:Object" Name="file" />
                                                       </ActivityAction.Argument>
-                                                      <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Emboss Files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_1" LocalPath="[Dict_ReturnFolderPath(&quot;Str_EmbossingPath&quot;)]" Overwrite="True" Recursive="False" RemotePath="[file.ToString()]" />
+                                                      <p:DownloadFiles ContinueOnError="False" Create="True" DisplayName="Download Emboss Files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_1" LocalPath="[Dict_PostBatchScriptPath(&quot;fd_EmbossingPcidssFolder&quot;)+&quot;\&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))]" Overwrite="True" Recursive="False" RemotePath="[file.ToString()]" />
                                                     </ActivityAction>
                                                   </ui:ForEach.Body>
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -733,7 +733,7 @@
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="x:Object" Name="file" />
                                                       </ActivityAction.Argument>
-                                                      <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Non Emboss files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_2" LocalPath="[Dict_ReturnFolderPath(&quot;Str_NonEmbossingPath&quot;)]" Overwrite="True" Recursive="False" RemotePath="[file.ToString()]" />
+                                                      <p:DownloadFiles ContinueOnError="False" Create="True" DisplayName="Download Non Emboss files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_2" LocalPath="[Dict_PostBatchScriptPath(&quot;fd_NonEmbossingPcidssFolder&quot;)+&quot;\&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(CInt(str_SeqNum.Trim)-1).ToString.PadLeft(4,CChar(&quot;0&quot;))]" Overwrite="True" Recursive="False" RemotePath="[file.ToString()]" />
                                                     </ActivityAction>
                                                   </ui:ForEach.Body>
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -756,204 +756,12 @@
                                           </p:WithFtpSession.Body>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </p:WithFtpSession>
-                                        <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="PCIDSS Server Session" sap:VirtualizedContainerService.HintSize="262,51" Host="[Str_PcidssServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_7" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_PcidssServerPwd).Password]" Port="[Int_PcidssServerPort]" UseSftp="True" Username="[Str_PcidssServerUserID]">
-                                          <p:WithFtpSession.Body>
-                                            <ActivityAction x:TypeArguments="p:IFtpSession">
-                                              <ActivityAction.Argument>
-                                                <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
-                                              </ActivityAction.Argument>
-                                              <Sequence DisplayName="Upload Embossing File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_25">
-                                                <Sequence.Variables>
-                                                  <Variable x:TypeArguments="x:String" Name="str_NonEmbossSftpPath" />
-                                                  <Variable x:TypeArguments="x:String" Name="str_EmbossSftpPath" />
-                                                  <Variable x:TypeArguments="s1:String[]" Name="arr_FilesArray" />
-                                                </Sequence.Variables>
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <Assign DisplayName="Set Emboss Sftp Path" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_48">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:String">[str_EmbossSftpPath]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:String">["/Embossing Return"]</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                                <Assign DisplayName="Set Non Emboss Sftp Path" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_47">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:String">[str_NonEmbossSftpPath]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:String">["/Non Embossing Return"]</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim sessionOptions As New WinSCP.SessionOptions&#xD;&#xA;&#xD;&#xA;            With sessionOptions&#xD;&#xA;                .Protocol = WinSCP.Protocol.Sftp&#xD;&#xA;                .HostName = str_ServerHost&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.PortNumber = str_ServerPort&#xD;&#xA;                .UserName = str_UserID&#xD;&#xA;                .Password = pwd_Pwd&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.GiveUpSecurityAndAcceptAnySshHostKey = True&#xD;&#xA;            End With&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;Using session As New WinSCP.Session&#xD;&#xA;' Connect&#xD;&#xA;&#x9;session.Open(sessionOptions)&#xD;&#xA;&#xD;&#xA;' Create folder&#xD;&#xA;&#x9;session.CreateDirectory(str_TargetFilePath)&#xD;&#xA;End Using" DisplayName="Create Embossing Folder in SFTP" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
-                                                  <ui:InvokeCode.Arguments>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="str_ServerHost">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PcidssServerHost" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="str_UserID">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PcidssServerUserID" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="pwd_Pwd">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="New System.Net.NetworkCredential(&quot;&quot;,Pwd_PcidssServerPwd).Password" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="str_TargetFilePath">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PcidssServerHost+str_EmbossSftpPath + &quot;/&quot; +Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:Int32" x:Key="str_ServerPort">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Int_PcidssServerPort" />
-                                                    </InArgument>
-                                                  </ui:InvokeCode.Arguments>
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:InvokeCode>
-                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Created folder &quot; + Str_PcidssServerHost+str_EmbossSftpPath + &quot;/&quot; +Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))]">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:LogMessage>
-                                                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim sessionOptions As New WinSCP.SessionOptions&#xD;&#xA;&#xD;&#xA;            With sessionOptions&#xD;&#xA;                .Protocol = WinSCP.Protocol.Sftp&#xD;&#xA;                .HostName = str_ServerHost&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.PortNumber = str_ServerPort&#xD;&#xA;                .UserName = str_UserID&#xD;&#xA;                .Password = pwd_Pwd&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.GiveUpSecurityAndAcceptAnySshHostKey = True&#xD;&#xA;            End With&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;Using session As New WinSCP.Session&#xD;&#xA;' Connect&#xD;&#xA;&#x9;session.Open(sessionOptions)&#xD;&#xA;&#xD;&#xA;' Create folder&#xD;&#xA;&#x9;session.CreateDirectory(str_TargetFilePath)&#xD;&#xA;End Using" DisplayName="Create Non Embossing Folder in SFTP" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
-                                                  <ui:InvokeCode.Arguments>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="str_ServerHost">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PcidssServerHost" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="str_UserID">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PcidssServerUserID" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="pwd_Pwd">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="New System.Net.NetworkCredential(&quot;&quot;,Pwd_PcidssServerPwd).Password" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="str_TargetFilePath">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PcidssServerHost+str_NonEmbossSftpPath + &quot;/&quot; +Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:Int32" x:Key="str_ServerPort">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Int_PcidssServerPort" />
-                                                    </InArgument>
-                                                  </ui:InvokeCode.Arguments>
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:InvokeCode>
-                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Created folder &quot; + Str_PcidssServerHost+str_NonEmbossSftpPath + &quot;/&quot; +Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))]">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:LogMessage>
-                                                <Assign DisplayName="Get - Embossing Files" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_88">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="s1:String[]">[arr_FilesArray]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="s1:String[]">[Directory.GetFiles(Dict_ReturnFolderPath("Str_EmbossingPath").ToString)]</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Embossing File Processing" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[arr_FilesArray]">
-                                                  <ui:ForEach.Body>
-                                                    <ActivityAction x:TypeArguments="x:String">
-                                                      <ActivityAction.Argument>
-                                                        <DelegateInArgument x:TypeArguments="x:String" Name="file" />
-                                                      </ActivityAction.Argument>
-                                                      <Sequence DisplayName="Upload Embossing files" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_53">
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                        <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload Emboss files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_2" LocalPath="[file.ToString()]" Overwrite="True" Recursive="False" RemotePath="[str_EmbossSftpPath+ &quot;/&quot; +Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))]" />
-                                                        <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[file.ToString()]" />
-                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Uploaded Embossing file &quot; + file.ToString()]">
-                                                          <sap:WorkflowViewStateService.ViewState>
-                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                            </scg:Dictionary>
-                                                          </sap:WorkflowViewStateService.ViewState>
-                                                        </ui:LogMessage>
-                                                      </Sequence>
-                                                    </ActivityAction>
-                                                  </ui:ForEach.Body>
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:ForEach>
-                                                <Assign DisplayName="Get - Non Embossing Files" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_89">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="s1:String[]">[arr_FilesArray]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="s1:String[]">[Directory.GetFiles(Dict_ReturnFolderPath("Str_NonEmbossingPath").ToString)]</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Non Embossing File Processing" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[arr_FilesArray]">
-                                                  <ui:ForEach.Body>
-                                                    <ActivityAction x:TypeArguments="x:String">
-                                                      <ActivityAction.Argument>
-                                                        <DelegateInArgument x:TypeArguments="x:String" Name="file" />
-                                                      </ActivityAction.Argument>
-                                                      <Sequence DisplayName="Upload Non Embossing files" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_54">
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                        <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload Non Emboss files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_3" LocalPath="[file.ToString()]" Overwrite="True" Recursive="False" RemotePath="[str_NonEmbossSftpPath+ &quot;/&quot; +Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(cint(str_SeqNum.Trim)-1).ToString.PadLeft(4,cchar(&quot;0&quot;))]" />
-                                                        <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delete_2" Path="[file.ToString()]" />
-                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Uploaded Non Embossing file &quot;+file.ToString()]">
-                                                          <sap:WorkflowViewStateService.ViewState>
-                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                            </scg:Dictionary>
-                                                          </sap:WorkflowViewStateService.ViewState>
-                                                        </ui:LogMessage>
-                                                      </Sequence>
-                                                    </ActivityAction>
-                                                  </ui:ForEach.Body>
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:ForEach>
-                                              </Sequence>
-                                            </ActivityAction>
-                                          </p:WithFtpSession.Body>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </p:WithFtpSession>
-                                        <Assign DisplayName="Set Error Flag" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                        <Assign DisplayName="Set Error Flag" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_17">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Boolean">[bool_IsNoError]</OutArgument>
                                           </Assign.To>
@@ -994,8 +802,8 @@
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_StatementFiles&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;ls&quot;]" DisplayName="Get Statement List" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_16" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                                          <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_75">
+                                          <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_StatementFiles&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;ls&quot;]" DisplayName="Get Statement List" sap:VirtualizedContainerService.HintSize="908,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_16" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                                          <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="908,60" sap2010:WorkflowViewState.IdRef="Assign_75">
                                             <Assign.To>
                                               <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
                                             </Assign.To>
@@ -1003,7 +811,7 @@
                                               <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                                             </Assign.Value>
                                           </Assign>
-                                          <Assign DisplayName="Set UBIX Esoa Mail id" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_49">
+                                          <Assign DisplayName="Set UBIX Esoa Mail id" sap:VirtualizedContainerService.HintSize="908,60" sap2010:WorkflowViewState.IdRef="Assign_49">
                                             <Assign.To>
                                               <OutArgument x:TypeArguments="x:String">[str_UbixEsoaMailId]</OutArgument>
                                             </Assign.To>
@@ -1011,15 +819,15 @@
                                               <InArgument x:TypeArguments="x:String">eisagayap@unionbankph.com</InArgument>
                                             </Assign.Value>
                                           </Assign>
-                                          <If Condition="[str_Response.ToLower.Contains(&quot;r06_clubp_ph_ubpissuerstatementfile_all_&quot;)]" DisplayName="If - Statement Exist" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_13">
+                                          <If Condition="[str_Response.ToLower.Contains(&quot;r06_clubp_ph_ubpissuerstatementfile_all_&quot;)]" DisplayName="If - Statement Exist" sap:VirtualizedContainerService.HintSize="908,1026" sap2010:WorkflowViewState.IdRef="If_13">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <If.Then>
-                                              <Sequence DisplayName="Upload to UBIX and Esoa" sap:VirtualizedContainerService.HintSize="304,396" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                              <Sequence DisplayName="Upload to UBIX and Esoa" sap:VirtualizedContainerService.HintSize="663,878" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="str_UbixFilePath" />
                                                 </Sequence.Variables>
@@ -1029,7 +837,7 @@
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSys Server Session" sap:VirtualizedContainerService.HintSize="262,51" Host="[Str_TSysDBServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_3" Password="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" Port="[Int_TSysDBServerPort]" UseSftp="True" Username="[Str_TSysDBServerUserID]">
+                                                <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSys Server Session" sap:VirtualizedContainerService.HintSize="621,51" Host="[Str_TSysDBServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_3" Password="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" Port="[Int_TSysDBServerPort]" UseSftp="True" Username="[Str_TSysDBServerUserID]">
                                                   <p:WithFtpSession.Body>
                                                     <ActivityAction x:TypeArguments="p:IFtpSession">
                                                       <ActivityAction.Argument>
@@ -1045,7 +853,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </p:WithFtpSession>
-                                                <Assign DisplayName="Set Ubix file Path" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_84">
+                                                <Assign DisplayName="Set Ubix file Path" sap:VirtualizedContainerService.HintSize="621,60" sap2010:WorkflowViewState.IdRef="Assign_84">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[str_UbixFilePath]</OutArgument>
                                                   </Assign.To>
@@ -1053,11 +861,11 @@
                                                     <InArgument x:TypeArguments="x:String">[Dict_ReturnFolderPath("str_StatementPath")+"\UBIX_"+Now.ToString("yyyyMMdd")+".zip"]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <bz:ZipFilesCls DisplayName="Zip - Statement Files" FolderFilesPath="[{dict_ReturnFolderPath(&quot;str_StatementPath&quot;)}]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="ZipFilesCls_1" Password="[Now.ToString(&quot;yyyyMMdd&quot;)+&quot;@&quot;]" ZipFile="[str_UbixFilePath]" />
-                                                <If Condition="[New System.IO.FileInfo(str_UbixFilePath).Length&gt;0]" DisplayName="If Ubix file size &gt;0" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_25">
+                                                <bz:ZipFilesCls DisplayName="Zip - Statement Files" FolderFilesPath="[{dict_ReturnFolderPath(&quot;str_StatementPath&quot;)}]" sap:VirtualizedContainerService.HintSize="621,22" sap2010:WorkflowViewState.IdRef="ZipFilesCls_1" Password="[Now.ToString(&quot;yyyyMMdd&quot;)+&quot;@&quot;]" ZipFile="[str_UbixFilePath]" />
+                                                <If Condition="[New System.IO.FileInfo(str_UbixFilePath).Length&gt;1]" DisplayName="If Ubix file size &gt;1kb" sap:VirtualizedContainerService.HintSize="621,533" sap2010:WorkflowViewState.IdRef="If_25">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
@@ -1115,7 +923,7 @@
                                               </ui:SendOutlookMail>
                                             </If.Else>
                                           </If>
-                                          <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="AppendLine_8" Text="[&quot;*******************************  Execution started for Statements  *****************************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully informed to UBIX and ESOA for files availabilty  *************************&quot;+Environment.NewLine]">
+                                          <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="908,51" sap2010:WorkflowViewState.IdRef="AppendLine_8" Text="[&quot;*******************************  Execution started for Statements  *****************************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully informed to UBIX and ESOA for files availabilty  *************************&quot;+Environment.NewLine]">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1216,7 +1024,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">140,1632 140,1682</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Sequence DisplayName="Corporate File" sap:VirtualizedContainerService.HintSize="529,727" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                                <Sequence DisplayName="Corporate File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="x:String" Name="str_VisaLog" />
                                                   </Sequence.Variables>
