@@ -17,7 +17,7 @@
     <x:Property Name="Int_PcidssServerPort" Type="InArgument(x:Int32)" />
     <x:Property Name="Pwd_PcidssServerPwd" Type="InArgument(ss:SecureString)" />
     <x:Property Name="Str_PcidssServerUserID" Type="InArgument(x:String)" />
-    <x:Property Name="Str_ProjectFolderPath" Type="OutArgument(x:String)" />
+    <x:Property Name="Str_ProjectFolderPath" Type="InArgument(x:String)" />
   </x:Members>
   <this:Main.Str_TSysAppServerHost>
     <InArgument x:TypeArguments="x:String" />
@@ -129,20 +129,20 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
               <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,134.5</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,110</av:PointCollection>
               <x:Double x:Key="Height">1036.5999999999767</x:Double>
               <x:Double x:Key="Width">697</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID11</x:Reference>
+            <x:Reference>__ReferenceID12</x:Reference>
           </Flowchart.StartNode>
           <FlowStep x:Name="__ReferenceID1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">200,654.5</av:Point>
+                <av:Point x:Key="ShapeLocation">200,664.5</av:Point>
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">400,680 516.5,680 516.5,736.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">400,690 516.5,690 516.5,736.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Payment Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="[Str_ProjectFolderPath+&quot;UiPathCode\General Utility\SSHCommandInterpreter.xaml&quot;]">
@@ -201,7 +201,7 @@
                             <av:PointCollection x:Key="ConnectorLocation">300,905.5 300,944.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Biller Script" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="[Str_ProjectFolderPath+&quot;UiPathCode\General Utility\SSHCommandInterpreter.xaml&quot;]">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Biller Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="[Str_ProjectFolderPath+&quot;UiPathCode\General Utility\SSHCommandInterpreter.xaml&quot;]">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
                             <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
@@ -269,9 +269,9 @@
           <FlowStep x:Name="__ReferenceID8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">200,424.5</av:Point>
+                <av:Point x:Key="ShapeLocation">200,474.5</av:Point>
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">400,450 520,450 520,536.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">400,500 520,500 520,546.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GL Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="[Str_ProjectFolderPath+&quot;UiPathCode\General Utility\SSHCommandInterpreter.xaml&quot;]">
@@ -298,19 +298,19 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <av:Point x:Key="ShapeLocation">480,536.5</av:Point>
+                    <av:Point x:Key="ShapeLocation">480,546.5</av:Point>
                     <av:Size x:Key="ShapeSize">80,87</av:Size>
-                    <av:PointCollection x:Key="FalseConnector">560,580 670,580 670,970 640,970</av:PointCollection>
-                    <av:PointCollection x:Key="TrueConnector">480,580 400,580</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">560,590 670,590 670,970 640,970</av:PointCollection>
+                    <av:PointCollection x:Key="TrueConnector">480,590 400,590</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <FlowDecision.True>
                   <FlowStep x:Name="__ReferenceID5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">200,554.5</av:Point>
+                        <av:Point x:Key="ShapeLocation">200,564.5</av:Point>
                         <av:Size x:Key="ShapeSize">200,51</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">300,605.5 300,654.5</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">300,615.5 300,664.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info" Message="[&quot;GL Script execution completed&quot;]">
@@ -341,21 +341,21 @@
           <FlowStep x:Name="__ReferenceID9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">200,307</av:Point>
+                <av:Point x:Key="ShapeLocation">200,357</av:Point>
                 <av:Size x:Key="ShapeSize">200,66</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">300,373 300,424.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">300,423 300,474.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Transfer GL Files" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_87">
+            <Sequence DisplayName="Transfer GL Files" sap:VirtualizedContainerService.HintSize="476,1479" sap2010:WorkflowViewState.IdRef="Sequence_87">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Temp Folder" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Str_ProjectFolderPath+&quot;\Temp&quot;]">
+              <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Temp Folder" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Str_ProjectFolderPath+&quot;\Temp&quot;]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -366,7 +366,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                     </ActivityAction.Argument>
-                    <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download SM files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_1" LocalPath="[Str_ProjectFolderPath+&quot;\Temp&quot;]" Overwrite="False" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_SMPcidss&quot;)]" />
+                    <p:DownloadFiles ContinueOnError="False" Create="True" DisplayName="Download SM files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_1" LocalPath="[Str_ProjectFolderPath+&quot;\Temp&quot;]" Overwrite="True" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_SMPcidss&quot;)]" />
                   </ActivityAction>
                 </p:WithFtpSession.Body>
                 <sap:WorkflowViewStateService.ViewState>
@@ -376,13 +376,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </p:WithFtpSession>
-              <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSysAppServer Session" sap:VirtualizedContainerService.HintSize="434,711" Host="[Str_TSysAppServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_1" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_TSysAppServerPwd).Password]" Port="[Int_TSysAppServerPort]" UseSftp="True" Username="[Str_TSysAppServerUserID]">
+              <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSysAppServer Session" sap:VirtualizedContainerService.HintSize="434,995" Host="[Str_TSysAppServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_1" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_TSysAppServerPwd).Password]" Port="[Int_TSysAppServerPort]" UseSftp="True" Username="[Str_TSysAppServerUserID]">
                 <p:WithFtpSession.Body>
                   <ActivityAction x:TypeArguments="p:IFtpSession">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Upload From Network" sap:VirtualizedContainerService.HintSize="304,625" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                    <Sequence DisplayName="Upload From Network" sap:VirtualizedContainerService.HintSize="349,909" sap2010:WorkflowViewState.IdRef="Sequence_89">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="s:String[]" Name="arr_FilesArray" />
                       </Sequence.Variables>
@@ -392,7 +392,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Get - Robinson Files" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_54">
+                      <Assign DisplayName="Get - Robinson Files" sap:VirtualizedContainerService.HintSize="307,60" sap2010:WorkflowViewState.IdRef="Assign_54">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:String[]">[arr_FilesArray]</OutArgument>
                         </Assign.To>
@@ -400,13 +400,13 @@
                           <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Dict_PreBatchScriptPath("fd_RobinsonPcidss").ToString)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="File Processing" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arr_FilesArray]">
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="File Processing" sap:VirtualizedContainerService.HintSize="307,51" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arr_FilesArray]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:String">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                             </ActivityAction.Argument>
-                            <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload Robinson files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_1" LocalPath="[file.ToString()]" Overwrite="False" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
+                            <p:UploadFiles ContinueOnError="False" Create="True" DisplayName="Upload Robinson files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_1" LocalPath="[file.ToString()]" Overwrite="True" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
                           </ActivityAction>
                         </ui:ForEach.Body>
                         <sap:WorkflowViewStateService.ViewState>
@@ -416,7 +416,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEach>
-                      <Assign DisplayName="Get - BPI Files" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_55">
+                      <Assign DisplayName="Get - BPI Files" sap:VirtualizedContainerService.HintSize="307,60" sap2010:WorkflowViewState.IdRef="Assign_55">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:String[]">[arr_FilesArray]</OutArgument>
                         </Assign.To>
@@ -424,23 +424,23 @@
                           <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Dict_PreBatchScriptPath("fd_BpiPcidss").ToString)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="File Processing" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arr_FilesArray]">
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="File Processing" sap:VirtualizedContainerService.HintSize="307,193" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arr_FilesArray]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:String">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                             </ActivityAction.Argument>
-                            <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload BPI files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_2" LocalPath="[file.ToString()]" Overwrite="False" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
+                            <p:UploadFiles ContinueOnError="False" Create="True" DisplayName="Upload BPI files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_2" LocalPath="[file.ToString()]" Overwrite="True" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
                           </ActivityAction>
                         </ui:ForEach.Body>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEach>
-                      <Assign DisplayName="Get - SM Files" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_56">
+                      <Assign DisplayName="Get - SM Files" sap:VirtualizedContainerService.HintSize="307,60" sap2010:WorkflowViewState.IdRef="Assign_56">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:String[]">[arr_FilesArray]</OutArgument>
                         </Assign.To>
@@ -448,18 +448,18 @@
                           <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Str_ProjectFolderPath+"\Temp")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="File Processing" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[arr_FilesArray]">
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="File Processing" sap:VirtualizedContainerService.HintSize="307,193" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[arr_FilesArray]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:String">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                             </ActivityAction.Argument>
-                            <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload SM files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_3" LocalPath="[file.ToString()]" Overwrite="False" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
+                            <p:UploadFiles ContinueOnError="False" Create="True" DisplayName="Upload SM files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_3" LocalPath="[file.ToString()]" Overwrite="True" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
                           </ActivityAction>
                         </ui:ForEach.Body>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -501,12 +501,12 @@
           <FlowStep x:Name="__ReferenceID11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">200,134.5</av:Point>
+                <av:Point x:Key="ShapeLocation">200,204.5</av:Point>
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">300,185.5 300,235.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">300,255.5 300,295.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Dt_PreBatchScriptPathRepo]" DisplayName="Create Post Batch Dictionary" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Dt_PreBatchScriptPathRepo]" DisplayName="Create Pre Batch Dictionary" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -514,7 +514,7 @@
                   </ActivityAction.Argument>
                   <Assign DisplayName="Set Key Value Pair" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_53">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[dict_PreBatchScriptPath(repoItem("Activity_Name").ToString)]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[Dict_PreBatchScriptPath(repoItem("Activity_Name").ToString)]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[repoItem("Path").ToString]</InArgument>
@@ -532,9 +532,9 @@
               <FlowStep x:Name="__ReferenceID10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">200,235.5</av:Point>
+                    <av:Point x:Key="ShapeLocation">200,295.5</av:Point>
                     <av:Size x:Key="ShapeSize">200,22</av:Size>
-                    <av:PointCollection x:Key="ConnectorLocation">300,257.5 300,307</av:PointCollection>
+                    <av:PointCollection x:Key="ConnectorLocation">300,317.5 300,357</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="ICM_Team_MailID" DisplayName="Get Asset - ICM Mail id" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
@@ -554,6 +554,26 @@
             </FlowStep.Next>
           </FlowStep>
           <x:Reference>__ReferenceID10</x:Reference>
+          <FlowStep x:Name="__ReferenceID12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">169,110</av:Point>
+                <av:Size x:Key="ShapeSize">262,60</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,170 300,204.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Initialise Dictionary" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_57">
+              <Assign.To>
+                <OutArgument x:TypeArguments="scg:IDictionary(x:String, x:String)">[Dict_PreBatchScriptPath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)">[New Dictionary(Of string, String)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <FlowStep.Next>
+              <x:Reference>__ReferenceID11</x:Reference>
+            </FlowStep.Next>
+          </FlowStep>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
@@ -568,7 +588,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="304,243" sap2010:WorkflowViewState.IdRef="Sequence_86">
+            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="304,240" sap2010:WorkflowViewState.IdRef="Sequence_86">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>

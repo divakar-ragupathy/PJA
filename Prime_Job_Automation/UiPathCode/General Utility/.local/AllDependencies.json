@@ -166,6 +166,15 @@
           "lib/Ionic.Zip.dll": {}
         }
       },
+      "Microsoft.ApplicationInsights/2.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net46/_._": {}
+        },
+        "runtime": {
+          "lib/net46/Microsoft.ApplicationInsights.dll": {}
+        }
+      },
       "Microsoft.AspNet.SignalR.Client/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -271,23 +280,30 @@
           "lib/net40/Renci.SshNet.dll": {}
         }
       },
-      "SSHComandInterpreter.Activities/1.1.0": {
+      "System.Collections/4.3.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Core"
+        ],
         "compile": {
-          "lib/_._": {}
+          "ref/net45/_._": {}
         },
         "runtime": {
-          "lib/LinuxComandExecutorActivities.dll": {}
+          "lib/net45/_._": {}
         }
       },
-      "SSHCommandHandler/1.0.1": {
+      "System.ComponentModel.Annotations/4.6.0": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations",
+          "mscorlib"
+        ],
         "compile": {
-          "lib/_._": {}
+          "ref/net461/_._": {}
         },
         "runtime": {
-          "lib/Renci.SshNet.dll": {},
-          "lib/SSHCommandHandler.dll": {}
+          "lib/net461/System.ComponentModel.Annotations.dll": {}
         }
       },
       "System.IO.Abstractions/3.0.10": {
@@ -640,6 +656,56 @@
         },
         "runtime": {
           "lib/net461/UiPath.OCR.Contracts.dll": {}
+        }
+      },
+      "UiPath.OracleNetSuite.Activities/1.0.0-preview": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "2.3.0",
+          "Newtonsoft.Json": "11.0.2",
+          "System.Collections": "4.3.0",
+          "System.ComponentModel.Annotations": "4.6.0"
+        },
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/ActiproSoftware.Shared.Wpf.dll": {},
+          "lib/net461/UiPath.OracleNetSuite.Activities.Design.dll": {},
+          "lib/net461/UiPath.OracleNetSuite.Activities.dll": {},
+          "lib/net461/UiPath.OracleNetSuite.dll": {}
+        },
+        "resource": {
+          "lib/net461/de/UiPath.OracleNetSuite.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net461/es-MX/UiPath.OracleNetSuite.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net461/fr/UiPath.OracleNetSuite.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/ja/UiPath.OracleNetSuite.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net461/ko/UiPath.OracleNetSuite.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net461/pt-BR/UiPath.OracleNetSuite.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net461/pt/UiPath.OracleNetSuite.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net461/ru/UiPath.OracleNetSuite.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/tr/UiPath.OracleNetSuite.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net461/zh-CN/UiPath.OracleNetSuite.resources.dll": {
+            "locale": "zh-CN"
+          }
         }
       },
       "UiPath.Platform/20.4.0": {
@@ -1014,20 +1080,6 @@
           "lib/net461/UiPath.Vision.Core.dll": {},
           "lib/net461/UiPath.Vision.dll": {}
         }
-      },
-      "UiPathTeam.UnZipFile.Activities/1.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.3"
-        },
-        "compile": {
-          "lib/net461/_._": {}
-        },
-        "runtime": {
-          "lib/net461/UiPathTeam.UnZipFile.Activities.Design.dll": {},
-          "lib/net461/UiPathTeam.UnZipFile.Activities.dll": {},
-          "lib/net461/UiPathTeam.UnZipFile.dll": {}
-        }
       }
     }
   },
@@ -1038,7 +1090,6 @@
       "path": "avalonedit/5.0.3",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "avalonedit.5.0.3.nupkg.sha512",
         "avalonedit.nuspec",
         "lib/Net35/ICSharpCode.AvalonEdit.dll",
@@ -1079,7 +1130,6 @@
       "path": "closedxml/0.87.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "closedxml.0.87.1.nupkg.sha512",
         "closedxml.nuspec",
         "lib/net35/ClosedXML.dll",
@@ -1096,7 +1146,6 @@
       "path": "csvhelper/2.13.5",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "csvhelper.2.13.5.nupkg.sha512",
         "csvhelper.nuspec",
         "lib/net20/CsvHelper.dll",
@@ -1119,7 +1168,6 @@
       "path": "documentformat.openxml/2.5.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "documentformat.openxml.2.5.0.nupkg.sha512",
         "documentformat.openxml.nuspec",
         "lib/DocumentFormat.OpenXml.dll"
@@ -1219,6 +1267,28 @@
         "nuget.bat"
       ]
     },
+    "Microsoft.ApplicationInsights/2.3.0": {
+      "sha512": "xMSuL1UVTKOGjfskm4f60FjH7CuWAm5HHEgGTDwHoyKQdOlYMcMLwguSTzyjnuZ4Gmdj+/gDXu8TM72Lms7CqQ==",
+      "type": "package",
+      "path": "microsoft.applicationinsights/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.ApplicationInsights.XML",
+        "lib/net40/Microsoft.ApplicationInsights.dll",
+        "lib/net45/Microsoft.ApplicationInsights.XML",
+        "lib/net45/Microsoft.ApplicationInsights.dll",
+        "lib/net46/Microsoft.ApplicationInsights.XML",
+        "lib/net46/Microsoft.ApplicationInsights.dll",
+        "lib/netstandard1.3/Microsoft.ApplicationInsights.XML",
+        "lib/netstandard1.3/Microsoft.ApplicationInsights.dll",
+        "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll",
+        "lib/uap10.0/Microsoft.ApplicationInsights.dll",
+        "lib/wp8/Microsoft.ApplicationInsights.dll",
+        "microsoft.applicationinsights.2.3.0.nupkg.sha512",
+        "microsoft.applicationinsights.nuspec"
+      ]
+    },
     "Microsoft.AspNet.SignalR.Client/2.4.0": {
       "sha512": "xGoQq9dEsBU49U1Whl0To2JyRQePmo8ayYS8VNruLlQaX+fQBzYyLJeMlW9r7mlt8Vc9JP+083m9pKrfYpdDbg==",
       "type": "package",
@@ -1291,7 +1361,6 @@
       "path": "microsoft.visualstudio.ole.interop/7.10.6071",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "lib/Microsoft.VisualStudio.OLE.Interop.dll",
         "lib/Microsoft.VisualStudio.OLE.Interop.xml",
         "microsoft.visualstudio.ole.interop.7.10.6071.nupkg.sha512",
@@ -1304,7 +1373,6 @@
       "path": "newtonsoft.json/11.0.2",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -1334,7 +1402,6 @@
       "path": "npoi/2.4.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE",
         "Read Me.txt",
         "lib/NPOI.xml",
@@ -1384,7 +1451,6 @@
       "path": "sharpziplib/1.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "lib/net45/ICSharpCode.SharpZipLib.dll",
         "lib/net45/ICSharpCode.SharpZipLib.xml",
         "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll",
@@ -1420,29 +1486,161 @@
         "ssh.net.nuspec"
       ]
     },
-    "SSHComandInterpreter.Activities/1.1.0": {
-      "sha512": "3kz9+VR+r9pjdxuXTcavN3ZyTM2QjaaaU809twEIP2PEO4fVih+YMz0SzBzgy8mZmtsxzFG+IDBYe+G9MXwOmg==",
+    "System.Collections/4.3.0": {
+      "sha512": "3Dcj85/TBdVpL5Zr+gEEBUuFe2icOnLalmEh9hfck1PTYbbyWuZgh4fmm2ysCLTrqLQw6t3TgTyJ+VLp+Qb+Lw==",
       "type": "package",
-      "path": "sshcomandinterpreter.activities/1.1.0",
+      "path": "system.collections/4.3.0",
       "files": [
         ".nupkg.metadata",
-        "lib/LinuxComandExecutorActivities.dll",
-        "sshcomandinterpreter.activities.1.1.0.nupkg.sha512",
-        "sshcomandinterpreter.activities.nuspec"
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.Collections.dll",
+        "ref/netcore50/System.Collections.xml",
+        "ref/netcore50/de/System.Collections.xml",
+        "ref/netcore50/es/System.Collections.xml",
+        "ref/netcore50/fr/System.Collections.xml",
+        "ref/netcore50/it/System.Collections.xml",
+        "ref/netcore50/ja/System.Collections.xml",
+        "ref/netcore50/ko/System.Collections.xml",
+        "ref/netcore50/ru/System.Collections.xml",
+        "ref/netcore50/zh-hans/System.Collections.xml",
+        "ref/netcore50/zh-hant/System.Collections.xml",
+        "ref/netstandard1.0/System.Collections.dll",
+        "ref/netstandard1.0/System.Collections.xml",
+        "ref/netstandard1.0/de/System.Collections.xml",
+        "ref/netstandard1.0/es/System.Collections.xml",
+        "ref/netstandard1.0/fr/System.Collections.xml",
+        "ref/netstandard1.0/it/System.Collections.xml",
+        "ref/netstandard1.0/ja/System.Collections.xml",
+        "ref/netstandard1.0/ko/System.Collections.xml",
+        "ref/netstandard1.0/ru/System.Collections.xml",
+        "ref/netstandard1.0/zh-hans/System.Collections.xml",
+        "ref/netstandard1.0/zh-hant/System.Collections.xml",
+        "ref/netstandard1.3/System.Collections.dll",
+        "ref/netstandard1.3/System.Collections.xml",
+        "ref/netstandard1.3/de/System.Collections.xml",
+        "ref/netstandard1.3/es/System.Collections.xml",
+        "ref/netstandard1.3/fr/System.Collections.xml",
+        "ref/netstandard1.3/it/System.Collections.xml",
+        "ref/netstandard1.3/ja/System.Collections.xml",
+        "ref/netstandard1.3/ko/System.Collections.xml",
+        "ref/netstandard1.3/ru/System.Collections.xml",
+        "ref/netstandard1.3/zh-hans/System.Collections.xml",
+        "ref/netstandard1.3/zh-hant/System.Collections.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.collections.4.3.0.nupkg.sha512",
+        "system.collections.nuspec"
       ]
     },
-    "SSHCommandHandler/1.0.1": {
-      "sha512": "Ar9tS3eIxHZFkSrr+FmWt0h6e5CDtLNnuiSDXG4+VzbRZl/i4jys8dq66/6UeWqdcjXusTqTwNoutXxg42+tgg==",
+    "System.ComponentModel.Annotations/4.6.0": {
+      "sha512": "pOd+UhZ3X8xfwKDlgAzowUJNjp8VYVmOHZm++vCd0kq1HZ0zK3mNo2yRXjYgv7Ik/Xi43fmJfND2PLEsQSALCg==",
       "type": "package",
-      "path": "sshcommandhandler/1.0.1",
+      "path": "system.componentmodel.annotations/4.6.0",
       "files": [
         ".nupkg.metadata",
-        "lib/Renci.SshNet.dll",
-        "lib/Renci.SshNet.xml",
-        "lib/SSHCommandHandler.dll",
-        "lib/SSHCommandHandler.pdb",
-        "sshcommandhandler.1.0.1.nupkg.sha512",
-        "sshcommandhandler.nuspec"
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net461/System.ComponentModel.Annotations.dll",
+        "lib/netcore50/System.ComponentModel.Annotations.dll",
+        "lib/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.0/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.1/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.1/System.ComponentModel.Annotations.xml",
+        "lib/portable-net45+win8/_._",
+        "lib/win8/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net461/System.ComponentModel.Annotations.dll",
+        "ref/net461/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/System.ComponentModel.Annotations.dll",
+        "ref/netcore50/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/de/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/es/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/fr/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/it/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ja/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ko/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ru/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard2.0/System.ComponentModel.Annotations.dll",
+        "ref/netstandard2.0/System.ComponentModel.Annotations.xml",
+        "ref/netstandard2.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard2.1/System.ComponentModel.Annotations.xml",
+        "ref/portable-net45+win8/_._",
+        "ref/win8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.annotations.4.6.0.nupkg.sha512",
+        "system.componentmodel.annotations.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.IO.Abstractions/3.0.10": {
@@ -1731,6 +1929,31 @@
         "uipath.ocr.contracts.nuspec"
       ]
     },
+    "UiPath.OracleNetSuite.Activities/1.0.0-preview": {
+      "sha512": "KtmBaJZn+al5H0EzBNN6a0tQI3g8A4dNHEYVdu7+Tb/L6TP85dtVXwaR93xqmCNBqlN4BJE55uRDiG4Gm+kwLw==",
+      "type": "package",
+      "path": "uipath.oraclenetsuite.activities/1.0.0-preview",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/ActiproSoftware.Shared.Wpf.dll",
+        "lib/net461/UiPath.OracleNetSuite.Activities.Design.dll",
+        "lib/net461/UiPath.OracleNetSuite.Activities.dll",
+        "lib/net461/UiPath.OracleNetSuite.dll",
+        "lib/net461/de/UiPath.OracleNetSuite.resources.dll",
+        "lib/net461/es-MX/UiPath.OracleNetSuite.resources.dll",
+        "lib/net461/fr/UiPath.OracleNetSuite.resources.dll",
+        "lib/net461/ja/UiPath.OracleNetSuite.resources.dll",
+        "lib/net461/ko/UiPath.OracleNetSuite.resources.dll",
+        "lib/net461/pt-BR/UiPath.OracleNetSuite.resources.dll",
+        "lib/net461/pt/UiPath.OracleNetSuite.resources.dll",
+        "lib/net461/ru/UiPath.OracleNetSuite.resources.dll",
+        "lib/net461/tr/UiPath.OracleNetSuite.resources.dll",
+        "lib/net461/zh-CN/UiPath.OracleNetSuite.resources.dll",
+        "uipath.oraclenetsuite.activities.1.0.0-preview.nupkg.sha512",
+        "uipath.oraclenetsuite.activities.nuspec"
+      ]
+    },
     "UiPath.Platform/20.4.0": {
       "sha512": "eope+VluZfnamlioK8bdWQ88I270B9/slRnRQMBXqxYR842U8hjJI+OMcTley0UaVCEgIzx4TvfY0Aolt14i2A==",
       "type": "package",
@@ -2017,34 +2240,19 @@
         "uipath.vision.2.0.3.nupkg.sha512",
         "uipath.vision.nuspec"
       ]
-    },
-    "UiPathTeam.UnZipFile.Activities/1.2.0": {
-      "sha512": "FtgrrXoAFDeo2IXWmuCVZwP5m6X7T6uV4EP/IaJJwwHiI0DFgez1jkaMHUMKu7gtFYLnOmXeU+ku76ojJ16fpg==",
-      "type": "package",
-      "path": "uipathteam.unzipfile.activities/1.2.0",
-      "files": [
-        ".nupkg.metadata",
-        "lib/net461/UiPathTeam.UnZipFile.Activities.Design.dll",
-        "lib/net461/UiPathTeam.UnZipFile.Activities.dll",
-        "lib/net461/UiPathTeam.UnZipFile.dll",
-        "uipathteam.unzipfile.activities.1.2.0.nupkg.sha512",
-        "uipathteam.unzipfile.activities.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
       "BalaReva.ZipUnzip.Activities >= 2019.4.1 <= 2019.4.1",
-      "SSHComandInterpreter.Activities >= 1.1.0 <= 1.1.0",
-      "SSHCommandHandler >= 1.0.1 <= 1.0.1",
       "UiPath.Database.Activities >= 1.3.7369.25200 <= 1.3.7369.25200",
       "UiPath.Excel.Activities >= 2.8.5 <= 2.8.5",
       "UiPath.FTP.Activities >= 1.0.7346.28183 <= 1.0.7346.28183",
       "UiPath.Mail.Activities >= 1.8.5 <= 1.8.5",
+      "UiPath.OracleNetSuite.Activities >= 1.0.0-preview <= 1.0.0-preview",
       "UiPath.System.Activities >= 20.4.0 <= 20.4.0",
-      "UiPath.UIAutomation.Activities >= 20.4.1 <= 20.4.1",
-      "UiPathTeam.UnZipFile.Activities >= 1.2.0 <= 1.2.0"
+      "UiPath.UIAutomation.Activities >= 20.4.1 <= 20.4.1"
     ]
   },
   "packageFolders": {
@@ -2052,11 +2260,11 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "Prime Adhoc Job Report Generation",
-      "projectName": "Prime Adhoc Job Report Generation",
-      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 5 - Report Generation\\.local",
+      "projectUniqueName": "General Utility",
+      "projectName": "General Utility",
+      "projectPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\General Utility\\.local",
       "packagesPath": "C:\\Users\\divakar_r\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\Stage 5 - Report Generation\\.local"
+      "outputPath": "D:\\Git\\PJA\\Prime_Job_Automation\\UiPathCode\\General Utility\\.local"
     },
     "frameworks": {
       "net461": {
@@ -2065,16 +2273,6 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[2019.4.1, 2019.4.1]"
-          },
-          "SSHComandInterpreter.Activities": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[1.1.0, 1.1.0]"
-          },
-          "SSHCommandHandler": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[1.0.1, 1.0.1]"
           },
           "UiPath.Database.Activities": {
             "include": "Runtime",
@@ -2096,6 +2294,11 @@
             "target": "Package",
             "version": "[1.8.5, 1.8.5]"
           },
+          "UiPath.OracleNetSuite.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.0-preview, 1.0.0-preview]"
+          },
           "UiPath.System.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -2105,11 +2308,6 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[20.4.1, 20.4.1]"
-          },
-          "UiPathTeam.UnZipFile.Activities": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[1.2.0, 1.2.0]"
           }
         }
       }
