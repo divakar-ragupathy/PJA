@@ -667,35 +667,17 @@
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                             </ui:LogMessage>
-                                                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke File Transfer To TSys" sap:VirtualizedContainerService.HintSize="349,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="9 File Transmit To TSYS\File Transmit To TSYS.xaml">
+                                                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke File Transfer To TSys" sap:VirtualizedContainerService.HintSize="349,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="6 File Transmit To TSYS\File Transmit To TSYS.xaml">
                                                                               <ui:InvokeWorkflowFile.Arguments>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TsysFolder">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="rule(&quot;TSYS_Location&quot;).ToString" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsMailId">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileListLookUpPath">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ProcessedFileLookupPath" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_StagingFile">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="fileItemS2.ToString" />
-                                                                                </InArgument>
-                                                                                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsFileValid">
-                                                                                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsFileValid" />
-                                                                                </OutArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ProjectFolderPath" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserName">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysDBServerUserID" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysDBServerDetails" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPassword">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysDBServerPwd" />
-                                                                                </InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TsysFolder">[rule("TSYS_Location").ToString]</InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsMailId">[Str_RpaOpsEmailID]</InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileListLookUpPath">[Str_ProcessedFileLookupPath]</InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_StagingFile">[fileItemS2.ToString]</InArgument>
+                                                                                <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsFileValid">[bool_IsFileValid]</OutArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[Str_ProjectFolderPath]</InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserName">[Str_TSysDBServerUserID]</InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">[Str_TSysDBServerDetails]</InArgument>
+                                                                                <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPassword">[Pwd_TSysDBServerPwd]</InArgument>
                                                                               </ui:InvokeWorkflowFile.Arguments>
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">

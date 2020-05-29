@@ -145,7 +145,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">400,680 516.5,680 516.5,736.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Payment Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Payment Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="[Str_ProjectFolderPath+&quot;UiPathCode\General Utility\SSHCommandInterpreter.xaml&quot;]">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
                 <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
@@ -201,7 +201,7 @@
                             <av:PointCollection x:Key="ConnectorLocation">300,905.5 300,944.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Biller Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Biller Script" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="[Str_ProjectFolderPath+&quot;UiPathCode\General Utility\SSHCommandInterpreter.xaml&quot;]">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
                             <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
@@ -274,7 +274,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">400,450 520,450 520,536.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GL Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="9 General Utility\SSHCommandInterpreter.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GL Script" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="[Str_ProjectFolderPath+&quot;UiPathCode\General Utility\SSHCommandInterpreter.xaml&quot;]">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
                 <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[Str_ExceptionMessage]</OutArgument>
@@ -284,7 +284,7 @@
                 <InArgument x:TypeArguments="x:String" x:Key="Str_ServerDetails">[Str_TSysAppServerDetails]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="Str_ServerUserName">[Str_TSysAppServerUserID]</InArgument>
                 <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_ServerPassword">[Pwd_TSysAppServerPwd]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Str_NotificationEmailID" />
+                <InArgument x:TypeArguments="x:String" x:Key="Str_NotificationEmailID">[str_IcmEmailId]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -346,13 +346,13 @@
                 <av:PointCollection x:Key="ConnectorLocation">300,373 300,424.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Transfer GL Files" sap:VirtualizedContainerService.HintSize="242,507" sap2010:WorkflowViewState.IdRef="Sequence_87">
+            <Sequence DisplayName="Transfer GL Files" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_87">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Temp Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Str_ProjectFolderPath+&quot;\Temp&quot;]">
+              <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Temp Folder" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Str_ProjectFolderPath+&quot;\Temp&quot;]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -360,7 +360,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CreateDirectory>
-              <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="PCIDSS Server Session" sap:VirtualizedContainerService.HintSize="200,51" Host="[Str_PcidssServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_2" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_PcidssServerPwd).Password]" Port="[Int_PcidssServerPort]" UseSftp="True" Username="[Str_PcidssServerUserID]">
+              <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="PCIDSS Server Session" sap:VirtualizedContainerService.HintSize="434,51" Host="[Str_PcidssServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_2" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_PcidssServerPwd).Password]" Port="[Int_PcidssServerPort]" UseSftp="True" Username="[Str_PcidssServerUserID]">
                 <p:WithFtpSession.Body>
                   <ActivityAction x:TypeArguments="p:IFtpSession">
                     <ActivityAction.Argument>
@@ -376,7 +376,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </p:WithFtpSession>
-              <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSysAppServer Session" sap:VirtualizedContainerService.HintSize="200,51" Host="[Str_TSysAppServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_1" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_TSysAppServerPwd).Password]" Port="[Int_TSysAppServerPort]" UseSftp="True" Username="[Str_TSysAppServerUserID]">
+              <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSysAppServer Session" sap:VirtualizedContainerService.HintSize="434,711" Host="[Str_TSysAppServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_1" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_TSysAppServerPwd).Password]" Port="[Int_TSysAppServerPort]" UseSftp="True" Username="[Str_TSysAppServerUserID]">
                 <p:WithFtpSession.Body>
                   <ActivityAction x:TypeArguments="p:IFtpSession">
                     <ActivityAction.Argument>
@@ -430,7 +430,7 @@
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                             </ActivityAction.Argument>
-                            <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload BPI files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_2" LocalPath="[Dict_PreBatchScriptPath(&quot;fd_BpiPcidss&quot;)]" Overwrite="False" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
+                            <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload BPI files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_2" LocalPath="[file.ToString()]" Overwrite="False" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
                           </ActivityAction>
                         </ui:ForEach.Body>
                         <sap:WorkflowViewStateService.ViewState>
@@ -454,7 +454,7 @@
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                             </ActivityAction.Argument>
-                            <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload SM files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_3" LocalPath="[Str_ProjectFolderPath+&quot;\Temp&quot;]" Overwrite="False" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
+                            <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload SM files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_3" LocalPath="[file.ToString()]" Overwrite="False" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
                           </ActivityAction>
                         </ui:ForEach.Body>
                         <sap:WorkflowViewStateService.ViewState>
@@ -469,12 +469,12 @@
                 </p:WithFtpSession.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </p:WithFtpSession>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;Uploaded SM, BPI and Robinsons File into TSys App Server Successfully&quot;]">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;Uploaded SM, BPI and Robinsons File into TSys App Server Successfully&quot;]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -482,7 +482,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
-              <ui:InvokeCode ContinueOnError="{x:Null}" Code="If Dir(folderPath, vbDirectory) &lt;&gt; &quot;&quot; Then&#xA;&#xA;My.Computer.FileSystem.DeleteDirectory(folderPath, FileIO.DeleteDirectoryOption.DeleteAllContents)&#xA;&#xA;End If&#xA;&#xA;&#xA;" DisplayName="Delete Temp Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="If Dir(folderPath, vbDirectory) &lt;&gt; &quot;&quot; Then&#xA;&#xA;My.Computer.FileSystem.DeleteDirectory(folderPath, FileIO.DeleteDirectoryOption.DeleteAllContents)&#xA;&#xA;End If&#xA;&#xA;&#xA;" DisplayName="Delete Temp Folder" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
                 <ui:InvokeCode.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="folderPath">[Str_ProjectFolderPath+"\Temp"]</InArgument>
                 </ui:InvokeCode.Arguments>
@@ -557,7 +557,7 @@
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="727,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="735,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -568,7 +568,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="304,240" sap2010:WorkflowViewState.IdRef="Sequence_86">
+            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="304,243" sap2010:WorkflowViewState.IdRef="Sequence_86">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>

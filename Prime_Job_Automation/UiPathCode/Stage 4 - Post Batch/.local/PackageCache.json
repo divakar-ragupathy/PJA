@@ -203,6 +203,17 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\winscp/5.17.6\\lib/net40/WinSCPnet.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\winscp\\5.17.6"
+    },
+    {
+      "Package": {
+        "Id": "UiPathTeam.Core.Activities",
+        "Version": "1.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.core.activities/1.0.1\\lib/net461/UiPathTeam.Core.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.core.activities/1.0.1\\lib/net461/UiPathTeam.Core.Activities.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.core.activities\\1.0.1"
     }
   ],
   "Conflicts": [],
@@ -497,6 +508,11 @@
           "Item2": "[2.2.1, )"
         }
       ]
+    },
+    "UiPathTeam.Core.Activities": {
+      "Id": "UiPathTeam.Core.Activities",
+      "Version": "1.0.1",
+      "Dependencies": []
     },
     "UiPathTeam.SSHConnector.Activities": {
       "Id": "UiPathTeam.SSHConnector.Activities",
@@ -896,6 +912,17 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision\\2.0.1\\lib\\net452\\UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.vision\\2.0.1"
+    },
+    {
+      "Package": {
+        "Id": "UiPathTeam.Core.Activities",
+        "Version": "1.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.core.activities\\1.0.1\\lib\\net461\\UiPathTeam.Core.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.core.activities\\1.0.1\\lib\\net461\\UiPathTeam.Core.Activities.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipathteam.core.activities\\1.0.1"
     },
     {
       "Package": {

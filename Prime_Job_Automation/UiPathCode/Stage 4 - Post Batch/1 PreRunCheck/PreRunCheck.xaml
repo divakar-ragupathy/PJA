@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PreRunCheck" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ftp" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PreRunCheck" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ftp" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Str_ExceptionMessage" Type="OutArgument(x:String)" />
     <x:Property Name="Str_RpaOpsEmailID" Type="OutArgument(x:String)" />
@@ -37,11 +37,15 @@
     <x:Property Name="Int_VisaServerPort" Type="OutArgument(x:Int32)" />
     <x:Property Name="Str_VisaVcfUserID" Type="OutArgument(x:String)" />
     <x:Property Name="Str_VisaServerHost" Type="OutArgument(x:String)" />
+    <x:Property Name="Str_HolidayList" Type="InArgument(x:String)" />
   </x:Members>
+  <this:PreRunCheck.Str_HolidayList>
+    <InArgument x:TypeArguments="x:String" />
+  </this:PreRunCheck.Str_HolidayList>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>951,1285</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>951,2606</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PreRunCheck_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -73,7 +77,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -100,7 +104,7 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MainSequence" sap:VirtualizedContainerService.HintSize="480,1120" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence DisplayName="MainSequence" sap:VirtualizedContainerService.HintSize="827,2441" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_HTMLTableCode" />
     </Sequence.Variables>
@@ -110,7 +114,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Perform Pre-Run Check" sap:VirtualizedContainerService.HintSize="438,1028" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Perform Pre-Run Check" sap:VirtualizedContainerService.HintSize="785,2349" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -118,7 +122,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="PreRunCheck" sap:VirtualizedContainerService.HintSize="391,801" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="PreRunCheck" sap:VirtualizedContainerService.HintSize="747,2122" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="str_PostBatchScriptRepoPath" />
             <Variable x:TypeArguments="ui:WorkbookApplication" Name="str_WorkbookName" />
@@ -129,6 +133,7 @@
             <Variable x:TypeArguments="x:String" Name="str_RuleFactoryFilePath" />
             <Variable x:TypeArguments="x:Boolean" Name="bool_IsMRFExist" />
             <Variable x:TypeArguments="sd:DataTable" Name="dt_AssetList" />
+            <Variable x:TypeArguments="x:String" Name="str_HolidayListFilePath" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -136,7 +141,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Get Assets" sap:VirtualizedContainerService.HintSize="349,66" sap2010:WorkflowViewState.IdRef="Sequence_76">
+          <Sequence DisplayName="Get Assets" sap:VirtualizedContainerService.HintSize="705,66" sap2010:WorkflowViewState.IdRef="Sequence_76">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -146,6 +151,11 @@
             <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="TIA_PMU_Team_MailID" DisplayName="Get Asset - Rpa Ops Mail Id" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_11">
               <ui:GetRobotAsset.Value>
                 <OutArgument x:TypeArguments="x:String">[Str_RpaOpsEmailID]</OutArgument>
+              </ui:GetRobotAsset.Value>
+            </ui:GetRobotAsset>
+            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="TIA_HolidayListPath" DisplayName="Get Asset - HolidayList" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_24">
+              <ui:GetRobotAsset.Value>
+                <OutArgument x:TypeArguments="x:String">[str_HolidayListFilePath]</OutArgument>
               </ui:GetRobotAsset.Value>
             </ui:GetRobotAsset>
             <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="TPA_RuleFactoryFile" DisplayName="Get Asset - Master Rule Factory" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_17">
@@ -361,14 +371,14 @@
               </ui:GetRobotAsset.Value>
             </ui:GetRobotAsset>
           </Sequence>
-          <Sequence DisplayName="Return File Path Creation" sap:VirtualizedContainerService.HintSize="349,497" sap2010:WorkflowViewState.IdRef="Sequence_88">
+          <Sequence DisplayName="Return File Path Creation" sap:VirtualizedContainerService.HintSize="705,66" sap2010:WorkflowViewState.IdRef="Sequence_88">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Initialise Dictionary" sap:VirtualizedContainerService.HintSize="307,60" sap2010:WorkflowViewState.IdRef="Assign_75">
+            <Assign DisplayName="Initialise Dictionary" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_75">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:IDictionary(x:String, x:String)">[Dict_ReturnFileFolder]</OutArgument>
               </Assign.To>
@@ -376,15 +386,15 @@
                 <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)">[New Dictionary(Of string, String)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:BuildDataTable DataTable="[dt_FolderList]" DisplayName="Temp Folder " sap:VirtualizedContainerService.HintSize="307,51" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;FolderName&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;FolderPath&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_EmbossingPath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\Embossing_Return&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_NonEmbossingPath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\Non_Embossing_Return&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_StatementPath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\Statement&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_VisaVcfPath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\Visa_VCF&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_AutoDbbPath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\AutoDB&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_LogFilePath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Configuration\Log&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_ReturnFilePath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\Return_Files&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
+            <ui:BuildDataTable DataTable="[dt_FolderList]" DisplayName="Temp Folder " sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;FolderName&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;FolderPath&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_EmbossingPath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\Embossing_Return&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_NonEmbossingPath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\Non_Embossing_Return&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_StatementPath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\Statement&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_VisaVcfPath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\Visa_VCF&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_AutoDbbPath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\AutoDB&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_LogFilePath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Configuration\Log&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;FolderName&gt;str_ReturnFilePath&lt;/FolderName&gt;&#xA;    &lt;FolderPath&gt;Staging\Return_Files&lt;/FolderPath&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:BuildDataTable>
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_FolderList]" DisplayName="Return File Folder Creation" sap:VirtualizedContainerService.HintSize="307,214" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_FolderList]" DisplayName="Return File Folder Creation" sap:VirtualizedContainerService.HintSize="334,214" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -424,14 +434,14 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
           </Sequence>
-          <Sequence DisplayName="Pre-Requisite Check" sap:VirtualizedContainerService.HintSize="349,66" sap2010:WorkflowViewState.IdRef="Sequence_89">
+          <Sequence DisplayName="Pre-Requisite Check" sap:VirtualizedContainerService.HintSize="705,1818" sap2010:WorkflowViewState.IdRef="Sequence_89">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:BuildDataTable DataTable="[dt_AssetList]" DisplayName="Asset DataTable " sap:VirtualizedContainerService.HintSize="549,51" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Asset&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;FilePath&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;IsExist&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;IsFolder&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Asset&gt;TPA_RuleFactoryFile&lt;/Asset&gt;&#xA;    &lt;IsFolder&gt;false&lt;/IsFolder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Asset&gt;TPA_PostBatchScriptRepository&lt;/Asset&gt;&#xA;    &lt;IsFolder&gt;false&lt;/IsFolder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Asset&gt;TPA_ErrorKeywordList&lt;/Asset&gt;&#xA;    &lt;IsFolder&gt;false&lt;/IsFolder&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
+            <ui:BuildDataTable DataTable="[dt_AssetList]" DisplayName="Asset DataTable " sap:VirtualizedContainerService.HintSize="663,51" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Asset&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;FilePath&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;IsExist&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;IsFolder&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Asset&gt;TPA_RuleFactoryFile&lt;/Asset&gt;&#xA;    &lt;IsFolder&gt;false&lt;/IsFolder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Asset&gt;TPA_PostBatchScriptRepository&lt;/Asset&gt;&#xA;    &lt;IsFolder&gt;false&lt;/IsFolder&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Asset&gt;TPA_ErrorKeywordList&lt;/Asset&gt;&#xA;    &lt;IsFolder&gt;false&lt;/IsFolder&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -439,7 +449,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:BuildDataTable>
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_AssetList]" DisplayName="Asset - File Path Exist" sap:VirtualizedContainerService.HintSize="549,51" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_AssetList]" DisplayName="Asset - File Path Exist" sap:VirtualizedContainerService.HintSize="663,51" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -531,7 +541,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <Assign DisplayName="Set IsExist Count" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_65">
+            <Assign DisplayName="Set IsExist Count" sap:VirtualizedContainerService.HintSize="663,60" sap2010:WorkflowViewState.IdRef="Assign_65">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[int_IsExistCount]</OutArgument>
               </Assign.To>
@@ -539,7 +549,7 @@
                 <InArgument x:TypeArguments="x:Int32">[cint(dt_AssetList.Select("IsExist='False'").Count.ToString)]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[int_IsExistCount=0]" DisplayName="If All Pre-Req Exist" sap:VirtualizedContainerService.HintSize="549,588" sap2010:WorkflowViewState.IdRef="If_8">
+            <If Condition="[int_IsExistCount=0]" DisplayName="If All Pre-Req Exist" sap:VirtualizedContainerService.HintSize="663,1444" sap2010:WorkflowViewState.IdRef="If_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -547,21 +557,21 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Post Batch Script Path Check" sap:VirtualizedContainerService.HintSize="304,440" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                <Sequence DisplayName="Post Batch Script Path Check" sap:VirtualizedContainerService.HintSize="418,1296" sap2010:WorkflowViewState.IdRef="Sequence_37">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Read Config File" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                  <Sequence DisplayName="Read Config File" sap:VirtualizedContainerService.HintSize="376,922" sap2010:WorkflowViewState.IdRef="Sequence_87">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Read Post Batch Script Repository" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" Workbook="[str_WorkbookName]" WorkbookPath="[str_ProjectFolderPath+str_PostBatchScriptRepoPath]">
+                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Read Post Batch Script Repository" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" Workbook="[str_WorkbookName]" WorkbookPath="[str_ProjectFolderPath+str_PostBatchScriptRepoPath]">
                       <ui:ExcelApplicationScope.Body>
                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                           <ActivityAction.Argument>
@@ -589,7 +599,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ExcelApplicationScope>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Retreived post batch script repository&quot;]">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Retreived post batch script repository&quot;]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -597,7 +607,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Read Return File Rule Factory" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" Workbook="[str_WorkbookName]" WorkbookPath="[str_ProjectFolderPath+str_RuleFactoryFilePath]">
+                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Read Return File Rule Factory" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" Workbook="[str_WorkbookName]" WorkbookPath="[str_ProjectFolderPath+str_RuleFactoryFilePath]">
                       <ui:ExcelApplicationScope.Body>
                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                           <ActivityAction.Argument>
@@ -625,7 +635,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ExcelApplicationScope>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Retreived rules from master rule factory&quot;]">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Retreived rules from master rule factory&quot;]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -633,7 +643,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <ui:ReadTextFile Content="[Str_ErrorKeywordRegExList]" DisplayName="Read Error Keyword File List" FileName="[Str_ProjectFolderPath+str_ErrorKeywordRegExListPath]" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+                    <ui:ReadTextFile Content="[Str_ErrorKeywordRegExList]" DisplayName="Read Error Keyword File List" FileName="[Str_ProjectFolderPath+str_ErrorKeywordRegExListPath]" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -641,7 +651,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ReadTextFile>
-                    <Assign DisplayName="Remove Newlines from Error Keyword" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_59">
+                    <Assign DisplayName="Remove Newlines from Error Keyword" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_59">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[Str_ErrorKeywordRegExList]</OutArgument>
                       </Assign.To>
@@ -649,7 +659,23 @@
                         <InArgument x:TypeArguments="x:String">[Str_ErrorKeywordRegExList.Replace(Environment.NewLine,"|").Replace(Chr(10),"|").Replace(Chr(13),"|")]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Retreived error key word list&quot;]">
+                    <ui:ReadTextFile Content="[Str_HolidayList]" DisplayName="Read Holiday List File " FileName="[Str_ProjectFolderPath+str_HolidayListFilePath]" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="ReadTextFile_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ReadTextFile>
+                    <Assign DisplayName="Remove Newlines from Holiday List" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_89">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[Str_HolidayList]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[Str_HolidayList.Replace(Environment.NewLine,"|").Replace(Chr(10),"|").Replace(Chr(13),"|")]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Retreived error key word list&quot;]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -658,7 +684,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
                   </Sequence>
-                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Dt_PostBatchScriptPathRepo]" DisplayName="For Each - Script Path" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEachRow_12">
+                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Dt_PostBatchScriptPathRepo]" DisplayName="For Each - Script Path" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="ForEachRow_12">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
@@ -844,7 +870,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
-                  <Assign DisplayName="Set isExistCount" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                  <Assign DisplayName="Set isExistCount" sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_36">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[int_IsExistCount]</OutArgument>
                     </Assign.To>
@@ -852,7 +878,7 @@
                       <InArgument x:TypeArguments="x:Int32">[cint(Dt_PostBatchScriptPathRepo.Select("IsExist='False'").Count.ToString)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If Condition="[int_IsExistCount=0]" DisplayName="If All Pre-Req Exist" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_10">
+                  <If Condition="[int_IsExistCount=0]" DisplayName="If All Pre-Req Exist" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="If_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1223,7 +1249,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="751,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

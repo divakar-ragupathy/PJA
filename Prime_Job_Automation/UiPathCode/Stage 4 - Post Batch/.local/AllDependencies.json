@@ -962,6 +962,16 @@
           "lib/net452/UiPath.Vision.dll": {}
         }
       },
+      "UiPathTeam.Core.Activities/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/UiPathTeam.Core.Activities.Design.dll": {},
+          "lib/net461/UiPathTeam.Core.Activities.dll": {}
+        }
+      },
       "UiPathTeam.SSHConnector.Activities/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -1926,6 +1936,18 @@
         "uipath.vision.nuspec"
       ]
     },
+    "UiPathTeam.Core.Activities/1.0.1": {
+      "sha512": "6W+M7L98wBzd/hc27jC3ZJTow8EnkePo5ZzLOOdxMUxKxQXcjhXIAjFUgoqirOl/hP8FKCt4XMSJlbIpBZiq8Q==",
+      "type": "package",
+      "path": "uipathteam.core.activities/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net461/UiPathTeam.Core.Activities.Design.dll",
+        "lib/net461/UiPathTeam.Core.Activities.dll",
+        "uipathteam.core.activities.1.0.1.nupkg.sha512",
+        "uipathteam.core.activities.nuspec"
+      ]
+    },
     "UiPathTeam.SSHConnector.Activities/1.0.2": {
       "sha512": "fjT98B30zAnwpIS6J9QA24F7mMzA/+NtA7I6lXDFAaNmfXRjxiEEk8jyby1roGe/fbHdMFTQhdg96tCbC17nBg==",
       "type": "package",
@@ -1980,6 +2002,7 @@
       "UiPath.Mail.Activities >= 1.8.5 <= 1.8.5",
       "UiPath.System.Activities >= 20.2.0-preview <= 20.2.0-preview",
       "UiPath.UIAutomation.Activities >= 20.2.0-preview <= 20.2.0-preview",
+      "UiPathTeam.Core.Activities >= 1.0.1 <= 1.0.1",
       "UiPathTeam.SSHConnector.Activities >= 1.0.2 <= 1.0.2",
       "UiPathTeam.UnZipFile.Activities >= 1.2.0 <= 1.2.0",
       "WinSCP >= 5.17.6 <= 5.17.6"
@@ -2044,6 +2067,11 @@
             "target": "Package",
             "version": "[20.2.0-preview, 20.2.0-preview]"
           },
+          "UiPathTeam.Core.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.1, 1.0.1]"
+          },
           "UiPathTeam.SSHConnector.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -2062,14 +2090,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'WinSCP 5.17.6' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
-      "libraryId": "WinSCP"
-    }
-  ]
+  }
 }

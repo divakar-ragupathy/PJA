@@ -12,6 +12,7 @@
     "UiPath.Mail.Activities": "[1.8.5]",
     "UiPath.System.Activities": "[20.2.0-preview]",
     "UiPath.UIAutomation.Activities": "[20.2.0-preview]",
+    "UiPathTeam.Core.Activities": "[1.0.1]",
     "UiPathTeam.SSHConnector.Activities": "[1.0.2]",
     "UiPathTeam.UnZipFile.Activities": "[1.2.0]",
     "WinSCP": "[5.17.6]"
