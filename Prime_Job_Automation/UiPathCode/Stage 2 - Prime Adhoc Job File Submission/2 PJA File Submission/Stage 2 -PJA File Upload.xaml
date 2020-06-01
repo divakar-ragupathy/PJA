@@ -72,7 +72,6 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1005,1651" sap2010:WorkflowViewState.IdRef="Sequence_637">
@@ -16825,7 +16824,7 @@
                         <av:PointCollection x:Key="ConnectorLocation">410,823 410,853 410.5,853 410.5,856.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Login Validation" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_856">
+                    <Sequence DisplayName="Login Validation" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_856">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -16848,10 +16847,7 @@
                           <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
                         </ui:ImageFound.Image>
                         <ui:ImageFound.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="77bb6f24-714c-4e2c-b460-16dfb698b2fb" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="77bb6f24-714c-4e2c-b460-16dfb698b2fb" Selector="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='*192.168.16.165*' /&gt;" TimeoutMS="2000">
                             <ui:Target.WaitForReady>
                               <InArgument x:TypeArguments="ui:WaitForReady" />
                             </ui:Target.WaitForReady>

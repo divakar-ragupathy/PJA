@@ -612,7 +612,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">300,1162 300,1226.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Convert Embossing &amp; Transfer" sap:VirtualizedContainerService.HintSize="763,1726" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Sequence DisplayName="Convert Embossing &amp; Transfer" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="str_SeqNum" />
                                   </Sequence.Variables>
@@ -965,7 +965,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">140,1522 140,1566</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="AUTODBD" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                            <Sequence DisplayName="AUTODBD" sap:VirtualizedContainerService.HintSize="518,860" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="str_DirectDebitLog" />
                                               </Sequence.Variables>
@@ -974,9 +974,9 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_HostDebitFiles&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;cp -p R06_CLUBP_PH_PaymentAdviceFile_*.out &quot;+dict_PostBatchScriptPath(&quot;fd_DirectDebitIn&quot;)]" DisplayName="Copy PaymentAdviceFile" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_17" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                                              <s:executeSSHCommands Command="[&quot;cd &quot;+dict_PostBatchScriptPath(&quot;fd_DirectDebit&quot;)+&quot;;./&quot;+Path.GetFileName(dict_PostBatchScriptPath(&quot;fl_DirectDebit&quot;))]" DisplayName="Run DirectDebit Batch" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_18" Response="[str_DirectDebitLog]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                                              <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_76">
+                                              <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_HostDebitFiles&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;cp -p R06_CLUBP_PH_PaymentAdviceFile_*.out &quot;+dict_PostBatchScriptPath(&quot;fd_DirectDebitIn&quot;)]" DisplayName="Copy PaymentAdviceFile" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_17" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                                              <s:executeSSHCommands Command="[&quot;cd &quot;+dict_PostBatchScriptPath(&quot;fd_DirectDebit&quot;)+&quot;;./&quot;+Path.GetFileName(dict_PostBatchScriptPath(&quot;fl_DirectDebit&quot;))]" DisplayName="Run DirectDebit Batch" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_18" Response="[str_DirectDebitLog]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                                              <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="476,60" sap2010:WorkflowViewState.IdRef="Assign_76">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
                                                 </Assign.To>
@@ -984,7 +984,7 @@
                                                   <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_77">
+                                              <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="476,60" sap2010:WorkflowViewState.IdRef="Assign_77">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[str_DirectDebitLog]</OutArgument>
                                                 </Assign.To>
@@ -992,14 +992,14 @@
                                                   <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_DirectDebitLog,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Sequence DisplayName="Send AutoDb file to ICM" sap:VirtualizedContainerService.HintSize="262,296" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                              <Sequence DisplayName="Send AutoDb file to ICM" sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSys Server Session" sap:VirtualizedContainerService.HintSize="200,51" Host="[Str_TSysDBServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_4" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysDBServerPwd).Password]" Port="[Int_TSysDBServerPort]" UseSftp="True" Username="[Str_TSysDBServerUserID]">
+                                                <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSys Server Session" sap:VirtualizedContainerService.HintSize="434,108" Host="[Str_TSysDBServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_4" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysDBServerPwd).Password]" Port="[Int_TSysDBServerPort]" UseSftp="True" Username="[Str_TSysDBServerUserID]">
                                                   <p:WithFtpSession.Body>
                                                     <ActivityAction x:TypeArguments="p:IFtpSession">
                                                       <ActivityAction.Argument>
@@ -1010,13 +1010,13 @@
                                                   </p:WithFtpSession.Body>
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </p:WithFtpSession>
-                                                <bz:ZipFilesCls DisplayName="Zip - Statement Files" FolderFilesPath="[{dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)}]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ZipFilesCls_2" Password="[Now.ToString(&quot;yyyyMMdd&quot;)]" ZipFile="[Dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)+&quot;\AutoDB_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;]" />
-                                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Please find the Auto DB file attachment.&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_23" IsBodyHtml="False" IsDraft="False" Subject="Notification: Auto DB File" To="[str_IcmMailId]">
+                                                <bz:ZipFilesCls DisplayName="Zip - Statement Files" FolderFilesPath="[{dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)+&quot;/AUTODB&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;.TXT&quot;}]" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="ZipFilesCls_2" Password="[Now.ToString(&quot;yyyyMMdd&quot;)]" ZipFile="[Dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)+&quot;\AutoDB_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;]" />
+                                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Please find the Auto DB file attachment.&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_23" IsBodyHtml="False" IsDraft="False" Subject="Notification: Auto DB File" To="[str_IcmMailId]">
                                                   <ui:SendOutlookMail.Files>
                                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                                                       <InArgument x:TypeArguments="x:String">[Dict_ReturnFolderPath("str_AutoDbPath")+"\UBIX_"+Now.ToString("yyyyMMdd")+".zip"]</InArgument>
@@ -1030,7 +1030,7 @@
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:SendOutlookMail>
                                               </Sequence>
-                                              <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="AppendLine_9" Text="[&quot;*******************************  Execution started for AutoDB  *********************************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+str_DirectDebitLog+Environment.NewLine+&quot;*******************************  Successfully Completed AutoDB  ********************************************************&quot;+Environment.NewLine]">
+                                              <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="AppendLine_9" Text="[&quot;*******************************  Execution started for AutoDB  *********************************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+str_DirectDebitLog+Environment.NewLine+&quot;*******************************  Successfully Completed AutoDB  ********************************************************&quot;+Environment.NewLine]">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
