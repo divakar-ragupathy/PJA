@@ -965,7 +965,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">140,1522 140,1566</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="AUTODBD" sap:VirtualizedContainerService.HintSize="518,860" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                            <Sequence DisplayName="AUTODBD" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="str_DirectDebitLog" />
                                               </Sequence.Variables>
@@ -992,7 +992,7 @@
                                                   <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_DirectDebitLog,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <Sequence DisplayName="Send AutoDb file to ICM" sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                              <Sequence DisplayName="Send AutoDb file to ICM" sap:VirtualizedContainerService.HintSize="476,447" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1016,15 +1016,17 @@
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </p:WithFtpSession>
                                                 <bz:ZipFilesCls DisplayName="Zip - Statement Files" FolderFilesPath="[{dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)+&quot;/AUTODB&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;.TXT&quot;}]" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="ZipFilesCls_2" Password="[Now.ToString(&quot;yyyyMMdd&quot;)]" ZipFile="[Dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)+&quot;\AutoDB_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;]" />
-                                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Please find the Auto DB file attachment.&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_23" IsBodyHtml="False" IsDraft="False" Subject="Notification: Auto DB File" To="[str_IcmMailId]">
+                                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Please find the Auto DB file attachment.&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_23" IsBodyHtml="False" IsDraft="False" Subject="Notification: Auto DB File" To="[str_IcmMailId]">
                                                   <ui:SendOutlookMail.Files>
                                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                                      <InArgument x:TypeArguments="x:String">[Dict_ReturnFolderPath("str_AutoDbPath")+"\UBIX_"+Now.ToString("yyyyMMdd")+".zip"]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String">
+                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Dict_ReturnFolderPath(&quot;str_AutoDbPath&quot;)+&quot;\AutoDB_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;" />
+                                                      </InArgument>
                                                     </scg:List>
                                                   </ui:SendOutlookMail.Files>
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
@@ -1048,7 +1050,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">140,1632 140,1682</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Sequence DisplayName="Corporate File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                                <Sequence DisplayName="Corporate File" sap:VirtualizedContainerService.HintSize="763,1450" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="x:String" Name="str_VisaLog" />
                                                   </Sequence.Variables>
@@ -1066,7 +1068,7 @@
                                                       <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_VisaLog,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <If Condition="[str_VisaLog.Substring(str_VisaLog.LastIndexOf(&quot;UBP*&quot;)+len(&quot;UBP*&quot;)).Contains(&quot;UBP&quot;)]" DisplayName="If - Visa File Exist" sap:VirtualizedContainerService.HintSize="721,1051" sap2010:WorkflowViewState.IdRef="If_15">
+                                                  <If Condition="[str_VisaLog.Substring(str_VisaLog.LastIndexOf(&quot;UBP*&quot;)+len(&quot;UBP*&quot;)).Contains(&quot;UBP&quot;)]" DisplayName="If - Visa File Exist" sap:VirtualizedContainerService.HintSize="721,1105" sap2010:WorkflowViewState.IdRef="If_15">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1074,20 +1076,20 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <If.Then>
-                                                      <Sequence DisplayName="Send Ubp file to Visa Server" sap:VirtualizedContainerService.HintSize="476,903" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                                      <Sequence DisplayName="Send Ubp file to Visa Server" sap:VirtualizedContainerService.HintSize="476,957" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" ContinueOnError="False" DisplayName="TSys Server Session" sap:VirtualizedContainerService.HintSize="434,108" Host="[Str_TSysDBServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_5" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_TSysDBServerPwd).Password]" Port="[Int_TSysDBServerPort]" Username="[Str_TSysDBServerUserID]">
+                                                        <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSys Server Session" sap:VirtualizedContainerService.HintSize="434,108" Host="[Str_TSysDBServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_5" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_TSysDBServerPwd).Password]" Port="[Int_TSysDBServerPort]" UseSftp="True" Username="[Str_TSysDBServerUserID]">
                                                           <p:WithFtpSession.Body>
                                                             <ActivityAction x:TypeArguments="p:IFtpSession">
                                                               <ActivityAction.Argument>
                                                                 <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                                                               </ActivityAction.Argument>
-                                                              <p:DownloadFiles ContinueOnError="False" Create="False" DisplayName="Download Visa File" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_10" LocalPath="[Dict_ReturnFolderPath(&quot;str_VisaVcfPath&quot;)]" Overwrite="False" Recursive="False" RemotePath="[dict_PostBatchScriptPath(&quot;fd_VisaVCF&quot;)]" />
+                                                              <p:DownloadFiles ContinueOnError="False" Create="True" DisplayName="Download Visa File" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_10" LocalPath="[Dict_ReturnFolderPath(&quot;str_VisaVcfPath&quot;)]" Overwrite="True" Recursive="False" RemotePath="[Dict_PostBatchScriptPath(&quot;fd_VisaVCF&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)]" />
                                                             </ActivityAction>
                                                           </p:WithFtpSession.Body>
                                                           <sap:WorkflowViewStateService.ViewState>
@@ -1097,13 +1099,13 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                         </p:WithFtpSession>
-                                                        <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" ContinueOnError="False" DisplayName="Visa Server Session" sap:VirtualizedContainerService.HintSize="434,663" Host="[Str_VisaVcfServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_6" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_VisaVcfPwd).Password]" Port="[Int_VisaVcfServerPort]" Username="[Str_VisaVcfUserID]">
+                                                        <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="Visa Server Session" sap:VirtualizedContainerService.HintSize="434,717" Host="[Str_VisaVcfServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_6" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_VisaVcfPwd).Password]" Port="[Int_VisaVcfServerPort]" UseSftp="True" Username="[Str_VisaVcfUserID]">
                                                           <p:WithFtpSession.Body>
                                                             <ActivityAction x:TypeArguments="p:IFtpSession">
                                                               <ActivityAction.Argument>
                                                                 <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                                                               </ActivityAction.Argument>
-                                                              <Sequence DisplayName="Upload Visa files" sap:VirtualizedContainerService.HintSize="391,577" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                                              <Sequence DisplayName="Upload Visa files" sap:VirtualizedContainerService.HintSize="391,631" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                                                 <Sequence.Variables>
                                                                   <Variable x:TypeArguments="x:String" Name="str_VisaVcfSftpPath" />
                                                                 </Sequence.Variables>
@@ -1121,7 +1123,7 @@
                                                                     <InArgument x:TypeArguments="x:String">/VISA_VCF</InArgument>
                                                                   </Assign.Value>
                                                                 </Assign>
-                                                                <Sequence DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="349,385" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                                                <Sequence DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="349,439" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                                                   <Sequence.Variables>
                                                                     <Variable x:TypeArguments="s1:String[]" Name="arr_FilesArray" />
                                                                   </Sequence.Variables>
@@ -1139,13 +1141,20 @@
                                                                       <InArgument x:TypeArguments="s1:String[]">[Directory.GetFiles(Dict_ReturnFolderPath("str_VisaVcfPath").ToString)]</InArgument>
                                                                     </Assign.Value>
                                                                   </Assign>
-                                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="File Processing" sap:VirtualizedContainerService.HintSize="307,193" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[arr_FilesArray]">
+                                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="File Processing" sap:VirtualizedContainerService.HintSize="307,247" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[arr_FilesArray]">
                                                                     <ui:ForEach.Body>
                                                                       <ActivityAction x:TypeArguments="x:String">
                                                                         <ActivityAction.Argument>
                                                                           <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                                                                         </ActivityAction.Argument>
-                                                                        <p:UploadFiles ContinueOnError="False" Create="False" DisplayName="Upload files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_1" LocalPath="[Dict_ReturnFolderPath(&quot;str_VisaVcfPath&quot;)+&quot;\&quot;+file.ToString()]" Overwrite="False" Recursive="False" RemotePath="[str_VisaVcfSftpPath]" />
+                                                                        <Sequence DisplayName="Upload" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                          <p:UploadFiles ContinueOnError="False" Create="True" DisplayName="Upload files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_1" LocalPath="[Dict_ReturnFolderPath(&quot;str_VisaVcfPath&quot;)+&quot;\&quot;+file.ToString()]" Overwrite="True" Recursive="False" RemotePath="[str_VisaVcfSftpPath]" />
+                                                                        </Sequence>
                                                                       </ActivityAction>
                                                                     </ui:ForEach.Body>
                                                                     <sap:WorkflowViewStateService.ViewState>
