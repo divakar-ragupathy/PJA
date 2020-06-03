@@ -295,6 +295,12 @@
                   <OutArgument x:TypeArguments="x:String" x:Key="Str_PlayEveryDayUserID">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PlayEveryDayUserID" />
                   </OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Str_IcmEmailID">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_IcmEmailID" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Str_UbixMailId">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_UbixMailId" />
+                  </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -547,6 +553,12 @@
                           <InArgument x:TypeArguments="x:String" x:Key="Str_PlayEveryDayUserID">
                             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PlayEveryDayUserID" />
                           </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_IcmMailId">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_IcmEmailID" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_UbixMailId">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_UbixMailId" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -690,6 +702,8 @@
       <Variable x:TypeArguments="x:String" Name="str_PlayEveryDayServerDetails" />
       <Variable x:TypeArguments="ss:SecureString" Name="pwd_PlayEveryDayPwd" />
       <Variable x:TypeArguments="x:String" Name="str_PlayEveryDayUserID" />
+      <Variable x:TypeArguments="x:String" Name="str_IcmEmailID" />
+      <Variable x:TypeArguments="x:String" Name="str_UbixMailId" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
