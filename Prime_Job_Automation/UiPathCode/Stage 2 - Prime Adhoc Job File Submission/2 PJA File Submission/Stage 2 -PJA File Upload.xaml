@@ -72,7 +72,6 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1005,1651" sap2010:WorkflowViewState.IdRef="Sequence_637">
@@ -99,10 +98,8 @@
       <TryCatch.Try>
         <Flowchart DisplayName="AdHoc Job Process" sap:VirtualizedContainerService.HintSize="925,1332" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
-            <Variable x:TypeArguments="x:Int32" Default="0" Name="Retry" />
             <Variable x:TypeArguments="x:Boolean" Name="bool_LoginError" />
             <Variable x:TypeArguments="x:String" Name="str_PrimeAppPath" />
-            <Variable x:TypeArguments="x:String" Name="str_ImageException" />
           </Flowchart.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -16650,14 +16647,11 @@
               </Flowchart>
               <Flowchart x:Key="ipmparameterfileload" DisplayName="Workflow - IPM Parameter File Load" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_29">
                 <Flowchart.Variables>
-                  <Variable x:TypeArguments="x:Boolean" Name="bool_IsJobs" />
                   <Variable x:TypeArguments="x:Boolean" Name="bool_IsAdHoc" />
                   <Variable x:TypeArguments="x:Int32" Default="1" Name="Retry" />
                   <Variable x:TypeArguments="x:Boolean" Name="bool_IsBtnNxt" />
                   <Variable x:TypeArguments="x:Boolean" Name="bool_IsFilterLblExst" />
                   <Variable x:TypeArguments="x:Boolean" Name="bool_IsLabelExist" />
-                  <Variable x:TypeArguments="x:Boolean" Name="bool_IsProcessNameExist" />
-                  <Variable x:TypeArguments="x:String" Default="20190715" Name="Str_AdhocInputFile" />
                   <Variable x:TypeArguments="x:String" Name="str_ImageException" />
                   <Variable x:TypeArguments="x:Boolean" Name="Bool_IsUploadSuccessfully" />
                 </Flowchart.Variables>
@@ -18166,10 +18160,7 @@
               </Flowchart>
             </Switch>
           </FlowStep>
-          <FlowDecision x:Name="__ReferenceID474" DisplayName="Need Spl Login?" sap:VirtualizedContainerService.HintSize="91,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-            <FlowDecision.Condition>
-              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Regex.IsMatch((Str_AdhocInputFile.ToString.ToLower),&quot;^TT067T0.[2][0][2][0-9]-[0-1][0-9]-[0-3][0-9]-[0-2][0-9]-[0-5][0-9]-[0-5][0-9].[0-9][0-9][0-9]$&quot;.ToLower)" />
-            </FlowDecision.Condition>
+          <FlowDecision x:Name="__ReferenceID474" Condition="[Regex.IsMatch((Str_AdhocInputFile.ToString.ToLower),&quot;^TT067T0.[2][0][2][0-9]-[0-1][0-9]-[0-3][0-9]-[0-2][0-9]-[0-5][0-9]-[0-5][0-9].[0-9][0-9][0-9]$&quot;.ToLower)]" DisplayName="Need Spl Login?" sap:VirtualizedContainerService.HintSize="91,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
