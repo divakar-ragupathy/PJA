@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:bz="clr-namespace:BalaReva.ZipUnzip;assembly=BalaReva.Zip" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ftp" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:bz="clr-namespace:BalaReva.ZipUnzip;assembly=BalaReva.Zip" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ftp" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Str_ExceptionMessage" Type="OutArgument(x:String)" />
     <x:Property Name="Dt_RuleFactory" Type="InArgument(sd:DataTable)" />
@@ -10,11 +10,31 @@
     <x:Property Name="Pwd_TSysDBServerPwd" Type="InArgument(ss:SecureString)" />
     <x:Property Name="Str_TSysDBServerDetails" Type="InArgument(x:String)" />
     <x:Property Name="Str_TSysDBServerUserID" Type="InArgument(x:String)" />
+    <x:Property Name="Dict_PreBatchScriptPath" Type="InArgument(scg:IDictionary(x:String, x:String))" />
+    <x:Property Name="Pwd_TSysAppServerPwd" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="Str_TSysAppServerUserID" Type="InArgument(x:String)" />
+    <x:Property Name="Str_TSysAppServerHost" Type="InArgument(x:String)" />
+    <x:Property Name="Int_TSysAppServerPort" Type="InArgument(x:Int32)" />
   </x:Members>
+  <this:Main.Dict_PreBatchScriptPath>
+    <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" />
+  </this:Main.Dict_PreBatchScriptPath>
+  <this:Main.Pwd_TSysAppServerPwd>
+    <InArgument x:TypeArguments="ss:SecureString" />
+  </this:Main.Pwd_TSysAppServerPwd>
+  <this:Main.Str_TSysAppServerUserID>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.Str_TSysAppServerUserID>
+  <this:Main.Str_TSysAppServerHost>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.Str_TSysAppServerHost>
+  <this:Main.Int_TSysAppServerPort>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:Main.Int_TSysAppServerPort>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>951,1250</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>951,544</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -53,7 +73,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -85,13 +105,13 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="714,1085" sap2010:WorkflowViewState.IdRef="Sequence_145">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="480,379" sap2010:WorkflowViewState.IdRef="Sequence_145">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Extract File from SFTP" sap:VirtualizedContainerService.HintSize="672,993" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+    <TryCatch DisplayName="Try Extract File from SFTP" sap:VirtualizedContainerService.HintSize="438,287" sap2010:WorkflowViewState.IdRef="TryCatch_12">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -99,7 +119,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Flowchart DisplayName="SFTP Source File Extraction Flow" sap:VirtualizedContainerService.HintSize="634,766" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart DisplayName="SFTP Source File Extraction Flow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_SftpRuleFactory" />
             <Variable x:TypeArguments="x:String" Name="str_SftpLPD" />
@@ -107,12 +127,11 @@
           </Flowchart.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,132.5</av:PointCollection>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              <x:Double x:Key="Height">730</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
@@ -160,13 +179,13 @@
                     <av:PointCollection x:Key="ConnectorLocation">300,395.5 300,470</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_SftpRuleFactory]" DisplayName="SFTP File Extraction, Validation &amp; Upload" sap:VirtualizedContainerService.HintSize="798,1958" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_SftpRuleFactory]" DisplayName="SFTP File Extraction, Validation &amp; Upload" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
                   <ui:ForEachRow.Body>
                     <ActivityAction x:TypeArguments="sd:DataRow">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rule" />
                       </ActivityAction.Argument>
-                      <TryCatch DisplayName="SFTP Exception Handler" sap:VirtualizedContainerService.HintSize="748,1810" sap2010:WorkflowViewState.IdRef="TryCatch_22">
+                      <TryCatch DisplayName="SFTP Exception Handler" sap:VirtualizedContainerService.HintSize="868,2718" sap2010:WorkflowViewState.IdRef="TryCatch_22">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -174,13 +193,13 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <TryCatch.Try>
-                          <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="SFTP Session" sap:VirtualizedContainerService.HintSize="687,998" Host="[rule(&quot;HostName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="WithFtpSession_11" Password="[New System.Net.NetworkCredential(&quot;&quot;,rule(&quot;SFTP_Password&quot;).ToString).Password]" Port="[Integer.Parse(rule(&quot;Port&quot;).ToString)]" UseSftp="True" Username="[rule(&quot;SFTP_UserId&quot;).ToString]">
+                          <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="SFTP Session" sap:VirtualizedContainerService.HintSize="830,2491" Host="[rule(&quot;HostName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="WithFtpSession_11" Password="[New System.Net.NetworkCredential(&quot;&quot;,rule(&quot;SFTP_Password&quot;).ToString).Password]" Port="[Integer.Parse(rule(&quot;Port&quot;).ToString)]" UseSftp="True" Username="[rule(&quot;SFTP_UserId&quot;).ToString]">
                             <p:WithFtpSession.Body>
                               <ActivityAction x:TypeArguments="p:IFtpSession">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="File Extract-Validate-Upload" sap:VirtualizedContainerService.HintSize="653,912" sap2010:WorkflowViewState.IdRef="Sequence_254">
+                                <Sequence DisplayName="File Extract-Validate-Upload" sap:VirtualizedContainerService.HintSize="796,2405" sap2010:WorkflowViewState.IdRef="Sequence_254">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="scg:IEnumerable(p:FtpObjectInfo)" Name="dt_EnumerateSftpfiles" />
                                     <Variable x:TypeArguments="x:Boolean" Name="bool_IsSftpSourceFolderExist" />
@@ -191,8 +210,8 @@
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <p:DirectoryExists ContinueOnError="False" DisplayName="SFTP Directory exists" Exists="[bool_IsSftpSourceFolderExist]" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="DirectoryExists_9" RemotePath="[rule(&quot;Source_Directory&quot;).ToString]" />
-                                  <If Condition="[str_LPD.Contains(rule(&quot;Process_Name&quot;).ToString.ToLower)]" DisplayName="If SFTP Details Not Exist" sap:VirtualizedContainerService.HintSize="611,399" sap2010:WorkflowViewState.IdRef="If_75">
+                                  <p:DirectoryExists ContinueOnError="False" DisplayName="SFTP Directory exists" Exists="[bool_IsSftpSourceFolderExist]" sap:VirtualizedContainerService.HintSize="754,22" sap2010:WorkflowViewState.IdRef="DirectoryExists_9" RemotePath="[rule(&quot;Source_Directory&quot;).ToString]" />
+                                  <If Condition="[str_LPD.Contains(rule(&quot;Process_Name&quot;).ToString.ToLower)]" DisplayName="If SFTP Details Not Exist" sap:VirtualizedContainerService.HintSize="754,399" sap2010:WorkflowViewState.IdRef="If_75">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -236,7 +255,7 @@
                                       </Sequence>
                                     </If.Else>
                                   </If>
-                                  <Flowchart DisplayName="File Transmit WorkFlow" sap:VirtualizedContainerService.HintSize="611,51" sap2010:WorkflowViewState.IdRef="Flowchart_10">
+                                  <Flowchart DisplayName="File Transmit To SFTP Staging " sap:VirtualizedContainerService.HintSize="754,51" sap2010:WorkflowViewState.IdRef="Flowchart_10">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -374,7 +393,7 @@
                                     <x:Reference>__ReferenceID2</x:Reference>
                                     <x:Reference>__ReferenceID3</x:Reference>
                                   </Flowchart>
-                                  <Sequence DisplayName="File Validation And Upload" sap:VirtualizedContainerService.HintSize="754,1560" sap2010:WorkflowViewState.IdRef="Sequence_253">
+                                  <Sequence DisplayName="File Validation And Upload" sap:VirtualizedContainerService.HintSize="754,1559" sap2010:WorkflowViewState.IdRef="Sequence_253">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="s:String[]" Name="arr_fileArrayStage1" />
                                       <Variable x:TypeArguments="s:String[]" Name="arr_fileArrayStage2" />
@@ -382,7 +401,7 @@
                                     </Sequence.Variables>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -497,7 +516,7 @@
                                         <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Str_ProjectFolderPath+rule("Staging_Folder").ToString)]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File After UnZip" sap:VirtualizedContainerService.HintSize="712,1177" sap2010:WorkflowViewState.IdRef="ForEach`1_46" Values="[arr_FileArrayStage2]">
+                                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File After UnZip" sap:VirtualizedContainerService.HintSize="712,1176" sap2010:WorkflowViewState.IdRef="ForEach`1_46" Values="[arr_FileArrayStage2]">
                                       <ui:ForEach.Body>
                                         <ActivityAction x:TypeArguments="x:String">
                                           <ActivityAction.Argument>
@@ -688,14 +707,14 @@
                                                                 <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence DisplayName="Move to TSys &amp; Archive File" sap:VirtualizedContainerService.HintSize="391,543" sap2010:WorkflowViewState.IdRef="Sequence_251">
+                                                            <Sequence DisplayName="Move to TSys &amp; Archive File" sap:VirtualizedContainerService.HintSize="663,598" sap2010:WorkflowViewState.IdRef="Sequence_251">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="349,51" sap2010:WorkflowViewState.IdRef="LogMessage_147" Level="Info" Message="[&quot;Invoking file transfer to TSys&quot;]">
+                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="621,51" sap2010:WorkflowViewState.IdRef="LogMessage_147" Level="Info" Message="[&quot;Invoking file transfer to TSys&quot;]">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -703,7 +722,48 @@
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:LogMessage>
-                                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke File Transfer To TSys" sap:VirtualizedContainerService.HintSize="349,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="6 File Transmit To TSYS\File Transmit To TSYS.xaml">
+                                                              <If Condition="[Regex.IsMatch(Path.GetFileName(fileItemS2.ToString.ToLower),&quot;^SM[2][0-9][0-1][0-9][0-3][0-9].[0-9][0-9][0-9]$&quot;.ToLower)]" DisplayName="If SM files" sap:VirtualizedContainerService.HintSize="621,51" sap2010:WorkflowViewState.IdRef="If_81">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <If.Then>
+                                                                  <Sequence DisplayName="Transfer SM Files to TSys App Server" sap:VirtualizedContainerService.HintSize="242,234" sap2010:WorkflowViewState.IdRef="Sequence_257">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="TSysAppServer Session" sap:VirtualizedContainerService.HintSize="200,51" Host="[Str_TSysAppServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_12" Password="[New Net.NetworkCredential(&quot;&quot;,Pwd_TSysAppServerPwd).Password]" Port="[Int_TSysAppServerPort]" UseSftp="True" Username="[Str_TSysAppServerUserID]">
+                                                                      <p:WithFtpSession.Body>
+                                                                        <ActivityAction x:TypeArguments="p:IFtpSession">
+                                                                          <ActivityAction.Argument>
+                                                                            <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
+                                                                          </ActivityAction.Argument>
+                                                                          <p:UploadFiles ContinueOnError="False" Create="True" DisplayName="Upload SM files" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UploadFiles_2" LocalPath="[fileItemS2.ToString()]" Overwrite="True" Recursive="False" RemotePath="[Dict_PreBatchScriptPath(&quot;fd_GLConvertorInput&quot;)]" />
+                                                                        </ActivityAction>
+                                                                      </p:WithFtpSession.Body>
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </p:WithFtpSession>
+                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_149" Level="Info" Message="[&quot;Uploaded SM File into TSys App Server Successfully&quot;]">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </ui:LogMessage>
+                                                                  </Sequence>
+                                                                </If.Then>
+                                                              </If>
+                                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke File Transfer To TSys" sap:VirtualizedContainerService.HintSize="621,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="6 File Transmit To TSYS\File Transmit To TSYS.xaml">
                                                                 <ui:InvokeWorkflowFile.Arguments>
                                                                   <InArgument x:TypeArguments="x:String" x:Key="Str_TsysFolder">[rule("TSYS_Location").ToString]</InArgument>
                                                                   <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsMailId">[Str_RpaOpsEmailID]</InArgument>
@@ -717,12 +777,12 @@
                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:InvokeWorkflowFile>
-                                                              <If Condition="[bool_IsFileValid]" DisplayName="If IsFile Valid" sap:VirtualizedContainerService.HintSize="349,51" sap2010:WorkflowViewState.IdRef="If_80">
+                                                              <If Condition="[bool_IsFileValid]" DisplayName="If IsFile Valid" sap:VirtualizedContainerService.HintSize="621,51" sap2010:WorkflowViewState.IdRef="If_80">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -759,7 +819,7 @@
                                                                   </Sequence>
                                                                 </If.Then>
                                                               </If>
-                                                              <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Staging Archive Folder" sap:VirtualizedContainerService.HintSize="349,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_6" Path="[Str_ProjectFolderPath+Str_ArchiveFolderPath &amp; rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c)(rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c).Length-1)&amp;&quot;\&quot;&amp;now.ToString(&quot;ddMMyyyy&quot;)]">
+                                                              <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Staging Archive Folder" sap:VirtualizedContainerService.HintSize="621,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_6" Path="[Str_ProjectFolderPath+Str_ArchiveFolderPath &amp; rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c)(rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c).Length-1)&amp;&quot;\&quot;&amp;now.ToString(&quot;ddMMyyyy&quot;)]">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -767,7 +827,7 @@
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:CreateDirectory>
-                                                              <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Str_ProjectFolderPath+Str_ArchiveFolderPath &amp; rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c)(rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c).Length-1)&amp;&quot;\&quot;&amp;now.ToString(&quot;ddMMyyyy&quot;)]" DisplayName="Archive Into Staging" sap:VirtualizedContainerService.HintSize="349,51" sap2010:WorkflowViewState.IdRef="MoveFile_6" Overwrite="True" Path="[fileItemS2.ToString]">
+                                                              <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Str_ProjectFolderPath+Str_ArchiveFolderPath &amp; rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c)(rule(&quot;Staging_Folder&quot;).ToString.Split(&quot;\&quot;c).Length-1)&amp;&quot;\&quot;&amp;now.ToString(&quot;ddMMyyyy&quot;)]" DisplayName="Archive Into Staging" sap:VirtualizedContainerService.HintSize="621,51" sap2010:WorkflowViewState.IdRef="MoveFile_6" Overwrite="True" Path="[fileItemS2.ToString]">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -802,7 +862,7 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:ForEach>
                                   </Sequence>
-                                  <Assign DisplayName="Set LPD" sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_81">
+                                  <Assign DisplayName="Set LPD" sap:VirtualizedContainerService.HintSize="754,60" sap2010:WorkflowViewState.IdRef="Assign_81">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[str_LPD]</OutArgument>
                                     </Assign.To>
@@ -810,7 +870,7 @@
                                       <InArgument x:TypeArguments="x:String">[str_LPD.Replace(rule("Process_Name").ToString.ToLower+":"+str_SftpLPD,rule("Process_Name").ToString.ToLower+":"+Now.ToString("MM/dd/yyyy HH:mm:ss"))]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:SetAsset TimeoutMS="{x:Null}" AssetName="TPA_SftpLastProcessedDate" DisplayName="Set Asset Sftp LPD" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="SetAsset_4" Value="[str_LPD]">
+                                  <ui:SetAsset TimeoutMS="{x:Null}" AssetName="TPA_SftpLastProcessedDate" DisplayName="Set Asset Sftp LPD" sap:VirtualizedContainerService.HintSize="754,22" sap2010:WorkflowViewState.IdRef="SetAsset_4" Value="[str_LPD]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -829,7 +889,7 @@
                           </p:WithFtpSession>
                         </TryCatch.Try>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="714,21" sap2010:WorkflowViewState.IdRef="Catch`1_32">
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="834,21" sap2010:WorkflowViewState.IdRef="Catch`1_32">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -933,7 +993,7 @@
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="638,21" sap2010:WorkflowViewState.IdRef="Catch`1_30">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_30">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
