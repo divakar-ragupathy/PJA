@@ -289,7 +289,7 @@
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" x:Key="&quot;SFTP&quot;" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="SFTP Server Session" sap:VirtualizedContainerService.HintSize="434,108" Host="[rule(&quot;HostName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="WithFtpSession_7" Password="[New System.Net.NetworkCredential(&quot;&quot;,rule(&quot;SFTP_Password&quot;).ToString).Password]" Port="[Integer.Parse(rule(&quot;Port&quot;).ToString)]" UseSftp="True" Username="[rule(&quot;SFTP_UserId&quot;).ToString]">
+                                                          <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" x:Key="SFTP" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="SFTP Server Session" sap:VirtualizedContainerService.HintSize="434,108" Host="[rule(&quot;HostName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="WithFtpSession_7" Password="[New System.Net.NetworkCredential(&quot;&quot;,rule(&quot;SFTP_Password&quot;).ToString).Password]" Port="[Integer.Parse(rule(&quot;Port&quot;).ToString)]" UseSftp="True" Username="[rule(&quot;SFTP_UserId&quot;).ToString]">
                                                             <p:WithFtpSession.Body>
                                                               <ActivityAction x:TypeArguments="p:IFtpSession">
                                                                 <ActivityAction.Argument>
@@ -305,7 +305,7 @@
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
                                                           </p:WithFtpSession>
-                                                          <Sequence x:Key="&quot;EMAIL&quot;" DisplayName="Send ReturnFile Through Mail" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                                          <Sequence x:Key="EMAIL" DisplayName="Send ReturnFile Through Mail" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -402,26 +402,26 @@
                             <av:Size x:Key="ShapeSize">200,51</av:Size>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="Tsys Server Session" sap:VirtualizedContainerService.HintSize="1211,2381" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_10" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysDBServerPassword).Password]" Port="[int_TSysServerPort]" UseSftp="True" Username="[Str_TSysDBServerUserName]">
+                        <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="Tsys Server Session" sap:VirtualizedContainerService.HintSize="1107,2046" Host="[str_TSysServerHost]" sap2010:WorkflowViewState.IdRef="WithFtpSession_10" Password="[New System.Net.NetworkCredential(&quot;&quot;,Pwd_TSysDBServerPassword).Password]" Port="[int_TSysServerPort]" UseSftp="True" Username="[Str_TSysDBServerUserName]">
                           <p:WithFtpSession.Body>
                             <ActivityAction x:TypeArguments="p:IFtpSession">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Send Return Files to Source" sap:VirtualizedContainerService.HintSize="1177,2295" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                              <Sequence DisplayName="Send Return Files to Source" sap:VirtualizedContainerService.HintSize="1073,1960" sap2010:WorkflowViewState.IdRef="Sequence_53">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_FilteredReturnFileRuleFactory]" DisplayName="For Each Folder" sap:VirtualizedContainerService.HintSize="1135,2203" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+                                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_FilteredReturnFileRuleFactory]" DisplayName="For Each Folder" sap:VirtualizedContainerService.HintSize="1031,1868" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
                                   <ui:ForEachRow.Body>
                                     <ActivityAction x:TypeArguments="sd:DataRow">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rule" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Get Return Files from Folder and Send to Source" sap:VirtualizedContainerService.HintSize="1085,2056" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                      <Sequence DisplayName="Get Return Files from Folder and Send to Source" sap:VirtualizedContainerService.HintSize="981,1721" sap2010:WorkflowViewState.IdRef="Sequence_52">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="scg:IEnumerable(p:FtpObjectInfo)" Name="list_ConvertedFiles" />
                                         </Sequence.Variables>
@@ -431,9 +431,9 @@
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <If Condition="[rule(&quot;Return_File_Location&quot;).ToString.ToUpper=&quot;DB&quot;]" DisplayName="If Retrun File Location = DB" sap:VirtualizedContainerService.HintSize="1043,1964" sap2010:WorkflowViewState.IdRef="If_9">
+                                        <If Condition="[rule(&quot;Return_File_Location&quot;).ToString.ToUpper=&quot;DB&quot;]" DisplayName="If Retrun File Location = DB" sap:VirtualizedContainerService.HintSize="939,1629" sap2010:WorkflowViewState.IdRef="If_9">
                                           <If.Then>
-                                            <Sequence DisplayName="Extract Log from DB" sap:VirtualizedContainerService.HintSize="304,679" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                            <Sequence DisplayName="Extract Log from DB" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_55">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="sd:DataTable" Name="dt_DataBaseLog" />
                                                 <Variable x:TypeArguments="x:String" Name="str_DBLogFileName" />
@@ -441,8 +441,8 @@
                                               </Sequence.Variables>
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
@@ -526,7 +526,7 @@
                                                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" x:Key="&quot;SFTP&quot;" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="SFTP Server Session" sap:VirtualizedContainerService.HintSize="200,51" Host="[rule(&quot;HostName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="WithFtpSession_11" Password="[New System.Net.NetworkCredential(&quot;&quot;,rule(&quot;SFTP_Password&quot;).ToString).Password]" Port="[Integer.Parse(rule(&quot;Port&quot;).ToString)]" UseSftp="True" Username="[rule(&quot;SFTP_UserId&quot;).ToString]">
+                                                  <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" x:Key="SFTP" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="SFTP Server Session" sap:VirtualizedContainerService.HintSize="200,51" Host="[rule(&quot;HostName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="WithFtpSession_11" Password="[New System.Net.NetworkCredential(&quot;&quot;,rule(&quot;SFTP_Password&quot;).ToString).Password]" Port="[Integer.Parse(rule(&quot;Port&quot;).ToString)]" UseSftp="True" Username="[rule(&quot;SFTP_UserId&quot;).ToString]">
                                                     <p:WithFtpSession.Body>
                                                       <ActivityAction x:TypeArguments="p:IFtpSession">
                                                         <ActivityAction.Argument>
@@ -542,7 +542,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </p:WithFtpSession>
-                                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" x:Key="&quot;EMAIL&quot;" Body="[&quot;Hi Team,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Please find the attached return file&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_14" IsBodyHtml="False" IsDraft="False" Subject="Notification: Return Files" To="[rule(&quot;Return_File_Email_Id&quot;).ToString]">
+                                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" x:Key="EMAIL" Body="[&quot;Hi Team,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Please find the attached return file&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_14" IsBodyHtml="False" IsDraft="False" Subject="Notification: Return Files" To="[rule(&quot;Return_File_Email_Id&quot;).ToString]">
                                                     <ui:SendOutlookMail.Files>
                                                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                                                         <InArgument x:TypeArguments="x:String">[Str_ReturnFileLocalPath+"\"+rule("Process_Name").ToString+"_"+Now.ToString("yyyyMMdd")+".zip"]</InArgument>
@@ -576,7 +576,7 @@
                                             </Sequence>
                                           </If.Then>
                                           <If.Else>
-                                            <Sequence DisplayName="Extract Return Files" sap:VirtualizedContainerService.HintSize="694,1817" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                            <Sequence DisplayName="Extract Return Files" sap:VirtualizedContainerService.HintSize="694,1482" sap2010:WorkflowViewState.IdRef="Sequence_56">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -584,13 +584,13 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <p:EnumerateObjects ContinueOnError="False" DisplayName="Get Return File List" Files="[list_ConvertedFiles]" sap:VirtualizedContainerService.HintSize="652,22" sap2010:WorkflowViewState.IdRef="EnumerateObjects_3" Recursive="False" RemotePath="[rule(&quot;Return_File_Location&quot;).ToString.Replace(&quot;YYYYMMDD&quot;,Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;))]" />
-                                              <ui:ForEach x:TypeArguments="p:FtpObjectInfo" CurrentIndex="{x:Null}" DisplayName="For Each Converted File " sap:VirtualizedContainerService.HintSize="652,1663" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[list_ConvertedFiles]">
+                                              <ui:ForEach x:TypeArguments="p:FtpObjectInfo" CurrentIndex="{x:Null}" DisplayName="For Each Converted File " sap:VirtualizedContainerService.HintSize="652,1328" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[list_ConvertedFiles]">
                                                 <ui:ForEach.Body>
                                                   <ActivityAction x:TypeArguments="p:FtpObjectInfo">
                                                     <ActivityAction.Argument>
                                                       <DelegateInArgument x:TypeArguments="p:FtpObjectInfo" Name="file" />
                                                     </ActivityAction.Argument>
-                                                    <Sequence DisplayName="Match File Pattern" sap:VirtualizedContainerService.HintSize="616,1530" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                                    <Sequence DisplayName="Match File Pattern" sap:VirtualizedContainerService.HintSize="616,1195" sap2010:WorkflowViewState.IdRef="Sequence_45">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="list_fileMatch" />
                                                       </Sequence.Variables>
@@ -608,13 +608,13 @@
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                       </ui:Matches>
-                                                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Matched Converted File" sap:VirtualizedContainerService.HintSize="574,1347" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[list_fileMatch]">
+                                                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Matched Converted File" sap:VirtualizedContainerService.HintSize="574,1012" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[list_fileMatch]">
                                                         <ui:ForEach.Body>
                                                           <ActivityAction x:TypeArguments="x:Object">
                                                             <ActivityAction.Argument>
                                                               <DelegateInArgument x:TypeArguments="x:Object" Name="matchfile" />
                                                             </ActivityAction.Argument>
-                                                            <Sequence DisplayName="Send Return File to Source" sap:VirtualizedContainerService.HintSize="538,1214" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                                            <Sequence DisplayName="Send Return File to Source" sap:VirtualizedContainerService.HintSize="538,879" sap2010:WorkflowViewState.IdRef="Sequence_44">
                                                               <Sequence.Variables>
                                                                 <Variable x:TypeArguments="sd:DataTable" Name="dt_Log" />
                                                               </Sequence.Variables>
@@ -625,7 +625,7 @@
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <p:DownloadFiles ContinueOnError="False" Create="True" DisplayName="Download  File from TSYS" sap:VirtualizedContainerService.HintSize="496,22" sap2010:WorkflowViewState.IdRef="DownloadFiles_6" LocalPath="[Str_ReturnFileLocalPath]" Overwrite="True" Recursive="False" RemotePath="[rule(&quot;Return_File_Location&quot;).ToString().Replace(&quot;YYYYMMDD&quot;,Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;))+&quot;/&quot;+Path.GetFileName(file.Name)]" />
-                                                              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[rule(&quot;Source_Type&quot;).ToString.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="496,998" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+                                                              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[rule(&quot;Source_Type&quot;).ToString.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="496,663" sap2010:WorkflowViewState.IdRef="Switch`1_4">
                                                                 <Switch.Default>
                                                                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Error - Unable to match source type&quot;+rule(&quot;Source_Type&quot;).ToString+&quot; with any of the standard source type.&quot;]">
                                                                     <sap:WorkflowViewStateService.ViewState>
@@ -642,7 +642,7 @@
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" x:Key="&quot;SFTP&quot;" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="SFTP Server Session" sap:VirtualizedContainerService.HintSize="434,108" Host="[rule(&quot;HostName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="WithFtpSession_8" Password="[New System.Net.NetworkCredential(&quot;&quot;,rule(&quot;SFTP_Password&quot;).ToString).Password]" Port="[Integer.Parse(rule(&quot;Port&quot;).ToString)]" UseSftp="True" Username="[rule(&quot;SFTP_UserId&quot;).ToString]">
+                                                                <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" x:Key="SFTP" AcceptAllCertificates="True" ContinueOnError="False" DisplayName="SFTP Server Session" sap:VirtualizedContainerService.HintSize="434,108" Host="[rule(&quot;HostName&quot;).ToString]" sap2010:WorkflowViewState.IdRef="WithFtpSession_8" Password="[New System.Net.NetworkCredential(&quot;&quot;,rule(&quot;SFTP_Password&quot;).ToString).Password]" Port="[Integer.Parse(rule(&quot;Port&quot;).ToString)]" UseSftp="True" Username="[rule(&quot;SFTP_UserId&quot;).ToString]">
                                                                   <p:WithFtpSession.Body>
                                                                     <ActivityAction x:TypeArguments="p:IFtpSession">
                                                                       <ActivityAction.Argument>
@@ -658,11 +658,11 @@
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                 </p:WithFtpSession>
-                                                                <Sequence x:Key="&quot;EMAIL&quot;" DisplayName="Send ReturnFile Through Mail" sap:VirtualizedContainerService.HintSize="242,205" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                                                <Sequence x:Key="EMAIL" DisplayName="Send ReturnFile Through Mail" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                   <bz:ZipFilesCls DisplayName="Zip - File" FolderFilesPath="[{Str_ReturnFileLocalPath+&quot;\&quot;+file.Name}]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ZipFilesCls_8" Password="[rule(&quot;Password&quot;).ToString.Replace(&quot;mmddyy&quot;,Now.ToString(&quot;MMddyy&quot;)).Replace(&quot;yyddmm&quot;,Now.ToString(&quot;yyddMM&quot;))]" ZipFile="[Str_ReturnFileLocalPath+&quot;\&quot;+rule(&quot;Process_Name&quot;).ToString+&quot;_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;]" />
@@ -680,22 +680,22 @@
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                   </ui:SendOutlookMail>
                                                                 </Sequence>
-                                                                <Sequence x:Key="PCIDSS" DisplayName="Upload Retrun File Into PCIDSS Folder" sap:VirtualizedContainerService.HintSize="376,262" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                                                <Sequence x:Key="PCIDSS" DisplayName="Upload Retrun File Into PCIDSS Folder" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_43">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[rule(&quot;Destination_File_Location&quot;).ToString+&quot;\&quot;+Now.ToString(&quot;yyyyMMdd&quot;)]">
+                                                                  <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[rule(&quot;Destination_File_Location&quot;).ToString+&quot;\&quot;+Now.ToString(&quot;yyyyMMdd&quot;)]">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                   </ui:CreateDirectory>
-                                                                  <ui:CopyFile ContinueOnError="{x:Null}" Destination="[rule(&quot;Destination_File_Location&quot;).ToString+&quot;\&quot;+Now.ToString(&quot;yyyyMMdd&quot;) + &quot;\&quot;+file.Name]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CopyFile_3" Overwrite="True" Path="[Str_ReturnFileLocalPath+&quot;\&quot;+file.Name]">
+                                                                  <ui:CopyFile ContinueOnError="{x:Null}" Destination="[rule(&quot;Destination_File_Location&quot;).ToString+&quot;\&quot;+Now.ToString(&quot;yyyyMMdd&quot;) + &quot;\&quot;+file.Name]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CopyFile_3" Overwrite="True" Path="[Str_ReturnFileLocalPath+&quot;\&quot;+file.Name]">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
