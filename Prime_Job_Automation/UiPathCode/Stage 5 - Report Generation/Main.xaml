@@ -81,7 +81,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="507,685" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="205,103" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
       <State.Entry>
         <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="461,541" sap2010:WorkflowViewState.IdRef="TryCatch_4">
           <TryCatch.Try>
@@ -138,7 +138,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the PJA upload activity starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the PJA upload activity starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="484,1015" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
         <TryCatch DisplayName="Try Check all Pre-Requisites are Exist" sap:VirtualizedContainerService.HintSize="438,597" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -173,15 +173,33 @@
               </ui:LogMessage>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PreRunCheck workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="1 PreRunCheck\PreRunCheck.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</OutArgument>
-                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJRemotePassword">[pwd_PJRemotePassword]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteUserId">[str_PJRemoteUserId]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteIp">[str_PJRemoteIp]</InArgument>
-                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TPNUser">[Pwd_TPNUser]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Str_TPNUserID">[Str_TPNUserID]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Str_HolidayList">[str_HolidayList]</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJRemotePassword">
+                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_PJRemotePassword" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteUserId">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PJRemoteUserId" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteIp">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PJRemoteIp" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TPNUser">
+                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_TPNUser" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TPNUserID">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TPNUserID" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_HolidayList">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_HolidayList" />
+                  </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -308,14 +326,30 @@
                       </ui:LogMessage>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PJA File Upload" sap:VirtualizedContainerService.HintSize="373,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="2 Report_Generation_Daily\ReportGenerationDaily.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</OutArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJRemotePassword">[pwd_PJRemotePassword]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteUserId">[str_PJRemoteUserId]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteIp">[str_PJRemoteIp]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_HolidayList">[str_HolidayList]</InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TPNUser">[Pwd_TPNUser]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TPNUserID">[Str_TPNUserID]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJRemotePassword">
+                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_PJRemotePassword" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteUserId">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PJRemoteUserId" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteIp">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PJRemoteIp" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_HolidayList">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_HolidayList" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TPNUser">
+                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TPNUser" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TPNUserID">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TPNUserID" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -425,17 +459,13 @@
     <StateMachine.Variables>
       <Variable x:TypeArguments="x:String" Name="str_ExceptionMessage" />
       <Variable x:TypeArguments="x:String" Name="str_RpaOpsEmailID" />
-      <Variable x:TypeArguments="x:String" Name="str_ProjectFolderPath">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Prime_Job_Automation\</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="C:\Prime_Job_Automation\" Name="str_ProjectFolderPath" />
       <Variable x:TypeArguments="x:String" Name="str_ReturnFilePath" />
       <Variable x:TypeArguments="ss:SecureString" Name="pwd_PJRemotePassword" />
       <Variable x:TypeArguments="x:String" Name="str_PJRemoteUserId" />
       <Variable x:TypeArguments="x:String" Name="str_PJRemoteIp" />
-      <Variable x:TypeArguments="ss:SecureString" Name="Pwd_TPNUser" />
-      <Variable x:TypeArguments="x:String" Name="Str_TPNUserID" />
+      <Variable x:TypeArguments="ss:SecureString" Name="pwd_TPNUser" />
+      <Variable x:TypeArguments="x:String" Name="str_TPNUserID" />
       <Variable x:TypeArguments="x:String" Name="str_HolidayList" />
     </StateMachine.Variables>
   </StateMachine>

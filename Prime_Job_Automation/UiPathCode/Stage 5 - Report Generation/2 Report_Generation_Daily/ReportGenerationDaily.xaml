@@ -1,7 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="Str_RpaOpsEmailID" Type="OutArgument(x:String)" />
-    <x:Property Name="Str_ProjectFolderPath" Type="OutArgument(x:String)" />
+    <x:Property Name="Str_RpaOpsEmailID" Type="InArgument(x:String)" />
+    <x:Property Name="Str_ProjectFolderPath" Type="InArgument(x:String)" />
     <x:Property Name="Pwd_PJRemotePassword" Type="InArgument(ss:SecureString)" />
     <x:Property Name="Str_PJRemoteUserId" Type="InArgument(x:String)" />
     <x:Property Name="Str_PJRemoteIp" Type="InArgument(x:String)" />
@@ -30,7 +30,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,2907</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,2986</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -82,10 +82,9 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1155,2742" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1160,2821" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Default="True" Name="bool_UsernameExists" />
       <Variable x:TypeArguments="x:String" Default="123456" Name="Password" />
@@ -108,7 +107,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Report Generation" sap:VirtualizedContainerService.HintSize="434,568" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Report Generation" sap:VirtualizedContainerService.HintSize="1118,2729" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1186,15 +1185,9 @@
                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                 <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim str_DayOfSoNM As String 'Day of Start of NextMonth&#xA;Dim str_LWDoCM As String 'Last Working Day of Current Month&#xA;Dim int_Year As Integer&#xA;Dim int_Month As Integer&#xA;Dim int_Day As Integer&#xA;If str_RunFrequency.ToLower.Equals(&quot;m&quot;) Then&#xA;str_DayOfSoNM=New DateTime(Now.Year,Now.Month,1).AddMonths(1).AddDays(-1).DayOfWeek.ToString&#xA;str_LWDoCM=New DateTime(Now.Year,Now.Month,1).AddMonths(1).AddDays(-1).ToString(&quot;MMddyyyy&quot;)        &#xA;Else If str_RunFrequency.ToLower.Equals(&quot;q&quot;) Then&#xA;    Select Now.Month Mod 3&#xA;    Case 0&#xA;        str_DayOfSoNM=New DateTime(Now.Year,Now.Month,1).AddMonths(1).AddDays(-1).DayOfWeek.ToString&#xA;        str_LWDoCM=New DateTime(Now.Year,Now.Month,1).AddMonths(1).AddDays(-1).ToString(&quot;MMddyyyy&quot;)&#xA;    Case 1&#xA;        str_DayOfSoNM=New DateTime(Now.Year,Now.Month,1).AddMonths(3).AddDays(-1).DayOfWeek.ToString&#xA;        str_LWDoCM=New DateTime(Now.Year,Now.Month,1).AddMonths(3).AddDays(-1).ToString(&quot;MMddyyyy&quot;)&#xA;    Case 2        &#xA;        str_DayOfSoNM=New DateTime(Now.Year,Now.Month,1).AddMonths(2).AddDays(-1).DayOfWeek.ToString&#xA;        str_LWDoCM=New DateTime(Now.Year,Now.Month,1).AddMonths(2).AddDays(-1).ToString(&quot;MMddyyyy&quot;)&#xA;    End Select&#xA;End If&#xA;&#xA;&#xA;While list_Holidays.Contains(str_LWDoCM) Or str_DayOfSoNM.ToLower.Equals(&quot;sunday&quot;)&#xA;    int_year=CInt(Mid(str_LWDoCM,5,4))&#xA;    int_month=CInt(Mid(str_LWDoCM,3,2))&#xA;    int_day=CInt(Mid(str_LWDoCM,1,2))&#xA;    str_DayOfSoNM=New DateTime(int_year,int_month,int_day).AddDays(-1).DayOfWeek.ToString&#xA;    str_LWDoCM=New DateTime(int_year,int_month,int_day).AddDays(-1).ToString(&quot;MMddyyyy&quot;)&#xA;End While&#xA; &#xA;If Now.ToString(&quot;MMddyyyy&quot;).Equals(str_LWDoCM) Then&#xA;&#x9;bool_IsLWD =True&#xA;&#x9;Else&#xA;&#x9;bool_IsLWD =False    &#xA;End If " DisplayName="Check Today = LWD" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                                                                                   <ui:InvokeCode.Arguments>
-                                                                                    <InArgument x:TypeArguments="x:String" x:Key="str_RunFrequency">
-                                                                                      <Literal x:TypeArguments="x:String">Q</Literal>
-                                                                                    </InArgument>
-                                                                                    <InArgument x:TypeArguments="x:String" x:Key="list_Holidays">
-                                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_HolidayList" />
-                                                                                    </InArgument>
-                                                                                    <OutArgument x:TypeArguments="x:Boolean" x:Key="bool_IsLWD">
-                                                                                      <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsLWD" />
-                                                                                    </OutArgument>
+                                                                                    <InArgument x:TypeArguments="x:String" x:Key="str_RunFrequency">Q</InArgument>
+                                                                                    <InArgument x:TypeArguments="x:String" x:Key="list_Holidays">[Str_HolidayList]</InArgument>
+                                                                                    <OutArgument x:TypeArguments="x:Boolean" x:Key="bool_IsLWD">[bool_IsLWD]</OutArgument>
                                                                                   </ui:InvokeCode.Arguments>
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1224,27 +1217,13 @@
                                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Quarterly Report" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="3 Report_Generation_Monthly\ReportGenerationMonthly.xaml">
                                                                                           <ui:InvokeWorkflowFile.Arguments>
-                                                                                            <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                                                                                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
-                                                                                            </OutArgument>
-                                                                                            <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                                                                                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_ProjectFolderPath" />
-                                                                                            </OutArgument>
-                                                                                            <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJRemotePassword">
-                                                                                              <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_PJRemotePassword" />
-                                                                                            </InArgument>
-                                                                                            <InArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteUserId">
-                                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PJRemoteUserId" />
-                                                                                            </InArgument>
-                                                                                            <InArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteIp">
-                                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_PJRemoteIp" />
-                                                                                            </InArgument>
-                                                                                            <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TPNUser">
-                                                                                              <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TPNUser" />
-                                                                                            </InArgument>
-                                                                                            <InArgument x:TypeArguments="x:String" x:Key="Str_TPNUserID">
-                                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TPNUserID" />
-                                                                                            </InArgument>
+                                                                                            <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</OutArgument>
+                                                                                            <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[Str_ProjectFolderPath]</OutArgument>
+                                                                                            <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PJRemotePassword">[Pwd_PJRemotePassword]</InArgument>
+                                                                                            <InArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteUserId">[Str_PJRemoteUserId]</InArgument>
+                                                                                            <InArgument x:TypeArguments="x:String" x:Key="Str_PJRemoteIp">[Str_PJRemoteIp]</InArgument>
+                                                                                            <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TPNUser">[Pwd_TPNUser]</InArgument>
+                                                                                            <InArgument x:TypeArguments="x:String" x:Key="Str_TPNUserID">[Str_TPNUserID]</InArgument>
                                                                                           </ui:InvokeWorkflowFile.Arguments>
                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2213,10 +2192,10 @@
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,406" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1084,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -2224,7 +2203,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Sequence - Exception Handling" sap:VirtualizedContainerService.HintSize="376,337" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Sequence - Exception Handling" sap:VirtualizedContainerService.HintSize="376,334" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="Str_ExceptionMessage" />
               </Sequence.Variables>

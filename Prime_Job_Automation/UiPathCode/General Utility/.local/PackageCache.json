@@ -2,6 +2,32 @@
   "Packages": [
     {
       "Package": {
+        "Id": "BalaReva.ZipUnzip.Activities",
+        "Version": "2019.4.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\balareva.zipunzip.activities/2019.4.1\\lib/BalaReva.Zip.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\balareva.zipunzip.activities/2019.4.1\\lib/BalaReva.Zip.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\balareva.zipunzip.activities/2019.4.1\\lib/SharpCompress.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\ionic.zip/1.9.1.8\\lib/Ionic.Zip.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\balareva.zipunzip.activities\\2019.4.1"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Database.Activities",
+        "Version": "1.3.7369.25200"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/Microsoft.Data.ConnectionUI.Dialog.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200"
+    },
+    {
+      "Package": {
         "Id": "UiPath.Excel.Activities",
         "Version": "2.8.5"
       },
@@ -23,6 +49,20 @@
     },
     {
       "Package": {
+        "Id": "UiPath.FTP.Activities",
+        "Version": "1.0.7346.28183"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\fluentftp/19.1.2\\lib/net45/FluentFTP.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\ssh.net/2016.1.0\\lib/net40/Renci.SshNet.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities\\1.0.7346.28183"
+    },
+    {
+      "Package": {
         "Id": "UiPath.Mail.Activities",
         "Version": "1.8.5"
       },
@@ -39,6 +79,22 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities/1.8.5\\lib/net461/UiPath.Mail.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.mail.activities\\1.8.5"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.OracleNetSuite.Activities",
+        "Version": "1.0.0-preview"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.applicationinsights/2.3.0\\lib/net46/Microsoft.ApplicationInsights.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\system.componentmodel.annotations/4.6.0\\lib/net461/System.ComponentModel.Annotations.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.oraclenetsuite.activities/1.0.0-preview\\lib/net461/ActiproSoftware.Shared.Wpf.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.oraclenetsuite.activities/1.0.0-preview\\lib/net461/UiPath.OracleNetSuite.Activities.Design.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.oraclenetsuite.activities/1.0.0-preview\\lib/net461/UiPath.OracleNetSuite.Activities.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.oraclenetsuite.activities/1.0.0-preview\\lib/net461/UiPath.OracleNetSuite.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.oraclenetsuite.activities\\1.0.0-preview"
     },
     {
       "Package": {
@@ -116,59 +172,14 @@
     },
     {
       "Package": {
-        "Id": "UiPath.OracleNetSuite.Activities",
-        "Version": "1.0.0-preview"
+        "Id": "SSHCommandHandler",
+        "Version": "1.0.1"
       },
       "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\microsoft.applicationinsights/2.3.0\\lib/net46/Microsoft.ApplicationInsights.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\system.componentmodel.annotations/4.6.0\\lib/net461/System.ComponentModel.Annotations.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.oraclenetsuite.activities/1.0.0-preview\\lib/net461/ActiproSoftware.Shared.Wpf.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.oraclenetsuite.activities/1.0.0-preview\\lib/net461/UiPath.OracleNetSuite.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.oraclenetsuite.activities/1.0.0-preview\\lib/net461/UiPath.OracleNetSuite.Activities.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.oraclenetsuite.activities/1.0.0-preview\\lib/net461/UiPath.OracleNetSuite.dll"
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler/1.0.1\\lib/Renci.SshNet.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler/1.0.1\\lib/SSHCommandHandler.dll"
       ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.oraclenetsuite.activities\\1.0.0-preview"
-    },
-    {
-      "Package": {
-        "Id": "UiPath.FTP.Activities",
-        "Version": "1.0.7346.28183"
-      },
-      "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\fluentftp/19.1.2\\lib/net45/FluentFTP.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\ssh.net/2016.1.0\\lib/net40/Renci.SshNet.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.Activities.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities/1.0.7346.28183\\lib/net452/UiPath.FTP.dll"
-      ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.ftp.activities\\1.0.7346.28183"
-    },
-    {
-      "Package": {
-        "Id": "BalaReva.ZipUnzip.Activities",
-        "Version": "2019.4.1"
-      },
-      "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\balareva.zipunzip.activities/2019.4.1\\lib/BalaReva.Zip.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\balareva.zipunzip.activities/2019.4.1\\lib/BalaReva.Zip.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\balareva.zipunzip.activities/2019.4.1\\lib/SharpCompress.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\ionic.zip/1.9.1.8\\lib/Ionic.Zip.dll"
-      ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\balareva.zipunzip.activities\\2019.4.1"
-    },
-    {
-      "Package": {
-        "Id": "UiPath.Database.Activities",
-        "Version": "1.3.7369.25200"
-      },
-      "Assemblies": [
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/Microsoft.Data.ConnectionUI.Dialog.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.Activities.Design.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.Activities.dll",
-        "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities/1.3.7369.25200\\lib/net452/UiPath.Database.dll"
-      ],
-      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200"
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler\\1.0.1"
     }
   ],
   "Conflicts": [],
@@ -305,6 +316,11 @@
     "SSH.NET": {
       "Id": "SSH.NET",
       "Version": "2016.1.0",
+      "Dependencies": []
+    },
+    "SSHCommandHandler": {
+      "Id": "SSHCommandHandler",
+      "Version": "1.0.1",
       "Dependencies": []
     },
     "System.Collections": {
@@ -771,6 +787,17 @@
         "C:\\Users\\divakar_r\\.nuget\\packages\\ssh.net\\2016.1.0\\lib\\net40\\Renci.SshNet.dll"
       ],
       "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\ssh.net\\2016.1.0"
+    },
+    {
+      "Package": {
+        "Id": "SSHCommandHandler",
+        "Version": "1.0.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler\\1.0.1\\lib\\Renci.SshNet.dll",
+        "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler\\1.0.1\\lib\\SSHCommandHandler.dll"
+      ],
+      "Path": "C:\\Users\\divakar_r\\.nuget\\packages\\sshcommandhandler\\1.0.1"
     },
     {
       "Package": {
