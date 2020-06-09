@@ -196,7 +196,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger source file extraction from PCIDSS" DisplayName="File Extraction from PCIDSS" sap:VirtualizedContainerService.HintSize="505,1015" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger source file extraction from PCIDSS" DisplayName="File Extraction from PCIDSS" sap:VirtualizedContainerService.HintSize="251,111" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try File Extraction from PCIDSS" sap:VirtualizedContainerService.HintSize="459,597" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -231,66 +231,26 @@
                       </ui:LogMessage>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Source File Extraction from PCIDSS" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="3 Source File Extraction - PCIDSS\PCIDSS Source File Extraction.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
-                          </OutArgument>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedSourceFileList">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProcessedSourceFileList" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileLookupPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProcessedFileListLookupPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ArchiveFolderPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">
-                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysDBServerPwd" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysDBServerDetails" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysAppServerUserID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysAppServerPwd">
-                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysAppServerPwd" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerUserID">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysAppServerUserID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerHost">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysAppServerHost" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="Int_TSysAppServerPort">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="int_TSysAppServerPort" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="Dict_PreBatchScriptPath">
-                            <mva:VisualBasicValue x:TypeArguments="scg:IDictionary(x:String, x:String)" ExpressionText="dict_PreBatchScriptPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_EdsPwd">
-                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_EdsPwd" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_EdsUserID">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_EdsUserID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="Int_EdsServerPort">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="int_EdsServerPort" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_EdsServerHost">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_EdsServerHost" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_EdsServerDetails">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_EdsServerDetails" />
-                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedSourceFileList">[str_ProcessedSourceFileList]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileLookupPath">[str_ProcessedFileListLookupPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">[str_ArchiveFolderPath]</InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">[pwd_TSysDBServerPwd]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">[str_TSysDBServerDetails]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">[str_TSysAppServerUserID]</InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysAppServerPwd">[pwd_TSysAppServerPwd]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerUserID">[str_TSysAppServerUserID]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerHost">[str_TSysAppServerHost]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="Int_TSysAppServerPort">[int_TSysAppServerPort]</InArgument>
+                          <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="Dict_PreBatchScriptPath">[dict_PreBatchScriptPath]</InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_EdsPwd">[pwd_EdsPwd]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_EdsUserID">[str_EdsUserID]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="Int_EdsServerPort">[int_EdsServerPort]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_EdsServerHost">[str_EdsServerHost]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_EdsServerDetails">[str_EdsServerDetails]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -367,7 +327,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="This process will trigger source file extraction from SFTP" DisplayName="File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="256,117" sap2010:WorkflowViewState.IdRef="State_5">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="This process will trigger source file extraction from SFTP" DisplayName="File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="505,1015" sap2010:WorkflowViewState.IdRef="State_5">
                       <State.Entry>
                         <TryCatch DisplayName="Try File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="459,597" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                           <sap:WorkflowViewStateService.ViewState>
@@ -402,21 +362,51 @@
                               </ui:LogMessage>
                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Source File Extraction from SFTP" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="4 Source File Extraction - SFTP\SFTP Source File Extraction.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
-                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedSourceFileList">[str_ProcessedSourceFileList]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileLookupPath">[str_ProcessedFileListLookupPath]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">[str_ArchiveFolderPath]</InArgument>
-                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">[pwd_TSysAppServerPwd]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">[str_TSysDBServerDetails]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">[str_TSysDBServerUserID]</InArgument>
-                                  <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="Dict_PreBatchScriptPath">[dict_PreBatchScriptPath]</InArgument>
-                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysAppServerPwd">[pwd_TSysAppServerPwd]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerUserID">[str_TSysAppServerUserID]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerHost">[str_TSysAppServerHost]</InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="Int_TSysAppServerPort">[int_TSysAppServerPort]</InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
+                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
+                                  </OutArgument>
+                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
+                                    <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedSourceFileList">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProcessedSourceFileList" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileLookupPath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProcessedFileListLookupPath" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ArchiveFolderPath" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">
+                                    <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysDBServerPwd" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysDBServerDetails" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysDBServerUserID" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="Dict_PreBatchScriptPath">
+                                    <mva:VisualBasicValue x:TypeArguments="scg:IDictionary(x:String, x:String)" ExpressionText="dict_PreBatchScriptPath" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysAppServerPwd">
+                                    <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysAppServerPwd" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerUserID">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysAppServerUserID" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerHost">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysAppServerHost" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="Int_TSysAppServerPort">
+                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="int_TSysAppServerPort" />
+                                  </InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -820,93 +810,35 @@
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[&quot;Invoking PreRun check workflow&quot;]" />
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PreRun Check workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="1 PreRunCheck\PreRunCheck.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProcessSourceFileListContent">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProcessedSourceFileList" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
-                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileListLookupPath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProcessedFileListLookupPath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ArchiveFolderPath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ErrorKeywordRegExList" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysDBServerDetails" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerUserID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysAppServerUserID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerDetails">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysAppServerDetails" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysAppServerPwd">
-                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysAppServerPwd" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysDBServerUserID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">
-                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysDBServerPwd" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PcidssServerDetails">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PcidssServerDetails" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PcidssServerHost">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PcidssServerHost" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_PcidssServerPort">
-                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="int_PcidssServerPort" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PcidssServerPwd">
-                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_PcidssServerPwd" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PcidssServerUserID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PcidssServerUserID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerHost">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysDBServerHost" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_TSysDBServerPort">
-                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="int_TSysDBServerPort" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerHost">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysAppServerHost" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_TSysAppServerPort">
-                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="int_TSysAppServerPort" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="Dict_PreBatchScriptPath">
-                    <mva:VisualBasicReference x:TypeArguments="scg:IDictionary(x:String, x:String)" ExpressionText="dict_PreBatchScriptPath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_EdsUserID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_EdsUserID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_EdsServerDetails">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_EdsServerDetails" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_EdsPwd">
-                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_EdsPwd" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_EdsServerHost">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_EdsServerHost" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_EdsServerPort">
-                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="int_EdsServerPort" />
-                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProcessSourceFileListContent">[str_ProcessedSourceFileList]</OutArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileListLookupPath">[str_ProcessedFileListLookupPath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ArchiveFolderPath">[str_ArchiveFolderPath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ErrorKeywordRegExList">[str_ErrorKeywordRegExList]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">[str_TSysDBServerDetails]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerUserID">[str_TSysAppServerUserID]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerDetails">[str_TSysAppServerDetails]</OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysAppServerPwd">[pwd_TSysAppServerPwd]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">[str_TSysDBServerUserID]</OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">[pwd_TSysDBServerPwd]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PcidssServerDetails">[str_PcidssServerDetails]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PcidssServerHost">[str_PcidssServerHost]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_PcidssServerPort">[int_PcidssServerPort]</OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PcidssServerPwd">[pwd_PcidssServerPwd]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PcidssServerUserID">[str_PcidssServerUserID]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerHost">[str_TSysDBServerHost]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_TSysDBServerPort">[int_TSysDBServerPort]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysAppServerHost">[str_TSysAppServerHost]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_TSysAppServerPort">[int_TSysAppServerPort]</OutArgument>
+                  <OutArgument x:TypeArguments="scg:IDictionary(x:String, x:String)" x:Key="Dict_PreBatchScriptPath">[dict_PreBatchScriptPath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_EdsUserID">[str_EdsUserID]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_EdsServerDetails">[str_EdsServerDetails]</OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_EdsPwd">[pwd_EdsPwd]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_EdsServerHost">[str_EdsServerHost]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_EdsServerPort">[int_EdsServerPort]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">

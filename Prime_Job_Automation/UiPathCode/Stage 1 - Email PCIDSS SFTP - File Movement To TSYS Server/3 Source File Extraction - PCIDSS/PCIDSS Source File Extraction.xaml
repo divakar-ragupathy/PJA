@@ -275,13 +275,13 @@
                                             <av:Size x:Key="ShapeSize">200,51</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="File Processing" sap:VirtualizedContainerService.HintSize="794,1746" sap2010:WorkflowViewState.IdRef="ForEach`1_26" Values="[arr_PcidssSourceFilesArray]">
+                                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="File Processing" sap:VirtualizedContainerService.HintSize="794,2279" sap2010:WorkflowViewState.IdRef="ForEach`1_26" Values="[arr_PcidssSourceFilesArray]">
                                           <ui:ForEach.Body>
                                             <ActivityAction x:TypeArguments="x:String">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="File Transfer" sap:VirtualizedContainerService.HintSize="758,1612" sap2010:WorkflowViewState.IdRef="Sequence_210">
+                                              <Sequence DisplayName="File Transfer" sap:VirtualizedContainerService.HintSize="758,2145" sap2010:WorkflowViewState.IdRef="Sequence_210">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="s:String[]" Name="arr_StatingFileArray" />
                                                 </Sequence.Variables>
@@ -291,41 +291,41 @@
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString+&quot;\&quot;+Path.GetFileName(file.ToString)]" DisplayName="File Transmit To PCIDSS Staging " sap:VirtualizedContainerService.HintSize="716,51" sap2010:WorkflowViewState.IdRef="CopyFile_6" Overwrite="True" Path="[file.ToString]">
+                                                <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString+&quot;\&quot;+Path.GetFileName(file.ToString)]" DisplayName="File Transmit To PCIDSS Staging " sap:VirtualizedContainerService.HintSize="716,157" sap2010:WorkflowViewState.IdRef="CopyFile_6" Overwrite="True" Path="[file.ToString]">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:CopyFile>
-                                                <If Condition="[Path.GetExtension(file.ToString)=&quot;.zip&quot; Or Path.GetExtension(file.ToString)=&quot;.7z&quot;]" DisplayName="If Zip File Extension" sap:VirtualizedContainerService.HintSize="716,51" sap2010:WorkflowViewState.IdRef="If_54">
+                                                <If Condition="[Path.GetExtension(file.ToString)=&quot;.zip&quot; Or Path.GetExtension(file.ToString)=&quot;.7z&quot;]" DisplayName="If Zip File Extension" sap:VirtualizedContainerService.HintSize="716,478" sap2010:WorkflowViewState.IdRef="If_54">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <If.Then>
-                                                    <TryCatch DisplayName="Try Unzip files" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_20">
+                                                    <TryCatch DisplayName="Try Unzip files" sap:VirtualizedContainerService.HintSize="532,330" sap2010:WorkflowViewState.IdRef="TryCatch_20">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <TryCatch.Try>
-                                                        <bz:UnZipFile CodePage="1252" DisplayName="UnZip File" ExtractFolderPath="[Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="UnZipFile_6" Password="[rule(&quot;Password&quot;).ToString.Replace(&quot;mmddyy&quot;,DateTime.ParseExact(Left(System.IO.File.GetLastWriteTime(file).ToString,10).ToString,“MM/dd/yyyy”,Globalization.CultureInfo.InvariantCulture).ToString(“MMddyy”)).Replace(&quot;yyddmm&quot;,DateTime.ParseExact(Left(System.IO.File.GetLastWriteTime(file).ToString,10).ToString,“MM/dd/yyyy”,Globalization.CultureInfo.InvariantCulture).ToString(“yyddMM”))]" ZipFile="[file.ToString]">
+                                                        <bz:UnZipFile CodePage="1252" DisplayName="UnZip File" ExtractFolderPath="[Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="494,103" sap2010:WorkflowViewState.IdRef="UnZipFile_6" Password="[rule(&quot;Password&quot;).ToString.Replace(&quot;mmddyy&quot;,DateTime.ParseExact(Left(System.IO.File.GetLastWriteTime(file).ToString,10).ToString,“MM/dd/yyyy”,Globalization.CultureInfo.InvariantCulture).ToString(“MMddyy”)).Replace(&quot;yyddmm&quot;,DateTime.ParseExact(Left(System.IO.File.GetLastWriteTime(file).ToString,10).ToString,“MM/dd/yyyy”,Globalization.CultureInfo.InvariantCulture).ToString(“yyddMM”))]" ZipFile="[file.ToString]">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                         </bz:UnZipFile>
                                                       </TryCatch.Try>
                                                       <TryCatch.Catches>
-                                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_23">
+                                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="498,21" sap2010:WorkflowViewState.IdRef="Catch`1_23">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -374,7 +374,7 @@
                                                         </Catch>
                                                       </TryCatch.Catches>
                                                       <TryCatch.Finally>
-                                                        <ui:Delete ContinueOnError="False" DisplayName="Delete Zip File" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delete_10" Path="[file.ToString]" />
+                                                        <ui:Delete ContinueOnError="False" DisplayName="Delete Zip File" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delete_10" Path="[Str_ProjectFolderPath+rule(&quot;Staging_Folder&quot;).ToString+&quot;\&quot;+Path.GetFileName(file.ToString)]" />
                                                       </TryCatch.Finally>
                                                     </TryCatch>
                                                   </If.Then>
@@ -473,14 +473,14 @@
                                                                         <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <Sequence DisplayName="Handle Failure Files" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_200">
+                                                                    <Sequence DisplayName="Handle Failure Files" sap:VirtualizedContainerService.HintSize="242,478" sap2010:WorkflowViewState.IdRef="Sequence_200">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;The file &quot; + Path.GetFileName(fileItem.ToString) +&quot; cannot be processed due to &quot; + str_ErrorMsg +&quot;. Kindly resend the new file.&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;TIA - PMU Team&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_46" IsBodyHtml="True" IsDraft="False" Subject="PCIDSS file Validation Failure" To="[rule(&quot;Sender_Email_Id&quot;).ToString]">
+                                                                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;The file &quot; + Path.GetFileName(fileItem.ToString) +&quot; cannot be processed due to &quot; + str_ErrorMsg +&quot;. Kindly resend the new file.&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;TIA - PMU Team&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_46" IsBodyHtml="False" IsDraft="False" Subject="PCIDSS file Validation Failure" To="[rule(&quot;Sender_Email_Id&quot;).ToString]">
                                                                         <ui:SendOutlookMail.Files>
                                                                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                                         </ui:SendOutlookMail.Files>
@@ -596,7 +596,7 @@
                                                                             <av:PointCollection x:Key="ConnectorLocation">480,663 480,710</av:PointCollection>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                        <Sequence DisplayName="Move to TSys &amp; Archive Files" sap:VirtualizedContainerService.HintSize="676,1138" sap2010:WorkflowViewState.IdRef="Sequence_207">
+                                                                        <Sequence DisplayName="Move to TSys &amp; Archive Files" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_207">
                                                                           <Sequence.Variables>
                                                                             <Variable x:TypeArguments="x:Int32" Name="int_TSysDBServerPort" />
                                                                             <Variable x:TypeArguments="x:String" Name="str_TSysDBServerHost" />
@@ -813,33 +813,15 @@
                                                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke File Transfer To TSys" sap:VirtualizedContainerService.HintSize="349,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="6 File Transmit To TSYS\File Transmit To TSYS.xaml">
                                                                                                     <ui:InvokeWorkflowFile.Arguments>
-                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TsysFolder">
-                                                                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Dict_PreBatchScriptPath(&quot;fd_TT067UploadPath&quot;)" />
-                                                                                                      </InArgument>
-                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsMailId">
-                                                                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
-                                                                                                      </InArgument>
-                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileListLookUpPath">
-                                                                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ProcessedFileLookupPath" />
-                                                                                                      </InArgument>
-                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_StagingFile">
-                                                                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="fileItem.ToString" />
-                                                                                                      </InArgument>
-                                                                                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsFileValid">
-                                                                                                        <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="bool_IsFileValid" />
-                                                                                                      </OutArgument>
-                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                                                                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ProjectFolderPath" />
-                                                                                                      </InArgument>
-                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserName">
-                                                                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysDBServerUserID" />
-                                                                                                      </InArgument>
-                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
-                                                                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysDBServerDetails" />
-                                                                                                      </InArgument>
-                                                                                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPassword">
-                                                                                                        <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysDBServerPwd" />
-                                                                                                      </InArgument>
+                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TsysFolder">[Dict_PreBatchScriptPath("fd_TT067UploadPath")]</InArgument>
+                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsMailId">[Str_RpaOpsEmailID]</InArgument>
+                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessedFileListLookUpPath">[Str_ProcessedFileLookupPath]</InArgument>
+                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_StagingFile">[fileItem.ToString]</InArgument>
+                                                                                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="Bool_IsFileValid">[bool_IsFileValid]</OutArgument>
+                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[Str_ProjectFolderPath]</InArgument>
+                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserName">[Str_TSysDBServerUserID]</InArgument>
+                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">[Str_TSysDBServerDetails]</InArgument>
+                                                                                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPassword">[Pwd_TSysDBServerPwd]</InArgument>
                                                                                                     </ui:InvokeWorkflowFile.Arguments>
                                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1361,7 +1343,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="376,240" sap2010:WorkflowViewState.IdRef="Sequence_96">
+            <Sequence DisplayName="Exception Handling" sap:VirtualizedContainerService.HintSize="376,243" sap2010:WorkflowViewState.IdRef="Sequence_96">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
