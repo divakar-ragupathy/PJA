@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>951,1200</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1200</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -39,7 +39,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="52">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -80,7 +80,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="507,685" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="205,103" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
       <State.Entry>
         <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="461,541" sap2010:WorkflowViewState.IdRef="TryCatch_4">
           <TryCatch.Try>
@@ -131,7 +131,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </State>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the PJA upload activity starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This process will do a pre-run check before the PJA upload activity starts" DisplayName="Pre-Run Check" sap:VirtualizedContainerService.HintSize="484,1015" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
         <TryCatch DisplayName="Try Check all Pre-Requisites are Exist" sap:VirtualizedContainerService.HintSize="438,597" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -166,16 +166,42 @@
               </ui:LogMessage>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PreRunCheck workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="1 PreRunCheck\PreRunCheck.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">[str_MicrosoftCVUrl]</OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">[str_MicrosoftCVKey]</OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">[str_ReturnFilePath]</OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">[str_TSysDBServerDetails]</OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">[str_TSysDBServerUserID]</OutArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">[pwd_TSysDBServerPwd]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
+                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_MicrosoftCVUrl" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_MicrosoftCVKey" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ReturnFilePath" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysDBServerDetails" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysDBServerUserID" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">
+                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysDBServerPwd" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysServerHost">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysServerHost" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_TSysServerPort">
+                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="int_TSysServerPort" />
+                  </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -267,7 +293,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger PJA File Submission process" DisplayName="PJA File Submission" sap:VirtualizedContainerService.HintSize="484,1028" sap2010:WorkflowViewState.IdRef="State_6">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This process will trigger PJA File Submission process" DisplayName="PJA File Submission" sap:VirtualizedContainerService.HintSize="257,132" sap2010:WorkflowViewState.IdRef="State_6">
               <State.Entry>
                 <TryCatch DisplayName="Try PJA File Submission" sap:VirtualizedContainerService.HintSize="438,637" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                   <sap:WorkflowViewStateService.ViewState>
@@ -427,12 +453,10 @@
       <Variable x:TypeArguments="ss:SecureString" Name="pwd_TSysDBServerPwd" />
       <Variable x:TypeArguments="x:String" Name="str_MicrosoftCVUrl" />
       <Variable x:TypeArguments="x:String" Name="str_MicrosoftCVKey" />
-      <Variable x:TypeArguments="x:String" Name="str_ProjectFolderPath">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Prime_Job_Automation\</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="C:\Prime_Job_Automation\" Name="str_ProjectFolderPath" />
       <Variable x:TypeArguments="x:String" Name="str_ReturnFilePath" />
+      <Variable x:TypeArguments="x:String" Name="str_TSysServerHost" />
+      <Variable x:TypeArguments="x:Int32" Name="int_TSysServerPort" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
