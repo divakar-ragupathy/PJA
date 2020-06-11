@@ -66,7 +66,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,2647</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>951,2647</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PostBatch_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -126,7 +126,6 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Sequence - PostBatch" sap:VirtualizedContainerService.HintSize="828,2482" sap2010:WorkflowViewState.IdRef="Sequence_27">
@@ -207,7 +206,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Following error occured while executing post batch &quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_34" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_TSYSDW&quot;)]">
+                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Following error occured while executing post batch &quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_34" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_TSYSDW&quot;)]">
                     <ui:SendOutlookMail.Files>
                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                     </ui:SendOutlookMail.Files>
@@ -261,7 +260,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Following error occured while executing post batch &quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_35" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_MoveReports&quot;)]">
+                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Following error occured while executing post batch &quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_35" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_MoveReports&quot;)]">
                         <ui:SendOutlookMail.Files>
                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                         </ui:SendOutlookMail.Files>
@@ -344,7 +343,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Following error occured while executing post batch &quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_51" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fd_InterfaceOutgoing&quot;)]">
+                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Following error occured while executing post batch &quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_51" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fd_InterfaceOutgoing&quot;)]">
                                   <ui:SendOutlookMail.Files>
                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                   </ui:SendOutlookMail.Files>
@@ -388,7 +387,7 @@
                                       </ui:SendOutlookMail>
                                     </If.Then>
                                     <If.Else>
-                                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;PlayEveryDay files are not copied to play every day server.Kindly check the below response&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_53" IsBodyHtml="False" IsDraft="False" Subject="Notification: PlayEveryDay files are not copied" To="[dict_PostBatchFailureMailID(&quot;fd_InterfaceOutgoing&quot;)]">
+                                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;PlayEveryDay files are not copied to play every day server.Kindly check the below response&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_53" IsBodyHtml="False" IsDraft="False" Subject="Notification: PlayEveryDay files are not copied" To="[dict_PostBatchFailureMailID(&quot;fd_InterfaceOutgoing&quot;)]">
                                         <ui:SendOutlookMail.Files>
                                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                         </ui:SendOutlookMail.Files>
@@ -407,7 +406,7 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;PlayEveryDay files are not available in the &quot;+Dict_PostBatchScriptPath(&quot;fd_InterfaceOutgoing&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;.Please find the below response&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_39" IsBodyHtml="False" IsDraft="False" Subject="Notification: PlayEveryDay files not exist" To="[dict_PostBatchFailureMailID(&quot;fd_InterfaceOutgoing&quot;)]">
+                          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;PlayEveryDay files are not available in the &quot;+Dict_PostBatchScriptPath(&quot;fd_InterfaceOutgoing&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;.Please find the below response&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_39" IsBodyHtml="False" IsDraft="False" Subject="Notification: PlayEveryDay files not exist" To="[dict_PostBatchFailureMailID(&quot;fd_InterfaceOutgoing&quot;)]">
                             <ui:SendOutlookMail.Files>
                               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                             </ui:SendOutlookMail.Files>
@@ -438,13 +437,13 @@
                             <av:PointCollection x:Key="ConnectorLocation">300,893 300,957</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Notify ICM for File Availability" sap:VirtualizedContainerService.HintSize="571,1948" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence DisplayName="Notify ICM for File Availability" sap:VirtualizedContainerService.HintSize="855,2205" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Collector O/G" sap:VirtualizedContainerService.HintSize="529,66" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                          <Sequence DisplayName="Collector O/G" sap:VirtualizedContainerService.HintSize="813,66" sap2010:WorkflowViewState.IdRef="Sequence_30">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -481,7 +480,7 @@
                                 </ui:SendOutlookMail>
                               </If.Then>
                               <If.Else>
-                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Collector outgoing files are not available in the &quot;+dict_PostBatchScriptPath(&quot;fd_CollectorOutgoing&quot;).ToString+&quot; .Please find the responseof the command&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_40" IsBodyHtml="False" IsDraft="False" Subject="Notification: Collector Return Files are not available" To="[dict_PostBatchFailureMailID(&quot;fd_CollectorOutgoing&quot;)]">
+                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Collector outgoing files are not available in the &quot;+dict_PostBatchScriptPath(&quot;fd_CollectorOutgoing&quot;).ToString+&quot; .Please find the responseof the command&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_40" IsBodyHtml="False" IsDraft="False" Subject="Notification: Collector Return Files are not available" To="[dict_PostBatchFailureMailID(&quot;fd_CollectorOutgoing&quot;)]">
                                   <ui:SendOutlookMail.Files>
                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                   </ui:SendOutlookMail.Files>
@@ -503,7 +502,7 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:AppendLine>
                           </Sequence>
-                          <Sequence DisplayName="Daily REJC / NOCH" sap:VirtualizedContainerService.HintSize="529,66" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                          <Sequence DisplayName="Daily REJC / NOCH" sap:VirtualizedContainerService.HintSize="813,66" sap2010:WorkflowViewState.IdRef="Sequence_31">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -540,7 +539,7 @@
                                 </ui:SendOutlookMail>
                               </If.Then>
                               <If.Else>
-                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Daily REJC/NOCH  files are not available in the &quot;+dict_PostBatchScriptPath(&quot;fd_Reports&quot;).ToString+&quot;. Please find response of the command.&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_41" IsBodyHtml="False" IsDraft="False" Subject="Notification: Daily REJC and NOCH file are not available" To="[dict_PostBatchFailureMailID(&quot;fd_Reports&quot;)]">
+                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Daily REJC/NOCH  files are not available in the &quot;+dict_PostBatchScriptPath(&quot;fd_Reports&quot;).ToString+&quot;. Please find response of the command.&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_41" IsBodyHtml="False" IsDraft="False" Subject="Notification: Daily REJC and NOCH file are not available" To="[dict_PostBatchFailureMailID(&quot;fd_Reports&quot;)]">
                                   <ui:SendOutlookMail.Files>
                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                   </ui:SendOutlookMail.Files>
@@ -562,7 +561,7 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:AppendLine>
                           </Sequence>
-                          <Sequence DisplayName="CLM" sap:VirtualizedContainerService.HintSize="529,66" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                          <Sequence DisplayName="CLM" sap:VirtualizedContainerService.HintSize="813,66" sap2010:WorkflowViewState.IdRef="Sequence_32">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -599,7 +598,7 @@
                                 </ui:SendOutlookMail>
                               </If.Then>
                               <If.Else>
-                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;CLM files are not available in the &quot;+dict_PostBatchScriptPath(&quot;fd_InterfaceOutgoing&quot;).ToString+&quot;.Please find response of the command.&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_42" IsBodyHtml="False" IsDraft="False" Subject="Notification: CLM file are not available" To="[dict_PostBatchFailureMailID(&quot;fd_Reports&quot;)]">
+                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;CLM files are not available in the &quot;+dict_PostBatchScriptPath(&quot;fd_InterfaceOutgoing&quot;).ToString+&quot;.Please find response of the command.&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_42" IsBodyHtml="False" IsDraft="False" Subject="Notification: CLM file are not available" To="[dict_PostBatchFailureMailID(&quot;fd_Reports&quot;)]">
                                   <ui:SendOutlookMail.Files>
                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                   </ui:SendOutlookMail.Files>
@@ -621,7 +620,7 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:AppendLine>
                           </Sequence>
-                          <Sequence DisplayName="GL" sap:VirtualizedContainerService.HintSize="529,1538" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                          <Sequence DisplayName="GL" sap:VirtualizedContainerService.HintSize="813,1795" sap2010:WorkflowViewState.IdRef="Sequence_33">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="str_InterfaceResponse" />
                             </Sequence.Variables>
@@ -631,8 +630,8 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_GLConvertor&quot;)+&quot;;rm *.log;rm *.txt;mkdir -p &quot;+Dict_PostBatchScriptPath(&quot;fd_GLBackup&quot;).ToString+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;;mv GLFILE*.TXT &quot;+Dict_PostBatchScriptPath(&quot;fd_GLBackup&quot;).ToString+Now.ToString(&quot;yyyyMMdd&quot;)]" DisplayName="Archive GLConv Files" sap:VirtualizedContainerService.HintSize="487,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_8" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                            <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="487,60" sap2010:WorkflowViewState.IdRef="Assign_67">
+                            <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_GLConvertor&quot;)+&quot;;rm *.log;rm *.txt;mkdir -p &quot;+Dict_PostBatchScriptPath(&quot;fd_GLBackup&quot;).ToString+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;;mv GLFILE*.TXT &quot;+Dict_PostBatchScriptPath(&quot;fd_GLBackup&quot;).ToString+Now.ToString(&quot;yyyyMMdd&quot;)]" DisplayName="Archive GLConv Files" sap:VirtualizedContainerService.HintSize="771,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_8" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                            <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="771,60" sap2010:WorkflowViewState.IdRef="Assign_67">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
                               </Assign.To>
@@ -640,7 +639,7 @@
                                 <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="487,51" sap2010:WorkflowViewState.IdRef="AppendLine_17" Text="[&quot;*******************************  Execution started for Convert GL file for Finacle posting   ***************************&quot;+Environment.NewLine+Environment.NewLine+&quot;*******************************  Archiving old files and deleting log files   ******************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine]">
+                            <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="771,51" sap2010:WorkflowViewState.IdRef="AppendLine_17" Text="[&quot;*******************************  Execution started for Convert GL file for Finacle posting   ***************************&quot;+Environment.NewLine+Environment.NewLine+&quot;*******************************  Archiving old files and deleting log files   ******************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -648,8 +647,8 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:AppendLine>
-                            <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_GLOutput&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;cp -p R06_CLUBP_PH_GLFile* &quot;+Dict_PostBatchScriptPath(&quot;fd_GLConvertor&quot;)]" DisplayName="Copy GLFiles to GLConversion Folder" sap:VirtualizedContainerService.HintSize="487,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_9" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                            <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="487,60" sap2010:WorkflowViewState.IdRef="Assign_68">
+                            <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_GLOutput&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;cp -p R06_CLUBP_PH_GLFile* &quot;+Dict_PostBatchScriptPath(&quot;fd_GLConvertor&quot;)]" DisplayName="Copy GLFiles to GLConversion Folder" sap:VirtualizedContainerService.HintSize="771,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_9" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                            <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="771,60" sap2010:WorkflowViewState.IdRef="Assign_68">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
                               </Assign.To>
@@ -657,7 +656,7 @@
                                 <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="487,132" sap2010:WorkflowViewState.IdRef="AppendLine_18" Text="[&quot;*******************************  Copied GL Files if any ****************************************************************&quot;+Environment.NewLine+ str_Response+Environment.NewLine]">
+                            <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="771,132" sap2010:WorkflowViewState.IdRef="AppendLine_18" Text="[&quot;*******************************  Copied GL Files if any ****************************************************************&quot;+Environment.NewLine+ str_Response+Environment.NewLine]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -665,8 +664,8 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:AppendLine>
-                            <s:executeSSHCommands Command="[&quot;cd &quot;+dict_PostBatchScriptPath(&quot;fd_GLConvertor&quot;)+&quot;;./&quot;+Path.GetFileName(dict_PostBatchScriptPath(&quot;fl_GLConvertor&quot;))]" DisplayName="Run GL Conversion " sap:VirtualizedContainerService.HintSize="487,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_10" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                            <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="487,60" sap2010:WorkflowViewState.IdRef="Assign_69">
+                            <s:executeSSHCommands Command="[&quot;cd &quot;+dict_PostBatchScriptPath(&quot;fd_GLConvertor&quot;)+&quot;;./&quot;+Path.GetFileName(dict_PostBatchScriptPath(&quot;fl_GLConvertor&quot;))]" DisplayName="Run GL Conversion " sap:VirtualizedContainerService.HintSize="771,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_10" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                            <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="771,60" sap2010:WorkflowViewState.IdRef="Assign_69">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
                               </Assign.To>
@@ -674,7 +673,7 @@
                                 <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <If Condition="[Regex.IsMatch(str_Response.ToLower,Str_ErrorKeywordRegExList.ToLower)]" DisplayName="If - Errors" sap:VirtualizedContainerService.HintSize="487,353" sap2010:WorkflowViewState.IdRef="If_32">
+                            <If Condition="[Regex.IsMatch(str_Response.ToLower,Str_ErrorKeywordRegExList.ToLower)]" DisplayName="If - Errors" sap:VirtualizedContainerService.HintSize="771,610" sap2010:WorkflowViewState.IdRef="If_32">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -682,7 +681,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;An error occured while exeuting GL post batch. Please review the log&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_43" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_GLConvertor&quot;)]">
+                                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;An error occured while exeuting GL post batch. Please review the log&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_43" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_GLConvertor&quot;)]">
                                   <ui:SendOutlookMail.Files>
                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                   </ui:SendOutlookMail.Files>
@@ -695,17 +694,25 @@
                                 </ui:SendOutlookMail>
                               </If.Then>
                               <If.Else>
-                                <Sequence DisplayName="Send GL File Notification" sap:VirtualizedContainerService.HintSize="242,205" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                <Sequence DisplayName="Send GL File Notification" sap:VirtualizedContainerService.HintSize="526,462" sap2010:WorkflowViewState.IdRef="Sequence_64">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <s:executeSSHCommands Command="[&quot;cd &quot;+dict_PostBatchScriptPath(&quot;fd_GLConvertor&quot;)+&quot;;ls GLFILE*&quot;]" DisplayName="Run GL Conversion " sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_28" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                                  <If Condition="[str_Response.Substring(str_Response.LastIndexOf(&quot;GLFILE*&quot;)+len(&quot;GLFILE*&quot;)).ToLower.Contains(&quot;glfile&quot;)]" DisplayName="If - Files Available For GL" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_18">
+                                  <s:executeSSHCommands Command="[&quot;cd &quot;+dict_PostBatchScriptPath(&quot;fd_GLConvertor&quot;)+&quot;;ls GLFILE*&quot;]" DisplayName="Run GL Conversion " sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_28" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                                  <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_100">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <If Condition="[str_Response.Substring(str_Response.LastIndexOf(&quot;GLFILE*&quot;)+len(&quot;GLFILE*&quot;)).ToLower.Contains(&quot;glfile&quot;)]" DisplayName="If - Files Available For GL" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_18">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -723,7 +730,7 @@
                                       </ui:SendOutlookMail>
                                     </If.Then>
                                     <If.Else>
-                                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;GL files are not available in the &quot;+Dict_PostBatchScriptPath(&quot;fd_GLBackup&quot;)+Now.ToString(&quot;yyyyMMdd&quot;)+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_44" IsBodyHtml="False" IsDraft="False" Subject="Notification: GL file are not generated" To="[dict_PostBatchFailureMailID(&quot;fl_GLConvertor&quot;)]">
+                                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;GL files are not available in the &quot;+Dict_PostBatchScriptPath(&quot;fd_GLBackup&quot;)+Now.ToString(&quot;yyyyMMdd&quot;)+&#xA;Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_44" IsBodyHtml="False" IsDraft="False" Subject="Notification: GL file are not generated" To="[dict_PostBatchFailureMailID(&quot;fl_GLConvertor&quot;)]">
                                         <ui:SendOutlookMail.Files>
                                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                         </ui:SendOutlookMail.Files>
@@ -739,7 +746,7 @@
                                 </Sequence>
                               </If.Else>
                             </If>
-                            <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="487,51" sap2010:WorkflowViewState.IdRef="AppendLine_19" Text="[&quot;*******************************  Sucessfully Completed Convert GL file for Finacle posting  ****************************&quot;+Environment.NewLine+str_Response+Environment.NewLine]">
+                            <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="771,51" sap2010:WorkflowViewState.IdRef="AppendLine_19" Text="[&quot;*******************************  Sucessfully Completed Convert GL file for Finacle posting  ****************************&quot;+Environment.NewLine+str_Response+Environment.NewLine]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -747,8 +754,8 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:AppendLine>
-                            <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_GLConvertor&quot;)+&quot;;rm *.log;rm *.txt;mkdir -p &quot;+Dict_PostBatchScriptPath(&quot;fd_GLBackup&quot;).ToString+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;;mv GLFILE*.TXT &quot;+Dict_PostBatchScriptPath(&quot;fd_GLBackup&quot;).ToString+Now.ToString(&quot;yyyyMMdd&quot;)]" DisplayName="Archive GLConv Files" sap:VirtualizedContainerService.HintSize="487,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_25" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                            <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="487,60" sap2010:WorkflowViewState.IdRef="Assign_70">
+                            <s:executeSSHCommands Command="[&quot;cd &quot;+Dict_PostBatchScriptPath(&quot;fd_GLConvertor&quot;)+&quot;;rm *.log;rm *.txt;mkdir -p &quot;+Dict_PostBatchScriptPath(&quot;fd_GLBackup&quot;).ToString+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;;mv GLFILE*.TXT &quot;+Dict_PostBatchScriptPath(&quot;fd_GLBackup&quot;).ToString+Now.ToString(&quot;yyyyMMdd&quot;)]" DisplayName="Archive GLConv Files" sap:VirtualizedContainerService.HintSize="771,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_25" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                            <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="771,60" sap2010:WorkflowViewState.IdRef="Assign_70">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
                               </Assign.To>
@@ -756,7 +763,7 @@
                                 <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="487,51" sap2010:WorkflowViewState.IdRef="AppendLine_14" Text="[&quot;*******************************  Intimation of GL files availability ***************************************************&quot;+Environment.NewLine+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Job successfully completed ************************************************************&quot;+Environment.NewLine]">
+                            <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="771,51" sap2010:WorkflowViewState.IdRef="AppendLine_14" Text="[&quot;*******************************  Intimation of GL files availability ***************************************************&quot;+Environment.NewLine+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Job successfully completed ************************************************************&quot;+Environment.NewLine]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -823,7 +830,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+Environment.NewLine+&#xD;&#xA;&quot;An error occured while executing convert all script hence return file process is terminated. Please find out below errors.&quot;+Environment.NewLine+Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_26" IsBodyHtml="False" IsDraft="False" Subject="ERROR : Convert All Script Failure" To="[Str_RpaOpsEmailID]">
+                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;An error occured while executing convert all script hence return file process is terminated. Please find out below errors.&quot;+Environment.NewLine+Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_26" IsBodyHtml="False" IsDraft="False" Subject="ERROR : Convert All Script Failure" To="[Str_RpaOpsEmailID]">
                                     <ui:SendOutlookMail.Files>
                                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                     </ui:SendOutlookMail.Files>
@@ -1068,7 +1075,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:ForEach>
-                                        <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Successfully uploaded the below emboss and non emboss files&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Emboss Files: &quot;+Dict_PostBatchScriptPath(&quot;fd_EmbossingPcidssFolder&quot;)+&quot;\&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(CInt(str_SeqNum.Trim)-1).ToString.PadLeft(5,CChar(&quot;0&quot;))+Environment.NewLine+&#xD;&#xA;&quot;---------------------------------&quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_ListOfEmboss+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Non Emboss Files: &quot;+Dict_PostBatchScriptPath(&quot;fd_NonEmbossingPcidssFolder&quot;)+&quot;\&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(CInt(str_SeqNum.Trim)-1).ToString.PadLeft(5,CChar(&quot;0&quot;))+Environment.NewLine+&#xD;&#xA;&quot;---------------------------------&quot;+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_ListOfNonEmboss+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_45" IsBodyHtml="False" IsDraft="False" Subject="Notification: Successfully copied the files from embossing and non-embossing to 183" To="[dict_PostBatchSuccessMailID(&quot;fl_RunEmboss&quot;)]">
+                                        <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Successfully uploaded the below emboss and non emboss files&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Emboss Files: &quot;+Dict_PostBatchScriptPath(&quot;fd_EmbossingPcidssFolder&quot;)+&quot;\&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(CInt(str_SeqNum.Trim)-1).ToString.PadLeft(5,CChar(&quot;0&quot;))+Environment.NewLine+&#xA;&quot;---------------------------------&quot;+&#xA;Environment.NewLine+&#xA;str_ListOfEmboss+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Non Emboss Files: &quot;+Dict_PostBatchScriptPath(&quot;fd_NonEmbossingPcidssFolder&quot;)+&quot;\&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot;_&quot;+(CInt(str_SeqNum.Trim)-1).ToString.PadLeft(5,CChar(&quot;0&quot;))+Environment.NewLine+&#xA;&quot;---------------------------------&quot;+&#xA;Environment.NewLine+&#xA;str_ListOfNonEmboss+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_45" IsBodyHtml="False" IsDraft="False" Subject="Notification: Successfully copied the files from embossing and non-embossing to 183" To="[dict_PostBatchSuccessMailID(&quot;fl_RunEmboss&quot;)]">
                                           <ui:SendOutlookMail.Files>
                                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                           </ui:SendOutlookMail.Files>
@@ -1111,7 +1118,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">140,1402 140,1456</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Statements" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                        <Sequence DisplayName="Statements" sap:VirtualizedContainerService.HintSize="925,1917" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="s1:String[]" Default="[New String(20){}]" Name="arr_Ubixfiles" />
                                           </Sequence.Variables>
@@ -1325,7 +1332,7 @@
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
-                                              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;UBP issuer statement file doesn't exist in &quot;+Dict_PostBatchScriptPath(&quot;fd_StatementFiles&quot;)+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_14" IsBodyHtml="False" IsDraft="False" Subject="Notification: Issuer Statements doesnt exist" To="[dict_PostBatchFailureMailID(&quot;fd_StatementFiles&quot;).Trim]">
+                                              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;UBP issuer statement file doesn't exist in &quot;+Dict_PostBatchScriptPath(&quot;fd_StatementFiles&quot;)+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_14" IsBodyHtml="False" IsDraft="False" Subject="Notification: Issuer Statements doesnt exist" To="[dict_PostBatchFailureMailID(&quot;fd_StatementFiles&quot;).Trim]">
                                                 <ui:SendOutlookMail.Files>
                                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                 </ui:SendOutlookMail.Files>
@@ -1391,7 +1398,7 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <If.Then>
-                                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Following error occured while exeuting post batch &quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_DirectDebitLog.Substring(str_DirectDebitLog.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_46" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_DirectDebit&quot;)]">
+                                                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Following error occured while exeuting post batch &quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_DirectDebitLog.Substring(str_DirectDebitLog.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_46" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_DirectDebit&quot;)]">
                                                     <ui:SendOutlookMail.Files>
                                                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                     </ui:SendOutlookMail.Files>
@@ -1637,7 +1644,7 @@
                                                       </Sequence>
                                                     </If.Then>
                                                     <If.Else>
-                                                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;UBP10026453.&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot; file is not available.Please check below executed command.&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_VisaLog.Substring(str_VisaLog.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_18" IsBodyHtml="False" IsDraft="False" Subject="Notification: Corporate files doesn't exist" To="[dict_PostBatchFailureMailID(&quot;fd_VisaVCF&quot;)]">
+                                                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;UBP10026453.&quot;+Now.ToString(&quot;yyMMdd&quot;)+&quot; file is not available.Please check below executed command.&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_VisaLog.Substring(str_VisaLog.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_18" IsBodyHtml="False" IsDraft="False" Subject="Notification: Corporate files doesn't exist" To="[dict_PostBatchFailureMailID(&quot;fd_VisaVCF&quot;)]">
                                                         <ui:SendOutlookMail.Files>
                                                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                         </ui:SendOutlookMail.Files>
@@ -1686,7 +1693,7 @@
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                         <If.Then>
-                                                          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Following error occured while exeuting post batch &quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_47" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_DailyReportConvertor&quot;)]">
+                                                          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Following error occured while exeuting post batch &quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_47" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_DailyReportConvertor&quot;)]">
                                                             <ui:SendOutlookMail.Files>
                                                               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                             </ui:SendOutlookMail.Files>
@@ -1729,7 +1736,7 @@
                                                           </ui:SendOutlookMail>
                                                         </If.Then>
                                                         <If.Else>
-                                                          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Files are not available in the &quot;+dict_PostBatchScriptPath(&quot;fd_DailyReportOutput&quot;)+Now.ToString(&quot;yyyyMMdd&quot;)+&quot; to download.Kindly look at the below response&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_29" IsBodyHtml="False" IsDraft="False" Subject="Notification: Daily reports Files are not available" To="[dict_PostBatchFailureMailID(&quot;fl_DailyReportConvertor&quot;)]">
+                                                          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Files are not available in the &quot;+dict_PostBatchScriptPath(&quot;fd_DailyReportOutput&quot;)+Now.ToString(&quot;yyyyMMdd&quot;)+&quot; to download.Kindly look at the below response&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_29" IsBodyHtml="False" IsDraft="False" Subject="Notification: Daily reports Files are not available" To="[dict_PostBatchFailureMailID(&quot;fl_DailyReportConvertor&quot;)]">
                                                             <ui:SendOutlookMail.Files>
                                                               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                             </ui:SendOutlookMail.Files>
@@ -1788,7 +1795,7 @@
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
                                                             <If.Then>
-                                                              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Following error occured while exeuting post batch &quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_48" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_AmlaConvertor&quot;)]">
+                                                              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Following error occured while exeuting post batch &quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_48" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_AmlaConvertor&quot;)]">
                                                                 <ui:SendOutlookMail.Files>
                                                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                                 </ui:SendOutlookMail.Files>
@@ -2029,7 +2036,7 @@
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                         <If.Then>
-                                                                          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Following error occured while exeuting post batch &quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_50" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_MonthlyReportConvertor&quot;)]">
+                                                                          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Following error occured while exeuting post batch &quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_50" IsBodyHtml="False" IsDraft="False" Subject="ERROR : An error occurred in Post Batch" To="[dict_PostBatchFailureMailID(&quot;fl_MonthlyReportConvertor&quot;)]">
                                                                             <ui:SendOutlookMail.Files>
                                                                               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                                             </ui:SendOutlookMail.Files>
@@ -2057,7 +2064,7 @@
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                             </ui:LogMessage>
-                                                                            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Tsys009.lst files are  available in the &quot;+Dict_PostBatchScriptPath(&quot;fd_MonthlyReportConvertor&quot;)+&quot; .Kindly review&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_32" IsBodyHtml="False" IsDraft="False" Subject="Notification:  tsys009.lst Files Available" To="[dict_PostBatchSuccessMailID(&quot;fl_MonthlyReportConvertor&quot;).Trim]">
+                                                                            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Tsys009.lst files are  available in the &quot;+Dict_PostBatchScriptPath(&quot;fd_MonthlyReportConvertor&quot;)+&quot; .Kindly review&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;str_Response.Substring(str_Response.LastIndexOf(&quot;echo !&quot;)+Len(&quot;echo !&quot;))+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" Cc="[Str_RpaOpsEmailID]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendOutlookMail_32" IsBodyHtml="False" IsDraft="False" Subject="Notification:  tsys009.lst Files Available" To="[dict_PostBatchSuccessMailID(&quot;fl_MonthlyReportConvertor&quot;).Trim]">
                                                                               <ui:SendOutlookMail.Files>
                                                                                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                                               </ui:SendOutlookMail.Files>
