@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>951,1200</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1200</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -66,7 +66,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="[TPA Prime Adhoc File Submission Process.]&#xA;[This process will trigger primce adhoc job]&#xA;[Expleo RPA Development Team]" DisplayName="TPA Prime Adhoc File Submission Process" sap:VirtualizedContainerService.HintSize="640,1035" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -166,51 +165,21 @@
               </ui:LogMessage>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PreRunCheck workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="1 PreRunCheck\PreRunCheck.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">
-                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_MicrosoftCVUrl" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_MicrosoftCVKey" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ReturnFilePath" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysDBServerDetails" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysDBServerUserID" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">
-                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysDBServerPwd" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PrimeDBHostName">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PrimeDBHostName" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PrimeDBPassword">
-                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="pwd_PrimeDBPassword" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PrimeDBUserName">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PrimeDBUserName" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerHost">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_TSysDBServerHost" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_TSysDBServerPort">
-                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="int_TSysDBServerPort" />
-                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</OutArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_RuleFactory">[dt_RuleFactory]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">[str_MicrosoftCVUrl]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">[str_MicrosoftCVKey]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">[str_ReturnFilePath]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">[str_TSysDBServerDetails]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">[str_TSysDBServerUserID]</OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">[pwd_TSysDBServerPwd]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PrimeDBHostName">[str_PrimeDBHostName]</OutArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PrimeDBPassword">[pwd_PrimeDBPassword]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_PrimeDBUserName">[str_PrimeDBUserName]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerHost">[str_TSysDBServerHost]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="Int_TSysDBServerPort">[int_TSysDBServerPort]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -337,51 +306,21 @@
                       </ui:LogMessage>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PJA File Upload" sap:VirtualizedContainerService.HintSize="354,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="2 PJA File Submission\Stage 1 -PJA File Upload.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_RuleFactory">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_RuleFactory" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_RpaOpsEmailID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ExceptionMessage" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_MicrosoftCVUrl" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_MicrosoftCVKey" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProjectFolderPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ReturnFilePath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysDBServerDetails" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">
-                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_TSysDBServerPwd" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysDBServerUserID" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_PrimeDBHostName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PrimeDBHostName" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_PrimeDBUserName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PrimeDBUserName" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PrimeDBPassword">
-                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd_PrimeDBPassword" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerHost">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_TSysDBServerHost" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="Int_TSysDBServerPort">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="int_TSysDBServerPort" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_RuleFactory">[dt_RuleFactory]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[str_RpaOpsEmailID]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ExceptionMessage">[str_ExceptionMessage]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVUrl">[str_MicrosoftCVUrl]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_MicrosoftCVKey">[str_MicrosoftCVKey]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ProjectFolderPath">[str_ProjectFolderPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFilePath">[str_ReturnFilePath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">[str_TSysDBServerDetails]</InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPwd">[pwd_TSysDBServerPwd]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserID">[str_TSysDBServerUserID]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_PrimeDBHostName">[str_PrimeDBHostName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_PrimeDBUserName">[str_PrimeDBUserName]</InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_PrimeDBPassword">[pwd_PrimeDBPassword]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerHost">[str_TSysDBServerHost]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="Int_TSysDBServerPort">[int_TSysDBServerPort]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">

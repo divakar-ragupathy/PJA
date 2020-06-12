@@ -18,7 +18,7 @@
   <sap:VirtualizedContainerService.HintSize>1240,1685</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReturnFiles_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="31">
+    <scg:List x:TypeArguments="x:String" Capacity="62">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -50,6 +50,7 @@
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>System.Data.OracleClient</x:String>
       <x:String>System.Data.Common</x:String>
+      <x:String>System.Globalization</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -464,7 +465,7 @@
                                           <OutArgument x:TypeArguments="x:String">[str_Query]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["Select Case When el.Successflag = 0 Then 'Failure' When el.Successflag = 1 Then 'Success' When el.Successflag = 2 Then 'Warning' End As RunStatus, el.Successflag,Case When LogType = 2 Then 'E' When LogType = 5 Then 'M' End As LogType,  AppStep As StepNo, Logmsg As Message, Appdatetimestamp As RunTime, el.*, stel.* from eodlog el Inner Join systemtraceerrorlog stel On replace(el.jobname, 'TCTDBS$_', '') = stel.dbloggroupkey Where Trunc(Appdatetimestamp) = TO_DATE('"+Str_PJAFileUploadedTime+"','MM/DD/YYYY') and Lower(el.ThreadName) = '"+rule("TSYS_PJA_Menu_Hierarchy").ToString().ToLower+"' order by el.SerNo, stel.AppStep"]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["Select Case When el.Successflag = 0 Then 'Failure' When el.Successflag = 1 Then 'Success' When el.Successflag = 2 Then 'Warning' End As RunStatus, el.Successflag,Case When LogType = 2 Then 'E' When LogType = 5 Then 'M' End As LogType,  AppStep As StepNo, Logmsg As Message, Appdatetimestamp As RunTime, el.*, stel.* from eodlog el Inner Join systemtraceerrorlog stel On replace(el.jobname, 'TCTDBS$_', '') = stel.dbloggroupkey Where Appdatetimestamp &gt; To_Date('"+Datetime.parseexact(Str_PJAFileUploadedTime,“MM/dd/yyyy HH:mm:ss”,system.globalization.cultureinfo.invariantculture).ToString(“MM/dd/yyyy hh:mm:ss tt”)+"','MM/DD/YYYY HH:MI:SS AM') and lower(el.ThreadName) = '"+rule("TSYS_PJA_Menu_Hierarchy").ToString().ToLower+"' order by el.SerNo, stel.AppStep"]</InArgument>
                                         </Assign.Value>
                                       </Assign>
                                       <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim oadap As System.Data.OracleClient.OracleDataAdapter&#xA;Dim cmd As System.Data.OracleClient.OracleCommand&#xA;Dim dt As DataTable&#xA;cmd = New System.Data.OracleClient.OracleCommand(query)&#xA;dt=New DataTable()&#xA;   &#xA;&#x9;&#x9;Try &#xA;    &#x9;cmd.Connection = Conn_DatabaseConnection&#xA;&#x9;&#x9;cmd.CommandText = query&#xA;&#x9;&#x9;cmd.CommandType = CommandType.Text&#xA;&#x9;&#x9;oadap = New OracleDataAdapter()&#xA;    &#x9;oadap.SelectCommand=cmd&#xA;    &#x9;oadap.Fill(dt)&#xA;    &#x9;Dt_LogTable=dt&#xA;    Catch e As Exception&#xA;            End Try&#xA;" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
@@ -696,12 +697,8 @@
                                                               <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi Team,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Please find the return file for &quot;+rule(&quot;Process_Name&quot;).ToString+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA-PMU Team.&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_9" IsBodyHtml="False" IsDraft="False" Subject="[&quot;Notification: &quot;+rule(&quot;Process_Name&quot;).ToString+ &quot; Return File&quot;]" To="[rule(&quot;Return_File_Email_Id&quot;).ToString]">
                                                                 <ui:SendOutlookMail.Files>
                                                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                                                    <InArgument x:TypeArguments="x:String">
-                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ReturnFileLocalPath+&quot;\&quot;+rule(&quot;Process_Name&quot;).ToString+&quot;_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;" />
-                                                                    </InArgument>
-                                                                    <InArgument x:TypeArguments="x:String">
-                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_ReturnFileLocalPath+&quot;\DB_Log_&quot;+rule(&quot;Process_Name&quot;).ToString+&quot;_&quot;+Now.ToString(&quot;yyyyMMdd&quot;)+&quot;.zip&quot;" />
-                                                                    </InArgument>
+                                                                    <InArgument x:TypeArguments="x:String">[Str_ReturnFileLocalPath+"\"+rule("Process_Name").ToString+"_"+Now.ToString("yyyyMMdd")+".zip"]</InArgument>
+                                                                    <InArgument x:TypeArguments="x:String">[Str_ReturnFileLocalPath+"\DB_Log_"+rule("Process_Name").ToString+"_"+Now.ToString("yyyyMMdd")+".zip"]</InArgument>
                                                                   </scg:List>
                                                                 </ui:SendOutlookMail.Files>
                                                                 <sap:WorkflowViewStateService.ViewState>

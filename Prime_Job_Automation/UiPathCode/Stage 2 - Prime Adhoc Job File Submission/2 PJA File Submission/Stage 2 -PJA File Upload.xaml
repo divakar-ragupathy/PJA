@@ -18073,7 +18073,7 @@
                     <OutArgument x:TypeArguments="x:String">[Str_PJAFileUploadedTime]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[now.ToString("MM/dd/yyyy hh:mm:ss")]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[now.ToString("MM/dd/yyyy HH:mm:ss")]</InArgument>
                   </Assign.Value>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
