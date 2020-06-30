@@ -72,7 +72,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try EOD" sap:VirtualizedContainerService.HintSize="1123,2773" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try EOD" sap:VirtualizedContainerService.HintSize="434,568" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -423,10 +423,7 @@
                                     <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
                                   </ui:ImageFound.Image>
                                   <ui:ImageFound.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
-                                      <ui:Target.TimeoutMS>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:Target.TimeoutMS>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="2000">
                                       <ui:Target.WaitForReady>
                                         <InArgument x:TypeArguments="ui:WaitForReady" />
                                       </ui:Target.WaitForReady>
@@ -1692,7 +1689,7 @@
                                 <av:PointCollection x:Key="ConnectorLocation">420,575 420,626</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RDP Workflow File" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[str_ProjectFolderPath+&quot;UiPathCode\General Utility\RemoteDesktop\RemoteDesktop.xaml&quot;]">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RDP Workflow File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[str_ProjectFolderPath+&quot;UiPathCode\General Utility\RemoteDesktop\RemoteDesktop.xaml&quot;]">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="Str_RdpIP">[str_PJRemoteIp]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="Str_RdpUserId">[str_PJRemoteUserId]</InArgument>
@@ -1910,10 +1907,10 @@
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1089,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,406" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -1921,13 +1918,13 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Sequence - Exception Handling" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Sequence - Exception Handling" sap:VirtualizedContainerService.HintSize="376,337" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="Str_ExceptionMessage" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -1939,7 +1936,7 @@
                   <InArgument x:TypeArguments="x:String">[exception.Source + " :- " + exception.Message]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;An unexpected error occured in Adhoc job execution. The error is &quot;+Str_ExceptionMessage+Environment.NewLine+Environment.NewLine+&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="An unexpected error" To="[Str_RpaOpsEmailID]">
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi All,&quot;+Environment.NewLine+Environment.NewLine+&#xD;&#xA;&quot;An unexpected error occured in EOD job execution. The error is &quot;+Str_ExceptionMessage+Environment.NewLine+Environment.NewLine+&#xD;&#xA;&quot;Regards,&quot;+Environment.NewLine+&#xD;&#xA;&quot;TIA - PMU Team&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="An unexpected error" To="[Str_RpaOpsEmailID]">
                 <ui:SendOutlookMail.Files>
                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                 </ui:SendOutlookMail.Files>
