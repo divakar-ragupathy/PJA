@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1685</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1585</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReturnFiles_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -465,14 +465,20 @@
                                           <OutArgument x:TypeArguments="x:String">[str_Query]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["Select Case When el.Successflag = 0 Then 'Failure' When el.Successflag = 1 Then 'Success' When el.Successflag = 2 Then 'Warning' End As RunStatus, el.Successflag,Case When LogType = 2 Then 'E' When LogType = 5 Then 'M' End As LogType,  AppStep As StepNo, Logmsg As Message, Appdatetimestamp As RunTime, el.*, stel.* from eodlog el Inner Join systemtraceerrorlog stel On replace(el.jobname, 'TCTDBS$_', '') = stel.dbloggroupkey Where Appdatetimestamp &gt; To_Date('"+Datetime.parseexact(Str_PJAFileUploadedTime,“MM/dd/yyyy HH:mm:ss”,system.globalization.cultureinfo.invariantculture).ToString(“MM/dd/yyyy hh:mm:ss tt”)+"','MM/DD/YYYY HH:MI:SS AM') and lower(el.ThreadName) = '"+rule("TSYS_PJA_Menu_Hierarchy").ToString().ToLower+"' order by el.SerNo, stel.AppStep"]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["Select  el.ThreadName,        el.ActionName,        el.JobName,        Case When stel.LogType = 2 Then 'E'        When stel.LogType = 5 Then 'M'        End As LogType,            AppStep As Seq, Logmsg As Message, Appdatetimestamp As DateTime, b.FileName from eodlog el            Inner Join SystemTraceErrorlog stel On replace(el.jobname, 'TCTDBS$_', '') = stel.dbloggroupkey            Left Join Batches b on replace(el.jobname, 'TCTDBS$_', '') = replace(trim(b.dbclientinfo), 'job_name: TCTDBS$_', '')                Where ActionName Is Not Null And stel.LogType in (2,5) And Appdatetimestamp &gt; To_Date('"+Datetime.parseexact(Str_PJAFileUploadedTime,“MM/dd/yyyy HH:mm:ss”,system.globalization.cultureinfo.invariantculture).ToString(“MM/dd/yyyy hh:mm:ss tt”)+"','MM/DD/YYYY HH:MI:SS AM')                and lower(el.ThreadName) = '"+rule("TSYS_PJA_Menu_Hierarchy").ToString().ToLower+"' order by el.SerNo, stel.AppStep"]</InArgument>
                                         </Assign.Value>
                                       </Assign>
                                       <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim oadap As System.Data.OracleClient.OracleDataAdapter&#xA;Dim cmd As System.Data.OracleClient.OracleCommand&#xA;Dim dt As DataTable&#xA;cmd = New System.Data.OracleClient.OracleCommand(query)&#xA;dt=New DataTable()&#xA;   &#xA;&#x9;&#x9;Try &#xA;    &#x9;cmd.Connection = Conn_DatabaseConnection&#xA;&#x9;&#x9;cmd.CommandText = query&#xA;&#x9;&#x9;cmd.CommandType = CommandType.Text&#xA;&#x9;&#x9;oadap = New OracleDataAdapter()&#xA;    &#x9;oadap.SelectCommand=cmd&#xA;    &#x9;oadap.Fill(dt)&#xA;    &#x9;Dt_LogTable=dt&#xA;    Catch e As Exception&#xA;            End Try&#xA;" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
                                         <ui:InvokeCode.Arguments>
-                                          <InArgument x:TypeArguments="sdo:OracleConnection" x:Key="Conn_DatabaseConnection">[Con_DatabaseConnection]</InArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_LogTable">[dt_DataBaseLog]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="query">[str_Query]</InArgument>
+                                          <InArgument x:TypeArguments="sdo:OracleConnection" x:Key="Conn_DatabaseConnection">
+                                            <mva:VisualBasicValue x:TypeArguments="sdo:OracleConnection" ExpressionText="Con_DatabaseConnection" />
+                                          </InArgument>
+                                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Dt_LogTable">
+                                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_DataBaseLog" />
+                                          </OutArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="query">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_Query" />
+                                          </InArgument>
                                         </ui:InvokeCode.Arguments>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
