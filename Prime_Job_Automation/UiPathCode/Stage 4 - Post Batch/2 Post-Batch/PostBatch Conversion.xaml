@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PostBatch" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:bz="clr-namespace:BalaReva.ZipUnzip;assembly=BalaReva.Zip" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ftp" xmlns:s="clr-namespace:SSHCommandHandler;assembly=SSHCommandHandler" xmlns:s1="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PostBatch" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:bz="clr-namespace:BalaReva.ZipUnzip;assembly=BalaReva.Zip" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/ftp" xmlns:s="clr-namespace:SSHCommandHandler;assembly=SSHCommandHandler" xmlns:s1="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sdo="clr-namespace:System.Data.OracleClient;assembly=System.Data.OracleClient" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Str_RpaOpsEmailID" Type="InArgument(x:String)" />
     <x:Property Name="Dt_PostBatchScriptPathRepo" Type="InArgument(sd:DataTable)" />
@@ -66,10 +66,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>951,2647</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,2647</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PostBatch_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="27">
+    <scg:List x:TypeArguments="x:String" Capacity="54">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -97,10 +97,11 @@
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>Renci.SshNet</x:String>
       <x:String>UiPath.FTP</x:String>
+      <x:String>System.Data.OracleClient</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="52">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -126,6 +127,8 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Data.OracleClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Sequence - PostBatch" sap:VirtualizedContainerService.HintSize="828,2482" sap2010:WorkflowViewState.IdRef="Sequence_27">
@@ -315,7 +318,7 @@
                           <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <If Condition="[str_Response.Substring( str_Response.IndexOf(&quot;*Play*&quot;)+6).ToLower.Contains(&quot;play&quot;)]" DisplayName="If - Play Every Day Files Exist" sap:VirtualizedContainerService.HintSize="771,607" sap2010:WorkflowViewState.IdRef="If_31">
+                      <If Condition="[str_Response.Substring( str_Response.LastIndexOf(&quot;*Play*&quot;)+6).ToLower.Contains(&quot;play&quot;)]" DisplayName="If - Play Every Day Files Exist" sap:VirtualizedContainerService.HintSize="771,607" sap2010:WorkflowViewState.IdRef="If_31">
                         <If.Then>
                           <Sequence DisplayName="Move Play Every Day Files" sap:VirtualizedContainerService.HintSize="526,459" sap2010:WorkflowViewState.IdRef="Sequence_62">
                             <sap:WorkflowViewStateService.ViewState>
@@ -437,7 +440,7 @@
                             <av:PointCollection x:Key="ConnectorLocation">300,893 300,957</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Notify ICM for File Availability" sap:VirtualizedContainerService.HintSize="855,2205" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence DisplayName="Notify ICM for File Availability" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -782,14 +785,14 @@
                                 <av:PointCollection x:Key="ConnectorLocation">300,1023 300,1096</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Convert All Return Files" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <Sequence DisplayName="Convert All Return Files" sap:VirtualizedContainerService.HintSize="666,833" sap2010:WorkflowViewState.IdRef="Sequence_7">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <s:executeSSHCommands Command="[&quot;cd &quot;+dict_PostBatchScriptPath(&quot;fd_InterfaceOutgoing&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;mv R06_CLUBP_PH_MonetaryFileResponse*.out &quot;+dict_PostBatchScriptPath(&quot;fd_ConvertBillerIn&quot;).ToString]" DisplayName="Copy Conversion file" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_12" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                              <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_71">
+                              <s:executeSSHCommands Command="[&quot;cd &quot;+dict_PostBatchScriptPath(&quot;fd_InterfaceOutgoing&quot;)+&quot;/&quot;+Now.AddDays(-1).ToString(&quot;yyyyMMdd&quot;)+&quot;;mv R06_CLUBP_PH_MonetaryFileResponse*.out &quot;+dict_PostBatchScriptPath(&quot;fd_ConvertBillerIn&quot;).ToString]" DisplayName="Copy Conversion file" sap:VirtualizedContainerService.HintSize="624,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_12" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                              <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="624,60" sap2010:WorkflowViewState.IdRef="Assign_71">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
                                 </Assign.To>
@@ -797,7 +800,7 @@
                                   <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="AppendLine_20" Text="[&quot;*******************************  Copied Files from Interface Outgoing to Convert_Biller in if any  *********************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Copy files completed successfully *****************************************************&quot;+Environment.NewLine]">
+                              <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="624,51" sap2010:WorkflowViewState.IdRef="AppendLine_20" Text="[&quot;*******************************  Copied Files from Interface Outgoing to Convert_Biller in if any  *********************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Copy files completed successfully *****************************************************&quot;+Environment.NewLine]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -805,8 +808,8 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:AppendLine>
-                              <s:executeSSHCommands Command="[&quot;cd &quot;+ dict_PostBatchScriptPath(&quot;fd_ConvertBiller&quot;)+&quot;;./&quot;+ Path.GetFileName(dict_PostBatchScriptPath(&quot;fl_ConvertBiller&quot;))]" DisplayName="Run Convert_Output" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_13" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
-                              <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_72">
+                              <s:executeSSHCommands Command="[&quot;cd &quot;+ dict_PostBatchScriptPath(&quot;fd_ConvertBiller&quot;)+&quot;;./&quot;+ Path.GetFileName(dict_PostBatchScriptPath(&quot;fl_ConvertBiller&quot;))]" DisplayName="Run Convert_Output" sap:VirtualizedContainerService.HintSize="624,22" sap2010:WorkflowViewState.IdRef="executeSSHCommands_13" Response="[str_Response]" ServerHost="[Str_TSysDBServerHost]" ServerPassword="[New System.Net.NetworkCredential(&quot;&quot;, Pwd_TSysDBServerPwd).Password]" ServerPort="[Int_TSysDBServerPort]" ServerUserName="[Str_TSysDBServerUserID]" />
+                              <Assign DisplayName="Remove Junk Characters from Response" sap:VirtualizedContainerService.HintSize="624,60" sap2010:WorkflowViewState.IdRef="Assign_72">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[str_Response]</OutArgument>
                                 </Assign.To>
@@ -814,7 +817,7 @@
                                   <InArgument x:TypeArguments="x:String">[Regex.Replace(Regex.Replace(str_Response,str_JunkCharacters,""),str_EscChar,"")]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[&quot;*******************************  Execution started for Convert All Return Files  ***************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully completed Convert All Return Files  **************************************&quot;+Environment.NewLine]">
+                              <ui:AppendLine DisplayName="Append Line" FileName="[Str_LogFilePath]" sap:VirtualizedContainerService.HintSize="624,51" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[&quot;*******************************  Execution started for Convert All Return Files  ***************************************&quot;+Environment.NewLine+str_Response+Environment.NewLine+&quot;*******************************  Successfully completed Convert All Return Files  **************************************&quot;+Environment.NewLine]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -822,10 +825,10 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:AppendLine>
-                              <If Condition="[Regex.IsMatch(str_Response.ToLower,Str_ErrorKeywordRegExList.ToLower)]" DisplayName="If - Errors" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_19">
+                              <If Condition="[Regex.IsMatch(str_Response.ToLower,Str_ErrorKeywordRegExList.ToLower)]" DisplayName="If - Errors" sap:VirtualizedContainerService.HintSize="624,235" sap2010:WorkflowViewState.IdRef="If_19">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -843,19 +846,43 @@
                                   </ui:SendOutlookMail>
                                 </If.Then>
                                 <If.Else>
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Return Files Workflow File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[Str_ProjectFolderPath+&quot;UiPathCode\General Utility\ReturnFiles.xaml&quot;]">
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Return Files Workflow File" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[Str_ProjectFolderPath+&quot;UiPathCode\General Utility\ReturnFiles.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">[Str_RpaOpsEmailID]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFileLocalPath">[Dict_ReturnFolderPath("str_ReturnFilePath")]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TypeOfReturnFiles">AfterEOD</InArgument>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_ReturnFilesRuleFactory">[Dt_RuleFactory]</InArgument>
-                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPassword">[Pwd_TSysDBServerPwd]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerDetails">[Str_TSysDBServerDetails]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserName">[Str_TSysDBServerUserID]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_RpaOpsEmailID">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_RpaOpsEmailID" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_ReturnFileLocalPath">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Dict_ReturnFolderPath(&quot;str_ReturnFilePath&quot;)" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TypeOfReturnFiles">
+                                        <Literal x:TypeArguments="x:String">AfterEOD</Literal>
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="Dt_ReturnFilesRuleFactory">
+                                        <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Dt_RuleFactory" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="Pwd_TSysDBServerPassword">
+                                        <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="Pwd_TSysDBServerPwd" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerUserName">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysDBServerUserID" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="sdo:OracleConnection" x:Key="Con_DatabaseConnection" />
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_ProcessName">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_PJAFileUploadedTime">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="Str_TSysDBServerHost">
+                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Str_TSysDBServerHost" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="Int_TSysDBServerPort">
+                                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Int_TSysDBServerPort" />
+                                      </InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
